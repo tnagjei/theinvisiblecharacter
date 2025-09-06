@@ -1,0 +1,85 @@
+# Cloudflare Pages Redirects Configuration for theinvisiblecharacter.live
+# Production redirect rules
+
+# Core page redirects - SEO-friendly permanent redirects
+/about /about.html 301
+/help /help.html 301
+/privacy /privacy-policy.html 301
+/terms /terms-of-service.html 301
+/contact /help.html#contact 301
+/faq /help.html#faq 301
+/tools /tools.html 301
+/guide /help.html 301
+
+# French language redirects
+/fr /about-fr.html 302
+/fr/a-propos /about-fr.html 301
+/fr/aide /help-fr.html 301
+/fr/blog /blog/fr/index.html 301
+
+# Blog redirects - Comprehensive coverage
+/blog /blog/index.html 301
+/blog/fortnite /blog/fortnite-invisible-name.html 301
+/blog/instagram /blog/instagram-invisible-characters.html 301
+/blog/whatsapp /blog/whatsapp-invisible-messages.html 301
+/blog/technical /blog/technical-guide-invisible-characters.html 301
+/blog/fr /blog/fr/index.html 301
+/blog/fr/fortnite /blog/fr/fortnite-nom-invisible.html 301
+/blog/fr/instagram /blog/fr/instagram-caracteres-invisibles.html 301
+/blog/fr/whatsapp /blog/fr/whatsapp-messages-invisibles.html 301
+/blog/fr/technical /blog/fr/guide-technique-caracteres-invisibles.html 301
+
+# Category and tag redirects (future-proofing)
+/blog/category/* /blog/ 301
+/blog/tag/* /blog/ 301
+/blog/category/games /blog/fortnite-invisible-name.html 301
+/blog/category/social /blog/instagram-invisible-characters.html 301
+
+# Trailing slash normalization
+/about/ /about.html 301
+/help/ /help.html 301
+/privacy/ /privacy-policy.html 301
+/terms/ /terms-of-service.html 301
+/tools/ /tools.html 301
+/blog/ /blog/index.html 301
+
+# Legacy URL redirects (for migration)
+# Add any legacy URLs here when migrating from old site
+# /old-invisible-characters / 301
+# /invisible-text-generator / 301
+
+# Mobile redirects
+/mobile /mobile-test.html 301
+/m /mobile-test.html 301
+
+# Error handling
+/* /404.html 404
+
+# Search and utility redirects
+/search / 301
+/sitemap /sitemap.xml 301
+/robots /robots.txt 301
+
+# Force HTTPS (Cloudflare handles this automatically, but kept for reference)
+# http://* https://:splat 301
+
+# Remove www redirect (uncomment when using custom domain)
+# https://www.theinvisiblecharacter.live/* https://theinvisiblecharacter.live/:splat 301
+
+# API routes (future-proofing for potential API endpoints)
+# /api/* https://api.theinvisiblecharacter.live/:splat 200
+# /api/v1/* https://api.theinvisiblecharacter.live/v1/:splat 200
+
+# Social media and external service redirects
+/facebook / 301
+/twitter / 301
+/youtube / 301
+/instagram / 301
+
+# Download redirects (if any downloadable content)
+/download / 301
+/download/* / 301
+
+# Special landing pages (for marketing campaigns)
+# /campaign-special / 301
+# /promo-winter / 301

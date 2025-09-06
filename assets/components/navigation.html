@@ -1,0 +1,159 @@
+<!-- Header Navigation Component -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-apple-gray-900/80 backdrop-blur-xl border-b border-apple-gray-200 dark:border-apple-gray-700">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="/" class="flex items-center space-x-2" aria-label="TheInvisibleCharacter.live Home">
+                    <svg class="w-8 h-8 text-apple-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="text-xl font-semibold">TheInvisibleCharacter</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#tools" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Tools</a>
+                <a href="#features" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Features</a>
+                <a href="about.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">About</a>
+                <a href="blog/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Blog</a>
+                <a href="help.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Help</a>
+                
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button id="language-toggle" class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Switch language">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                        </svg>
+                        <span id="current-language">EN</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="language-dropdown" class="absolute right-0 mt-2 w-32 bg-white dark:bg-apple-gray-800 rounded-lg shadow-lg border border-apple-gray-200 dark:border-apple-gray-700 hidden">
+                        <a href="/" class="block px-4 py-2 hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 rounded-t-lg transition-colors">
+                            🇺🇸 English
+                        </a>
+                        <a href="index-fr.html" class="block px-4 py-2 hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 rounded-b-lg transition-colors">
+                            🇫🇷 Français
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle-desktop" class="p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Toggle theme">
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Open menu" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-apple-gray-900 border-t border-apple-gray-200 dark:border-apple-gray-700">
+        <div class="px-4 py-2 space-y-1">
+            <a href="#tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Tools</a>
+            <a href="#features" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Features</a>
+            <a href="about.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">About</a>
+            <a href="blog/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Blog</a>
+            <a href="help.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Help</a>
+            
+            <!-- Mobile Language Switcher -->
+            <div class="border-t border-apple-gray-200 dark:border-apple-gray-700 pt-2 mt-2">
+                <a href="/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">
+                    🇺🇸 English
+                </a>
+                <a href="index-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">
+                    🇫🇷 Français
+                </a>
+            </div>
+            
+            <!-- Mobile Theme Toggle -->
+            <button id="theme-toggle-mobile" class="w-full text-left px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+                <span>Toggle theme</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<script>
+// Language switcher functionality
+const languageToggle = document.getElementById('language-toggle');
+const languageDropdown = document.getElementById('language-dropdown');
+const currentLanguage = document.getElementById('current-language');
+
+// Toggle language dropdown
+languageToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    languageDropdown.classList.toggle('hidden');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', () => {
+    languageDropdown.classList.add('hidden');
+});
+
+// Prevent dropdown from closing when clicking inside
+languageDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Update current language based on page
+if (window.location.pathname.includes('-fr.html') || window.location.pathname.includes('/fr/')) {
+    currentLanguage.textContent = 'FR';
+} else {
+    currentLanguage.textContent = 'EN';
+}
+
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
+// Add scroll effect to header
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('shadow-lg');
+    } else {
+        header.classList.remove('shadow-lg');
+    }
+});
+</script>

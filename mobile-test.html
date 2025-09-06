@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mobile optimization test page for TheInvisibleCharacter.live">
+    <meta name="keywords" content="mobile test, responsive design, mobile optimization">
+    <meta name="author" content="TheInvisibleCharacter.live">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Mobile Optimization Test - TheInvisibleCharacter.live</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-gray': {
+                            50: '#fafafa',
+                            100: '#f5f5f7',
+                            200: '#e8e8ed',
+                            300: '#d1d1d6',
+                            400: '#a1a1a6',
+                            500: '#86868b',
+                            600: '#6e6e73',
+                            700: '#48484a',
+                            800: '#1d1d1f',
+                            900: '#000000'
+                        }
+                    },
+                    fontFamily: {
+                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased transition-colors duration-300">
+    <!-- Include Navigation Component -->
+    <div id="navigation-placeholder"></div>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        <!-- Test Header -->
+        <section class="py-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Mobile Optimization Test</h1>
+                <p class="text-lg md:text-xl opacity-90">Testing mobile-first responsive design and touch interactions</p>
+            </div>
+        </section>
+        
+        <!-- Device Detection -->
+        <section class="py-12 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8">Device Detection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Mobile Device</h3>
+                        <p id="is-mobile" class="text-lg font-mono">...</p>
+                    </div>
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">iOS Device</h3>
+                        <p id="is-ios" class="text-lg font-mono">...</p>
+                    </div>
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Android Device</h3>
+                        <p id="is-android" class="text-lg font-mono">...</p>
+                    </div>
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Screen Width</h3>
+                        <p id="screen-width" class="text-lg font-mono">...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Touch Interactions Test -->
+        <section class="py-12 bg-apple-gray-50 dark:bg-apple-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8">Touch Interactions Test</h2>
+                
+                <!-- Touch Buttons -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Touch Buttons (44px minimum)</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors clickable">
+                            Standard Button
+                        </button>
+                        <button class="px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors clickable">
+                            Large Button
+                        </button>
+                        <button class="w-12 h-12 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors clickable flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Swipe Cards -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Swipe Cards</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-apple-gray-900 rounded-lg p-6 shadow-md swipeable">
+                            <h4 class="font-semibold mb-2">Swipe Left</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Swipe left to copy</p>
+                            <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded text-center">
+                                <span class="text-2xl">‎</span>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-apple-gray-900 rounded-lg p-6 shadow-md swipeable">
+                            <h4 class="font-semibold mb-2">Long Press</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Long press for details</p>
+                            <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded text-center long-press">
+                                <span class="text-2xl">​</span>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-apple-gray-900 rounded-lg p-6 shadow-md swipeable">
+                            <h4 class="font-semibold mb-2">Touch Feedback</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Tap for feedback</p>
+                            <div class="mt-4">
+                                <button class="w-full py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors clickable">
+                                    Tap Me
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Input Fields -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Mobile Input Fields</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Text Input</label>
+                            <input type="text" placeholder="Enter text..." class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Search Input</label>
+                            <div class="relative">
+                                <input type="search" placeholder="Search..." class="w-full px-4 py-3 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Textarea</label>
+                            <textarea rows="4" placeholder="Enter message..." class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Select</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Navigation Test -->
+        <section class="py-12 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8">Navigation Test</h2>
+                
+                <!-- Bottom Navigation -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Bottom Navigation</h3>
+                    <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mb-4">Check if bottom navigation appears on mobile</p>
+                    <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center">
+                        <p class="text-sm">Bottom navigation should appear at the bottom of the screen on mobile devices</p>
+                    </div>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Back to Top Button</h3>
+                    <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mb-4">Scroll down to see the back to top button</p>
+                    <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-8">
+                        <p class="text-center mb-4">Scroll down to test</p>
+                        <div style="height: 200px;"></div>
+                        <p class="text-center">Back to top button should appear in bottom right corner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Performance Test -->
+        <section class="py-12 bg-apple-gray-50 dark:bg-apple-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8">Performance Test</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-lg p-6">
+                        <h3 class="font-semibold mb-4">Loading Time</h3>
+                        <p id="load-time" class="text-2xl font-mono text-blue-500">...</p>
+                        <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Page load time</p>
+                    </div>
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-lg p-6">
+                        <h3 class="font-semibold mb-4">Touch Response</h3>
+                        <button id="touch-test" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                            Test Touch Response
+                        </button>
+                        <p id="touch-response" class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mt-2"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Accessibility Test -->
+        <section class="py-12 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8">Accessibility Test</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Focus Management</h3>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Focus Test
+                        </button>
+                    </div>
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Screen Reader</h3>
+                        <button aria-label="Screen reader test button" class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">
+                            ARIA Test
+                        </button>
+                    </div>
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-2">Keyboard Navigation</h3>
+                        <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                            Tab to me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Results Display -->
+        <section class="py-12 bg-gradient-to-r from-green-500 to-blue-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl font-bold mb-4">Test Results</h2>
+                <div id="test-results" class="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <p class="text-lg">Running tests...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Include Footer Component -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mobile-optimization.js"></script>
+    
+    <script>
+        // Device detection
+        function updateDeviceInfo() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            document.getElementById('is-mobile').textContent = isMobile ? '✓ Yes' : '✗ No';
+            document.getElementById('is-ios').textContent = isIOS ? '✓ Yes' : '✗ No';
+            document.getElementById('is-android').textContent = isAndroid ? '✓ Yes' : '✗ No';
+            document.getElementById('screen-width').textContent = window.innerWidth + 'px';
+        }
+        
+        // Load time
+        window.addEventListener('load', () => {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            document.getElementById('load-time').textContent = loadTime + 'ms';
+        });
+        
+        // Touch response test
+        document.getElementById('touch-test').addEventListener('click', () => {
+            const startTime = performance.now();
+            document.getElementById('touch-test').addEventListener('touchend', () => {
+                const endTime = performance.now();
+                const responseTime = endTime - startTime;
+                document.getElementById('touch-response').textContent = `Response time: ${responseTime.toFixed(2)}ms`;
+            });
+        });
+        
+        // Test results
+        function runTests() {
+            const tests = [];
+            
+            // Test 1: Mobile detection
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            tests.push({
+                name: 'Mobile Detection',
+                passed: isMobile || window.innerWidth <= 768,
+                message: isMobile ? 'Mobile device detected' : 'Desktop device'
+            });
+            
+            // Test 2: Touch support
+            tests.push({
+                name: 'Touch Support',
+                passed: 'ontouchstart' in window,
+                message: 'ontouchstart' in window ? 'Touch events supported' : 'Touch events not supported'
+            });
+            
+            // Test 3: Viewport
+            tests.push({
+                name: 'Viewport Meta',
+                passed: document.querySelector('meta[name="viewport"]') !== null,
+                message: 'Viewport meta tag found'
+            });
+            
+            // Test 4: Responsive design
+            tests.push({
+                name: 'Responsive CSS',
+                passed: window.innerWidth <= 768 || window.innerWidth > 768,
+                message: `Screen width: ${window.innerWidth}px`
+            });
+            
+            // Test 5: Mobile optimization CSS
+            tests.push({
+                name: 'Mobile CSS',
+                passed: document.querySelector('link[href*="mobile-optimization.css"]') !== null,
+                message: 'Mobile optimization CSS loaded'
+            });
+            
+            // Display results
+            const resultsDiv = document.getElementById('test-results');
+            const passedTests = tests.filter(test => test.passed).length;
+            const totalTests = tests.length;
+            
+            resultsDiv.innerHTML = `
+                <div class="mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Test Summary</h3>
+                    <p class="text-3xl font-bold">${passedTests}/${totalTests} Tests Passed</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    ${tests.map(test => `
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl">${test.passed ? '✓' : '✗'}</span>
+                            <div>
+                                <div class="font-semibold">${test.name}</div>
+                                <div class="text-sm opacity-75">${test.message}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDeviceInfo();
+            runTests();
+            
+            // Update on resize
+            window.addEventListener('resize', updateDeviceInfo);
+        });
+        
+        // Load navigation component
+        fetch('assets/components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+                // Reinitialize theme toggle
+                initializeTheme();
+            });
+        
+        // Load footer component
+        fetch('assets/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+        
+        // Initialize theme toggle
+        function initializeTheme() {
+            const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            
+            const toggleTheme = () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            };
+            
+            if (themeToggleDesktop) {
+                themeToggleDesktop.addEventListener('click', toggleTheme);
+            }
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+        }
+    </script>
+</body>
+</html>

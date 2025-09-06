@@ -1,0 +1,47 @@
+# Cloudflare Pages Configuration for theinvisiblecharacter.live
+# Production deployment settings
+
+[build]
+  command = "./build.sh"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+  PYTHON_VERSION = "3.11"
+
+# Production build settings
+[env.production]
+  [env.production.build]
+    command = "./build.sh --production"
+    publish = "."
+
+# Development settings
+[env.development]
+  [env.development.build]
+    command = "./build.sh --development"
+    publish = "."
+
+# Analytics and monitoring
+[analytics]
+  enabled = true
+
+# Security headers (backup to _headers file)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+# Performance optimizations
+[env.production.vars]
+  ENVIRONMENT = "production"
+  CACHE_TTL = "86400"
+  ENABLE_COMPRESSION = "true"
+
+[env.development.vars]
+  ENVIRONMENT = "development"
+  CACHE_TTL = "0"
+  ENABLE_COMPRESSION = "false"

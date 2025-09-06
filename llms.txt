@@ -1,0 +1,49 @@
+# TheInvisibleCharacter.live - Invisible Character Generator
+
+TheInvisibleCharacter.live is a professional online platform specializing in zero-width character processing. We provide simple, efficient, and professional invisible character generation and management services for social media enthusiasts, gamers, and creative professionals worldwide.
+
+## Key Features
+- 12 types of Unicode invisible characters
+- Real-time character detection
+- Multi-language support (English/French)
+- Mobile-responsive design
+- Privacy-focused (no registration required)
+- 100% free to use
+
+## Main Tools
+- Character Generator: Create various types of invisible characters
+- Character Detector: Find and analyze invisible characters in text
+- Character Converter: Convert between regular and invisible characters
+
+## Popular Use Cases
+- Instagram bios and captions
+- Fortnite invisible names
+- WhatsApp invisible messages
+- TikTok profiles
+- Social media optimization
+- Creative text formatting
+
+## Technical Details
+- Built with HTML5, Tailwind CSS, and vanilla JavaScript
+- Cloudflare Pages deployment ready
+- SEO optimized with structured data
+- Mobile-first responsive design
+- Dark/light theme support
+- Accessibility compliant (WCAG 2.1)
+
+## Language Support
+- English: https://theinvisiblecharacter.live/
+- French: https://theinvisiblecharacter.live/index-fr.html
+
+## Legal & Privacy
+- Privacy Policy: https://theinvisiblecharacter.live/privacy-policy.html
+- Terms of Service: https://theinvisiblecharacter.live/terms-of-service.html
+- No user data collection or tracking
+- GDPR compliant
+
+## Contact
+- Website: https://theinvisiblecharacter.live
+- Support: Available through help center
+
+## Last Updated
+December 2024

@@ -1,0 +1,4251 @@
+{
+  "timestamp": "2025-09-06T02:10:32.099Z",
+  "pages": {
+    "404.html": {
+      "filePath": "404.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过短，建议至少120个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"text-left\">..."
+        }
+      ],
+      "metaTags": {
+        "title": "404 - 页面未找到",
+        "description": "页面未找到 - 隐形字符工具"
+      },
+      "structure": {
+        "semanticTags": []
+      },
+      "links": [],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "about-fr.html": {
+      "filePath": "about-fr.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        }
+      ],
+      "metaTags": {
+        "title": "À propos TheInvisibleCharacter.live - Outils Gratuits Mission & Équipe",
+        "description": "✓ À propos TheInvisibleCharacter.live - Mission, équipe & outils de caractères invisibles gratuits pour réseaux sociaux & jeux. Plateforme respectueuse de la vie privée ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#about",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#about",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "about.html": {
+      "filePath": "about.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        }
+      ],
+      "metaTags": {
+        "title": "About TheInvisibleCharacter.live - Free Tools Mission & Team",
+        "description": "✓ About TheInvisibleCharacter.live - Mission, team & free invisible character tools for social media & gaming. Privacy-focused platform with professional tools ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "#about",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "#about",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "/#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "/#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "assets/components/footer-fr.html": {
+      "filePath": "assets/components/footer-fr.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少页面标题"
+        },
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少meta description"
+        },
+        {
+          "type": "Mobile",
+          "severity": "error",
+          "message": "缺少viewport meta标签"
+        },
+        {
+          "type": "Encoding",
+          "severity": "error",
+          "message": "缺少或错误的charset标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "HTML标签缺少lang属性"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "页面内容较少，建议增加内容"
+        }
+      ],
+      "metaTags": {},
+      "structure": {
+        "semanticTags": [
+          "footer"
+        ]
+      },
+      "links": [
+        {
+          "href": "#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "privacy-policy.html",
+          "text": "Politique de Confidentialité"
+        },
+        {
+          "href": "terms-of-service.html",
+          "text": "Conditions d'Utilisation"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "privacy-policy.html",
+          "text": "Politique de Confidentialité"
+        },
+        {
+          "href": "terms-of-service.html",
+          "text": "Conditions d'Utilisation"
+        }
+      ],
+      "scripts": [],
+      "styles": [],
+      "accessibility": {},
+      "seo": {}
+    },
+    "assets/components/footer.html": {
+      "filePath": "assets/components/footer.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少页面标题"
+        },
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少meta description"
+        },
+        {
+          "type": "Mobile",
+          "severity": "error",
+          "message": "缺少viewport meta标签"
+        },
+        {
+          "type": "Encoding",
+          "severity": "error",
+          "message": "缺少或错误的charset标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "HTML标签缺少lang属性"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "页面内容较少，建议增加内容"
+        }
+      ],
+      "metaTags": {},
+      "structure": {
+        "semanticTags": [
+          "footer"
+        ]
+      },
+      "links": [
+        {
+          "href": "#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "privacy-policy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms-of-service.html",
+          "text": "Terms of Service"
+        },
+        {
+          "href": "about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "privacy-policy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms-of-service.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "scripts": [],
+      "styles": [],
+      "accessibility": {},
+      "seo": {}
+    },
+    "assets/components/navigation-fr.html": {
+      "filePath": "assets/components/navigation-fr.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少页面标题"
+        },
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少meta description"
+        },
+        {
+          "type": "Mobile",
+          "severity": "error",
+          "message": "缺少viewport meta标签"
+        },
+        {
+          "type": "Encoding",
+          "severity": "error",
+          "message": "缺少或错误的charset标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "HTML标签缺少lang属性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        }
+      ],
+      "metaTags": {},
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav"
+        ]
+      },
+      "links": [
+        {
+          "href": "#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#features",
+          "text": "Fonctionnalités"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#features",
+          "text": "Fonctionnalités"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        }
+      ],
+      "scripts": [],
+      "styles": [],
+      "accessibility": {},
+      "seo": {}
+    },
+    "assets/components/navigation.html": {
+      "filePath": "assets/components/navigation.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少页面标题"
+        },
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少meta description"
+        },
+        {
+          "type": "Mobile",
+          "severity": "error",
+          "message": "缺少viewport meta标签"
+        },
+        {
+          "type": "Encoding",
+          "severity": "error",
+          "message": "缺少或错误的charset标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "HTML标签缺少lang属性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        }
+      ],
+      "metaTags": {},
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav"
+        ]
+      },
+      "links": [
+        {
+          "href": "#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "#features",
+          "text": "Features"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        },
+        {
+          "href": "#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "#features",
+          "text": "Features"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        }
+      ],
+      "scripts": [],
+      "styles": [],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fortnite-invisible-name.html": {
+      "filePath": "blog/fortnite-invisible-name.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex gap-6\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"w-12 h-12 bg-orange-500 rounded-full f..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <li class=\"flex items-start space-x-2\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <svg class=\"w-5 h-5 text-orange-500 mt-0.5 flex-sh..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现13次): <path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"currentColor..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-red-50 dark:bg-red-900/20 rounded-2..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <li class=\"flex items-start space-x-3\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <svg class=\"w-5 h-5 mt-0.5 flex-shrink-0\" fill=\"cu..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 01..."
+        }
+      ],
+      "metaTags": {
+        "title": "Fortnite Invisible Name - TheInvisibleCharacter.live Gamer Guide",
+        "description": "✓ Complete Fortnite invisible name guide. Step-by-step tutorial for blank names, safe methods for PC, console & mobile players ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "../",
+          "text": "TheInvisibleCharacter.live"
+        },
+        {
+          "href": "../#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "../#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "../#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "../assets/js/theme.js",
+        "../assets/js/main.js",
+        "../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../assets/css/theme.css",
+        "../assets/css/style.css",
+        "../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fr/fortnite-nom-invisible.html": {
+      "filePath": "blog/fr/fortnite-nom-invisible.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 9 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <script src=\"../../assets/js/mobile-optimization.j..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex gap-6\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"w-12 h-12 bg-orange-500 rounded-full f..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <li class=\"flex items-start space-x-2\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <svg class=\"w-5 h-5 text-orange-500 mt-0.5 flex-sh..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现13次): <path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"currentColor..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-red-50 dark:bg-red-900/20 rounded-2..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <li class=\"flex items-start space-x-3\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <svg class=\"w-5 h-5 mt-0.5 flex-shrink-0\" fill=\"cu..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 01..."
+        }
+      ],
+      "metaTags": {
+        "title": "Fortnite Nom Invisble - TheInvisibleCharacter.live Guide Joueur",
+        "description": "✓ Guide complet Fortnite nom invisible. Tutoriel étape par étape pour noms vides, méthodes sûres pour PC, console & joueurs mobiles ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "../../",
+          "text": "TheInvisibleCharacter.live"
+        },
+        {
+          "href": "../../#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "../../#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "../../#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "../../about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "../../assets/js/mobile-optimization.js",
+        "https://cdn.tailwindcss.com",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/theme.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/main.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../../assets/css/theme.css",
+        "../../assets/css/style.css",
+        "../../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fr/guide-technique-caracteres-invisibles.html": {
+      "filePath": "blog/fr/guide-technique-caracteres-invisibles.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 5 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Question\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"acceptedAnswer\": {..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Answer\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex items-center mb-4\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): }</code></pre>..."
+        }
+      ],
+      "metaTags": {
+        "title": "Guide Technique - TheInvisibleCharacter.live Caractères Invisibles",
+        "description": "✓ Guide technique caractères invisibles & standards Unicode. Apprenez espaces largeur zéro, liants & meilleures pratiques implémentation ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "#introduction",
+          "text": "Introduction"
+        },
+        {
+          "href": "#bases-unicode",
+          "text": "Bases Unicode"
+        },
+        {
+          "href": "#types-caracteres-invisibles",
+          "text": "Types de Caractères Invisibles"
+        },
+        {
+          "href": "#implementation-technique",
+          "text": "Implémentation Technique"
+        },
+        {
+          "href": "#compatibilite-plateformes",
+          "text": "Compatibilité des Plateformes"
+        },
+        {
+          "href": "#bonnes-pratiques",
+          "text": "Bonnes Pratiques"
+        },
+        {
+          "href": "#techniques-avancees",
+          "text": "Techniques Avancées"
+        },
+        {
+          "href": "#depannage",
+          "text": "Dépannage"
+        },
+        {
+          "href": "#developpements-futurs",
+          "text": "Développements Futurs"
+        },
+        {
+          "href": "#conclusion",
+          "text": "Conclusion"
+        },
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "instagram-caracteres-invisibles.html",
+          "text": "Guide Instagram"
+        },
+        {
+          "href": "fortnite-nom-invisible.html",
+          "text": "Noms Fortnite"
+        },
+        {
+          "href": "whatsapp-messages-invisibles.html",
+          "text": "Messages WhatsApp"
+        },
+        {
+          "href": "guide-technique-caracteres-invisibles.html",
+          "text": "Guide Technique"
+        },
+        {
+          "href": "#",
+          "text": "Documentation API"
+        },
+        {
+          "href": "#",
+          "text": "Guide d'Intégration"
+        },
+        {
+          "href": "#",
+          "text": "Support Technique"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        },
+        {
+          "href": "#",
+          "text": "Conditions d'Utilisation"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com"
+      ],
+      "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fr/index.html": {
+      "filePath": "blog/fr/index.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 9 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 2 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <script src=\"../../assets/js/mobile-optimization.j..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <article class=\"bg-apple-gray-50 dark:bg-apple-gra..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-16 h-16 text-white\" fill=\"currentCol..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"p-6\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"flex items-center space-x-2 text-sm te..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <span>•</span>..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        }
+      ],
+      "metaTags": {
+        "title": "Blog - TheInvisibleCharacter.live Guide Caractères Invisibles",
+        "description": "✓ Blog - Guides d'experts sur les caractères invisibles pour Instagram, TikTok, Fortnite & WhatsApp. Techniques créatives, conseils de dépannage & tutoriels ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "instagram-caracteres-invisibles.html",
+          "text": "Lire la suite →"
+        },
+        {
+          "href": "fortnite-nom-invisible.html",
+          "text": "Lire la suite →"
+        },
+        {
+          "href": "whatsapp-messages-invisibles.html",
+          "text": "Lire la suite →"
+        },
+        {
+          "href": "guide-technique-caracteres-invisibles.html",
+          "text": "Lire la suite →"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "../../assets/js/mobile-optimization.js",
+        "https://cdn.tailwindcss.com",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/theme.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/main.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../../assets/css/theme.css",
+        "../../assets/css/style.css",
+        "../../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fr/instagram-caracteres-invisibles.html": {
+      "filePath": "blog/fr/instagram-caracteres-invisibles.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 9 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <script src=\"../../assets/js/mobile-optimization.j..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现11次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <div class=\"flex items-start space-x-6\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <div class=\"w-12 h-12 bg-purple-500 rounded-full f..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <div class=\"flex-1\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): [caractère invisible]<br>..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex items-start space-x-4\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <svg class=\"w-4 h-4 text-white\" fill=\"none\" stroke..."
+        }
+      ],
+      "metaTags": {
+        "title": "Caractères Invisibles Instagram - TheInvisibleCharacter.live Guide Bio",
+        "description": "✓ Guide complet pour les caractères invisibles Instagram bio formatage & sauts de ligne. Apprenez techniques largeur zéro avec tutoriel étape par étape ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "../../assets/js/mobile-optimization.js",
+        "https://cdn.tailwindcss.com",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/theme.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/main.js",
+        "../../assets/js/mobile-optimization.js",
+        "../../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../../assets/css/theme.css",
+        "../../assets/css/style.css",
+        "../../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/fr/whatsapp-messages-invisibles.html": {
+      "filePath": "blog/fr/whatsapp-messages-invisibles.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 5 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Question\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"acceptedAnswer\": {..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Answer\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex items-center mb-4\">..."
+        }
+      ],
+      "metaTags": {
+        "title": "Messages Invisibles WhatsApp - TheInvisibleCharacter.live Guide",
+        "description": "✓ Guide messages invisibles WhatsApp. Apprenez à envoyer textes vides & messages cachés avec tutoriel étape par étape complet ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "#introduction",
+          "text": "Introduction"
+        },
+        {
+          "href": "#comment-ca-marche",
+          "text": "Comment ça Marche"
+        },
+        {
+          "href": "#guide-etape-par-etape",
+          "text": "Guide Étape par Étape"
+        },
+        {
+          "href": "#usages-creatifs",
+          "text": "Usages Créatifs"
+        },
+        {
+          "href": "#depannage",
+          "text": "Dépannage"
+        },
+        {
+          "href": "#bonnes-pratiques",
+          "text": "Bonnes Pratiques"
+        },
+        {
+          "href": "#faq",
+          "text": "FAQ"
+        },
+        {
+          "href": "#conclusion",
+          "text": "Conclusion"
+        },
+        {
+          "href": "../../",
+          "text": "Accueil"
+        },
+        {
+          "href": "../../about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "../../help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "instagram-caracteres-invisibles.html",
+          "text": "Guide Instagram"
+        },
+        {
+          "href": "fortnite-nom-invisible.html",
+          "text": "Noms Fortnite"
+        },
+        {
+          "href": "whatsapp-messages-invisibles.html",
+          "text": "Messages WhatsApp"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        },
+        {
+          "href": "#",
+          "text": "Conditions d'Utilisation"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Cookies"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        },
+        {
+          "href": "#",
+          "text": "Conditions d'Utilisation"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com"
+      ],
+      "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/index.html": {
+      "filePath": "blog/index.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 2 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <span>•</span>..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <a href=\"#\" class=\"bg-apple-gray-50 dark:bg-apple-..."
+        }
+      ],
+      "metaTags": {
+        "title": "Blog - TheInvisibleCharacter.live Invisible Character Guide",
+        "description": "✓ Blog - Expert guides on invisible characters for Instagram, TikTok, Fortnite & WhatsApp. Learn creative techniques, troubleshooting tips & platform tutorials ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "instagram-invisible-characters.html",
+          "text": "Read More →"
+        },
+        {
+          "href": "fortnite-invisible-name.html",
+          "text": "Read More →"
+        },
+        {
+          "href": "whatsapp-invisible-messages.html",
+          "text": "Read More →"
+        },
+        {
+          "href": "technical-guide-invisible-characters.html",
+          "text": "Read More →"
+        },
+        {
+          "href": "#",
+          "text": "Coming Soon →"
+        },
+        {
+          "href": "#",
+          "text": "Coming Soon →"
+        },
+        {
+          "href": "../#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "../#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "../#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "../assets/js/theme.js",
+        "../assets/js/main.js",
+        "../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../assets/css/theme.css",
+        "../assets/css/style.css",
+        "../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/instagram-invisible-characters.html": {
+      "filePath": "blog/instagram-invisible-characters.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <li class=\"flex items-start space-x-2\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <svg class=\"w-5 h-5 text-purple-500 mt-0.5 flex-sh..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现11次): <path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex gap-6\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"w-12 h-12 bg-purple-500 rounded-full f..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-lg text-apple-gray-600 dark:text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <div class=\"bg-white dark:bg-apple-gray-800 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <ul class=\"space-y-2 text-sm text-apple-gray-600 d..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <li class=\"flex items-start space-x-3\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现8次): <svg class=\"w-5 h-5 mt-0.5 flex-shrink-0\" fill=\"cu..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 01..."
+        }
+      ],
+      "metaTags": {
+        "title": "Instagram Invisible Characters - TheInvisibleCharacter.live Bio Guide",
+        "description": "✓ Complete guide to Instagram invisible characters for bio formatting & line breaks. Learn zero-width character techniques with step-by-step tutorial ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "../",
+          "text": "Home"
+        },
+        {
+          "href": "../#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help"
+        },
+        {
+          "href": "../",
+          "text": "TheInvisibleCharacter.live"
+        },
+        {
+          "href": "../#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "../#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "../#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "./",
+          "text": "Blog"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html",
+          "text": "About"
+        },
+        {
+          "href": "../help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "../about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "../assets/js/theme.js",
+        "../assets/js/main.js",
+        "../assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "../assets/css/theme.css",
+        "../assets/css/style.css",
+        "../assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/technical-guide-invisible-characters.html": {
+      "filePath": "blog/technical-guide-invisible-characters.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 5 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Question\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"acceptedAnswer\": {..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Answer\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex items-center mb-4\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): }</code></pre>..."
+        }
+      ],
+      "metaTags": {
+        "title": "Technical Guide - TheInvisibleCharacter.live Invisible Characters",
+        "description": "✓ Technical guide to invisible characters & Unicode standards. Learn zero-width spaces, joiners & implementation best practices ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/about.html",
+          "text": "About"
+        },
+        {
+          "href": "/help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "#introduction",
+          "text": "Introduction"
+        },
+        {
+          "href": "#unicode-basics",
+          "text": "Unicode Basics"
+        },
+        {
+          "href": "#invisible-characters",
+          "text": "Types of Invisible Characters"
+        },
+        {
+          "href": "#technical-implementation",
+          "text": "Technical Implementation"
+        },
+        {
+          "href": "#platform-compatibility",
+          "text": "Platform Compatibility"
+        },
+        {
+          "href": "#best-practices",
+          "text": "Best Practices"
+        },
+        {
+          "href": "#advanced-techniques",
+          "text": "Advanced Techniques"
+        },
+        {
+          "href": "#troubleshooting",
+          "text": "Troubleshooting"
+        },
+        {
+          "href": "#future-developments",
+          "text": "Future Developments"
+        },
+        {
+          "href": "#conclusion",
+          "text": "Conclusion"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/about.html",
+          "text": "About"
+        },
+        {
+          "href": "/help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "/blog/instagram-invisible-characters.html",
+          "text": "Instagram Guide"
+        },
+        {
+          "href": "/blog/fortnite-invisible-name.html",
+          "text": "Fortnite Names"
+        },
+        {
+          "href": "/blog/whatsapp-invisible-messages.html",
+          "text": "WhatsApp Messages"
+        },
+        {
+          "href": "/blog/technical-guide-invisible-characters.html",
+          "text": "Technical Guide"
+        },
+        {
+          "href": "#",
+          "text": "API Documentation"
+        },
+        {
+          "href": "#",
+          "text": "Integration Guide"
+        },
+        {
+          "href": "#",
+          "text": "Technical Support"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "#",
+          "text": "Terms of Service"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com"
+      ],
+      "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "blog/whatsapp-invisible-messages.html": {
+      "filePath": "blog/whatsapp-invisible-messages.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过短，建议至少120个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 5 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Question\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"acceptedAnswer\": {..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): \"@type\": \"Answer\",..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"flex items-center mb-4\">..."
+        }
+      ],
+      "metaTags": {
+        "title": "WhatsApp Invisible Messages - TheInvisibleCharacter.live Guide",
+        "description": "✓ WhatsApp invisible messages guide. Learn to send blank texts & hidden messages with complete step-by-step tutorial ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "nav",
+          "main",
+          "footer",
+          "article",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/about.html",
+          "text": "About"
+        },
+        {
+          "href": "/help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "#introduction",
+          "text": "Introduction"
+        },
+        {
+          "href": "#how-it-works",
+          "text": "How It Works"
+        },
+        {
+          "href": "#step-by-step",
+          "text": "Step-by-Step Guide"
+        },
+        {
+          "href": "#creative-uses",
+          "text": "Creative Uses"
+        },
+        {
+          "href": "#troubleshooting",
+          "text": "Troubleshooting"
+        },
+        {
+          "href": "#best-practices",
+          "text": "Best Practices"
+        },
+        {
+          "href": "#faq",
+          "text": "FAQ"
+        },
+        {
+          "href": "#conclusion",
+          "text": "Conclusion"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/about.html",
+          "text": "About"
+        },
+        {
+          "href": "/help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "/blog/instagram-invisible-characters.html",
+          "text": "Instagram Guide"
+        },
+        {
+          "href": "/blog/fortnite-invisible-name.html",
+          "text": "Fortnite Names"
+        },
+        {
+          "href": "/blog/whatsapp-invisible-messages.html",
+          "text": "WhatsApp Messages"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "#",
+          "text": "Terms of Service"
+        },
+        {
+          "href": "#",
+          "text": "Cookie Policy"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "#",
+          "text": "Terms of Service"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com"
+      ],
+      "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "help-fr.html": {
+      "filePath": "help-fr.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"text-center mb-16\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"currentColor..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"bg-apple-gray-50 dark:bg-apple-gray-80..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <ul class=\"text-sm text-apple-gray-500 dark:text-a..."
+        }
+      ],
+      "metaTags": {
+        "title": "Centre d'Aide - TheInvisibleCharacter.live Guide Caractères Invisibles",
+        "description": "✓ Centre d'Aide - Apprenez à utiliser les caractères invisibles sur Instagram, TikTok, Fortnite & WhatsApp. Tutoriels complets & guides de dépannage ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "/index-fr.html",
+          "text": "Accueil"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "blog/fr/instagram-caracteres-invisibles.html",
+          "text": "Lire le Guide →"
+        },
+        {
+          "href": "blog/fr/fortnite-nom-invisible.html",
+          "text": "Lire le Guide →"
+        },
+        {
+          "href": "blog/fr/whatsapp-messages-invisibles.html",
+          "text": "Lire le Guide →"
+        },
+        {
+          "href": "#",
+          "text": "À Venir →"
+        },
+        {
+          "href": "#",
+          "text": "À Venir →"
+        },
+        {
+          "href": "blog/fr/guide-technique-caracteres-invisibles.html",
+          "text": "Lire le Guide →"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "/index-fr.html#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À propos"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "help.html": {
+      "filePath": "help.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 3 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"text-center mb-16\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"currentColor..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <div class=\"bg-apple-gray-50 dark:bg-apple-gray-80..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现6次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <ul class=\"text-sm text-apple-gray-500 dark:text-a..."
+        }
+      ],
+      "metaTags": {
+        "title": "Help Center - TheInvisibleCharacter.live Invisible Character Guide",
+        "description": "✓ Help Center - Learn to use invisible characters on Instagram, TikTok, Fortnite & WhatsApp. Complete tutorials & troubleshooting guides for invisible character tools ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#tools",
+          "text": "Tools"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help"
+        },
+        {
+          "href": "blog/instagram-invisible-characters.html",
+          "text": "Read Guide →"
+        },
+        {
+          "href": "blog/fortnite-invisible-name.html",
+          "text": "Read Guide →"
+        },
+        {
+          "href": "blog/whatsapp-invisible-messages.html",
+          "text": "Read Guide →"
+        },
+        {
+          "href": "#",
+          "text": "Coming Soon →"
+        },
+        {
+          "href": "#",
+          "text": "Coming Soon →"
+        },
+        {
+          "href": "blog/technical-guide-invisible-characters.html",
+          "text": "Read Guide →"
+        },
+        {
+          "href": "/#tools",
+          "text": "Character Generator"
+        },
+        {
+          "href": "/#tools",
+          "text": "Detection Tool"
+        },
+        {
+          "href": "/#tools",
+          "text": "Converter"
+        },
+        {
+          "href": "blog/",
+          "text": "Blog"
+        },
+        {
+          "href": "help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "help.html",
+          "text": "Help Center"
+        },
+        {
+          "href": "about.html#contact",
+          "text": "Contact Us"
+        },
+        {
+          "href": "#",
+          "text": "Privacy Policy"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "index-fr.html": {
+      "filePath": "index-fr.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 7 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 2 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"none\" stroke..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <div class=\"flex items-center justify-between\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"bg-white dark:bg-apple-gray-900 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        }
+      ],
+      "metaTags": {
+        "title": "Générateur Caractères Invisibles - TheInvisibleCharacter.live Outils",
+        "description": "✓ Générateur de caractères invisibles gratuits pour Instagram, TikTok, Fortnite & WhatsApp. Copiez 12 types de caractères Unicode instantanément. Pas d'inscription requise ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#features",
+          "text": "Fonctionnalités"
+        },
+        {
+          "href": "#about",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "#tools",
+          "text": "Outils"
+        },
+        {
+          "href": "#features",
+          "text": "Fonctionnalités"
+        },
+        {
+          "href": "#about",
+          "text": "À propos"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Aide"
+        },
+        {
+          "href": "#tools",
+          "text": "Générateur de Caractères"
+        },
+        {
+          "href": "#tools",
+          "text": "Outil de Détection"
+        },
+        {
+          "href": "#tools",
+          "text": "Convertisseur"
+        },
+        {
+          "href": "blog/fr/",
+          "text": "Blog"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html",
+          "text": "À Propos"
+        },
+        {
+          "href": "help-fr.html",
+          "text": "Centre d'Aide"
+        },
+        {
+          "href": "about-fr.html#contact",
+          "text": "Contactez-nous"
+        },
+        {
+          "href": "#",
+          "text": "Politique de Confidentialité"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/characters.js",
+        "assets/js/clipboard.js",
+        "assets/js/detector.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "index.html": {
+      "filePath": "index.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题过长，建议不超过60个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过长，建议不超过160个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少H1标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 7 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <svg class=\"w-6 h-6 text-white\" fill=\"none\" stroke..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <div class=\"flex items-center justify-between\">..."
+        }
+      ],
+      "metaTags": {
+        "title": "Free Invisible Character Generator - TheInvisibleCharacter.live Tools",
+        "description": "✓ Free invisible character generator for Instagram, TikTok, Fortnite & WhatsApp. Copy 12 types of Unicode invisible characters instantly. No registration required ✓"
+      },
+      "structure": {
+        "semanticTags": [
+          "main",
+          "section"
+        ]
+      },
+      "links": [],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/characters.js",
+        "assets/js/clipboard.js",
+        "assets/js/detector.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "mobile-test.html": {
+      "filePath": "mobile-test.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过短，建议至少120个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "表单输入框缺少对应的label标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <div class=\"bg-apple-gray-50 dark:bg-apple-gray-80..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <div class=\"mb-8\">..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): tests.push({..."
+        }
+      ],
+      "metaTags": {
+        "title": "Mobile Optimization Test - TheInvisibleCharacter.live",
+        "description": "Mobile optimization test page for TheInvisibleCharacter.live"
+      },
+      "structure": {
+        "semanticTags": [
+          "main",
+          "section"
+        ]
+      },
+      "links": [],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "privacy-policy.html": {
+      "filePath": "privacy-policy.html",
+      "issues": [
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 2 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现9次): <div class=\"bg-white dark:bg-apple-gray-800 rounde..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现7次): <ul class=\"list-disc list-inside space-y-2 text-ap..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现5次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        }
+      ],
+      "metaTags": {
+        "title": "Privacy Policy - TheInvisibleCharacter.live",
+        "description": "Privacy Policy for TheInvisibleCharacter.live - Learn how we protect your data and privacy while using our invisible character generator tools."
+      },
+      "structure": {
+        "semanticTags": [
+          "main",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "https://theinvisiblecharacter.live",
+          "text": "theinvisiblecharacter.live"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "terms-of-service.html": {
+      "filePath": "terms-of-service.html",
+      "issues": [
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 4 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 2 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现10次): <p class=\"text-apple-gray-600 dark:text-apple-gray..."
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现12次): <div class=\"bg-white dark:bg-apple-gray-800 rounde..."
+        }
+      ],
+      "metaTags": {
+        "title": "Terms of Service - TheInvisibleCharacter.live",
+        "description": "Terms of Service for TheInvisibleCharacter.live - Read our terms and conditions for using our invisible character generator tools and services."
+      },
+      "structure": {
+        "semanticTags": [
+          "main",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "https://theinvisiblecharacter.live",
+          "text": "theinvisiblecharacter.live"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/main.js",
+        "assets/js/mobile-optimization.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css",
+        "assets/css/mobile-optimization.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "test.html": {
+      "filePath": "test.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "error",
+          "message": "缺少meta description"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "Open Graph标签不完整"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用main标签标识主要内容"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "warning",
+          "message": "建议使用nav标签标识导航区域"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "Performance",
+          "severity": "warning",
+          "message": "发现 6 个内联脚本，建议外部化"
+        },
+        {
+          "type": "Accessibility",
+          "severity": "info",
+          "message": "考虑添加ARIA标签提升可访问性"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        }
+      ],
+      "metaTags": {
+        "title": "功能测试页面 - The Invisible Character"
+      },
+      "structure": {
+        "semanticTags": []
+      },
+      "links": [],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/characters.js",
+        "assets/js/clipboard.js",
+        "assets/js/detector.js",
+        "assets/js/main.js"
+      ],
+      "styles": [
+        "assets/css/style.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    },
+    "tools.html": {
+      "filePath": "tools.html",
+      "issues": [
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "描述过短，建议至少120个字符"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "标题层级跳跃：从H1到H3"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Quality",
+          "severity": "warning",
+          "message": "发现占位符链接"
+        },
+        {
+          "type": "Security",
+          "severity": "warning",
+          "message": "外部脚本缺少完整性验证: https://cdn.tailwindcss.com"
+        },
+        {
+          "type": "SEO",
+          "severity": "warning",
+          "message": "缺少canonical URL"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "多语言网站建议添加hreflang标签"
+        },
+        {
+          "type": "SEO",
+          "severity": "info",
+          "message": "考虑添加结构化数据"
+        },
+        {
+          "type": "Maintainability",
+          "severity": "warning",
+          "message": "发现 1 个硬编码URL"
+        },
+        {
+          "type": "Quality",
+          "severity": "info",
+          "message": "发现重复代码行 (出现4次): <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8..."
+        }
+      ],
+      "metaTags": {
+        "title": "隐形字符工具 - 工作台",
+        "description": "隐形字符工具 - 在线生成和管理零宽字符，支持多种隐形字符格式"
+      },
+      "structure": {
+        "semanticTags": [
+          "header",
+          "nav",
+          "main",
+          "footer",
+          "section"
+        ]
+      },
+      "links": [
+        {
+          "href": "/",
+          "text": "首页"
+        },
+        {
+          "href": "/tools.html",
+          "text": "工具"
+        },
+        {
+          "href": "#features",
+          "text": "功能"
+        },
+        {
+          "href": "#about",
+          "text": "关于"
+        },
+        {
+          "href": "/",
+          "text": "首页"
+        },
+        {
+          "href": "/tools.html",
+          "text": "工具"
+        },
+        {
+          "href": "#features",
+          "text": "功能"
+        },
+        {
+          "href": "#about",
+          "text": "关于"
+        },
+        {
+          "href": "/tools.html",
+          "text": "字符生成器"
+        },
+        {
+          "href": "/tools.html",
+          "text": "检测工具"
+        },
+        {
+          "href": "/tools.html",
+          "text": "转换器"
+        },
+        {
+          "href": "#",
+          "text": "文档"
+        },
+        {
+          "href": "#",
+          "text": "API"
+        },
+        {
+          "href": "#",
+          "text": "博客"
+        },
+        {
+          "href": "#",
+          "text": "帮助中心"
+        },
+        {
+          "href": "#",
+          "text": "联系我们"
+        },
+        {
+          "href": "#",
+          "text": "隐私政策"
+        }
+      ],
+      "scripts": [
+        "https://cdn.tailwindcss.com",
+        "assets/js/theme.js",
+        "assets/js/components.js"
+      ],
+      "styles": [
+        "assets/css/theme.css",
+        "assets/css/style.css"
+      ],
+      "accessibility": {},
+      "seo": {}
+    }
+  },
+  "summary": {
+    "totalPages": 26,
+    "totalIssues": 375,
+    "issuesByType": {
+      "SEO": 122,
+      "Accessibility": 38,
+      "Security": 22,
+      "Quality": 151,
+      "Performance": 16,
+      "Maintainability": 18,
+      "Mobile": 4,
+      "Encoding": 4
+    }
+  }
+}

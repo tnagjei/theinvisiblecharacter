@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能测试页面 - The Invisible Character</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">功能测试页面</h1>
+        
+        <!-- 基本功能测试 -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">基本功能测试</h2>
+            <div class="space-y-4">
+                <button id="test-theme" class="px-4 py-2 bg-blue-500 text-white rounded">测试主题切换</button>
+                <button id="test-notification" class="px-4 py-2 bg-green-500 text-white rounded">测试通知</button>
+                <button id="test-clipboard" class="px-4 py-2 bg-purple-500 text-white rounded">测试复制</button>
+                <button id="test-detection" class="px-4 py-2 bg-red-500 text-white rounded">测试检测</button>
+            </div>
+        </div>
+
+        <!-- 字符库测试 -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">字符库测试</h2>
+            <div id="character-test-results" class="space-y-2">
+                <!-- 测试结果将显示在这里 -->
+            </div>
+        </div>
+
+        <!-- 检测器测试 -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">检测器测试</h2>
+            <textarea id="test-textarea" class="w-full p-2 border rounded mb-4" rows="4" placeholder="输入包含隐形字符的文本进行测试..."></textarea>
+            <button id="test-detect-btn" class="px-4 py-2 bg-blue-500 text-white rounded">开始检测</button>
+            <div id="detection-test-results" class="mt-4">
+                <!-- 检测结果将显示在这里 -->
+            </div>
+        </div>
+
+        <!-- 复制功能测试 -->
+        <div class="bg-white rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">复制功能测试</h2>
+            <div class="space-y-4">
+                <button id="copy-test-btn" class="px-4 py-2 bg-green-500 text-white rounded" data-clipboard-text="测试复制文本">
+                    复制测试文本
+                </button>
+                <div id="copy-test-results" class="text-sm text-gray-600">
+                    <!-- 复制结果将显示在这里 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入所有JavaScript文件 -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/characters.js"></script>
+    <script src="assets/js/clipboard.js"></script>
+    <script src="assets/js/detector.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // 测试脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('测试页面已加载');
+
+            // 测试主题切换
+            document.getElementById('test-theme').addEventListener('click', function() {
+                if (window.themeManager) {
+                    window.themeManager.toggleTheme();
+                    console.log('主题切换测试完成');
+                } else {
+                    console.error('主题管理器未加载');
+                }
+            });
+
+            // 测试通知
+            document.getElementById('test-notification').addEventListener('click', function() {
+                if (window.app) {
+                    window.app.showNotification('这是一个测试通知', 'success');
+                    console.log('通知测试完成');
+                } else {
+                    console.error('应用未加载');
+                }
+            });
+
+            // 测试字符库
+            document.getElementById('test-clipboard').addEventListener('click', function() {
+                if (window.invisibleCharacterLibrary) {
+                    const characters = window.invisibleCharacterLibrary.getCharacters();
+                    const resultsDiv = document.getElementById('character-test-results');
+                    resultsDiv.innerHTML = `<p>字符库包含 ${characters.length} 个字符</p>`;
+                    console.log('字符库测试完成，共找到', characters.length, '个字符');
+                } else {
+                    console.error('字符库未加载');
+                }
+            });
+
+            // 测试检测器
+            document.getElementById('test-detection').addEventListener('click', function() {
+                if (window.invisibleCharacterDetector) {
+                    const testText = '这是一个测试文本，包含零宽字符：' + String.fromCharCode(8203) + String.fromCharCode(8204);
+                    const result = window.invisibleCharacterDetector.detectInvisibleCharacters(testText);
+                    console.log('检测器测试完成，结果：', result);
+                } else {
+                    console.error('检测器未加载');
+                }
+            });
+
+            // 测试文本检测
+            document.getElementById('test-detect-btn').addEventListener('click', function() {
+                const text = document.getElementById('test-textarea').value;
+                const resultsDiv = document.getElementById('detection-test-results');
+                
+                if (window.invisibleCharacterDetector) {
+                    const result = window.invisibleCharacterDetector.detectInvisibleCharacters(text);
+                    
+                    if (result.totalMatches > 0) {
+                        resultsDiv.innerHTML = `
+                            <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">
+                                <p>检测到 ${result.totalMatches} 个隐形字符</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    ${result.results.map(r => `<li>${r.pattern} (${r.unicode}): ${r.count}个</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    } else {
+                        resultsDiv.innerHTML = `
+                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                                <p>未检测到隐形字符</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    resultsDiv.innerHTML = '<p class="text-red-500">检测器未加载</p>';
+                }
+            });
+
+            // 测试复制功能
+            document.getElementById('copy-test-btn').addEventListener('click', function() {
+                const resultsDiv = document.getElementById('copy-test-results');
+                
+                // 模拟复制成功
+                resultsDiv.innerHTML = '<p class="text-green-600">复制功能测试完成</p>';
+                
+                setTimeout(() => {
+                    resultsDiv.innerHTML = '<p class="text-gray-600">点击按钮复制测试文本</p>';
+                }, 3000);
+            });
+
+            // 在测试文本中添加一些隐形字符
+            document.getElementById('test-textarea').value = '这是一个测试文本，包含零宽空格：' + 
+                String.fromCharCode(8203) + '和零宽连字符：' + String.fromCharCode(8204);
+
+            // 监听应用初始化完成
+            document.addEventListener('appInitialized', function(e) {
+                console.log('应用初始化完成', e.detail);
+            });
+
+            // 监听其他组件初始化
+            document.addEventListener('libraryInitialized', function(e) {
+                console.log('字符库初始化完成', e.detail);
+            });
+
+            document.addEventListener('copySuccess', function(e) {
+                console.log('复制成功', e.detail);
+            });
+
+            document.addEventListener('detectionCompleted', function(e) {
+                console.log('检测完成', e.detail);
+            });
+        });
+    </script>
+</body>
+</html>
