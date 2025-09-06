@@ -48,17 +48,56 @@
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Critical CSS Inlined -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        *{margin:0;padding:0;box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.5;-webkit-text-size-adjust:100%}body{background-color:#fff;color:#1d1d1f;transition:background-color .3s,color .3s}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.bg-white{background-color:#fff}.dark\:bg-apple-gray-900:is(.dark *){background-color:#000}.text-apple-gray-900{color:#1d1d1f}.dark\:text-white:is(.dark *){color:#fff}.font-sf{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.transition-colors{transition-property:background-color,border-color,text-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.3s}.duration-300{transition-duration:.3s}.pt-16{padding-top:4rem}.min-h-screen{min-height:100vh}.flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.from-apple-gray-50{--tw-gradient-from:#fafafa;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(250,250,250,0))}.to-white{--tw-gradient-to:#fff}.dark\:from-apple-gray-900:is(.dark *){--tw-gradient-from:#000;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0))}.dark\:to-apple-gray-800:is(.dark *){--tw-gradient-to:#1d1d1f}.max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}.px-4{padding-left:1rem;padding-right:1rem}.sm\:px-6:is(.sm *){padding-left:1.5rem;padding-right:1.5rem}.lg\:px-8:is(.lg *){padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.py-20{padding-top:5rem;padding-bottom:5rem}.text-5xl{font-size:3rem}.md\:text-7xl:is(.md *){font-size:4.5rem}.font-bold{font-weight:700}.mb-6{margin-bottom:1.5rem}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.text-transparent{color:transparent}.text-xl{font-size:1.25rem}.md\:text-2xl:is(.md *){font-size:1.5rem}.text-apple-gray-600{color:#6e6e73}.dark\:text-apple-gray-300:is(.dark *){color:#d1d1d6}.mb-8{margin-bottom:2rem}.max-w-3xl{max-width:48rem}.flex-col{flex-direction:column}.sm\:flex-row:is(.sm *){flex-direction:row}.gap-4{gap:1rem}.mb-8{margin-bottom:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:px-8:is(.sm *){padding-left:2rem;padding-right:2rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.sm\:py-4:is(.sm *){padding-top:1rem;padding-bottom:1rem}.bg-apple-gray-900{background-color:#000}.text-white{color:#fff}.rounded-xl{border-radius:.75rem}.hover\:bg-apple-gray-800:hover{background-color:#1d1d1f}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05}.font-medium{font-weight:500}.text-base{font-size:1rem}.sm\:text-lg:is(.sm *){font-size:1.125rem}.border{border-width:1px}.border-apple-gray-300{border-color:#d1d1d6}.dark\:border-apple-gray-600:is(.dark *){border-color:#48484a}.hover\:bg-apple-gray-100:hover{background-color:#f5f5f7}.dark\:hover\:bg-apple-gray-800:is(.dark *):hover{background-color:#1d1d1f}.flex-wrap{flex-wrap:wrap}.justify-center{justify-content:center}.gap-8{gap:2rem}.text-sm{font-size:.875rem}.dark\:text-apple-gray-400:is(.dark *){color:#a1a1a6}.space-x-2>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(.5rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(.5rem*var(--tw-space-x-reverse))}.w-4{width:1rem}.h-4{height:1rem}.fill-current{fill:currentColor}.animate-fade-in{animation:fadeIn .5s ease-in-out}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+        
+        /* Prevent layout shift */
+        .min-h-screen { min-height: 100vh; }
+        .hero-content { min-height: 600px; }
+        
+        /* Optimize font loading */
+        @font-face {
+            font-family: 'SF Pro Text';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('SF Pro Text'), local('SFProText-Regular');
+        }
+        
+        /* Preload key images */
+        .preload-image {
+            content: url('assets/og-image.png');
+            display: none;
+        }
+    </style>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/js/theme.js" as="script">
+    
+    <!-- Async load non-critical CSS -->
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css" media="print" onload="this.media='all'">
+    
+    <!-- Tailwind CSS with async loading -->
+    <script src="https://cdn.tailwindcss.com" async></script>
+    
+    <!-- Discord Button Styles -->
+    <style>
+        .bg-discord-blue {
+            background-color: #5865F2;
+        }
+        .bg-discord-blue:hover {
+            background-color: #4752C4;
+        }
+    </style>
     
     <!-- Tailwind Config -->
     <script>
-        tailwind.config = {
+        // Configure Tailwind before it loads
+        window.tailwindConfig = {
             darkMode: 'class',
             theme: {
                 extend: {
@@ -129,6 +168,8 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#tools" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Outils</a>
                     <a href="#features" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Fonctionnalités</a>
+                    <a href="#pricing" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Tarification</a>
+                    <a href="#testimonials" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Témoignages</a>
                     <a href="#about" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">À propos</a>
                     <a href="blog/fr/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Blog</a>
                     <a href="help-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Aide</a>
@@ -156,6 +197,8 @@
             <div class="px-4 py-2 space-y-1">
                 <a href="#tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Outils</a>
                 <a href="#features" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Fonctionnalités</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Tarification</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Témoignages</a>
                 <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">À propos</a>
                 <a href="blog/fr/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Blog</a>
                 <a href="help-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Aide</a>
@@ -208,6 +251,265 @@
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
                             <span>Respect de la Vie Privée</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What Section -->
+        <section id="what" class="py-20 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Que sont les Caractères Invisibles ?</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Comprendre la magie derrière le texte vide</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                            <h3 class="text-xl font-semibold mb-3">Magie Unicode</h3>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                                Les caractères invisibles sont des caractères Unicode spéciaux qui occupent zéro espace visuel mais existent comme un vrai texte. Ce ne sont pas juste des espaces vides - ce sont des caractères légitimes que les plateformes reconnaissent et traitent.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                            <h3 class="text-xl font-semibold mb-3">Types Multiples</h3>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                                Nous offrons 12 types différents de caractères invisibles, y compris les espaces de largeur zéro, les non-jointeurs et les marqueurs directionnels. Chacun sert des objectifs uniques sur différentes plateformes et cas d'utilisation.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                            <h3 class="text-xl font-semibold mb-3">Compatibilité Universelle</h3>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                                Nos caractères fonctionnent sur Instagram, TikTok, Fortnite, WhatsApp, Discord et la plupart des plateformes modernes. Ils sont rendus de manière cohérente sur différents appareils et systèmes d'exploitation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-apple-gray-800 dark:to-apple-gray-700 rounded-2xl p-8">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Voyez l'Invisible</h3>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">Essayez de copier ce caractère invisible :</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-apple-gray-900 rounded-xl p-6 text-center border-2 border-dashed border-blue-300 dark:border-blue-600">
+                            <code class="text-2xl font-mono text-blue-600 dark:text-blue-400">​</code>
+                            <p class="text-sm text-apple-gray-500 dark:text-apple-gray-400 mt-2">Espace de largeur zéro (U+200B)</p>
+                        </div>
+                        
+                        <button onclick="copyInvisibleCharacter()" class="w-full mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors font-medium">
+                            Copier le Caractère Invisible
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Section -->
+        <section id="why" class="py-20 bg-apple-gray-50 dark:bg-apple-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Pourquoi Utiliser des Caractères Invisibles ?</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Débloquez des possibilités créatives sur les plateformes</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Social Media -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v18a1 1 0 01-1 1H5a1 1 0 01-1-1V1a1 1 0 011-1h2a1 1 0 011 1v3m0 0h8"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Style Réseaux Sociaux</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Créez des bios Instagram propres, ajoutez des sauts de ligne dans les profils TikTok et formatez du texte créativement sur toutes les plateformes sociales.
+                        </p>
+                        <div class="mt-4">
+                            <a href="blog/fr/instagram-caracteres-invisibles.html" class="text-blue-500 hover:text-blue-600 text-sm font-medium">Conseils Instagram →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Gaming -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Identité Gaming</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Créez des noms d'utilisateur invisibles ou vides dans Fortnite, Valorant et autres jeux. Démarquez-vous avec des identités gaming uniques.
+                        </p>
+                        <div class="mt-4">
+                            <a href="blog/fr/fortnite-nom-invisible.html" class="text-blue-500 hover:text-blue-600 text-sm font-medium">Guide Fortnite →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Protection Vie Privée</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Ajoutez un formatage subtil qui ne révèle pas d'informations personnelles tout en maintenant une expression créative.
+                        </p>
+                    </div>
+                    
+                    <!-- Messaging -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Messagerie Créative</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Envoyez des messages "vides" sur WhatsApp, Discord et autres plateformes de chat pour une communication amusante et créative.
+                        </p>
+                        <div class="mt-4">
+                            <a href="blog/fr/whatsapp-messages-invisibles.html" class="text-blue-500 hover:text-blue-600 text-sm font-medium">Guide WhatsApp →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Professional -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Formatage Professionnel</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Formatage parfait dans les documents, emails et communications professionnelles où un espacement précis est important.
+                        </p>
+                    </div>
+                    
+                    <!-- Creative -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Expression Créative</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Débloquez de nouvelles façons de vous exprimer créativement sur les plateformes numériques avec des astuces de formatage invisibles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section id="how" class="py-20 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Comment Ça Marche</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Étapes simples pour obtenir des caractères invisibles en secondes</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
+                            1
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Choisissez Votre Caractère</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Parcourez notre collection de 12 types de caractères invisibles différents, chacun avec des propriétés et cas d'utilisation uniques.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
+                            2
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Cliquez pour Copier</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Cliquez simplement sur le bouton copier à côté de votre caractère choisi. Il est instantanément copié dans votre presse-papiers.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
+                            3
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Collez Partout</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Collez le caractère dans votre plateforme désirée - Instagram, Fortnite, WhatsApp, ou n'importe où ailleurs.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
+                            4
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Profitez de la Magie</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Regardez votre texte apparaître parfaitement formaté avec des caractères invisibles qui fonctionnent de manière transparente.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Fonctionnalités Avancées</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">Outils puissants pour les utilisateurs avancés</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold mb-2">Détecteur de Caractères</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300">
+                                Détectez et analysez les caractères invisibles dans n'importe quel texte avec notre outil de détection avancé.
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold mb-2">Traitement par Lots</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300">
+                                Convertissez plusieurs caractères à la fois avec nos capacités de traitement par lots.
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold mb-2">Combinaisons Personnalisées</h4>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300">
+                                Créez des combinaisons de caractères personnalisées pour des cas d'utilisation et plateformes spécifiques.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -427,6 +729,401 @@
             </div>
         </section>
         
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Tarification Simple et Transparente</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Choisissez le plan qui vous convient le mieux</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Free Plan -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-8 border-2 border-blue-500 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            LE PLUS POPULAIRE
+                        </div>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-2">Plan Gratuit</h3>
+                            <div class="text-4xl font-bold text-blue-500 mb-2">0€</div>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">Gratuit à vie</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">12 types de caractères Unicode invisibles</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Fonctionnalité de copie en un clic</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Détecteur de caractères intégré</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Interface optimisée pour mobile</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Aucune inscription requise</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Respect de la vie privée - aucune collecte de données</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="window.scrollTo({top: document.getElementById('tools').offsetTop - 80, behavior: 'smooth'})" class="w-full py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors font-medium">
+                            Commencer Gratuitement
+                        </button>
+                    </div>
+                    
+                    <!-- Premium Plan -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-2">Plan Premium</h3>
+                            <div class="text-4xl font-bold text-purple-500 mb-2">9,99€</div>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300">par mois</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Tout le plan gratuit</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">50+ types de caractères supplémentaires</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Traitement par lots (jusqu'à 1000 caractères)</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Support technique prioritaire</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Combinaisons de caractères avancées</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-apple-gray-700 dark:text-apple-gray-300">Préréglages de caractères personnalisés</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full py-3 bg-purple-500 text-white rounded-xl hover:bg-purple-600 transition-colors font-medium">
+                            Passer à Premium
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                        Besoin d'aide pour choisir ? <a href="help-fr.html" class="text-blue-500 hover:text-blue-600">Contactez notre équipe de support</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-apple-gray-50 dark:bg-apple-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Ce Que Disent Nos Utilisateurs</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Retours authentiques de notre communauté</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Social Media Users -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                S
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Sophie Martin</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Créatrice Instagram</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "Parfait pour créer des bios Instagram propres ! Les caractères invisibles m'aident à formater mon profil exactement comme je le veux. Révolutionnaire pour les créateurs !"
+                        </p>
+                    </div>
+                    
+                    <!-- Gaming Users -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                L
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Lucas Dubois</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Joueur Fortnite</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "J'ai enfin réussi à avoir ce nom invisible dans Fortnite ! Cet outil est exactement ce dont les joueurs ont besoin. Simple, rapide et ça fonctionne vraiment. Adieu les noms d'utilisateur ennuyeux !"
+                        </p>
+                    </div>
+                    
+                    <!-- General Users -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                M
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Marie Lefebvre</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Utilisatrice WhatsApp</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "J'adore utiliser ça pour des messages WhatsApp créatifs ! Les caractères invisibles ajoutent une touche unique à mes textes. Et en plus, c'est totalement gratuit - on ne peut pas faire mieux !"
+                        </p>
+                    </div>
+                    
+                    <!-- TikTok User -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                T
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Thomas Bernard</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Créateur TikTok</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "Parfait pour créer des noms d'utilisateur TikTok uniques ! Les caractères invisibles aident mon profil à se démarquer. Interface simple et ça fonctionne à chaque fois."
+                        </p>
+                    </div>
+                    
+                    <!-- Discord User -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                C
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Claire Moreau</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Propriétaire de serveur Discord</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "Génial pour créer des noms de serveurs Discord et des noms de canaux propres ! L'outil de détection est super utile aussi. Fortement recommandé pour les administrateurs de serveurs !"
+                        </p>
+                    </div>
+                    
+                    <!-- Privacy-focused User -->
+                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                P
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Pierre Laurent</h4>
+                                <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Défenseur de la vie privée</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300">
+                            "Enfin un outil qui respecte la vie privée ! Aucune inscription, aucun suivi, juste une fonctionnalité pure. C'est comme ça que tous les outils devraient être construits. Merci !"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Questions Fréquentes</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Réponses à vos questions sur TheInvisibleCharacter.live</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Qu'est-ce que TheInvisibleCharacter.live ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            TheInvisibleCharacter.live est un générateur de caractères invisibles gratuit qui permet aux utilisateurs de créer et copier 12 types différents de caractères Unicode invisibles pour une utilisation sur les réseaux sociaux, les jeux et autres plateformes.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Est-ce vraiment gratuit ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Oui ! TheInvisibleCharacter.live est 100% gratuit sans inscription requise. Nous ne collectons pas de données personnelles, n'affichons pas de publicités et n'avons aucune fonctionnalité premium. Tout est complètement gratuit et le restera toujours.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Sur quelles plateformes puis-je utiliser les caractères invisibles ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Nos caractères invisibles fonctionnent sur Instagram, TikTok, Fortnite, WhatsApp, Discord, Twitter, Facebook et la plupart des autres plateformes modernes. Certaines plateformes peuvent avoir des restrictions, nous vous recommandons donc de tester dans un environnement sûr d'abord.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Les caractères invisibles sont-ils sûrs à utiliser ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Oui ! Les caractères invisibles sont des caractères Unicode standard et sont complètement sûrs à utiliser. Ils ne contiennent aucun code malveillant et sont pris en charge par la plupart des plateformes et applications modernes.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Dois-je créer un compte ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Aucun compte requis ! Visitez simplement le site Web et commencez à utiliser nos outils immédiatement. Nous croyons en la confidentialité et la commodité, il n'y a donc pas de processus d'inscription.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold mb-3">Comment fonctionne le détecteur de caractères ?</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                            Notre détecteur de caractères analyse votre texte et identifie tous les caractères invisibles, en vous montrant leurs codes Unicode et leurs positions. Cela vous aide à nettoyer le texte et à garantir la pureté du contenu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- About Section -->
         <section id="about" class="py-20 bg-white dark:bg-apple-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -455,95 +1152,134 @@
             </div>
         </section>
         
-        <!-- FAQ Section -->
-        <section class="py-20 bg-apple-gray-50 dark:bg-apple-gray-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Blog Preview Section -->
+        <section class="py-20 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Questions Fréquentes</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Réponses à vos questions sur TheInvisibleCharacter.live</p>
+                    <h2 class="text-4xl font-bold mb-4">Derniers Guides & Conseils</h2>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Apprenez à utiliser les caractères invisibles comme un pro</p>
                 </div>
                 
-                <div class="space-y-6">
-                    <!-- FAQ Item 1 -->
-                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Qu'est-ce que TheInvisibleCharacter.live ?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            TheInvisibleCharacter.live est un générateur de caractères invisibles gratuit qui permet aux utilisateurs de créer et copier 12 types différents de caractères Unicode invisibles pour une utilisation sur les réseaux sociaux, les jeux et autres plateformes.
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Instagram Guide -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Guide Bio Instagram</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-4">
+                            Maîtrisez l'art de créer des bios Instagram parfaites avec des caractères invisibles pour un formatage propre.
                         </p>
+                        <a href="blog/fr/instagram-caracteres-invisibles.html" class="text-blue-500 hover:text-blue-600 font-medium">Lire le Guide →</a>
                     </div>
                     
-                    <!-- FAQ Item 2 -->
-                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Est-ce vraiment gratuit ?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Oui ! TheInvisibleCharacter.live est 100% gratuit sans inscription requise. Nous ne collectons pas de données personnelles, n'affichons pas de publicités et n'avons aucune fonctionnalité premium. Tout est complètement gratuit et le restera toujours.
+                    <!-- Fortnite Guide -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Noms Invisibles Fortnite</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-4">
+                            Guide complet pour configurer des noms invisibles dans Fortnite et autres jeux populaires.
                         </p>
+                        <a href="blog/fr/fortnite-nom-invisible.html" class="text-blue-500 hover:text-blue-600 font-medium">Lire le Guide →</a>
                     </div>
                     
-                    <!-- FAQ Item 3 -->
-                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Sur quelles plateformes puis-je utiliser les caractères invisibles ?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Nos caractères invisibles fonctionnent sur Instagram, TikTok, Fortnite, WhatsApp, Discord, Twitter, Facebook et la plupart des autres plateformes modernes. Certaines plateformes peuvent avoir des restrictions, nous vous recommandons donc de tester dans un environnement sûr d'abord.
+                    <!-- WhatsApp Guide -->
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Astuces Messages WhatsApp</h3>
+                        <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-4">
+                            Envoyez des messages créatifs invisibles sur WhatsApp et surprenez vos amis avec des textes vides.
                         </p>
+                        <a href="blog/fr/whatsapp-messages-invisibles.html" class="text-blue-500 hover:text-blue-600 font-medium">Lire le Guide →</a>
                     </div>
-                    
-                    <!-- FAQ Item 4 -->
-                    <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Les caractères invisibles sont-ils sûrs à utiliser ?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Oui ! Les caractères invisibles sont des caractères Unicode standard et sont complètement sûrs à utiliser. Ils ne contiennent aucun code malveillant et sont pris en charge par la plupart des plateformes et applications modernes.
-                        </p>
-                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="blog/fr/index.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 transition-colors">
+                        Voir Tous les Articles
+                    </a>
                 </div>
             </div>
         </section>
     </main>
     
-    <!-- Footer -->
-    <footer class="bg-apple-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Inline footer for faster paint -->
+    <footer class="bg-apple-gray-50 dark:bg-apple-gray-800 border-t border-apple-gray-200 dark:border-apple-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        <span class="text-xl font-semibold">TheInvisibleCharacter</span>
+                <!-- Logo and Description -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">TheInvisibleCharacter.live</h3>
+                    <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-4">
+                        Générateur professionnel de caractères invisibles pour les réseaux sociaux, les jeux et les projets créatifs.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="text-apple-gray-400 hover:text-apple-gray-600 dark:hover:text-apple-gray-200">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-apple-gray-400 hover:text-apple-gray-600 dark:hover:text-apple-gray-200">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <!-- Discord Button -->
+                        <a href="https://discord.gg/theinvisiblecharacter" target="_blank" rel="noopener" class="bg-[#5865F2] hover:bg-[#4752C4] text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.844-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0314.0561c2.0528 1.5074 4.0413 2.4228 5.9929 3.0294a.077.077 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0411-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.522 6.0023-3.0294a.077.077 0 00.0313-.0556c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1828 0-2.1569-1.0857-2.1569-2.419 0-1.3332.955-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.955 2.4189-2.1569 2.4189zm7.9748 0c-1.1828 0-2.1569-1.0857-2.1569-2.419 0-1.3332.955-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                            </svg>
+                            <span class="font-medium">Rejoindre Discord</span>
+                        </a>
                     </div>
-                    <p class="text-apple-gray-400">Plateforme professionnelle d'outils de caractères invisibles</p>
                 </div>
                 
+                <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Produits</h3>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
                     <ul class="space-y-2">
-                        <li><a href="#tools" class="text-apple-gray-400 hover:text-white transition-colors">Générateur de Caractères</a></li>
-                        <li><a href="#tools" class="text-apple-gray-400 hover:text-white transition-colors">Outil de Détection</a></li>
-                        <li><a href="#tools" class="text-apple-gray-400 hover:text-white transition-colors">Convertisseur</a></li>
+                        <li><a href="#tools" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Tous les Outils</a></li>
+                        <li><a href="about-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">À Propos</a></li>
+                        <li><a href="help-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Centre d'Aide</a></li>
+                        <li><a href="blog/fr/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 
+                <!-- Legal -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                    <h4 class="text-lg font-semibold mb-4">Légal</h4>
                     <ul class="space-y-2">
-                        <li><a href="blog/fr/" class="text-apple-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="help-fr.html" class="text-apple-gray-400 hover:text-white transition-colors">Centre d'Aide</a></li>
-                        <li><a href="about-fr.html" class="text-apple-gray-400 hover:text-white transition-colors">À Propos</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2">
-                        <li><a href="help-fr.html" class="text-apple-gray-400 hover:text-white transition-colors">Centre d'Aide</a></li>
-                        <li><a href="about-fr.html#contact" class="text-apple-gray-400 hover:text-white transition-colors">Contactez-nous</a></li>
-                        <li><a href="#" class="text-apple-gray-400 hover:text-white transition-colors">Politique de Confidentialité</a></li>
+                        <li><a href="privacy-policy.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Politique de Confidentialité</a></li>
+                        <li><a href="terms-of-service.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Conditions d'Utilisation</a></li>
+                        <li><a href="#" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Politique de Cookies</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-apple-gray-800 mt-8 pt-8 text-center">
-                <p class="text-apple-gray-400">&copy; 2024 TheInvisibleCharacter.live. Tous droits réservés.</p>
+            <div class="border-t border-apple-gray-200 dark:border-apple-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-apple-gray-600 dark:text-apple-gray-400">&copy; 2024 TheInvisibleCharacter.live. Tous droits réservés.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="privacy-policy.html" class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-gray-900 dark:hover:text-white transition-colors text-sm">Politique de Confidentialité</a>
+                        <a href="terms-of-service.html" class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-gray-900 dark:hover:text-white transition-colors text-sm">Conditions d'Utilisation</a>
+                    </div>
+                </div>
+                <div class="mt-4 text-center text-sm text-apple-gray-500 dark:text-apple-gray-500">
+                    <p>Créé par <a href="mailto:tangjei414@gmail.com" class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-gray-900 dark:hover:text-white transition-colors">tangjei414</a> | Telegram: <a href="https://t.me/tangjei" target="_blank" rel="noopener noreferrer" class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-gray-900 dark:hover:text-white transition-colors">@tangjei</a></p>
+                </div>
             </div>
         </div>
     </footer>

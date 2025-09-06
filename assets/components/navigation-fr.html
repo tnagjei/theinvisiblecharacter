@@ -4,16 +4,20 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <a href="index-fr.html" class="flex items-center space-x-2" aria-label="TheInvisibleCharacter.live Accueil">
-                    <svg class="w-8 h-8 text-apple-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="index-fr.html" class="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text hover:from-blue-700 hover:to-purple-700 transition-all duration-200" aria-label="TheInvisibleCharacter.live Accueil">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
-                    <span class="text-xl font-semibold">TheInvisibleCharacter</span>
+                    <span class="text-xl font-bold">TheInvisibleCharacter</span>
                 </a>
             </div>
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
+                <!-- 突出的主页按钮 -->
+                <a href="index-fr.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                    🏠 Accueil
+                </a>
                 <a href="#tools" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Outils</a>
                 <a href="#features" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">Fonctionnalités</a>
                 <a href="about-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors">À propos</a>
@@ -64,6 +68,10 @@
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-apple-gray-900 border-t border-apple-gray-200 dark:border-apple-gray-700">
         <div class="px-4 py-2 space-y-1">
+            <!-- 突出的主页按钮 -->
+            <a href="index-fr.html" class="block px-3 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+                🏠 Accueil - Gratuit
+            </a>
             <a href="#tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Outils</a>
             <a href="#features" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">Fonctionnalités</a>
             <a href="about-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors">À propos</a>
