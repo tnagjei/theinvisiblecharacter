@@ -739,6 +739,6 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // Export for ES modules
-if (typeof export !== 'undefined') {
-    export { InvisibleCharacterDetector };
+if (typeof exports !== 'undefined') {
+    exports.InvisibleCharacterDetector = InvisibleCharacterDetector;
 }

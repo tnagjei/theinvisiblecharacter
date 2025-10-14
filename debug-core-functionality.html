@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐形字符网站核心功能调试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .character-display {
+            background: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>隐形字符网站核心功能调试</h1>
+
+    <!-- 隐形字符库测试 -->
+    <div class="test-section">
+        <h2>隐形字符库测试</h2>
+        <button onclick="testCharacterLibrary()">测试隐形字符库</button>
+        <div id="character-library-results"></div>
+    </div>
+
+    <!-- 隐形字符显示测试 -->
+    <div class="test-section">
+        <h2>隐形字符显示测试</h2>
+        <button onclick="testCharacterDisplay()">测试隐形字符显示</button>
+        <div id="character-display-results"></div>
+    </div>
+
+    <!-- 复制功能测试 -->
+    <div class="test-section">
+        <h2>复制功能测试</h2>
+        <button onclick="testCopyFunctionality()">测试复制功能</button>
+        <div id="copy-results"></div>
+    </div>
+
+    <!-- 检测功能测试 -->
+    <div class="test-section">
+        <h2>检测功能测试</h2>
+        <button onclick="testDetectionFunctionality()">测试检测功能</button>
+        <div id="detection-results"></div>
+    </div>
+
+    <!-- 综合测试 -->
+    <div class="test-section">
+        <h2>综合功能测试</h2>
+        <button onclick="runComprehensiveTests()">运行所有测试</button>
+        <div id="comprehensive-results"></div>
+    </div>
+
+    <script>
+        // 测试隐形字符库
+        function testCharacterLibrary() {
+            const resultsDiv = document.getElementById('character-library-results');
+            resultsDiv.innerHTML = '<p>正在测试隐形字符库...</p>';
+
+            try {
+                // 检查隐形字符库是否已加载
+                if (typeof window.invisibleCharacterLibrary === 'undefined') {
+                    throw new Error('隐形字符库未初始化');
+                }
+
+                const library = window.invisibleCharacterLibrary;
+                const characters = library.getCharacters();
+
+                let results = `
+                    <div class="test-result success">
+                        ✅ 隐形字符库初始化成功<br>
+                        📊 总字符数: ${characters.length}<br>
+                        🏷️ 可用类别: ${library.getCategories().join(', ')}
+                    </div>
+                `;
+
+                // 测试搜索功能
+                library.setSearchTerm('零宽');
+                const searchResults = library.getCharacters();
+                results += `
+                    <div class="test-result success">
+                        ✅ 搜索功能测试成功<br>
+                        🔍 搜索"零宽"结果: ${searchResults.length} 个字符
+                    </div>
+                `;
+
+                // 测试字符选择
+                if (characters.length > 0) {
+                    library.toggleCharacterSelection(characters[0].id);
+                    const selected = library.getSelectedCharacters();
+                    results += `
+                        <div class="test-result success">
+                            ✅ 字符选择功能测试成功<br>
+                            ⭐ 已选择: ${selected.length} 个字符
+                        </div>
+                    `;
+                }
+
+                resultsDiv.innerHTML = results;
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ 隐形字符库测试失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // 测试隐形字符显示
+        function testCharacterDisplay() {
+            const resultsDiv = document.getElementById('character-display-results');
+            resultsDiv.innerHTML = '<p>正在测试隐形字符显示...</p>';
+
+            try {
+                if (typeof window.invisibleCharacterLibrary === 'undefined') {
+                    throw new Error('隐形字符库未初始化');
+                }
+
+                const library = window.invisibleCharacterLibrary;
+                const characters = library.getCharacters();
+
+                if (characters.length === 0) {
+                    throw new Error('没有可用的隐形字符');
+                }
+
+                let results = '<div class="test-result success">✅ 隐形字符显示测试成功</div>';
+                results += '<div class="character-display">';
+
+                characters.slice(0, 5).forEach(char => {
+                    results += `
+                        <div style="margin: 10px 0;">
+                            <strong>${char.name}</strong> (${char.unicode}): "${char.character}"<br>
+                            <small>英文名: ${char.englishName}</small><br>
+                            <small>描述: ${char.description}</small>
+                        </div>
+                    `;
+                });
+
+                results += '</div>';
+                resultsDiv.innerHTML = results;
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ 隐形字符显示测试失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // 测试复制功能
+        function testCopyFunctionality() {
+            const resultsDiv = document.getElementById('copy-results');
+            resultsDiv.innerHTML = '<p>正在测试复制功能...</p>';
+
+            try {
+                if (typeof window.clipboardManager === 'undefined') {
+                    throw new Error('剪贴板管理器未初始化');
+                }
+
+                const clipboard = window.clipboardManager;
+
+                // 测试剪贴板支持
+                const isSupported = clipboard.isSupported();
+                let results = `
+                    <div class="test-result success">
+                        ✅ 剪贴板支持检测: ${isSupported ? '支持' : '不支持'}
+                    </div>
+                `;
+
+                // 测试复制隐形字符
+                if (typeof window.invisibleCharacterLibrary !== 'undefined') {
+                    const library = window.invisibleCharacterLibrary;
+                    const characters = library.getCharacters();
+
+                    if (characters.length > 0) {
+                        const testText = characters[0].character + characters[1].character;
+                        clipboard.copy(testText);
+                        results += `
+                            <div class="test-result success">
+                                ✅ 隐形字符复制测试成功<br>
+                                📋 已复制字符组合: "${testText}"
+                            </div>
+                        `;
+                    }
+                }
+
+                resultsDiv.innerHTML = results;
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ 复制功能测试失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // 测试检测功能
+        function testDetectionFunctionality() {
+            const resultsDiv = document.getElementById('detection-results');
+            resultsDiv.innerHTML = '<p>正在测试检测功能...</p>';
+
+            try {
+                if (typeof window.invisibleCharacterDetector === 'undefined') {
+                    throw new Error('隐形字符检测器未初始化');
+                }
+
+                const detector = window.invisibleCharacterDetector;
+
+                // 测试检测隐形字符
+                const testText = '测试\u200B\u200C\u200D文本';
+                const result = detector.detectInvisibleCharacters(testText);
+
+                let results = `
+                    <div class="test-result success">
+                        ✅ 隐形字符检测器初始化成功<br>
+                        📊 检测模式数量: ${detector.patterns.length}
+                    </div>
+                `;
+
+                results += `
+                    <div class="test-result success">
+                        ✅ 隐形字符检测测试成功<br>
+                        🔍 测试文本: "${testText}"<br>
+                        🎯 检测到 ${result.totalMatches} 个隐形字符
+                    </div>
+                `;
+
+                if (result.totalMatches > 0) {
+                    results += '<div class="test-result success">📋 检测结果:<br>';
+                    result.results.forEach(r => {
+                        results += `・ ${r.pattern} (${r.unicode}): ${r.count}个<br>`;
+                    });
+                    results += '</div>';
+                }
+
+                resultsDiv.innerHTML = results;
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ 检测功能测试失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // 运行综合测试
+        function runComprehensiveTests() {
+            const resultsDiv = document.getElementById('comprehensive-results');
+            resultsDiv.innerHTML = '<p>正在运行综合测试...</p>';
+
+            setTimeout(() => {
+                testCharacterLibrary();
+                setTimeout(() => {
+                    testCharacterDisplay();
+                    setTimeout(() => {
+                        testCopyFunctionality();
+                        setTimeout(() => {
+                            testDetectionFunctionality();
+
+                            setTimeout(() => {
+                                resultsDiv.innerHTML = `
+                                    <div class="test-result success">
+                                        🎉 综合测试完成！<br>
+                                        请查看上方各个测试部分的结果。<br>
+                                        如果所有测试都显示绿色成功标识，则网站功能正常。
+                                    </div>
+                                `;
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 500);
+        }
+
+        // 页面加载完成后自动运行测试
+        window.addEventListener('load', () => {
+            console.log('页面加载完成，隐形字符网站调试工具已就绪');
+
+            // 延迟执行自动测试，给所有脚本加载时间
+            setTimeout(() => {
+                console.log('自动运行综合测试...');
+                runComprehensiveTests();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

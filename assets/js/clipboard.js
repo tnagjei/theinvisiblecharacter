@@ -61,18 +61,61 @@ class ClipboardManager {
     }
 
     initializeClipboard() {
+        // Check if ClipboardJS is loaded, if not, wait for it
         if (typeof ClipboardJS === 'undefined' && !this.useFallback) {
-            return;
+            // If ClipboardJS is not loaded yet, wait for it
+            if (!document.querySelector('script[src*="clipboard.js"]')) {
+                console.warn('ClipboardJS script not found, using fallback');
+                this.useFallback = true;
+            } else {
+                // Wait a bit more for the script to load
+                setTimeout(() => {
+                    if (typeof ClipboardJS !== 'undefined') {
+                        this.initializeClipboardJS();
+                    } else {
+                        console.warn('ClipboardJS failed to load, using fallback');
+                        this.useFallback = true;
+                        this.initializeFallback();
+                    }
+                }, 100);
+                return;
+            }
         }
 
+        // Initialize based on what's available
+        if (typeof ClipboardJS !== 'undefined') {
+            this.initializeClipboardJS();
+        } else {
+            this.initializeFallback();
+        }
+    }
+
+    initializeClipboardJS() {
         // Initialize ClipboardJS for all copy buttons
         this.initializeCopyButtons();
-        
+
         // Initialize dynamic clipboard instances
         this.initializeDynamicClipboard();
-        
+
         // Setup clipboard event listeners
         this.setupClipboardEvents();
+    }
+
+    initializeFallback() {
+        // Initialize fallback copy functionality
+        this.setupFallbackCopyButtons();
+
+        // Setup clipboard event listeners (for programmatic copying)
+        this.setupClipboardEvents();
+    }
+
+    setupFallbackCopyButtons() {
+        // Find all elements with data-clipboard-text or data-clipboard-target
+        const copyButtons = document.querySelectorAll('[data-clipboard-text], [data-clipboard-target]');
+
+        copyButtons.forEach(button => {
+            this.setupFallbackCopy(button);
+        });
     }
 
     initializeCopyButtons() {
@@ -508,6 +551,6 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // Export for ES modules
-if (typeof export !== 'undefined') {
-    export { ClipboardManager };
+if (typeof exports !== 'undefined') {
+    exports.ClipboardManager = ClipboardManager;
 }

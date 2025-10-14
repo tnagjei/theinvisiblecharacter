@@ -891,6 +891,6 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // Export for ES modules
-if (typeof export !== 'undefined') {
-    export { InvisibleCharacterApp };
+if (typeof exports !== 'undefined') {
+    exports.InvisibleCharacterApp = InvisibleCharacterApp;
 }
