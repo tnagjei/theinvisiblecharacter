@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Spacing character representation -->
+  <path d="M4 12h16" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+  <path d="M8 8h8" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+  <path d="M6 16h12" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+</svg>

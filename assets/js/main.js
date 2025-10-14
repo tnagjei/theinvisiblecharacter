@@ -291,17 +291,21 @@ class InvisibleCharacterApp {
         const card = document.createElement('div');
         card.className = 'character-card bg-white dark:bg-apple-gray-800 rounded-lg p-4 border border-apple-gray-200 dark:border-apple-gray-700 hover:shadow-lg transition-all duration-200 cursor-pointer';
         card.dataset.characterId = character.id;
-        
+
+        // Get category icon
+        const categoryIcon = character.icon || this.getCategoryIcon(character.category);
+
         card.innerHTML = `
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2">
+                    ${categoryIcon ? `<img src="${categoryIcon}" alt="${character.category} icon" class="w-5 h-5 opacity-70">` : ''}
                     <span class="character-preview text-2xl font-mono bg-apple-gray-100 dark:bg-apple-gray-700 px-2 py-1 rounded">${character.character}</span>
                     <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400">${character.unicode}</span>
                 </div>
-                <button class="copy-character-btn p-2 rounded hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors" 
+                <button class="copy-character-btn p-2 rounded hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors"
                         data-clipboard-text="${character.character}"
                         data-character-id="${character.id}"
-                        title="复制字符">
+                        title="Copy character">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
@@ -312,7 +316,7 @@ class InvisibleCharacterApp {
             <div class="flex items-center justify-between">
                 <span class="text-xs bg-apple-gray-100 dark:bg-apple-gray-700 px-2 py-1 rounded">${character.category}</span>
                 <div class="flex items-center space-x-1">
-                    <span class="text-xs text-apple-gray-500">热度:</span>
+                    <span class="text-xs text-apple-gray-500">Popularity:</span>
                     <div class="flex space-x-1">
                         ${this.createPopularityStars(character.popularity)}
                     </div>
@@ -333,7 +337,7 @@ class InvisibleCharacterApp {
     createPopularityStars(popularity) {
         const stars = Math.floor(popularity / 20);
         let html = '';
-        
+
         for (let i = 0; i < 5; i++) {
             if (i < stars) {
                 html += '<svg class="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
@@ -341,8 +345,21 @@ class InvisibleCharacterApp {
                 html += '<svg class="w-3 h-3 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
             }
         }
-        
+
         return html;
+    }
+
+    getCategoryIcon(category) {
+        const iconMap = {
+            'braille': 'assets/icons/icon-braille.svg',
+            'hangul': 'assets/icons/icon-hangul.svg',
+            'formatting': 'assets/icons/icon-formatting.svg',
+            'spacing': 'assets/icons/icon-spacing.svg',
+            'separator': 'assets/icons/icon-separator.svg',
+            'mathematical': 'assets/icons/icon-mathematical.svg',
+            'directional': 'assets/icons/icon-directional.svg'
+        };
+        return iconMap[category] || null;
     }
 
     setupCharacterSearch() {
@@ -581,12 +598,12 @@ class InvisibleCharacterApp {
             this.renderDetectionResults(resultsContainer, detail);
         }
 
-        // Show notification
-        if (hasInvisibleCharacters) {
-            this.showNotification(`检测到 ${totalMatches} 个隐形字符`, 'warning');
-        } else {
-            this.showNotification('未检测到隐形字符', 'success');
-        }
+         // Show notification
+         if (hasInvisibleCharacters) {
+             this.showNotification(`Detected ${totalMatches} invisible characters`, 'warning');
+         } else {
+             this.showNotification('No invisible characters detected', 'success');
+         }
     }
 
     handleLibraryInitialized(detail) {
@@ -599,12 +616,12 @@ class InvisibleCharacterApp {
         
         container.innerHTML = `
             <div class="bg-white dark:bg-apple-gray-800 rounded-lg p-6">
-                <h3 class="text-lg font-semibold mb-4">检测结果</h3>
-                
+                <h3 class="text-lg font-semibold mb-4">Detection Results</h3>
+
                 ${totalMatches > 0 ? `
                     <div class="mb-4">
                         <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mb-2">
-                            在文本中检测到 <span class="font-semibold text-red-600">${totalMatches}</span> 个隐形字符
+                            Detected <span class="font-semibold text-red-600">${totalMatches}</span> invisible characters in text
                         </p>
                         <div class="space-y-2">
                             ${results.map(result => `
@@ -627,17 +644,17 @@ class InvisibleCharacterApp {
                     </div>
                     
                     <div class="flex space-x-2">
-                        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors" 
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
                                 onclick="app.cleanDetectedText('${text.replace(/'/g, "\\'")}')">
-                            清理隐形字符
+                            Clean Invisible Characters
                         </button>
                         <button class="px-4 py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors"
                                 onclick="app.exportDetectionResults()">
-                            导出结果
+                            Export Results
                         </button>
                     </div>
                 ` : `
-                    <p class="text-green-600 dark:text-green-400">文本中未检测到隐形字符</p>
+                    <p class="text-green-600 dark:text-green-400">No invisible characters detected in text</p>
                 `}
             </div>
         `;
@@ -710,7 +727,7 @@ class InvisibleCharacterApp {
         
         const feedback = document.createElement('span');
         feedback.className = 'absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap';
-        feedback.textContent = '已复制!';
+        feedback.textContent = 'Copied!';
         
         trigger.style.position = 'relative';
         trigger.appendChild(feedback);
@@ -746,11 +763,11 @@ class InvisibleCharacterApp {
     }
 
     handleOnlineStatus() {
-        this.showNotification('网络连接已恢复', 'success');
+        this.showNotification('Network connection restored', 'success');
     }
 
     handleOfflineStatus() {
-        this.showNotification('网络连接已断开', 'warning');
+        this.showNotification('Network connection lost', 'warning');
     }
 
     handleVisibilityChange() {
@@ -837,7 +854,7 @@ class InvisibleCharacterApp {
             const detectorInput = document.querySelector('#detector-input');
             if (detectorInput) {
                 detectorInput.value = result.cleanedText;
-                this.showNotification(`已清理 ${result.removedCount} 个隐形字符`, 'success');
+                this.showNotification(`Cleaned ${result.removedCount} invisible characters`, 'success');
             }
         }
     }
