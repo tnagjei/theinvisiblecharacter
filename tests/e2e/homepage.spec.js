@@ -15,12 +15,12 @@ test.describe('主页功能测试', () => {
     // 检查Hero区域
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('text=TheInvisibleCharacter.live')).toBeVisible();
-    
+
     // 检查导航菜单
     await expect(page.locator('nav')).toBeVisible();
     await expect(page.locator('text=Tools')).toBeVisible();
-    await expect(page.locator('text=Features')).toBeVisible();
-    
+    await expect(page.locator('text=FAQ')).toBeVisible();
+
     // 检查工具区域
     await expect(page.locator('#tools')).toBeVisible();
     await expect(page.locator('#generator-tool')).toBeVisible();
@@ -29,14 +29,14 @@ test.describe('主页功能测试', () => {
 
   test('主题切换功能', async ({ page }) => {
     const themeToggle = page.locator('#theme-toggle-desktop');
-    
+
     // 检查初始状态
     await expect(page.locator('body')).not.toHaveClass(/dark/);
-    
+
     // 切换到暗色主题
     await themeToggle.click();
     await expect(page.locator('body')).toHaveClass(/dark/);
-    
+
     // 切换回亮色主题
     await themeToggle.click();
     await expect(page.locator('body')).not.toHaveClass(/dark/);
@@ -44,49 +44,47 @@ test.describe('主页功能测试', () => {
 
   test('语言切换功能', async ({ page }) => {
     const languageToggle = page.locator('#language-toggle');
-    
+
     // 点击语言切换按钮
     await languageToggle.click();
-    
+
     // 检查下拉菜单
     await expect(page.locator('#language-dropdown')).toBeVisible();
     await expect(page.locator('text=🇺🇸 English')).toBeVisible();
     await expect(page.locator('text=🇫🇷 Français')).toBeVisible();
-    
+
     // 点击外部关闭菜单
     await page.click('body');
     await expect(page.locator('#language-dropdown')).toBeHidden();
   });
 
-  test('平滑滚动到工具区域', async ({ page }) => {
-    const startButton = page.locator('text=Start Using Free');
-    await startButton.click();
-    
-    // 等待滚动完成
-    await page.waitForTimeout(1000);
-    
-    // 检查是否滚动到工具区域
+  test('工具区域在首屏可见', async ({ page }) => {
+    // 新布局：工具区域现在在第一屏直接可见，无需滚动
     const toolsSection = page.locator('#tools');
+    await expect(toolsSection).toBeVisible();
+
+    // 验证工具区域在视口内（首屏）
     const toolsBox = await toolsSection.boundingBox();
-    expect(toolsBox.y).toBeLessThan(200);
+    const viewportSize = page.viewportSize();
+    expect(toolsBox.y).toBeLessThan(viewportSize.height);
   });
 
   test('响应式导航菜单', async ({ page }) => {
     // 测试桌面端导航
     await expect(page.locator('#mobile-menu')).toBeHidden();
     await expect(page.locator('#mobile-menu-button')).toBeHidden();
-    
+
     // 切换到移动端视图
     await page.setViewportSize({ width: 375, height: 667 });
-    
+
     // 检查移动端菜单
     await expect(page.locator('#mobile-menu-button')).toBeVisible();
     await expect(page.locator('#mobile-menu')).toBeHidden();
-    
+
     // 打开移动端菜单
     await page.locator('#mobile-menu-button').click();
     await expect(page.locator('#mobile-menu')).toBeVisible();
-    
+
     // 关闭移动端菜单
     await page.locator('#mobile-menu-button').click();
     await expect(page.locator('#mobile-menu')).toBeHidden();
