@@ -69,7 +69,7 @@
 # http://* https://:splat 301
 
 # Remove www redirect (uncomment when using custom domain)
-# https://www.theinvisiblecharacter.live/* https://theinvisiblecharacter.live/:splat 301
+https://www.theinvisiblecharacter.live/* https://theinvisiblecharacter.live/:splat 301
 
 # API routes (future-proofing for potential API endpoints)
 # /api/* https://api.theinvisiblecharacter.live/:splat 200

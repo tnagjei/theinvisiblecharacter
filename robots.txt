@@ -36,6 +36,7 @@ Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /cloudflare-config/
+Disallow: /cdn-cgi/
 
 # Block development and temporary files
 Disallow: /*.bak$
