@@ -208,110 +208,110 @@ cat > sitemap.xml << EOF
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/about.html</loc>
+        <loc>https://$DOMAIN/about</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/help.html</loc>
+        <loc>https://$DOMAIN/help</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/tools.html</loc>
+        <loc>https://$DOMAIN/tools</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/privacy-policy.html</loc>
+        <loc>https://$DOMAIN/privacy-policy</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/terms-of-service.html</loc>
+        <loc>https://$DOMAIN/terms-of-service</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/index.html</loc>
+        <loc>https://$DOMAIN/blog/</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fortnite-invisible-name.html</loc>
+        <loc>https://$DOMAIN/blog/fortnite-invisible-name</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/instagram-invisible-characters.html</loc>
+        <loc>https://$DOMAIN/blog/instagram-invisible-characters</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/whatsapp-invisible-messages.html</loc>
+        <loc>https://$DOMAIN/blog/whatsapp-invisible-messages</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/technical-guide-invisible-characters.html</loc>
+        <loc>https://$DOMAIN/blog/technical-guide-invisible-characters</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <!-- French pages -->
     <url>
-        <loc>https://$DOMAIN/index-fr.html</loc>
+        <loc>https://$DOMAIN/index-fr</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/about-fr.html</loc>
+        <loc>https://$DOMAIN/about-fr</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/help-fr.html</loc>
+        <loc>https://$DOMAIN/help-fr</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fr/index.html</loc>
+        <loc>https://$DOMAIN/blog/fr/</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fr/fortnite-nom-invisible.html</loc>
+        <loc>https://$DOMAIN/blog/fr/fortnite-nom-invisible</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fr/instagram-caracteres-invisibles.html</loc>
+        <loc>https://$DOMAIN/blog/fr/instagram-caracteres-invisibles</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fr/whatsapp-messages-invisibles.html</loc>
+        <loc>https://$DOMAIN/blog/fr/whatsapp-messages-invisibles</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://$DOMAIN/blog/fr/guide-technique-caracteres-invisibles.html</loc>
+        <loc>https://$DOMAIN/blog/fr/guide-technique-caracteres-invisibles</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

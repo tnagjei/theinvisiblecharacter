@@ -2,46 +2,51 @@
 # Production redirect rules
 
 # Core page redirects - SEO-friendly permanent redirects
-/about /about.html 301
-/help /help.html 301
-/privacy /privacy-policy.html 301
-/terms /terms-of-service.html 301
-/contact /help.html#contact 301
-/faq /help.html#faq 301
-/tools /tools.html 301
-/guide /help.html 301
+# Removed to prevent loops with Cloudflare Pretty URLs
+# /about /about.html 301
+# /help /help.html 301
+# /privacy /privacy-policy.html 301
+# /terms /terms-of-service.html 301
+/contact /help%23contact 301
+/faq /help%23faq 301
+# /tools /tools.html 301
+/guide /help 301
 
 # French language redirects
-/fr /about-fr.html 302
-/fr/a-propos /about-fr.html 301
-/fr/aide /help-fr.html 301
-/fr/blog /blog/fr/index.html 301
+# French language redirects
+# Point to index-fr (Clean URL) instead of about-fr
+/fr /index-fr 302
+/fr/a-propos /about-fr 301
+/fr/aide /help-fr 301
+/fr/blog /blog/fr/ 301
 
 # Blog redirects - Comprehensive coverage
-/blog /blog/index.html 301
-/blog/fortnite /blog/fortnite-invisible-name.html 301
-/blog/instagram /blog/instagram-invisible-characters.html 301
-/blog/whatsapp /blog/whatsapp-invisible-messages.html 301
-/blog/technical /blog/technical-guide-invisible-characters.html 301
-/blog/fr /blog/fr/index.html 301
-/blog/fr/fortnite /blog/fr/fortnite-nom-invisible.html 301
-/blog/fr/instagram /blog/fr/instagram-caracteres-invisibles.html 301
-/blog/fr/whatsapp /blog/fr/whatsapp-messages-invisibles.html 301
-/blog/fr/technical /blog/fr/guide-technique-caracteres-invisibles.html 301
+# Blog redirects - Comprehensive coverage
+/blog /blog/ 301
+/blog/fortnite /blog/fortnite-invisible-name 301
+/blog/instagram /blog/instagram-invisible-characters 301
+/blog/whatsapp /blog/whatsapp-invisible-messages 301
+/blog/technical /blog/technical-guide-invisible-characters 301
+/blog/fr /blog/fr/ 301
+/blog/fr/fortnite /blog/fr/fortnite-nom-invisible 301
+/blog/fr/instagram /blog/fr/instagram-caracteres-invisibles 301
+/blog/fr/whatsapp /blog/fr/whatsapp-messages-invisibles 301
+/blog/fr/technical /blog/fr/guide-technique-caracteres-invisibles 301
 
 # Category and tag redirects (future-proofing)
 /blog/category/* /blog/ 301
 /blog/tag/* /blog/ 301
-/blog/category/games /blog/fortnite-invisible-name.html 301
-/blog/category/social /blog/instagram-invisible-characters.html 301
+/blog/category/games /blog/fortnite-invisible-name 301
+/blog/category/social /blog/instagram-invisible-characters 301
 
 # Trailing slash normalization
-/about/ /about.html 301
-/help/ /help.html 301
-/privacy/ /privacy-policy.html 301
-/terms/ /terms-of-service.html 301
-/tools/ /tools.html 301
-/blog/ /blog/index.html 301
+# Commented out to let Cloudflare handle it
+# /about/ /about.html 301
+# /help/ /help.html 301
+# /privacy/ /privacy-policy.html 301
+# /terms/ /terms-of-service.html 301
+# /tools/ /tools.html 301
+# /blog/ /blog/index.html 301
 
 # Legacy URL redirects (for migration)
 # Add any legacy URLs here when migrating from old site
