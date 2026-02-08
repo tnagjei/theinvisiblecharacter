@@ -6,9 +6,9 @@ test.describe('主页功能测试', () => {
   });
 
   test('页面标题和Meta信息正确', async ({ page }) => {
-    await expect(page).toHaveTitle(/TheInvisibleCharacter.live/);
+    await expect(page).toHaveTitle(/Free Invisible Character Generator/);
     const metaDescription = await page.getAttribute('meta[name="description"]', 'content');
-    expect(metaDescription).toContain('invisible character generator');
+    expect(metaDescription).toContain('invisible characters');
   });
 
   test('主要页面元素加载', async ({ page }) => {
@@ -19,7 +19,7 @@ test.describe('主页功能测试', () => {
     // 检查导航菜单
     await expect(page.locator('nav')).toBeVisible();
     await expect(page.locator('text=Tools')).toBeVisible();
-    await expect(page.locator('text=FAQ')).toBeVisible();
+    await expect(page.locator('text=Features')).toBeVisible();
 
     // 检查工具区域
     await expect(page.locator('#tools')).toBeVisible();
@@ -58,15 +58,19 @@ test.describe('主页功能测试', () => {
     await expect(page.locator('#language-dropdown')).toBeHidden();
   });
 
-  test('工具区域在首屏可见', async ({ page }) => {
-    // 新布局：工具区域现在在第一屏直接可见，无需滚动
-    const toolsSection = page.locator('#tools');
-    await expect(toolsSection).toBeVisible();
+  test('平滑滚动到工具区域', async ({ page }) => {
+    // Tools section is now above-the-fold after hero refactor
+    // Test navigation link scroll behavior instead of removed CTA
+    const toolsNavLink = page.locator('nav a[href="#tools"]').first();
+    await toolsNavLink.click();
 
-    // 验证工具区域在视口内（首屏）
+    // 等待滚动完成
+    await page.waitForTimeout(1000);
+
+    // 检查是否滚动到工具区域
+    const toolsSection = page.locator('#tools');
     const toolsBox = await toolsSection.boundingBox();
-    const viewportSize = page.viewportSize();
-    expect(toolsBox.y).toBeLessThan(viewportSize.height);
+    expect(toolsBox.y).toBeLessThan(200);
   });
 
   test('响应式导航菜单', async ({ page }) => {
