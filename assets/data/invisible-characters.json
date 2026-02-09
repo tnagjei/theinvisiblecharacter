@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-02-08",
+  "characters": [
+    {
+      "id": "u2800",
+      "unicode": "U+2800",
+      "character": "\u2800",
+      "name": "Braille Pattern Blank",
+      "category": "braille",
+      "htmlEntity": "&#10240;",
+      "cssEscape": "\\2800",
+      "javascriptEscape": "\\u2800"
+    },
+    {
+      "id": "u3164",
+      "unicode": "U+3164",
+      "character": "\u3164",
+      "name": "Hangul Filler",
+      "category": "hangul",
+      "htmlEntity": "&#12644;",
+      "cssEscape": "\\3164",
+      "javascriptEscape": "\\u3164"
+    },
+    {
+      "id": "u2060",
+      "unicode": "U+2060",
+      "character": "\u2060",
+      "name": "Word Joiner",
+      "category": "formatting",
+      "htmlEntity": "&#8288;",
+      "cssEscape": "\\2060",
+      "javascriptEscape": "\\u2060"
+    },
+    {
+      "id": "u200b",
+      "unicode": "U+200B",
+      "character": "\u200B",
+      "name": "Zero Width Space",
+      "category": "spacing",
+      "htmlEntity": "&#8203;",
+      "cssEscape": "\\200B",
+      "javascriptEscape": "\\u200B"
+    },
+    {
+      "id": "u200c",
+      "unicode": "U+200C",
+      "character": "\u200C",
+      "name": "Zero Width Non-Joiner",
+      "category": "formatting",
+      "htmlEntity": "&#8204;",
+      "cssEscape": "\\200C",
+      "javascriptEscape": "\\u200C"
+    },
+    {
+      "id": "u200d",
+      "unicode": "U+200D",
+      "character": "\u200D",
+      "name": "Zero Width Joiner",
+      "category": "formatting",
+      "htmlEntity": "&#8205;",
+      "cssEscape": "\\200D",
+      "javascriptEscape": "\\u200D"
+    },
+    {
+      "id": "u2063",
+      "unicode": "U+2063",
+      "character": "\u2063",
+      "name": "Invisible Separator",
+      "category": "separator",
+      "htmlEntity": "&#8291;",
+      "cssEscape": "\\2063",
+      "javascriptEscape": "\\u2063"
+    },
+    {
+      "id": "u2061",
+      "unicode": "U+2061",
+      "character": "\u2061",
+      "name": "Function Application",
+      "category": "mathematical",
+      "htmlEntity": "&#8289;",
+      "cssEscape": "\\2061",
+      "javascriptEscape": "\\u2061"
+    },
+    {
+      "id": "u2062",
+      "unicode": "U+2062",
+      "character": "\u2062",
+      "name": "Invisible Times",
+      "category": "mathematical",
+      "htmlEntity": "&#8290;",
+      "cssEscape": "\\2062",
+      "javascriptEscape": "\\u2062"
+    },
+    {
+      "id": "u200e",
+      "unicode": "U+200E",
+      "character": "\u200E",
+      "name": "Left-to-Right Mark",
+      "category": "directional",
+      "htmlEntity": "&#8206;",
+      "cssEscape": "\\200E",
+      "javascriptEscape": "\\u200E"
+    },
+    {
+      "id": "u200f",
+      "unicode": "U+200F",
+      "character": "\u200F",
+      "name": "Right-to-Left Mark",
+      "category": "directional",
+      "htmlEntity": "&#8207;",
+      "cssEscape": "\\200F",
+      "javascriptEscape": "\\u200F"
+    },
+    {
+      "id": "u202a",
+      "unicode": "U+202A",
+      "character": "\u202A",
+      "name": "Left-to-Right Embedding",
+      "category": "directional",
+      "htmlEntity": "&#8234;",
+      "cssEscape": "\\202A",
+      "javascriptEscape": "\\u202A"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://theinvisiblecharacter.live/developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Developer resources for TheInvisibleCharacter.live - Static JSON data, integration tips, and technical support for invisible characters.">
+    <meta name="keywords" content="developer, api, integration guide, invisible characters, unicode, json">
+    <meta name="author" content="TheInvisibleCharacter.live">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theinvisiblecharacter.live/developer.html">
+    <meta property="og:title" content="Developer Resources - TheInvisibleCharacter.live">
+    <meta property="og:description"
+        content="Static JSON data, integration tips, and technical support for invisible characters.">
+    <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="TheInvisibleCharacter.live - Developer Resources">
+    <meta property="og:site_name" content="TheInvisibleCharacter.live">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@invisiblechar">
+    <meta name="twitter:creator" content="@invisiblechar">
+    <meta name="twitter:url" content="https://theinvisiblecharacter.live/developer.html">
+    <meta name="twitter:title" content="Developer Resources - TheInvisibleCharacter.live">
+    <meta name="twitter:description"
+        content="Static JSON data, integration tips, and technical support for invisible characters.">
+    <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
+    <meta name="twitter:image:alt" content="TheInvisibleCharacter.live - Developer Resources">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-gray': {
+                            50: '#fafafa',
+                            100: '#f5f5f7',
+                            200: '#e8e8ed',
+                            300: '#d1d1d6',
+                            400: '#a1a1a6',
+                            500: '#86868b',
+                            600: '#6e6e73',
+                            700: '#48484a',
+                            800: '#1d1d1f',
+                            900: '#000000'
+                        }
+                    },
+                    fontFamily: {
+                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>Developer Resources - TheInvisibleCharacter.live</title>
+
+    <!-- Google AdSense -->
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963"
+        crossorigin="anonymous"></script>
+</head>
+
+<body
+    class="bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased transition-colors duration-300">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-apple-gray-800 text-white px-4 py-2 rounded-md"
+        title="Skip to main content">
+        Skip to main content
+    </a>
+
+    <!-- Include Navigation Component -->
+    <div id="navigation-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        <!-- Hero -->
+        <section
+            class="bg-gradient-to-br from-apple-gray-50 to-white dark:from-apple-gray-900 dark:to-apple-gray-800 py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Developer Resources</h1>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">
+                        Static JSON data, integration tips, and support for invisible characters.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="py-16 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- TOC -->
+                    <aside class="lg:col-span-1">
+                        <div
+                            class="sticky top-24 bg-apple-gray-50 dark:bg-apple-gray-800 rounded-xl p-5 border border-apple-gray-200 dark:border-apple-gray-700">
+                            <h2 class="text-lg font-semibold mb-4">On This Page</h2>
+                            <ul class="space-y-2 text-apple-gray-700 dark:text-apple-gray-300">
+                                <li><a href="#api" class="hover:text-blue-500 transition-colors"
+                                        title="Static Data API">Static Data API</a>
+                                </li>
+                                <li><a href="#integration" class="hover:text-blue-500 transition-colors"
+                                        title="Integration Guide">Integration
+                                        Guide</a></li>
+                                <li><a href="#support" class="hover:text-blue-500 transition-colors"
+                                        title="Technical Support">Technical
+                                        Support</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <div class="lg:col-span-3 space-y-12">
+                        <!-- API -->
+                        <section id="api" class="scroll-mt-24">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Static Data API</h2>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-6">
+                                We provide a static JSON file containing our core invisible character set. You can use
+                                it to build your own UI, validator, or copy-to-clipboard helpers.
+                            </p>
+
+                            <div
+                                class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 space-y-4">
+                                <div>
+                                    <div class="text-sm uppercase tracking-wide text-apple-gray-500">Endpoint</div>
+                                    <div class="font-mono text-sm break-all">/assets/data/invisible-characters.json
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-sm uppercase tracking-wide text-apple-gray-500">Example
+                                        (JavaScript)</div>
+                                    <pre
+                                        class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const res = await fetch('/assets/data/invisible-characters.json');\nconst data = await res.json();\nconsole.log(data.characters[0]);</code></pre>
+                                </div>
+                            </div>
+
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300 mt-6">
+                                Tip: in JSON, invisible characters are represented using Unicode escape sequences (for
+                                example <span class="font-mono">\\u200B</span>) so you can copy them safely.
+                            </p>
+                        </section>
+
+                        <!-- Integration -->
+                        <section id="integration" class="scroll-mt-24">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Integration Guide</h2>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-6">
+                                If you only need to generate or validate invisible characters, you can integrate
+                                without any dependency:
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div
+                                    class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700">
+                                    <h3 class="text-lg font-semibold mb-3">Generate</h3>
+                                    <pre
+                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Zero Width Space\nconst ZWS = '\\u200B';\n\n// Hangul Filler (often works for blank names)\nconst HF = '\\u3164';</code></pre>
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700">
+                                    <h3 class="text-lg font-semibold mb-3">Detect</h3>
+                                    <pre
+                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Basic invisible-character detector\nconst INVISIBLE = /[\\u200B-\\u200F\\u2060\\u2061\\u2062\\u2063\\u2800\\u3164\\u202A]/g;\n\nfunction hasInvisibleChars(s) {\n  return INVISIBLE.test(s);\n}</code></pre>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                                <h3 class="text-lg font-semibold mb-2">Need More Detail?</h3>
+                                <p class="text-apple-gray-700 dark:text-apple-gray-200">
+                                    Read the full Unicode deep dive in our
+                                    <a href="/blog/technical-guide-invisible-characters.html"
+                                        class="text-blue-600 dark:text-blue-300 hover:underline"
+                                        title="Technical Guide">Technical Guide</a>.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Support -->
+                        <section id="support" class="scroll-mt-24">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Technical Support</h2>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-6">
+                                If you hit a platform-specific issue (for example, a character that appears as blank on
+                                one app but not another), we can help you troubleshoot.
+                            </p>
+
+                            <div
+                                class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 space-y-3">
+                                <p class="text-apple-gray-600 dark:text-apple-gray-300">
+                                    When reporting an issue, include:
+                                </p>
+                                <ul
+                                    class="list-disc list-inside space-y-2 text-apple-gray-600 dark:text-apple-gray-300">
+                                    <li>Platform + app version (e.g., TikTok iOS 34.x)</li>
+                                    <li>The character code point(s) you used (e.g., U+200B)</li>
+                                    <li>Whether it works on desktop vs mobile</li>
+                                </ul>
+                                <div class="pt-2">
+                                    <a href="/help.html"
+                                        class="inline-flex items-center px-5 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors font-medium"
+                                        title="Help Center">Help
+                                        Center</a>
+                                    <a href="/about.html#contact"
+                                        class="inline-flex items-center px-5 py-3 rounded-lg border border-apple-gray-300 dark:border-apple-gray-600 hover:bg-apple-gray-50 dark:hover:bg-apple-gray-900 transition-colors font-medium ml-3"
+                                        title="Contact">Contact</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mobile-optimization.js"></script>
+
+    <script>
+        // Load navigation component
+        fetch('assets/components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+                // Reinitialize theme toggle and navigation handlers
+                initializeTheme();
+                initializeMobileMenu();
+                initializeLanguageDropdown();
+            });
+
+        // Load footer component
+        fetch('assets/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Initialize theme toggle
+        function initializeTheme() {
+            const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+            const toggleTheme = () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            };
+
+            if (themeToggleDesktop) {
+                themeToggleDesktop.addEventListener('click', toggleTheme);
+            }
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+        }
+
+        // Initialize mobile menu toggle
+        function initializeMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        }
+
+        // Initialize language dropdown
+        function initializeLanguageDropdown() {
+            const languageButton = document.getElementById('language-toggle');
+            const languageDropdown = document.getElementById('language-dropdown');
+
+            if (languageButton && languageDropdown) {
+                languageButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', () => {
+                    if (languageDropdown && !languageDropdown.classList.contains('hidden')) {
+                        languageDropdown.classList.add('hidden');
+                    }
+                });
+            }
+        }
+    </script>
+    <script defer="" src="assets/js/link-titles.js"></script>
+
+
+</body>
+
+</html>

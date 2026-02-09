@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comment faire un nom Discord invisible (pseudo qui paraît vide) avec des caractères Unicode invisibles. Étapes desktop et mobile, plus solutions si Discord refuse ou tronque le pseudo.">
+    <meta name="keywords" content="nom discord invisible, pseudo discord invisible, nom discord vide, pseudo discord vide, caractere invisible discord, braille vide discord, espace largeur zero discord">
+    <meta name="author" content="TheInvisibleCharacter.live">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible.html">
+    <meta property="og:title" content="Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas">
+    <meta property="og:description" content="Créez un pseudo Discord qui paraît vide en utilisant un caractère Unicode invisible. Étapes desktop/mobile + dépannage si Discord refuse le nom.">
+    <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Guide Discord - Nom invisible (TheInvisibleCharacter.live)">
+    <meta property="og:site_name" content="TheInvisibleCharacter.live">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="article:published_time" content="2024-01-18">
+    <meta property="article:author" content="TheInvisibleCharacter.live">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@invisiblechar">
+    <meta name="twitter:creator" content="@invisiblechar">
+    <meta name="twitter:url" content="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible.html">
+    <meta name="twitter:title" content="Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas">
+    <meta name="twitter:description" content="Nom Discord invisible: étapes desktop/mobile + dépannage si Discord refuse ou tronque le pseudo.">
+    <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Guide Discord - Nom invisible (TheInvisibleCharacter.live)">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas",
+        "description": "Comment faire un pseudo Discord qui paraît vide avec un caractère Unicode invisible, avec étapes desktop/mobile et dépannage.",
+        "image": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "author": {
+            "@type": "Organization",
+            "name": "TheInvisibleCharacter.live"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "TheInvisibleCharacter.live",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://theinvisiblecharacter.live/assets/icons/favicon.svg"
+            }
+        },
+        "datePublished": "2024-01-18",
+        "dateModified": "2024-01-18",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible.html"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/mobile-optimization.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-gray': {
+                            50: '#fafafa',
+                            100: '#f5f5f7',
+                            200: '#e8e8ed',
+                            300: '#d1d1d6',
+                            400: '#a1a1a6',
+                            500: '#86868b',
+                            600: '#6e6e73',
+                            700: '#48484a',
+                            800: '#1d1d1f',
+                            900: '#000000'
+                        }
+                    },
+                    fontFamily: {
+                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'scale-in': 'scaleIn 0.2s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas</title>
+
+    <!-- Google AdSense -->
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased transition-colors duration-300">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-apple-gray-800 text-white px-4 py-2 rounded-md" title="Aller au contenu principal">
+        Aller au contenu principal
+    </a>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-apple-gray-900/80 backdrop-blur-xl border-b border-apple-gray-200 dark:border-apple-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/index-fr.html" class="flex items-center space-x-2" aria-label="TheInvisibleCharacter.live Accueil" title="TheInvisibleCharacter.live Accueil">
+                        <svg class="w-8 h-8 text-apple-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="text-xl font-semibold">TheInvisibleCharacter</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/index-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="Accueil">Accueil</a>
+                    <a href="/index-fr.html#tools" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="Outils">Outils</a>
+                    <a href="/about-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="À Propos">À Propos</a>
+                    <a href="/blog/fr/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors font-semibold" title="Blog">Blog</a>
+                    <a href="/help-fr.html" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="Aide">Aide</a>
+                    <button id="theme-toggle-desktop" class="p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Basculer le thème">
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-apple-gray-900 border-t border-apple-gray-200 dark:border-apple-gray-700">
+            <div class="px-4 py-2 space-y-1">
+                <a href="/index-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="Accueil">Accueil</a>
+                <a href="/index-fr.html#tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="Outils">Outils</a>
+                <a href="/about-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="À propos">À propos</a>
+                <a href="/blog/fr/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors font-semibold" title="Blog">Blog</a>
+                <a href="/help-fr.html" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="Aide">Aide</a>
+                <button id="theme-toggle-mobile" class="w-full text-left px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 01-11.708-11.708 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <span>Basculer le thème</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        <!-- Article Header -->
+        <article class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-slate-50 dark:from-blue-900/20 dark:to-slate-900/20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+                <div class="animate-fade-in">
+                    <div class="flex items-center justify-center space-x-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Discord</span>
+                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-full text-sm font-medium">Pseudo</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-slate-600 dark:from-blue-400 dark:to-slate-400 bg-clip-text text-transparent">
+                        Nom Discord invisible
+                    </h1>
+                    <div class="flex items-center justify-center space-x-4 text-apple-gray-600 dark:text-apple-gray-300 mb-8">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>18 janvier 2024</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>7 min</span>
+                        </div>
+                    </div>
+                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300 max-w-3xl mx-auto mb-10">
+                        Vous ne pouvez pas mettre un nom totalement vide, mais vous pouvez faire apparaître votre pseudo de serveur comme “blanc”
+                        en utilisant un caractère Unicode invisible. Voici la méthode la plus simple et les solutions si Discord refuse.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/index-fr.html#tools" class="px-8 py-4 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-all duration-200 transform hover:scale-105 font-medium inline-block" title="Copier un caractère invisible">
+                            Copier un caractère invisible
+                        </a>
+                        <a href="/help-fr.html#faq" class="px-8 py-4 bg-white/80 dark:bg-apple-gray-800/80 text-apple-gray-900 dark:text-white rounded-xl hover:bg-white dark:hover:bg-apple-gray-800 transition-all duration-200 font-medium inline-block border border-apple-gray-200 dark:border-apple-gray-700" title="Questions fréquentes">
+                            Questions fréquentes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Article Content -->
+        <section class="py-16 bg-white dark:bg-apple-gray-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <h2>La méthode la plus fiable</h2>
+                    <p>
+                        Commencez par copier un caractère invisible depuis l'outil. Si Discord le supprime ou refuse, essayez un autre caractère:
+                        les règles de validation peuvent évoluer.
+                    </p>
+
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 my-8">
+                        <h3 class="mt-0">Méthode rapide</h3>
+                        <ol class="mb-0">
+                            <li>Copiez un caractère depuis <a href="/index-fr.html#tools" title="TheInvisibleCharacter.live">TheInvisibleCharacter.live</a>.</li>
+                            <li>Ouvrez Discord et éditez votre <strong>Profil de serveur</strong> (pseudo).</li>
+                            <li>Collez le caractère invisible et enregistrez.</li>
+                        </ol>
+                    </div>
+
+                    <h2>Sur ordinateur (desktop)</h2>
+                    <ol>
+                        <li>Ouvrez le serveur où vous voulez un pseudo “vide”.</li>
+                        <li>Ouvrez <strong>Paramètres du serveur</strong> → <strong>Profils</strong> (ou “Modifier le pseudo”).</li>
+                        <li>Collez le caractère invisible dans le champ de pseudo.</li>
+                        <li>Enregistrez.</li>
+                    </ol>
+
+                    <h2>Sur mobile</h2>
+                    <ol>
+                        <li>Ouvrez le serveur.</li>
+                        <li>Menu du serveur → <strong>Paramètres</strong> → <strong>Changer le pseudo</strong> (ou <strong>Profils</strong>).</li>
+                        <li>Collez le caractère invisible et confirmez.</li>
+                    </ol>
+
+                    <h2>Dépannage</h2>
+                    <ul>
+                        <li><strong>“Pseudo invalide”</strong>: essayez un autre caractère invisible.</li>
+                        <li><strong>Petit carré visible</strong>: la police affiche le caractère. Essayez un autre.</li>
+                        <li><strong>Discord tronque</strong>: évitez de coller uniquement au début/fin, et testez une autre variante.</li>
+                        <li><strong>Pseudos uniques</strong>: certains serveurs imposent l'unicité; il faut parfois un mix ou une séquence différente.</li>
+                    </ul>
+
+                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 my-10">
+                        <h3 class="mt-0">Aussi utile sur TikTok</h3>
+                        <p class="mb-0">
+                            Voir: <a href="tiktok-profil-caracteres-invisibles.html" title="caractères invisibles TikTok">caractères invisibles TikTok</a>.
+                        </p>
+                    </div>
+
+                    <h2>Utilisation responsable</h2>
+                    <p>
+                        Un pseudo “vide” peut être amusant, mais peut aussi gêner la modération ou l'identification sur certains serveurs.
+                        Respectez les règles du serveur et évitez toute utilisation trompeuse.
+                    </p>
+                </div>
+
+                <!-- Related Guides -->
+                <div class="mt-16">
+                    <h2 class="text-2xl font-bold mb-8">Guides associés</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <a href="tiktok-profil-caracteres-invisibles.html" class="p-5 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700 hover:bg-apple-gray-50 dark:hover:bg-apple-gray-800 transition-colors" title="TikTok Espacement et formatage dans la bio.">
+                            <h3 class="font-semibold mb-2">TikTok</h3>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300 mb-0">Espacement et formatage dans la bio.</p>
+                        </a>
+                        <a href="instagram-caracteres-invisibles.html" class="p-5 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700 hover:bg-apple-gray-50 dark:hover:bg-apple-gray-800 transition-colors" title="Instagram Bio et mise en page avec caractères invisibles.">
+                            <h3 class="font-semibold mb-2">Instagram</h3>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300 mb-0">Bio et mise en page avec caractères invisibles.</p>
+                        </a>
+                        <a href="guide-technique-caracteres-invisibles.html" class="p-5 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700 hover:bg-apple-gray-50 dark:hover:bg-apple-gray-800 transition-colors" title="Guide technique Détails Unicode et bonnes pratiques.">
+                            <h3 class="font-semibold mb-2">Guide technique</h3>
+                            <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300 mb-0">Détails Unicode et bonnes pratiques.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-apple-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">TheInvisibleCharacter.live</h3>
+                        <p class="text-apple-gray-400">Plateforme professionnelle de caractères invisibles</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Produits</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/index-fr.html#tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Générateur">Générateur</a></li>
+                            <li><a href="/index-fr.html#tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Détection">Détection</a></li>
+                            <li><a href="/index-fr.html#tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Conversion">Conversion</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/blog/fr/" class="text-apple-gray-400 hover:text-white transition-colors" title="Blog">Blog</a></li>
+                            <li><a href="/help-fr.html" class="text-apple-gray-400 hover:text-white transition-colors" title="Centre d'Aide">Centre d'Aide</a></li>
+                            <li><a href="/about-fr.html" class="text-apple-gray-400 hover:text-white transition-colors" title="À Propos">À Propos</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Support</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/help-fr.html" class="text-apple-gray-400 hover:text-white transition-colors" title="Centre d'Aide">Centre d'Aide</a></li>
+                            <li><a href="/about-fr.html#contact" class="text-apple-gray-400 hover:text-white transition-colors" title="Contact">Contact</a></li>
+                            <li><a href="/privacy-policy.html" class="text-apple-gray-400 hover:text-white transition-colors" title="Confidentialité">Confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-apple-gray-800 mt-8 pt-8 text-center">
+                    <p class="text-apple-gray-400">© 2024 TheInvisibleCharacter.live. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/mobile-optimization.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (!header) return;
+            if (window.scrollY > 50) header.classList.add('shadow-lg');
+            else header.classList.remove('shadow-lg');
+        });
+
+        // Smooth scroll for internal anchors
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href.length < 2) return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+    <script defer="" src="../../assets/js/link-titles.js"></script>
+
+
+
+
+</body></html>
