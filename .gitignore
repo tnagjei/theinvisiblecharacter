@@ -8,3 +8,8 @@ doc/seo-review.md
 node_modules
 test-results/
 .agents/
+debug-core-functionality.html
+debug-runtime.html
+mobile-test.html
+test.html
+Cloudflare-Pages-文件结构实现.md
