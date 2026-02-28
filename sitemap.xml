@@ -7,7 +7,7 @@
     <!-- English Homepage -->
     <url>
         <loc>https://theinvisiblecharacter.live/</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- French Homepage -->
     <url>
         <loc>https://theinvisiblecharacter.live/index-fr.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,13 +23,13 @@
     <!-- About Pages -->
     <url>
         <loc>https://theinvisiblecharacter.live/about.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/about-fr.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -37,13 +37,13 @@
     <!-- Help Pages -->
     <url>
         <loc>https://theinvisiblecharacter.live/help.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/help-fr.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -51,21 +51,29 @@
     <!-- Tools Page -->
     <url>
         <loc>https://theinvisiblecharacter.live/tools.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Developer Page -->
+    <url>
+        <loc>https://theinvisiblecharacter.live/developer.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     
     <!-- Blog Indexes -->
     <url>
         <loc>https://theinvisiblecharacter.live/blog/</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -73,25 +81,43 @@
     <!-- Blog Posts - English -->
     <url>
         <loc>https://theinvisiblecharacter.live/blog/instagram-invisible-characters.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fortnite-invisible-name.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/tiktok-invisible-characters.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/discord-invisible-name.html</loc>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -99,25 +125,55 @@
     <!-- Blog Posts - French -->
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram.html</loc>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram.html</loc>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -125,13 +181,19 @@
     <!-- Legal Pages -->
     <url>
         <loc>https://theinvisiblecharacter.live/privacy-policy.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/terms-of-service.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://theinvisiblecharacter.live/cookie-policy.html</loc>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -139,7 +201,7 @@
     <!-- 404 Page -->
     <url>
         <loc>https://theinvisiblecharacter.live/404.html</loc>
-        <lastmod>2024-12-01</lastmod>
+        <lastmod>2025-02-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>
     </url>

@@ -238,6 +238,18 @@ cat > sitemap.xml << EOF
         <priority>0.3</priority>
     </url>
     <url>
+        <loc>https://$DOMAIN/cookie-policy</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/developer</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://$DOMAIN/blog/</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>weekly</changefreq>
@@ -263,6 +275,24 @@ cat > sitemap.xml << EOF
     </url>
     <url>
         <loc>https://$DOMAIN/blog/technical-guide-invisible-characters</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/creative-ways-invisible-characters</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/tiktok-invisible-characters</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/discord-invisible-name</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -312,6 +342,36 @@ cat > sitemap.xml << EOF
     </url>
     <url>
         <loc>https://$DOMAIN/blog/fr/guide-technique-caracteres-invisibles</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/fr/tiktok-profil-caracteres-invisibles</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/fr/discord-nom-invisible</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/fr/optimisation-stories-instagram</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/fr/guide-hashtags-instagram</loc>
+        <lastmod>$(date +%Y-%m-%d)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://$DOMAIN/blog/fr/strategies-croissance-instagram</loc>
         <lastmod>$(date +%Y-%m-%d)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

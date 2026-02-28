@@ -7,3 +7,4 @@ doc/seo-review.md
 .codex/
 node_modules
 test-results/
+.agents/

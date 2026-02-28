@@ -151,8 +151,12 @@
                                 <div>
                                     <div class="text-sm uppercase tracking-wide text-apple-gray-500">Example
                                         (JavaScript)</div>
-                                    <pre
-                                        class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const res = await fetch('/assets/data/invisible-characters.json');\nconst data = await res.json();\nconsole.log(data.characters[0]);</code></pre>
+                                    <pre class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Fetch and use the data
+(async function() {
+  const res = await fetch('/assets/data/invisible-characters.json');
+  const data = await res.json();
+  console.log(data.characters[0]);
+})();</code></pre>
                                 </div>
                             </div>
 
@@ -175,13 +179,22 @@
                                     class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700">
                                     <h3 class="text-lg font-semibold mb-3">Generate</h3>
                                     <pre
-                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Zero Width Space\nconst ZWS = '\\u200B';\n\n// Hangul Filler (often works for blank names)\nconst HF = '\\u3164';</code></pre>
+                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Zero Width Space
+const ZWS = '\u200B';
+
+// Hangul Filler (often works for blank names)
+const HF = '\u3164';</code></pre>
                                 </div>
                                 <div
                                     class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700">
                                     <h3 class="text-lg font-semibold mb-3">Detect</h3>
                                     <pre
-                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Basic invisible-character detector\nconst INVISIBLE = /[\\u200B-\\u200F\\u2060\\u2061\\u2062\\u2063\\u2800\\u3164\\u202A]/g;\n\nfunction hasInvisibleChars(s) {\n  return INVISIBLE.test(s);\n}</code></pre>
+                                        class="bg-apple-gray-50 dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>// Basic invisible-character detector
+const INVISIBLE = /[\u200B-\u200F\u2060\u2061\u2062\u2063\u2800\u3164\u202A]/;
+
+function hasInvisibleChars(s) {
+  return INVISIBLE.test(s);
+}</code></pre>
                                 </div>
                             </div>
 
