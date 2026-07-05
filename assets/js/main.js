@@ -645,7 +645,7 @@ class InvisibleCharacterApp {
                     
                     <div class="flex space-x-2">
                         <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-                                onclick="app.cleanDetectedText('${text.replace(/'/g, "\\'")}')">
+                                onclick="app.cleanDetectedText()">
                             Clean Invisible Characters
                         </button>
                         <button class="px-4 py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors"
@@ -848,7 +848,11 @@ class InvisibleCharacterApp {
         }
     }
 
-    cleanDetectedText(text) {
+    cleanDetectedText(text = null) {
+        if (text === null) {
+            text = document.querySelector('#detector-input')?.value || '';
+        }
+
         const result = this.components.detector?.cleanInvisibleCharacters(text);
         if (result) {
             const detectorInput = document.querySelector('#detector-input');
@@ -870,10 +874,6 @@ class InvisibleCharacterApp {
 
     navigateTo(view) {
         this.navigateToView(view);
-    }
-
-    showNotification(message, type = 'info') {
-        this.showNotification(message, type);
     }
 
     // Emit events

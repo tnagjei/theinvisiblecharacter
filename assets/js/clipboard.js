@@ -9,6 +9,8 @@ class ClipboardManager {
         this.copyHistory = [];
         this.maxHistory = 10;
         this.isSupported = this.checkClipboardSupport();
+        this.clipboardLoadAttempts = 0;
+        this.clipboardReady = false;
         this.init();
     }
 
@@ -43,7 +45,7 @@ class ClipboardManager {
         // Load ClipboardJS from CDN
         const script = document.createElement('script');
         script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js';
-        script.integrity = 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRpCRAPGMuqH85tuyEeeyI1rgQyPcBq4Cm2qZ0jE9Qe1s5L9g==';
+        script.integrity = 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==';
         script.crossOrigin = 'anonymous';
         script.referrerPolicy = 'no-referrer';
         
@@ -68,14 +70,16 @@ class ClipboardManager {
                 console.warn('ClipboardJS script not found, using fallback');
                 this.useFallback = true;
             } else {
-                // Wait a bit more for the script to load
+                // ponytail: short polling avoids false fallback on slow CDN loads; native copy remains the fallback.
                 setTimeout(() => {
                     if (typeof ClipboardJS !== 'undefined') {
                         this.initializeClipboardJS();
-                    } else {
+                    } else if (this.clipboardLoadAttempts++ >= 20) {
                         console.warn('ClipboardJS failed to load, using fallback');
                         this.useFallback = true;
                         this.initializeFallback();
+                    } else {
+                        this.initializeClipboard();
                     }
                 }, 100);
                 return;
@@ -91,6 +95,9 @@ class ClipboardManager {
     }
 
     initializeClipboardJS() {
+        if (this.clipboardReady) return;
+        this.clipboardReady = true;
+
         // Initialize ClipboardJS for all copy buttons
         this.initializeCopyButtons();
 
@@ -102,6 +109,9 @@ class ClipboardManager {
     }
 
     initializeFallback() {
+        if (this.clipboardReady) return;
+        this.clipboardReady = true;
+
         // Initialize fallback copy functionality
         this.setupFallbackCopyButtons();
 

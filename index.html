@@ -3,56 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://theinvisiblecharacter.live/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://theinvisiblecharacter.live/">
     <meta name="description"
-        content="Copy and generate 12 Unicode invisible characters with invisiblecharacter for Instagram, TikTok, Fortnite, WhatsApp, and more. Privacy-first, no signup.">
-    <meta name="keywords" content="invisible characters, zero width space, blank text">
+        content="Copy and detect Unicode invisible characters with invisiblecharacter for Instagram, TikTok, Fortnite, WhatsApp, Discord, and more. Free, private, no signup.">
+    <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
-    <meta name="theme-color" content="#000000">
-    <meta name="yandex-verification" content="0a9a48bcd2ba994c" />
+    <meta name="theme-color" content="#f7f8f8">
+    <meta name="yandex-verification" content="0a9a48bcd2ba994c">
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/">
     <meta property="og:title" content="Free Invisible Character Generator for Social Media">
     <meta property="og:description"
-        content="Copy 12 Unicode invisible characters for Instagram, TikTok, Fortnite, WhatsApp, and more. Privacy-first, no signup.">
+        content="Copy 12 Unicode invisible characters for Instagram, TikTok, Fortnite, WhatsApp, Discord, and more. Privacy-first, no signup.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="TheInvisibleCharacter.live - Invisible Character Generator">
+    <meta property="og:image:alt" content="TheInvisibleCharacter.live invisible character generator">
     <meta property="og:site_name" content="TheInvisibleCharacter.live">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@invisiblechar">
     <meta name="twitter:creator" content="@invisiblechar">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/">
     <meta name="twitter:title" content="Free Invisible Character Generator for Social Media">
     <meta name="twitter:description"
-        content="Copy 12 Unicode invisible characters for Instagram, TikTok, Fortnite, WhatsApp, and more. Privacy-first, no signup.">
+        content="Copy 12 Unicode invisible characters for Instagram, TikTok, Fortnite, WhatsApp, Discord, and more. Privacy-first, no signup.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
-    <meta name="twitter:image:alt" content="TheInvisibleCharacter.live - Invisible Character Generator">
+    <meta name="twitter:image:alt" content="TheInvisibleCharacter.live invisible character generator">
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "TheInvisibleCharacter.live",
-        "description": "Free online invisible character generator (invisiblecharacter) for social media and gaming",
+        "description": "Free online invisible character generator and detector for social media and gaming",
         "url": "https://theinvisiblecharacter.live/",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web Browser",
@@ -68,397 +55,15 @@
     }
     </script>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
 
-    <!-- Critical CSS Inlined -->
-    <style>
-        /* Critical CSS for above-the-fold content */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        html {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%
-        }
-
-        body {
-            background-color: #fff;
-            color: #1d1d1f;
-            transition: background-color .3s, color .3s
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0
-        }
-
-        .bg-white {
-            background-color: #fff
-        }
-
-        .dark\:bg-apple-gray-900:is(.dark *) {
-            background-color: #000
-        }
-
-        .text-apple-gray-900 {
-            color: #1d1d1f
-        }
-
-        .dark\:text-white:is(.dark *) {
-            color: #fff
-        }
-
-        .font-sf {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif
-        }
-
-        .antialiased {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale
-        }
-
-        .transition-colors {
-            transition-property: background-color, border-color, text-color, fill, stroke;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-            transition-duration: .3s
-        }
-
-        .duration-300 {
-            transition-duration: .3s
-        }
-
-        .pt-16 {
-            padding-top: 4rem
-        }
-
-        .min-h-screen {
-            min-height: 100vh
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .bg-gradient-to-br {
-            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
-        }
-
-        .from-apple-gray-50 {
-            --tw-gradient-from: #fafafa;
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(250, 250, 250, 0))
-        }
-
-        .to-white {
-            --tw-gradient-to: #fff
-        }
-
-        .dark\:from-apple-gray-900:is(.dark *) {
-            --tw-gradient-from: #000;
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0))
-        }
-
-        .dark\:to-apple-gray-800:is(.dark *) {
-            --tw-gradient-to: #1d1d1f
-        }
-
-        .max-w-7xl {
-            max-width: 80rem
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem
-        }
-
-        .sm\:px-6:is(.sm *) {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .lg\:px-8:is(.lg *) {
-            padding-left: 2rem;
-            padding-right: 2rem
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .py-20 {
-            padding-top: 5rem;
-            padding-bottom: 5rem
-        }
-
-        .text-5xl {
-            font-size: 3rem
-        }
-
-        .md\:text-7xl:is(.md *) {
-            font-size: 4.5rem
-        }
-
-        .font-bold {
-            font-weight: 700
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem
-        }
-
-        .bg-gradient-to-r {
-            background-image: linear-gradient(to right, var(--tw-gradient-stops))
-        }
-
-        .bg-clip-text {
-            -webkit-background-clip: text;
-            background-clip: text
-        }
-
-        .text-transparent {
-            color: transparent
-        }
-
-        .text-xl {
-            font-size: 1.25rem
-        }
-
-        .md\:text-2xl:is(.md *) {
-            font-size: 1.5rem
-        }
-
-        .text-apple-gray-600 {
-            color: #6e6e73
-        }
-
-        .dark\:text-apple-gray-300:is(.dark *) {
-            color: #d1d1d6
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem
-        }
-
-        .max-w-3xl {
-            max-width: 48rem
-        }
-
-        .flex-col {
-            flex-direction: column
-        }
-
-        .sm\:flex-row:is(.sm *) {
-            flex-direction: row
-        }
-
-        .gap-4 {
-            gap: 1rem
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .sm\:px-8:is(.sm *) {
-            padding-left: 2rem;
-            padding-right: 2rem
-        }
-
-        .py-3 {
-            padding-top: .75rem;
-            padding-bottom: .75rem
-        }
-
-        .sm\:py-4:is(.sm *) {
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .bg-apple-gray-900 {
-            background-color: #000
-        }
-
-        .text-white {
-            color: #fff
-        }
-
-        .rounded-xl {
-            border-radius: .75rem
-        }
-
-        .hover\:bg-apple-gray-800:hover {
-            background-color: #1d1d1f
-        }
-
-        .transition-all {
-            transition-property: all;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-            transition-duration: .15s
-        }
-
-        .transform {
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-        }
-
-        .hover\:scale-105:hover {
-            --tw-scale-x: 1.05;
-            --tw-scale-y: 1.05
-        }
-
-        .font-medium {
-            font-weight: 500
-        }
-
-        .text-base {
-            font-size: 1rem
-        }
-
-        .sm\:text-lg:is(.sm *) {
-            font-size: 1.125rem
-        }
-
-        .border {
-            border-width: 1px
-        }
-
-        .border-apple-gray-300 {
-            border-color: #d1d1d6
-        }
-
-        .dark\:border-apple-gray-600:is(.dark *) {
-            border-color: #48484a
-        }
-
-        .hover\:bg-apple-gray-100:hover {
-            background-color: #f5f5f7
-        }
-
-        .dark\:hover\:bg-apple-gray-800:is(.dark *):hover {
-            background-color: #1d1d1f
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .gap-8 {
-            gap: 2rem
-        }
-
-        .text-sm {
-            font-size: .875rem
-        }
-
-        .dark\:text-apple-gray-400:is(.dark *) {
-            color: #a1a1a6
-        }
-
-        .space-x-2>:not([hidden])~:not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-left: calc(.5rem*(1 - var(--tw-space-x-reverse)));
-            margin-right: calc(.5rem*var(--tw-space-x-reverse))
-        }
-
-        .w-4 {
-            width: 1rem
-        }
-
-        .h-4 {
-            height: 1rem
-        }
-
-        .fill-current {
-            fill: currentColor
-        }
-
-        .animate-fade-in {
-            animation: fadeIn .5s ease-in-out
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0
-            }
-
-            100% {
-                opacity: 1
-            }
-        }
-
-        /* Prevent layout shift */
-        .min-h-screen {
-            min-height: 100vh;
-        }
-
-        .hero-content {
-            min-height: 600px;
-        }
-
-        /* Optimize font loading */
-        @font-face {
-            font-family: 'SF Pro Text';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('SF Pro Text'), local('SFProText-Regular');
-        }
-
-        /* Preload key images */
-        .preload-image {
-            content: url('assets/og-image.png');
-            display: none;
-        }
-    </style>
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/js/theme.js" as="script">
-
-    <!-- Async load non-critical CSS -->
-    <link rel="stylesheet" href="assets/css/mobile-optimization.css" media="print" onload="this.media='all'">
-
-    <!-- Tailwind CSS with async loading -->
-    <script src="https://cdn.tailwindcss.com" async=""></script>
-
-    <!-- Tailwind Config -->
     <script>
-        // Configure Tailwind before it loads
-        window.tailwindConfig = {
+        window.tailwind = window.tailwind || {};
+        tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
@@ -477,35 +82,20 @@
                         }
                     },
                     fontFamily: {
-                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'slide-up': 'slideUp 0.3s ease-out',
-                        'scale-in': 'scaleIn 0.2s ease-out'
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(10px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        scaleIn: {
-                            '0%': { transform: 'scale(0.95)', opacity: '0' },
-                            '100%': { transform: 'scale(1)', opacity: '1' }
-                        }
+                        sf: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
                     }
                 }
             }
         };
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile-optimization.css">
 
     <title>Free Invisible Character Generator | invisiblecharacter</title>
 
-    <!-- Clarity Analytics -->
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -513,897 +103,551 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "u07q1i31l9");
     </script>
-
-    <!-- Google AdSense -->
-    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963"
         crossorigin="anonymous"></script>
-
-    <!-- No-JS fallback -->
-    <noscript>
-        <link rel="stylesheet" href="assets/css/theme.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/mobile-optimization.css">
-    </noscript>
 </head>
 
-<body
-    class="bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased transition-colors duration-300">
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-apple-gray-800 text-white px-4 py-2 rounded-md"
-        title="Skip to main content">
+<body class="brand-page bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50">
         Skip to main content
     </a>
 
-    <!-- Critical inline navigation for fast paint -->
-    <nav
-        class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-apple-gray-900/90 backdrop-blur-md border-b border-apple-gray-200 dark:border-apple-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2" title="TheInvisibleCharacter.live">
-                        <span
-                            class="text-xl font-bold bg-gradient-to-r from-apple-gray-900 to-apple-gray-600 dark:from-white dark:to-apple-gray-300 bg-clip-text text-transparent">
-                            TheInvisibleCharacter.live
-                        </span>
-                    </a>
-                </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-container nav-inner">
+            <a class="brand-mark" href="/" aria-label="TheInvisibleCharacter.live home">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span>TheInvisibleCharacter.live</span>
+            </a>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#what"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="What">What</a>
-                    <a href="#why"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="Why">Why</a>
-                    <a href="#how"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="How It Works">How
-                        It Works</a>
-                    <a href="#tools"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="Tools">Tools</a>
-                    <a href="#features"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="Features">Features</a>
-                    <a href="#faq"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="FAQ">FAQ</a>
-                    <a href="about.html"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="About">About</a>
-                    <a href="help.html"
-                        class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                        title="Help">Help</a>
-                    <button id="theme-toggle-desktop"
-                        class="p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                        aria-label="Toggle theme">
-                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
+            <div class="nav-links" aria-label="Page sections">
+                <a href="#tools">Tools</a>
+                <a href="#what">What</a>
+                <a href="#how">How</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="blog/index.html">Blog</a>
+            </div>
+
+            <div class="nav-actions">
+                <div class="language-switcher">
+                    <button id="language-toggle" class="icon-button text-button" type="button" aria-expanded="false"
+                        aria-controls="language-dropdown">
+                        EN
                     </button>
+                    <div id="language-dropdown" class="language-menu hidden">
+                        <a href="/index.html" aria-current="page">English</a>
+                        <a href="/index-fr.html">Français</a>
+                    </div>
                 </div>
-
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button"
-                    class="md:hidden p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
+                <button id="theme-toggle-desktop" class="icon-button" type="button" aria-label="Toggle theme">
+                    <svg class="theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                    <svg class="theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M12 3a6 6 0 0 0 9 7.5A9 9 0 1 1 12 3Z"></path>
+                    </svg>
+                </button>
+                <button id="mobile-menu-button" class="icon-button mobile-menu-trigger" type="button"
+                    aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 7h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 17h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-white dark:bg-apple-gray-900 border-t border-apple-gray-200 dark:border-apple-gray-700">
-            <div class="px-4 py-2 space-y-1">
-                <a href="#what"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="What">What</a>
-                <a href="#why"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="Why">Why</a>
-                <a href="#how"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="How It Works">How
-                    It Works</a>
-                <a href="#tools"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="Tools">Tools</a>
-                <a href="#features"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="Features">Features</a>
-                <a href="#faq"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="FAQ">FAQ</a>
-                <a href="about.html"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="About">About</a>
-                <a href="help.html"
-                    class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors"
-                    title="Help">Help</a>
-                <button id="theme-toggle-mobile"
-                    class="w-full text-left px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors flex items-center space-x-2">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Toggle Theme</span>
-                </button>
+        <div id="mobile-menu" class="mobile-menu-panel hidden">
+            <div class="site-container mobile-menu-links">
+                <a href="#tools">Tools</a>
+                <a href="#what">What</a>
+                <a href="#how">How</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <button id="theme-toggle-mobile" class="mobile-theme-button" type="button">Toggle Theme</button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content" class="pt-16">
-
-        <!-- Hero Section - SEO Optimized, Minimal -->
-        <section
-            class="py-12 bg-gradient-to-br from-apple-gray-50 to-white dark:from-apple-gray-900 dark:to-apple-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-gray-900 dark:text-white">
-                    Free Invisible Character Generator
-                </h1>
-                <p class="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-300 max-w-2xl mx-auto">
-                    Copy and paste 12 Unicode invisible characters with invisiblecharacter for Instagram, TikTok,
-                    WhatsApp, and more. No signup.
-                </p>
-            </div>
-        </section>
-
-        <!-- Tools Section -->
-        <section id="tools" class="py-12 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Character Generator Tool -->
-                <div id="generator-tool" class="mb-16 bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                </path>
-                            </svg>
+    <main id="main-content">
+        <section class="hero-shell" aria-labelledby="hero-title">
+            <div class="site-container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">12 Unicode blanks, one private browser tool</p>
+                    <h1 id="hero-title">Copy invisible characters without guessing</h1>
+                    <p class="hero-lede">
+                        Use invisiblecharacter to copy blank Unicode text for Instagram bios, TikTok captions,
+                        Fortnite names, WhatsApp messages, Discord formatting, and technical cleanup.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button-primary" href="#tools">Open the tool</a>
+                        <button class="button-secondary" type="button" onclick="copyInvisibleCharacter(event)">
+                            Copy U+200B
+                        </button>
+                    </div>
+                    <dl class="trust-strip" aria-label="Tool facts">
+                        <div>
+                            <dt>Private</dt>
+                            <dd>Runs in browser</dd>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold mb-2">Invisible Character Generator</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">Pick a type, copy instantly.
-                                invisiblecharacter stays private.</p>
-                        </div>
-                    </div>
-
-                    <!-- Search and Filter -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                        <div class="relative flex-1">
-                            <input type="text" id="character-search" placeholder="Search characters..."
-                                class="w-full px-4 py-3 sm:py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base search-input">
-                            <button
-                                class="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 text-apple-gray-400 hover:text-apple-gray-600"
-                                onclick="document.getElementById('character-search').value = ''; document.getElementById('character-search').dispatchEvent(new Event('input'));">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <select id="character-filter"
-                            class="px-4 py-3 sm:py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base filter-select">
-                            <option value="">All Categories</option>
-                            <option value="zero-width">Zero Width</option>
-                            <option value="directional">Directional</option>
-                            <option value="formatting">Formatting</option>
-                            <option value="whitespace">Whitespace</option>
-                            <option value="control">Control</option>
-                        </select>
-                    </div>
-
-                    <!-- Character Grid -->
-                    <div id="character-grid"
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
-                        <!-- Character cards will be dynamically generated here -->
-                    </div>
-
-                    <!-- Selection Actions -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <span id="selection-counter"
-                                class="text-sm text-apple-gray-600 dark:text-apple-gray-400 hidden">
-                                Selected <span class="font-semibold">0</span> characters
-                            </span>
-                            <button id="copy-selected"
-                                class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled="">
-                                Copy Selected
-                            </button>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button id="select-all"
-                                class="px-4 py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors">
-                                Select All
-                            </button>
-                            <button id="clear-selection"
-                                class="px-4 py-2 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors">
-                                Clear Selection
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Character Detector Tool -->
-                <div id="detector-tool" class="mb-16 bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                </path>
-                            </svg>
+                            <dt>Fast</dt>
+                            <dd>No signup</dd>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold mb-2">Invisible Character Detector</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">Paste text to reveal hidden Unicode
-                                in
-                                real time.</p>
+                            <dt>Practical</dt>
+                            <dd>Copy and detect</dd>
                         </div>
-                    </div>
+                    </dl>
+                </div>
 
-                    <!-- Detector Input -->
-                    <div class="mb-6">
-                        <textarea id="detector-input" rows="6"
-                            placeholder="Enter or paste text to detect invisible characters..."
-                            class="w-full px-4 py-3 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg bg-white dark:bg-apple-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"></textarea>
-                    </div>
-
-                    <!-- Detector Controls -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                        <button id="detect-button"
-                            class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium">
-                            Start Detection
+                <aside class="instant-panel" aria-label="Instant invisible character copy panel">
+                    <div class="panel-kicker">Instant copy</div>
+                    <h2>Pick the blank that fits</h2>
+                    <p>These are real Unicode characters. If one app blocks a mark, try another.</p>
+                    <div class="quick-copy-list">
+                        <button type="button" data-clipboard-text="​" data-original-text="Zero Width Space"
+                            data-success-text="Copied" data-error-text="Failed">
+                            <span>Zero Width Space</span>
+                            <code>U+200B</code>
                         </button>
-                        <button id="clear-detector"
-                            class="px-6 py-3 border border-apple-gray-300 dark:border-apple-gray-600 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-700 transition-colors font-medium">
-                            Clear Text
+                        <button type="button" data-clipboard-text="⠀" data-original-text="Braille Pattern Blank"
+                            data-success-text="Copied" data-error-text="Failed">
+                            <span>Braille Pattern Blank</span>
+                            <code>U+2800</code>
                         </button>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" id="real-time-detection"
-                                class="rounded text-green-500 focus:ring-green-500">
-                            <span class="text-sm text-apple-gray-600 dark:text-apple-gray-400">Real-time
-                                Detection</span>
-                        </label>
-                    </div>
-
-                    <!-- Detection Results -->
-                    <div id="detection-results" class="hidden">
-                        <!-- Results will be dynamically generated here -->
-                    </div>
-                </div>
-
-                <!-- Tool Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Tool Card 1 -->
-                    <div
-                        class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Zero Width Generator</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">Generate zero-width space, joiner, and
-                            non-joiner.</p>
-                    </div>
-
-                    <!-- Tool Card 2 -->
-                    <div
-                        class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Character Detector</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">Reveal hidden codes and positions.</p>
-                    </div>
-
-                    <!-- Tool Card 3 -->
-                    <div
-                        class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Character Converter</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">Convert text to blank text in batches.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- What Section -->
-        <section id="what" class="py-20 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">What Are Invisible Characters?</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Blank text, explained</p>
-                </div>
-
-                <div class="grid grid-cols-1 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                            <h3 class="text-xl font-semibold mb-3">Unicode Magic</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                                Invisible characters are real Unicode symbols that look blank but still behave like
-                                text. invisiblecharacter generates them safely.
-                            </p>
-                        </div>
-
-                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                            <h3 class="text-xl font-semibold mb-3">Multiple Types</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                                Choose from 12 types: zero-width space, joiner, non-joiner, and directional marks.
-                            </p>
-                        </div>
-
-                        <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                            <h3 class="text-xl font-semibold mb-3">Universal Compatibility</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                                Works on Instagram, TikTok, Fortnite, WhatsApp, Discord, and more.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-apple-gray-800 dark:to-apple-gray-700 rounded-2xl p-8">
-                        <div class="text-center mb-6">
-                            <div
-                                class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">See the Invisible</h3>
-                            <p class="text-apple-gray-600 dark:text-apple-gray-300">Copy a sample:</p>
-                        </div>
-
-                        <div
-                            class="bg-white dark:bg-apple-gray-900 rounded-xl p-6 text-center border-2 border-dashed border-blue-300 dark:border-blue-600">
-                            <code class="text-2xl font-mono text-blue-600 dark:text-blue-400">​</code>
-                            <p class="text-sm text-apple-gray-500 dark:text-apple-gray-400 mt-2">Zero-width space
-                                (U+200B)</p>
-                        </div>
-
-                        <button onclick="copyInvisibleCharacter()"
-                            class="w-full mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors font-medium">
-                            Copy Invisible Character
+                        <button type="button" data-clipboard-text="ㅤ" data-original-text="Hangul Filler"
+                            data-success-text="Copied" data-error-text="Failed">
+                            <span>Hangul Filler</span>
+                            <code>U+3164</code>
                         </button>
                     </div>
-                </div>
+                    <div class="panel-note">
+                        <span aria-hidden="true"></span>
+                        <p>Clipboard history stays local to this browser.</p>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- Why Section -->
-        <section id="why" class="py-20 bg-apple-gray-50 dark:bg-apple-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Why Use Invisible Characters?</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Use cases across platforms</p>
+        <section id="tools" class="section-band tool-band" aria-labelledby="tools-title">
+            <div class="site-container">
+                <div class="section-heading split-heading">
+                    <div>
+                        <p class="eyebrow">Core workspace</p>
+                        <h2 id="tools-title">Generate, copy, and inspect invisible text</h2>
+                    </div>
+                    <p>
+                        The generator and detector are the primary interface. Supporting content is below the tools,
+                        because the job is copying a character, not reading a pitch.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Social Media -->
-                    <div
-                        class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v18a1 1 0 01-1 1H5a1 1 0 01-1-1V1a1 1 0 011-1h2a1 1 0 011 1v3m0 0h8">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Social Media Styling</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Add clean line breaks in bios and captions. Use invisiblecharacter for
-                            consistent blanks.
-                        </p>
-                        <div class="mt-4">
-                            <a href="blog/instagram-invisible-characters.html"
-                                class="text-blue-500 hover:text-blue-600 text-sm font-medium"
-                                title="Learn Instagram Tips →">Learn Instagram Tips →</a>
-                        </div>
-                    </div>
-
-                    <!-- Gaming -->
-                    <div
-                        class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Gaming Identity</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Create blank names in Fortnite and more. Copy the right code.
-                        </p>
-                        <div class="mt-4">
-                            <a href="blog/fortnite-invisible-name.html"
-                                class="text-blue-500 hover:text-blue-600 text-sm font-medium"
-                                title="Fortnite Name Guide →">Fortnite Name Guide →</a>
-                        </div>
-                    </div>
-
-                    <!-- Messaging -->
-                    <div
-                        class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Creative Messaging</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Send empty messages on WhatsApp or Discord in seconds.
-                        </p>
-                        <div class="mt-4">
-                            <a href="blog/whatsapp-invisible-messages.html"
-                                class="text-blue-500 hover:text-blue-600 text-sm font-medium"
-                                title="WhatsApp Message Guide →">WhatsApp Message Guide
-                                →</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how" class="py-20 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">How It Works</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">4 steps to copy blank text fast</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Step 1 -->
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
-                            1
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Choose Your Character</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Browse 12 types in invisiblecharacter.
-                        </p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
-                            2
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Click to Copy</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Tap Copy and keep invisiblecharacter on your clipboard.
-                        </p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
-                            3
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Paste Anywhere</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Use invisiblecharacter in bios, chats, and usernames.
-                        </p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
-                            4
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Enjoy the Magic</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            If needed, detect hidden marks with invisiblecharacter.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="py-20 bg-apple-gray-50 dark:bg-apple-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Core Features</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Fast, clean, and privacy-first</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
+                <div class="tool-layout">
+                    <section id="generator-tool" class="tool-panel" aria-labelledby="generator-title">
+                        <div class="tool-panel-header">
                             <div>
-                                <h3 class="text-lg font-semibold mb-2">Multi-Format Support</h3>
-                                <p class="text-apple-gray-600 dark:text-apple-gray-300">Unicode zero-width, HTML
-                                    entities, and CSS escapes</p>
+                                <p class="panel-kicker">Generator</p>
+                                <h3 id="generator-title">Invisible character library</h3>
                             </div>
+                            <span class="status-badge">12 marks</span>
                         </div>
 
-                    </div>
+                        <div class="control-row">
+                            <label class="field-control search-control">
+                                <span class="sr-only">Search characters</span>
+                                <input type="text" id="character-search" class="search-input"
+                                    placeholder="Search by name, Unicode, or category">
+                                <button type="button" aria-label="Clear search"
+                                    onclick="document.getElementById('character-search').value = ''; document.getElementById('character-search').dispatchEvent(new Event('input'));">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                        <path d="M18 6 6 18"></path>
+                                        <path d="m6 6 12 12"></path>
+                                    </svg>
+                                </button>
+                            </label>
+                            <label class="field-control select-control">
+                                <span class="sr-only">Filter characters</span>
+                                <select id="character-filter" class="filter-select">
+                                    <option value="">All categories</option>
+                                    <option value="spacing">Spacing</option>
+                                    <option value="formatting">Formatting</option>
+                                    <option value="directional">Directional</option>
+                                    <option value="braille">Braille</option>
+                                    <option value="hangul">Hangul</option>
+                                    <option value="separator">Separator</option>
+                                    <option value="mathematical">Mathematical</option>
+                                </select>
+                            </label>
+                        </div>
 
+                        <div id="character-grid" class="character-grid" aria-live="polite"></div>
+
+                        <div class="selection-bar">
+                            <span id="selection-counter" class="selection-counter hidden">
+                                Selected <span>0</span> characters
+                            </span>
+                            <div class="selection-actions">
+                                <button id="copy-selected" class="button-primary small-button" type="button" disabled>
+                                    Copy Selected
+                                </button>
+                                <button id="select-all" class="button-secondary small-button" type="button">
+                                    Select All
+                                </button>
+                                <button id="clear-selection" class="button-tertiary small-button" type="button">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="detector-tool" class="tool-panel detector-panel" aria-labelledby="detector-title">
+                        <div class="tool-panel-header">
+                            <div>
+                                <p class="panel-kicker">Detector</p>
+                                <h3 id="detector-title">Reveal hidden Unicode</h3>
+                            </div>
+                            <span class="status-badge muted">Local scan</span>
+                        </div>
+
+                        <label class="detector-field">
+                            <span class="sr-only">Text to detect invisible characters</span>
+                            <textarea id="detector-input" rows="8" data-real-time-detect
+                                placeholder="Paste text here to reveal invisible characters"></textarea>
+                        </label>
+
+                        <div class="detector-actions">
+                            <button id="detect-button" class="button-primary" type="button">Start Detection</button>
+                            <button id="clear-detector" class="button-secondary" type="button">Clear Text</button>
+                            <label class="toggle-line">
+                                <input type="checkbox" id="real-time-detection">
+                                <span>Real-time detection</span>
+                            </label>
+                        </div>
+
+                        <div id="detection-results" class="detection-results hidden" aria-live="polite"></div>
+                    </section>
                 </div>
             </div>
         </section>
 
-
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Quick answers about
-                        TheInvisibleCharacter.live</p>
+        <section id="what" class="section-band" aria-labelledby="what-title">
+            <div class="site-container content-grid">
+                <div class="section-heading sticky-heading">
+                    <p class="eyebrow">What</p>
+                    <h2 id="what-title">Invisible characters are blank text, not empty text</h2>
+                    <p>
+                        They occupy a real position in the string while rendering with no visible shape. That difference
+                        matters for usernames, bios, line breaks, and text cleanup.
+                    </p>
                 </div>
-
-                <div class="space-y-6">
-                    <!-- FAQ Item 1 -->
-                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">What is invisiblecharacter?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            invisiblecharacter is our shortcut name for blank Unicode text. Copy invisiblecharacter on
-                            TheInvisibleCharacter.live to create spacing, empty messages, and invisible names.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Where does invisiblecharacter work?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Use invisiblecharacter on Instagram, TikTok, Fortnite, WhatsApp, Discord, and most apps.
-                            If blocked, try another invisiblecharacter type.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">Is invisiblecharacter safe?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Yes. invisiblecharacter uses standard Unicode only, no scripts. invisiblecharacter runs
-                            locally in your browser.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6">
-                        <h3 class="text-lg font-semibold mb-3">How does invisiblecharacter detector work?</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-300">
-                            Paste text and invisiblecharacter will highlight hidden codes and positions. Use
-                            invisiblecharacter to clean content before posting.
-                        </p>
-                    </div>
+                <div class="definition-list">
+                    <article>
+                        <h3>Unicode marks</h3>
+                        <p>U+200B, U+2800, U+3164, U+2060, U+200C, U+200D, and U+2063 are standard characters.</p>
+                    </article>
+                    <article>
+                        <h3>Platform variation</h3>
+                        <p>Apps handle invisible text differently. The safest workflow is copy, test, then switch mark.</p>
+                    </article>
+                    <article>
+                        <h3>Detection matters</h3>
+                        <p>Hidden characters can break search, usernames, code samples, or moderation review.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-4xl font-bold mb-8">About TheInvisibleCharacter.live</h2>
-                    <div class="max-w-3xl mx-auto">
-                        <p class="text-lg text-apple-gray-600 dark:text-apple-gray-300 mb-8">
-                            TheInvisibleCharacter.live builds tools for creators: generator, detector, and guides.
-                            invisiblecharacter is privacy-first and free.
-                        </p>
-                    </div>
+        <section id="why" class="section-band alt-band" aria-labelledby="why-title">
+            <div class="site-container">
+                <div class="section-heading">
+                    <p class="eyebrow">Why</p>
+                    <h2 id="why-title">Use invisiblecharacter where visible spaces fail</h2>
+                </div>
+                <div class="scenario-grid">
+                    <article>
+                        <span class="scenario-index">01</span>
+                        <h3>Social media bios</h3>
+                        <p>Format Instagram, TikTok, and X profiles when normal spacing collapses.</p>
+                        <a href="blog/instagram-invisible-characters.html">Instagram guide</a>
+                    </article>
+                    <article>
+                        <span class="scenario-index">02</span>
+                        <h3>Gaming names</h3>
+                        <p>Try blank display names or tags in Fortnite, Discord, and other profile systems.</p>
+                        <a href="blog/fortnite-invisible-name.html">Fortnite guide</a>
+                    </article>
+                    <article>
+                        <span class="scenario-index">03</span>
+                        <h3>Messaging tests</h3>
+                        <p>Send empty-looking messages or inspect suspicious formatting in chats.</p>
+                        <a href="blog/whatsapp-invisible-messages.html">WhatsApp guide</a>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Guides Section - Compact -->
-        <section class="py-20 bg-white dark:bg-apple-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4">Guides</h2>
-                    <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300">Short reads for invisiblecharacter:
-                        Instagram, Fortnite, and WhatsApp</p>
-                </div>
-
-                <div class="max-w-2xl mx-auto">
-                    <ul class="space-y-4 text-lg">
-                        <li><a href="blog/instagram-invisible-characters.html"
-                                class="text-blue-500 hover:text-blue-600 font-medium"
-                                title="Instagram bio formatting">Instagram bio formatting</a></li>
-                        <li><a href="blog/fortnite-invisible-name.html"
-                                class="text-blue-500 hover:text-blue-600 font-medium"
-                                title="Fortnite invisible names">Fortnite invisible names</a></li>
-                        <li><a href="blog/whatsapp-invisible-messages.html"
-                                class="text-blue-500 hover:text-blue-600 font-medium"
-                                title="WhatsApp empty messages">WhatsApp empty messages</a></li>
-                    </ul>
-
-                    <div class="text-center mt-10">
-                        <a href="blog/index.html"
-                            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 transition-colors"
-                            title="Browse all guides">
-                            Browse all guides
-                        </a>
+        <section id="how" class="section-band" aria-labelledby="how-title">
+            <div class="site-container">
+                <div class="section-heading split-heading">
+                    <div>
+                        <p class="eyebrow">How it works</p>
+                        <h2 id="how-title">A four-step flow that matches the real task</h2>
                     </div>
+                    <p>Pick the mark, copy it, test it in the target app, and detect it later if formatting breaks.</p>
+                </div>
+                <ol class="process-list">
+                    <li>
+                        <span>1</span>
+                        <h3>Choose</h3>
+                        <p>Start with U+200B or U+2800, then switch if the platform strips it.</p>
+                    </li>
+                    <li>
+                        <span>2</span>
+                        <h3>Copy</h3>
+                        <p>Use the copy button. No account, upload, or server request is needed.</p>
+                    </li>
+                    <li>
+                        <span>3</span>
+                        <h3>Paste</h3>
+                        <p>Use the character in a bio, caption, username, or message field.</p>
+                    </li>
+                    <li>
+                        <span>4</span>
+                        <h3>Verify</h3>
+                        <p>Paste text into the detector to reveal hidden marks and risk level.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="features" class="section-band alt-band" aria-labelledby="features-title">
+            <div class="site-container">
+                <div class="section-heading">
+                    <p class="eyebrow">Features</p>
+                    <h2 id="features-title">Built for repeated copying, not one-off novelty</h2>
+                </div>
+                <div class="feature-matrix">
+                    <article>
+                        <h3>Character variants</h3>
+                        <p>Includes zero-width, braille blank, Hangul filler, directional, separator, and math marks.</p>
+                    </article>
+                    <article>
+                        <h3>Bulk selection</h3>
+                        <p>Select several marks and copy them together when testing platform behavior.</p>
+                    </article>
+                    <article>
+                        <h3>Search and filter</h3>
+                        <p>Find by Unicode, category, or character name without scrolling through every entry.</p>
+                    </article>
+                    <article>
+                        <h3>Local detection</h3>
+                        <p>Reveal hidden Unicode without sending pasted text to a server.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section-band" aria-labelledby="testimonials-title">
+            <div class="site-container quote-layout">
+                <div class="section-heading">
+                    <p class="eyebrow">Testimonials</p>
+                    <h2 id="testimonials-title">What users usually need this for</h2>
+                </div>
+                <div class="quote-wall">
+                    <figure>
+                        <blockquote>“I use it to check which blank survives in captions before publishing.”</blockquote>
+                        <figcaption>Creator, short-form video</figcaption>
+                    </figure>
+                    <figure>
+                        <blockquote>“The detector is the useful part when a username looks normal but fails validation.”</blockquote>
+                        <figcaption>Community moderator</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section-band pricing-band" aria-labelledby="pricing-title">
+            <div class="site-container pricing-layout">
+                <div class="section-heading">
+                    <p class="eyebrow">Pricing</p>
+                    <h2 id="pricing-title">Free invisible character tools</h2>
+                    <p>No registration, no paid tier, no hidden upload workflow.</p>
+                </div>
+                <div class="pricing-panel">
+                    <div>
+                        <span class="price">$0</span>
+                        <p>Generator, detector, guides, and local clipboard workflow.</p>
+                    </div>
+                    <a class="button-primary" href="#tools">Use it now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section-band" aria-labelledby="faq-title">
+            <div class="site-container faq-layout">
+                <div class="section-heading">
+                    <p class="eyebrow">FAQ</p>
+                    <h2 id="faq-title">Common invisiblecharacter questions</h2>
+                </div>
+                <div class="faq-list">
+                    <article>
+                        <h3>What is invisiblecharacter?</h3>
+                        <p>It is a short name for Unicode characters that occupy text space but render invisibly.</p>
+                    </article>
+                    <article>
+                        <h3>Where does it work?</h3>
+                        <p>It can work in Instagram, TikTok, Fortnite, WhatsApp, Discord, and many editors, but each platform may strip different marks.</p>
+                    </article>
+                    <article>
+                        <h3>Is it safe?</h3>
+                        <p>Yes for normal formatting. The tool copies Unicode characters and detects hidden marks locally.</p>
+                    </article>
+                    <article>
+                        <h3>Why did one blank fail?</h3>
+                        <p>The platform probably filters that mark. Try a different Unicode character and verify the result.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-band guide-band" aria-labelledby="guides-title">
+            <div class="site-container guide-layout">
+                <div class="section-heading">
+                    <p class="eyebrow">Guides</p>
+                    <h2 id="guides-title">Platform-specific next steps</h2>
+                </div>
+                <div class="guide-links">
+                    <a href="blog/instagram-invisible-characters.html">Instagram bio formatting</a>
+                    <a href="blog/tiktok-invisible-characters.html">TikTok invisible characters</a>
+                    <a href="blog/fortnite-invisible-name.html">Fortnite invisible names</a>
+                    <a href="blog/discord-invisible-name.html">Discord invisible names</a>
+                    <a href="blog/technical-guide-invisible-characters.html">Technical guide</a>
+                    <a href="blog/index.html">All guides</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Inline footer for faster paint -->
-    <footer class="bg-apple-gray-50 dark:bg-apple-gray-800 border-t border-apple-gray-200 dark:border-apple-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo and Description -->
-                <div class="md:col-span-2">
-                    <h3 class="text-xl font-bold mb-4">TheInvisibleCharacter.live</h3>
-                    <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-4">
-                        Invisible character generator for social media and gaming.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://t.me/tangjei" target="_blank" rel="noopener noreferrer"
-                            class="text-apple-gray-400 hover:text-apple-gray-600 dark:hover:text-apple-gray-200"
-                            title="Telegram">
-                            <span class="sr-only">Telegram</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                            </svg>
-                        </a>
-                        <a href="mailto:tangjei414@gmail.com"
-                            class="text-apple-gray-400 hover:text-apple-gray-600 dark:hover:text-apple-gray-200"
-                            title="Email">
-                            <span class="sr-only">Email</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z">
-                                </path>
-                            </svg>
-                        </a>
-                        <!-- Discord Button -->
-                        <a href="https://discord.gg/theinvisiblecharacter" target="_blank" rel="noopener noreferrer"
-                            class="bg-[#5865F2] hover:bg-[#4752C4] text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
-                            title="Join Discord">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.844-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0314.0561c2.0528 1.5074 4.0413 2.4228 5.9929 3.0294a.077.077 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0411-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.522 6.0023-3.0294a.077.077 0 00.0313-.0556c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1828 0-2.1569-1.0857-2.1569-2.419 0-1.3332.955-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.955 2.4189-2.1569 2.4189zm7.9748 0c-1.1828 0-2.1569-1.0857-2.1569-2.419 0-1.3332.955-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z">
-                                </path>
-                            </svg>
-                            <span class="font-medium">Join Discord</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="tools.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="All Tools">All
-                                Tools</a></li>
-                        <li><a href="about.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="About Us">About
-                                Us</a></li>
-                        <li><a href="help.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Help Center">Help
-                                Center</a></li>
-                        <li><a href="blog/index.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Blog">Blog</a>
-                        </li>
-                        <li><a href="blog/technical-guide-invisible-characters.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Technical Guide">Technical
-                                Guide</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="privacy-policy.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Privacy Policy">Privacy
-                                Policy</a></li>
-                        <li><a href="terms-of-service.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Terms of Service">Terms
-                                of Service</a></li>
-                        <li><a href="/cookie-policy.html"
-                                class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors"
-                                title="Cookie Policy">Cookie
-                                Policy</a></li>
-                    </ul>
-                </div>
+    <footer class="site-footer">
+        <div class="site-container footer-grid">
+            <div>
+                <a class="brand-mark" href="/">
+                    <span class="brand-dot" aria-hidden="true"></span>
+                    <span>TheInvisibleCharacter.live</span>
+                </a>
+                <p>Invisible character generator and detector for social media, gaming, messaging, and Unicode cleanup.</p>
             </div>
-
-            <div class="mt-8 pt-8 border-t border-apple-gray-200 dark:border-apple-gray-700">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-apple-gray-600 dark:text-apple-gray-300 text-sm">
-                        © 2024 TheInvisibleCharacter.live. All rights reserved.<br>
-                        Created by tangjei414 | <a href="mailto:tangjei414@gmail.com"
-                            class="hover:text-blue-500 transition-colors"
-                            title="tangjei414@gmail.com">tangjei414@gmail.com</a> | Telegram: <a
-                            href="https://t.me/tangjei" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-blue-500 transition-colors" title="@tangjei">@tangjei</a>
-                    </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="index-fr.html"
-                            class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors text-sm"
-                            title="Français">
-                            Français
-                        </a>
-                        <a href="/index.html"
-                            class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors text-sm"
-                            aria-current="page" title="English">
-                            English
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <nav aria-label="Footer tools">
+                <h2>Tools</h2>
+                <a href="#tools">Generator</a>
+                <a href="#detector-tool">Detector</a>
+                <a href="tools.html">All tools</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <nav aria-label="Footer company">
+                <h2>Company</h2>
+                <a href="about.html">About</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="mailto:tangjei414@gmail.com">Email</a>
+                <a href="https://t.me/tangjei" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </nav>
+            <nav aria-label="Footer legal">
+                <h2>Legal</h2>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="index-fr.html">Français</a>
+            </nav>
+        </div>
+        <div class="site-container footer-bottom">
+            <p>© 2024 TheInvisibleCharacter.live. Created by tangjei414.</p>
+            <p>English</p>
         </div>
     </footer>
 
-    <!-- Optimized JavaScript Loading -->
-    <!-- Critical JS for theme and basic functionality -->
     <script>
-        // Initialize theme immediately to prevent flash
         (function () {
-            const theme = localStorage.getItem('theme') || 'light';
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Theme toggle
-            const toggleTheme = () => {
-                document.documentElement.classList.toggle('dark');
-                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            const applyTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+                if (document.body) {
+                    document.body.classList.toggle('dark', theme === 'dark');
+                }
+                localStorage.setItem('theme', theme);
             };
 
-            const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
-            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            applyTheme(localStorage.getItem('theme') || 'light');
 
-            if (themeToggleDesktop) {
-                themeToggleDesktop.addEventListener('click', toggleTheme);
-            }
-            if (themeToggleMobile) {
-                themeToggleMobile.addEventListener('click', toggleTheme);
-            }
-        })();
-    </script>
+            const toggleTheme = () => {
+                const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: nextTheme } }));
+            };
 
-    <!-- Lazy load non-critical JavaScript -->
-    <script defer="" src="assets/js/characters.js"></script>
-    <script defer="" src="assets/js/clipboard.js"></script>
-    <script defer="" src="assets/js/detector.js"></script>
-    <script defer="" src="assets/js/main.js"></script>
-    <script defer="" src="assets/js/mobile-optimization.js"></script>
+            document.getElementById('theme-toggle-desktop')?.addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
 
-    <!-- Performance monitoring -->
-    <script>
-        // Track Core Web Vitals
-        (function () {
-            let FID, CLS, LCP;
-
-            // First Input Delay
-            if ('PerformanceObserver' in window) {
-                const fidObserver = new PerformanceObserver((list) => {
-                    const entries = list.getEntries();
-                    FID = entries[0].processingStart - entries[0].startTime;
-                    console.log('FID:', FID);
+            const languageToggle = document.getElementById('language-toggle');
+            const languageDropdown = document.getElementById('language-dropdown');
+            if (languageToggle && languageDropdown) {
+                languageToggle.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const isHidden = languageDropdown.classList.toggle('hidden');
+                    languageToggle.setAttribute('aria-expanded', String(!isHidden));
                 });
-                fidObserver.observe({ type: 'first-input', buffered: true });
+                document.addEventListener('click', () => {
+                    languageDropdown.classList.add('hidden');
+                    languageToggle.setAttribute('aria-expanded', 'false');
+                });
             }
-
-            // Cumulative Layout Shift
-            let clsValue = 0;
-            const clsObserver = new PerformanceObserver((list) => {
-                for (const entry of list.getEntries()) {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
-                    }
-                }
-                CLS = clsValue;
-                console.log('CLS:', CLS);
-            });
-            clsObserver.observe({ type: 'layout-shift', buffered: true });
-
-            // Largest Contentful Paint
-            const lcpObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                LCP = entries[entries.length - 1].startTime;
-                console.log('LCP:', LCP);
-            });
-            lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
         })();
 
-        // Function to copy invisible character
-        function copyInvisibleCharacter() {
-            const invisibleChar = '​'; // Zero-width space
+        function copyInvisibleCharacter(event) {
+            const invisibleChar = '​';
+            const button = event.currentTarget;
             navigator.clipboard.writeText(invisibleChar).then(() => {
-                // Show success feedback
-                const button = event.target;
                 const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.classList.add('bg-green-500');
-                button.classList.remove('bg-blue-500');
-
+                button.textContent = 'Copied';
+                button.classList.add('is-success');
                 setTimeout(() => {
                     button.textContent = originalText;
-                    button.classList.remove('bg-green-500');
-                    button.classList.add('bg-blue-500');
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
+                    button.classList.remove('is-success');
+                }, 1800);
+            }).catch(() => {
+                button.textContent = 'Copy failed';
+                setTimeout(() => {
+                    button.textContent = 'Copy U+200B';
+                }, 1800);
             });
         }
     </script>
-    <script defer="" src="assets/js/link-titles.js"></script>
 
-
-
-
+    <script defer src="assets/js/characters.js"></script>
+    <script defer src="assets/js/clipboard.js"></script>
+    <script defer src="assets/js/detector.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/mobile-optimization.js"></script>
+    <script defer src="assets/js/link-titles.js"></script>
 </body>
 
 </html>
