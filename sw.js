@@ -3,16 +3,25 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'tic-v1.0.0';
+const CACHE_NAME = 'tic-v1.1.0';
 const urlsToCache = [
     '/',
+    '/index-fr',
     '/tools',
+    '/tiktok-invisible-username-generator',
+    '/invisible-name-generator',
+    '/blank-text-generator',
+    '/fr/caractere-invisible-tiktok',
     '/assets/css/theme.css',
     '/assets/css/tailwind.css',
     '/assets/css/style.css',
-    '/assets/js/theme.js',
-    '/assets/js/components.js',
-    '/assets/js/performance.js'
+    '/assets/css/mobile-optimization.css',
+    '/assets/js/characters.js',
+    '/assets/js/clipboard.js',
+    '/assets/js/detector.js',
+    '/assets/js/main.js',
+    '/assets/js/mobile-optimization.js',
+    '/assets/js/link-titles.js'
 ];
 
 // Install event - cache resources
