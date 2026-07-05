@@ -49,17 +49,6 @@ Disallow: /backup_*/
 # Block unnecessary parameters and tracking
 Disallow: /*?*
 Disallow: /*&_nc_*
-Disallow: /*.json$
-Disallow: /*.xml$
-
-# Allow important pages explicitly
-Allow: /$
-Allow: /index.html
-Allow: /tools.html
-Allow: /about.html
-Allow: /help.html
-Allow: /blog/
-Allow: /assets/
 
 # Social media and search engine crawlers
 User-agent: Googlebot

@@ -6,8 +6,7 @@
 const CACHE_NAME = 'tic-v1.0.0';
 const urlsToCache = [
     '/',
-    '/index.html',
-    '/tools.html',
+    '/tools',
     '/404.html',
     '/assets/css/theme.css',
     '/assets/css/style.css',
