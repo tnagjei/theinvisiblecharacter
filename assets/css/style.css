@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    color-scheme: light;
 }
 
 body {
@@ -60,7 +61,7 @@ p {
     border-radius: 0.5rem;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
     border: none;
     cursor: pointer;
     position: relative;
@@ -112,7 +113,7 @@ p {
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
@@ -127,12 +128,13 @@ p {
     border: 2px solid #e5e7eb;
     border-radius: 0.5rem;
     font-size: 1rem;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     background: white;
 }
 
 .input:focus {
-    outline: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
@@ -203,7 +205,7 @@ p {
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     border: 1px solid #e5e7eb;
 }
 
@@ -491,7 +493,7 @@ p {
 
 /* Character card styles */
 .character-card {
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     position: relative;
 }
 
@@ -521,7 +523,7 @@ p {
 }
 
 .copy-character-btn {
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .copy-character-btn:hover {
@@ -731,7 +733,7 @@ p {
 
 /* Search and filter styles */
 .search-input {
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .search-input:focus {
@@ -739,7 +741,7 @@ p {
 }
 
 .filter-select {
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .filter-select:focus {
@@ -838,6 +840,25 @@ p {
         radial-gradient(circle at 84% 16%, rgba(15, 118, 110, 0.08), transparent 26rem),
         var(--tic-soft);
     color: var(--tic-ink);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(225, 29, 72, 0.18);
+}
+
+.dark {
+    color-scheme: dark;
+}
+
+.brand-page a,
+.brand-page button,
+.brand-page select,
+.brand-page textarea,
+.brand-page input {
+    touch-action: manipulation;
+}
+
+.brand-page section[id],
+.brand-page [id$="-title"] {
+    scroll-margin-top: 88px;
 }
 
 .brand-page.dark,

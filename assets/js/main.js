@@ -290,7 +290,7 @@ class InvisibleCharacterApp {
 
     createCharacterCard(character) {
         const card = document.createElement('div');
-        card.className = 'character-card bg-white dark:bg-apple-gray-800 rounded-lg p-4 border border-apple-gray-200 dark:border-apple-gray-700 hover:shadow-lg transition-all duration-200 cursor-pointer';
+        card.className = 'character-card bg-white dark:bg-apple-gray-800 rounded-lg p-4 border border-apple-gray-200 dark:border-apple-gray-700 hover:shadow-lg transition-colors duration-200 cursor-pointer';
         card.dataset.characterId = character.id;
         card.dataset.unicode = character.unicode;
         card.dataset.category = character.category;
@@ -301,7 +301,7 @@ class InvisibleCharacterApp {
         card.innerHTML = `
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2">
-                    ${categoryIcon ? `<img src="${categoryIcon}" alt="${character.category} icon" class="w-5 h-5 opacity-70">` : ''}
+                    ${categoryIcon ? `<img src="${categoryIcon}" alt="${character.category} icon" width="20" height="20" loading="lazy" class="w-5 h-5 opacity-70">` : ''}
                     <span class="character-preview text-2xl font-mono bg-apple-gray-100 dark:bg-apple-gray-700 px-2 py-1 rounded">${character.character}</span>
                     <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400">${character.unicode}</span>
                 </div>
@@ -703,7 +703,7 @@ class InvisibleCharacterApp {
 
     showNotification(message, type = 'info') {
         const notification = document.createElement('div');
-        notification.className = `fixed top-4 right-4 z-50 px-4 py-2 rounded-lg shadow-lg transform transition-all duration-300 ${
+        notification.className = `fixed top-4 right-4 z-50 px-4 py-2 rounded-lg shadow-lg transform transition-transform duration-300 ${
             type === 'success' ? 'bg-green-500 text-white' :
             type === 'error' ? 'bg-red-500 text-white' :
             type === 'warning' ? 'bg-yellow-500 text-white' :

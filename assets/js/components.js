@@ -62,7 +62,7 @@ class InvisibleCharacterGenerator {
                     </div>
 
                     <!-- Generate Button -->
-                    <button id="generate-btn" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                    <button id="generate-btn" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-colors duration-200 transform hover:scale-105">
                         Generate Invisible Characters
                     </button>
 
@@ -234,11 +234,11 @@ class InvisibleCharacterDetector {
                     <!-- Input Area -->
                     <div>
                         <label for="detect-input" class="block text-sm font-medium mb-2">Input text</label>
-                        <textarea id="detect-input" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="Enter or paste text to detect invisible characters..."></textarea>
+                        <textarea id="detect-input" name="detect-input" autocomplete="off" spellcheck="false" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="Enter or paste text to detect invisible characters…"></textarea>
                     </div>
 
                     <!-- Detect Button -->
-                    <button id="detect-btn" class="w-full py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-lg font-medium hover:from-green-600 hover:to-teal-700 transition-all duration-200 transform hover:scale-105">
+                    <button id="detect-btn" class="w-full py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-lg font-medium hover:from-green-600 hover:to-teal-700 transition-colors duration-200 transform hover:scale-105">
                         Detect Invisible Characters
                     </button>
 
@@ -374,7 +374,7 @@ class InvisibleCharacterDetector {
                     <span class="text-sm text-gray-500">Position: ${char.position}</span>
                 </div>
                 <div class="text-sm text-gray-600 dark:text-gray-400 mt-1 font-mono">
-                    ...${char.context}...
+                    …${char.context}…
                 </div>
             </div>
         `).join('');
