@@ -46,7 +46,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200B',
                 regex: /\u200B/g,
                 category: 'zero-width',
-                description: '零宽空格 - 用于文本分隔的不可见空格',
+                description: 'Zero width space used for invisible text separation',
                 risk: 'low'
             },
             {
@@ -54,7 +54,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200C',
                 regex: /\u200C/g,
                 category: 'zero-width',
-                description: '零宽非连接符 - 防止字符连接',
+                description: 'Zero width non-joiner used to prevent character joining',
                 risk: 'low'
             },
             {
@@ -62,7 +62,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200D',
                 regex: /\u200D/g,
                 category: 'zero-width',
-                description: '零宽连接符 - 强制字符连接',
+                description: 'Zero width joiner used to force character joining',
                 risk: 'low'
             },
             
@@ -72,7 +72,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200E',
                 regex: /\u200E/g,
                 category: 'directional',
-                description: '左至右标记 - 指定文本方向',
+                description: 'Left-to-right mark used to control text direction',
                 risk: 'medium'
             },
             {
@@ -80,7 +80,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200F',
                 regex: /\u200F/g,
                 category: 'directional',
-                description: '右至左标记 - 指定文本方向',
+                description: 'Right-to-left mark used to control text direction',
                 risk: 'medium'
             },
             {
@@ -88,7 +88,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+202A',
                 regex: /\u202A/g,
                 category: 'directional',
-                description: '左至右嵌入 - 嵌入LTR文本',
+                description: 'Left-to-right embedding mark for LTR text',
                 risk: 'medium'
             },
             {
@@ -96,7 +96,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+202B',
                 regex: /\u202B/g,
                 category: 'directional',
-                description: '右至左嵌入 - 嵌入RTL文本',
+                description: 'Right-to-left embedding mark for RTL text',
                 risk: 'medium'
             },
             
@@ -106,7 +106,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2060',
                 regex: /\u2060/g,
                 category: 'formatting',
-                description: '单词连接符 - 防止换行',
+                description: 'Word joiner used to prevent line breaks',
                 risk: 'low'
             },
             {
@@ -114,7 +114,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2063',
                 regex: /\u2063/g,
                 category: 'separator',
-                description: '不可见分隔符 - 分隔文本元素',
+                description: 'Invisible separator used to separate text elements',
                 risk: 'low'
             },
             {
@@ -122,7 +122,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2061',
                 regex: /\u2061/g,
                 category: 'mathematical',
-                description: '函数应用符 - 数学表达式',
+                description: 'Function application mark used in mathematical notation',
                 risk: 'low'
             },
             {
@@ -130,7 +130,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2062',
                 regex: /\u2062/g,
                 category: 'mathematical',
-                description: '不可见乘号 - 数学乘法',
+                description: 'Invisible times mark used for mathematical multiplication',
                 risk: 'low'
             },
             {
@@ -138,7 +138,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2800',
                 regex: /\u2800/g,
                 category: 'braille',
-                description: '盲文空白字符 - 盲文系统空白',
+                description: 'Braille blank character',
                 risk: 'low'
             },
             {
@@ -146,7 +146,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+3164',
                 regex: /\u3164/g,
                 category: 'hangul',
-                description: '韩文填充字符 - 韩文填充',
+                description: 'Hangul filler character',
                 risk: 'low'
             },
             
@@ -156,7 +156,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+00A0',
                 regex: /\u00A0/g,
                 category: 'whitespace',
-                description: '不间断空格 - 防止换行的空格',
+                description: 'Non-breaking space used to prevent line breaks',
                 risk: 'low'
             },
             {
@@ -164,7 +164,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2000',
                 regex: /\u2000/g,
                 category: 'whitespace',
-                description: 'En空格 - 1个Em宽度的一半',
+                description: 'En quad, half of an em width',
                 risk: 'low'
             },
             {
@@ -172,7 +172,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2001',
                 regex: /\u2001/g,
                 category: 'whitespace',
-                description: 'Em空格 - 1个Em宽度',
+                description: 'Em quad, one em width',
                 risk: 'low'
             },
             {
@@ -180,7 +180,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2002',
                 regex: /\u2002/g,
                 category: 'whitespace',
-                description: 'En空格 - 1个En宽度',
+                description: 'En space, one en width',
                 risk: 'low'
             },
             {
@@ -188,7 +188,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2003',
                 regex: /\u2003/g,
                 category: 'whitespace',
-                description: 'Em空格 - 1个Em宽度',
+                description: 'Em space, one em width',
                 risk: 'low'
             },
             {
@@ -196,7 +196,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2009',
                 regex: /\u2009/g,
                 category: 'whitespace',
-                description: '细空格 - 1/5个Em宽度',
+                description: 'Thin space, about one fifth of an em width',
                 risk: 'low'
             },
             {
@@ -204,7 +204,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+200A',
                 regex: /\u200A/g,
                 category: 'whitespace',
-                description: '极细空格 - 最窄空格',
+                description: 'Hair space, a very narrow space',
                 risk: 'low'
             },
             
@@ -214,7 +214,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2028',
                 regex: /\u2028/g,
                 category: 'control',
-                description: '行分隔符 - 分隔行',
+                description: 'Line separator',
                 risk: 'medium'
             },
             {
@@ -222,7 +222,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+2029',
                 regex: /\u2029/g,
                 category: 'control',
-                description: '段落分隔符 - 分隔段落',
+                description: 'Paragraph separator',
                 risk: 'medium'
             },
             
@@ -232,7 +232,7 @@ class InvisibleCharacterDetector {
                 unicode: 'U+FEFF',
                 regex: /\uFEFF/g,
                 category: 'control',
-                description: '零宽不间断空格 - BOM标记',
+                description: 'Zero width no-break space, also used as a BOM marker',
                 risk: 'high'
             }
         ];

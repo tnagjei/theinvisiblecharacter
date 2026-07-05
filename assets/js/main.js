@@ -435,11 +435,11 @@ class InvisibleCharacterApp {
         // Clipboard manager handles this automatically
         // Just add custom styling and behavior if needed
         document.addEventListener('copySuccess', (e) => {
-            this.showNotification('复制成功！', 'success');
+            this.showNotification('Copied', 'success');
         });
 
         document.addEventListener('copyError', (e) => {
-            this.showNotification('复制失败，请重试', 'error');
+            this.showNotification('Copy failed. Try again.', 'error');
         });
     }
 
@@ -634,7 +634,7 @@ class InvisibleCharacterApp {
                                     <div>
                                         <span class="font-medium">${result.pattern}</span>
                                         <span class="text-sm text-apple-gray-500 ml-2">${result.unicode}</span>
-                                        <span class="text-xs text-apple-gray-400 ml-2">(${result.count}个)</span>
+                                        <span class="text-xs text-apple-gray-400 ml-2">(${result.count})</span>
                                     </div>
                                     <span class="text-xs px-2 py-1 rounded ${
                                         result.risk === 'high' ? 'bg-red-100 text-red-800' :

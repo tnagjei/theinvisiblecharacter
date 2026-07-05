@@ -539,8 +539,8 @@ class InvisibleCharacterLibrary {
                 data: charData || {
                     character: char,
                     unicode: `U+${char.charCodeAt(0).toString(16).toUpperCase()}`,
-                    name: '未知隐形字符',
-                    description: '未在库中识别的隐形字符'
+                    name: 'Unknown invisible character',
+                    description: 'Invisible character not recognized in the library'
                 }
             });
         }
