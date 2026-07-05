@@ -5,6 +5,7 @@ const { root, sourceHtmlFiles } = require('./site-files');
 const failures = [];
 const rootHeaders = path.join(root, '_headers');
 const buildHeaders = path.join(root, 'build', '_headers');
+const cloudflareHeaders = path.join(root, 'cloudflare-config', '_headers');
 
 function fail(message) {
   failures.push(message);
@@ -14,7 +15,7 @@ function read(file) {
   return fs.readFileSync(file, 'utf8');
 }
 
-for (const file of [rootHeaders, buildHeaders]) {
+for (const file of [rootHeaders, buildHeaders, cloudflareHeaders]) {
   if (!fs.existsSync(file)) fail(`${path.relative(root, file)} is missing`);
 }
 
@@ -22,6 +23,12 @@ if (fs.existsSync(rootHeaders) && fs.existsSync(buildHeaders)) {
   const rootContent = read(rootHeaders);
   const buildContent = read(buildHeaders);
   if (rootContent !== buildContent) fail('build/_headers differs from root _headers');
+}
+
+if (fs.existsSync(rootHeaders) && fs.existsSync(cloudflareHeaders)) {
+  const rootContent = read(rootHeaders);
+  const cloudflareContent = read(cloudflareHeaders);
+  if (rootContent !== cloudflareContent) fail('cloudflare-config/_headers differs from root _headers');
 }
 
 const headers = fs.existsSync(buildHeaders) ? read(buildHeaders) : fs.existsSync(rootHeaders) ? read(rootHeaders) : '';

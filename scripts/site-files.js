@@ -16,7 +16,9 @@ const rootHtmlPages = [
   'privacy-policy.html',
   'terms-of-service.html',
   'cookie-policy.html',
-  'tiktok-invisible-username-generator.html'
+  'tiktok-invisible-username-generator.html',
+  'invisible-name-generator.html',
+  'blank-text-generator.html'
 ];
 
 function walk(dir, predicate, output = []) {
@@ -36,7 +38,9 @@ function sourceHtmlFiles() {
   const files = rootHtmlPages
     .map(file => path.join(root, file))
     .filter(file => fs.existsSync(file));
-  return files.concat(walk(path.join(root, 'blog'), file => file.endsWith('.html')));
+  return files
+    .concat(walk(path.join(root, 'blog'), file => file.endsWith('.html')))
+    .concat(walk(path.join(root, 'fr'), file => file.endsWith('.html')));
 }
 
 function webJsFiles() {

@@ -25,6 +25,8 @@ const rootHtmlPages = [
   'terms-of-service.html',
   'cookie-policy.html',
   'tiktok-invisible-username-generator.html',
+  'invisible-name-generator.html',
+  'blank-text-generator.html',
   '404.html'
 ];
 
@@ -64,7 +66,7 @@ function copyBuildFiles() {
     copyRecursive(path.join(root, file), path.join(buildDir, file));
   }
 
-  for (const entry of ['assets', 'blog']) {
+  for (const entry of ['assets', 'blog', 'fr']) {
     copyRecursive(path.join(root, entry), path.join(buildDir, entry));
   }
 

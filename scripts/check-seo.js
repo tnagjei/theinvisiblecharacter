@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
-const { root, domain, sourceHtmlFiles, pathForCleanUrl } = require('./site-files');
+const { root, domain, sourceHtmlFiles, webJsFiles, pathForCleanUrl } = require('./site-files');
 
 const failures = [];
 
@@ -15,6 +15,21 @@ function read(file) {
 
 function href($, selector) {
   return $(selector).first().attr('href') || $(selector).first().attr('content') || '';
+}
+
+function expectedLang(relative) {
+  const normalized = relative.replace(/\\/g, '/');
+  if (normalized === 'index-fr.html' || normalized.endsWith('-fr.html') || normalized.startsWith('blog/fr/') || normalized.startsWith('fr/')) {
+    return 'fr';
+  }
+  return 'en';
+}
+
+function hasHreflang(file, lang, target) {
+  const $ = cheerio.load(read(path.join(root, file)));
+  return $('link[rel="alternate"][hreflang]').toArray().some(node => {
+    return $(node).attr('hreflang') === lang && $(node).attr('href') === target;
+  });
 }
 
 function checkUrlShape(url, file) {
@@ -58,6 +73,10 @@ for (const file of sourceHtmlFiles()) {
   const relative = path.relative(root, file);
   const $ = cheerio.load(read(file));
   const canonical = $('link[rel="canonical"]').attr('href');
+  const lang = ($('html').attr('lang') || '').toLowerCase();
+  const expected = expectedLang(relative);
+
+  if (lang !== expected) fail(`${relative}: expected lang="${expected}", found "${lang || 'missing'}"`);
 
   if (!canonical) {
     fail(`${relative}: missing canonical`);
@@ -76,6 +95,19 @@ for (const file of sourceHtmlFiles()) {
 const sitemapPath = path.join(root, 'sitemap.xml');
 const sitemap = read(sitemapPath);
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+const requiredUrls = [
+  `${domain}/`,
+  `${domain}/index-fr`,
+  `${domain}/tools`,
+  `${domain}/tiktok-invisible-username-generator`,
+  `${domain}/invisible-name-generator`,
+  `${domain}/blank-text-generator`,
+  `${domain}/fr/caractere-invisible-tiktok`,
+  `${domain}/blog/`
+];
+for (const requiredUrl of requiredUrls) {
+  if (!urls.includes(requiredUrl)) fail(`sitemap missing required URL: ${requiredUrl}`);
+}
 for (const url of urls) {
   for (const token of ['.html', 'www.', '/404', '/index.html']) {
     if (url.includes(token)) fail(`sitemap URL contains forbidden token ${token}: ${url}`);
@@ -111,14 +143,49 @@ function checkHomeHreflang(file) {
 checkHomeHreflang('index.html');
 checkHomeHreflang('index-fr.html');
 
+const tiktokHreflang = [
+  ['en', `${domain}/tiktok-invisible-username-generator`],
+  ['fr', `${domain}/fr/caractere-invisible-tiktok`],
+  ['x-default', `${domain}/tiktok-invisible-username-generator`]
+];
+for (const file of ['tiktok-invisible-username-generator.html', 'fr/caractere-invisible-tiktok.html']) {
+  for (const [lang, target] of tiktokHreflang) {
+    if (!hasHreflang(file, lang, target)) fail(`${file}: missing hreflang ${lang} -> ${target}`);
+  }
+}
+
 const tools = cheerio.load(read(path.join(root, 'tools.html')));
 const toolsLang = (tools('html').attr('lang') || '').toLowerCase();
 if (toolsLang.startsWith('zh')) fail('tools.html: /tools must not use Chinese html lang');
+if (/[\u3400-\u9fff]/.test(tools.text())) fail('tools.html: /tools contains Chinese text');
 
-for (const file of sourceHtmlFiles()) {
+const home = cheerio.load(read(path.join(root, 'index.html')));
+if (home('.character-card').length < 12) fail('index.html: homepage must statically render at least 12 character cards');
+
+const webFiles = [
+  ...sourceHtmlFiles(),
+  ...webJsFiles()
+].filter(file => fs.existsSync(file));
+
+const unsupportedClaims = [
+  /100K\+/i,
+  /1M\+/i,
+  /99\.9%/i,
+  /99,9%/i,
+  /monthly active users/i,
+  /characters generated/i,
+  /trusted by millions/i
+];
+
+for (const file of webFiles) {
   const relative = path.relative(root, file);
   const content = read(file);
   if (content.includes('cdn.tailwindcss.com')) fail(`${relative}: references Tailwind CDN`);
+  if (content.includes('cdnjs.cloudflare.com')) fail(`${relative}: references cdnjs`);
+  if (content.includes('ClipboardJS')) fail(`${relative}: references ClipboardJS`);
+  for (const pattern of unsupportedClaims) {
+    if (pattern.test(content)) fail(`${relative}: contains unsupported trust claim matching ${pattern}`);
+  }
 }
 
 if (failures.length) {
