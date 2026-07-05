@@ -102,7 +102,11 @@ const requiredUrls = [
   `${domain}/tiktok-invisible-username-generator`,
   `${domain}/invisible-name-generator`,
   `${domain}/blank-text-generator`,
-  `${domain}/fr/caractere-invisible-tiktok`,
+  `${domain}/fr/caractere-invisible`,
+  `${domain}/fr/pseudo-invisible-tiktok`,
+  `${domain}/fr/message-vide-whatsapp`,
+  `${domain}/fr/saut-de-ligne-instagram`,
+  `${domain}/fr/pseudo-invisible-discord`,
   `${domain}/blog/`
 ];
 for (const requiredUrl of requiredUrls) {
@@ -145,10 +149,10 @@ checkHomeHreflang('index-fr.html');
 
 const tiktokHreflang = [
   ['en', `${domain}/tiktok-invisible-username-generator`],
-  ['fr', `${domain}/fr/caractere-invisible-tiktok`],
+  ['fr', `${domain}/fr/pseudo-invisible-tiktok`],
   ['x-default', `${domain}/tiktok-invisible-username-generator`]
 ];
-for (const file of ['tiktok-invisible-username-generator.html', 'fr/caractere-invisible-tiktok.html']) {
+for (const file of ['tiktok-invisible-username-generator.html', 'fr/pseudo-invisible-tiktok.html']) {
   for (const [lang, target] of tiktokHreflang) {
     if (!hasHreflang(file, lang, target)) fail(`${file}: missing hreflang ${lang} -> ${target}`);
   }

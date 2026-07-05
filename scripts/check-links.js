@@ -59,7 +59,13 @@ if (!fs.existsSync(redirectsPath)) {
     '/blog/technical-guide-invisible-characters.html /blog/technical-guide-invisible-characters 301',
     '/blog/creative-ways-invisible-characters.html /blog/creative-ways-invisible-characters 301',
     '/tiktok-invisible-username-generator.html /tiktok-invisible-username-generator 301',
-    '/fr/caractere-invisible-tiktok.html /fr/caractere-invisible-tiktok 301',
+    '/fr/caractere-invisible.html /fr/caractere-invisible 301',
+    '/fr/pseudo-invisible-tiktok.html /fr/pseudo-invisible-tiktok 301',
+    '/fr/message-vide-whatsapp.html /fr/message-vide-whatsapp 301',
+    '/fr/saut-de-ligne-instagram.html /fr/saut-de-ligne-instagram 301',
+    '/fr/pseudo-invisible-discord.html /fr/pseudo-invisible-discord 301',
+    '/fr/caractere-invisible-tiktok /fr/pseudo-invisible-tiktok 301',
+    '/fr/caractere-invisible-tiktok.html /fr/pseudo-invisible-tiktok 301',
     '/invisible-name-generator.html /invisible-name-generator 301',
     '/blank-text-generator.html /blank-text-generator 301'
   ];
