@@ -50,7 +50,6 @@ class PerformanceOptimizer {
     setupResourceHints() {
         // Preconnect to external domains
         const preconnectDomains = [
-            'https://cdn.tailwindcss.com',
             'https://fonts.googleapis.com',
             'https://fonts.gstatic.com'
         ];

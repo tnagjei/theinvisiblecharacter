@@ -276,6 +276,7 @@ class InvisibleCharacterApp {
         if (!gridContainer) return;
 
         const characters = this.components.library?.getCharacters() || [];
+        gridContainer.innerHTML = '';
         
         characters.forEach(character => {
             const characterCard = this.createCharacterCard(character);
@@ -291,6 +292,8 @@ class InvisibleCharacterApp {
         const card = document.createElement('div');
         card.className = 'character-card bg-white dark:bg-apple-gray-800 rounded-lg p-4 border border-apple-gray-200 dark:border-apple-gray-700 hover:shadow-lg transition-all duration-200 cursor-pointer';
         card.dataset.characterId = character.id;
+        card.dataset.unicode = character.unicode;
+        card.dataset.category = character.category;
 
         // Get category icon
         const categoryIcon = character.icon || this.getCategoryIcon(character.category);
@@ -313,6 +316,8 @@ class InvisibleCharacterApp {
             </div>
             <h3 class="font-semibold text-sm mb-1">${character.name}</h3>
             <p class="text-xs text-apple-gray-600 dark:text-apple-gray-400 mb-2">${character.description}</p>
+            <p class="text-xs text-apple-gray-600 dark:text-apple-gray-400 mb-2">Use case: ${character.usage}</p>
+            <p class="text-xs text-apple-gray-600 dark:text-apple-gray-400 mb-2">Platform risk: May be stripped by some apps.</p>
             <div class="flex items-center justify-between">
                 <span class="text-xs bg-apple-gray-100 dark:bg-apple-gray-700 px-2 py-1 rounded">${character.category}</span>
                 <div class="flex items-center space-x-1">

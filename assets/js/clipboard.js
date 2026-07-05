@@ -1,30 +1,20 @@
 /**
- * Clipboard Integration System
- * Enhanced clipboard functionality with ClipboardJS integration
+ * Native clipboard integration with textarea fallback.
  */
 
 class ClipboardManager {
     constructor() {
-        this.clipboardInstances = new Map();
         this.copyHistory = [];
         this.maxHistory = 10;
-        this.isSupported = this.checkClipboardSupport();
-        this.clipboardLoadAttempts = 0;
         this.clipboardReady = false;
+        this.isClipboardSupported = this.checkClipboardSupport();
         this.init();
     }
 
     init() {
-        // Load ClipboardJS from CDN
-        this.loadClipboardJS();
-        
-        // Setup event listeners
-        this.setupEventListeners();
-        
-        // Load copy history
         this.loadCopyHistory();
-        
-        // Initialize when DOM is ready
+        this.setupClipboardEvents();
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.initializeClipboard());
         } else {
@@ -33,398 +23,189 @@ class ClipboardManager {
     }
 
     checkClipboardSupport() {
-        return 'clipboard' in navigator || 'execCommand' in document;
-    }
-
-    loadClipboardJS() {
-        // Check if ClipboardJS is already loaded
-        if (typeof ClipboardJS !== 'undefined') {
-            return;
-        }
-
-        // Load ClipboardJS from CDN
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js';
-        script.integrity = 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==';
-        script.crossOrigin = 'anonymous';
-        script.referrerPolicy = 'no-referrer';
-        
-        script.onload = () => {
-            console.log('ClipboardJS loaded successfully');
-            this.initializeClipboard();
-        };
-        
-        script.onerror = () => {
-            console.warn('Failed to load ClipboardJS, using fallback');
-            this.useFallback = true;
-        };
-        
-        document.head.appendChild(script);
+        return Boolean(navigator.clipboard) || document.queryCommandSupported?.('copy') || 'execCommand' in document;
     }
 
     initializeClipboard() {
-        // Check if ClipboardJS is loaded, if not, wait for it
-        if (typeof ClipboardJS === 'undefined' && !this.useFallback) {
-            // If ClipboardJS is not loaded yet, wait for it
-            if (!document.querySelector('script[src*="clipboard.js"]')) {
-                console.warn('ClipboardJS script not found, using fallback');
-                this.useFallback = true;
-            } else {
-                // ponytail: short polling avoids false fallback on slow CDN loads; native copy remains the fallback.
-                setTimeout(() => {
-                    if (typeof ClipboardJS !== 'undefined') {
-                        this.initializeClipboardJS();
-                    } else if (this.clipboardLoadAttempts++ >= 20) {
-                        console.warn('ClipboardJS failed to load, using fallback');
-                        this.useFallback = true;
-                        this.initializeFallback();
-                    } else {
-                        this.initializeClipboard();
+        if (this.clipboardReady) return;
+        this.clipboardReady = true;
+        this.setupCopyButtons(document);
+        this.observeDynamicButtons();
+    }
+
+    setupCopyButtons(rootNode) {
+        const buttons = rootNode.querySelectorAll?.('[data-clipboard-text], [data-clipboard-target]') || [];
+        buttons.forEach(button => this.setupCopyButton(button));
+    }
+
+    setupCopyButton(button) {
+        if (button.dataset.clipboardBound === 'true') return;
+        button.dataset.clipboardBound = 'true';
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            const text = this.getButtonText(button);
+            this.copyText(text, button);
+        });
+    }
+
+    getButtonText(button) {
+        const targetSelector = button.getAttribute('data-clipboard-target');
+        const target = targetSelector ? document.querySelector(targetSelector) : null;
+        return button.getAttribute('data-clipboard-text') || target?.textContent || button.textContent || '';
+    }
+
+    observeDynamicButtons() {
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType !== 1) return;
+                    if (node.matches?.('[data-clipboard-text], [data-clipboard-target]')) {
+                        this.setupCopyButton(node);
                     }
-                }, 100);
-                return;
-            }
-        }
+                    this.setupCopyButtons(node);
+                });
+            });
+        });
 
-        // Initialize based on what's available
-        if (typeof ClipboardJS !== 'undefined') {
-            this.initializeClipboardJS();
-        } else {
-            this.initializeFallback();
-        }
+        observer.observe(document.body, { childList: true, subtree: true });
+        this.observer = observer;
     }
 
-    initializeClipboardJS() {
-        if (this.clipboardReady) return;
-        this.clipboardReady = true;
+    setupClipboardEvents() {
+        document.addEventListener('copyText', event => {
+            this.copyText(event.detail.text, event.detail.trigger);
+        });
 
-        // Initialize ClipboardJS for all copy buttons
-        this.initializeCopyButtons();
+        document.addEventListener('copyWithOptions', event => {
+            this.copyWithOptions(event.detail.text, event.detail.options);
+        });
 
-        // Initialize dynamic clipboard instances
-        this.initializeDynamicClipboard();
+        document.addEventListener('getCopyHistory', event => {
+            this.emitEvent('copyHistoryData', {
+                history: this.copyHistory,
+                requestId: event.detail.requestId
+            });
+        });
 
-        // Setup clipboard event listeners
-        this.setupClipboardEvents();
-    }
+        document.addEventListener('clearCopyHistory', () => {
+            this.clearCopyHistory();
+        });
 
-    initializeFallback() {
-        if (this.clipboardReady) return;
-        this.clipboardReady = true;
+        document.addEventListener('charactersCopied', event => {
+            this.handleCharacterCopy(event.detail);
+        });
 
-        // Initialize fallback copy functionality
-        this.setupFallbackCopyButtons();
-
-        // Setup clipboard event listeners (for programmatic copying)
-        this.setupClipboardEvents();
-    }
-
-    setupFallbackCopyButtons() {
-        // Find all elements with data-clipboard-text or data-clipboard-target
-        const copyButtons = document.querySelectorAll('[data-clipboard-text], [data-clipboard-target]');
-
-        copyButtons.forEach(button => {
-            this.setupFallbackCopy(button);
+        document.addEventListener('themeChanged', event => {
+            this.updateButtonStyles(event.detail.theme);
         });
     }
 
-    initializeCopyButtons() {
-        // Find all elements with data-clipboard-text or data-clipboard-target
-        const copyButtons = document.querySelectorAll('[data-clipboard-text], [data-clipboard-target]');
-        
-        copyButtons.forEach(button => {
-            this.createClipboardInstance(button);
-        });
-    }
-
-    createClipboardInstance(button) {
-        if (this.useFallback) {
-            this.setupFallbackCopy(button);
-            return;
+    copyText(text, trigger = null) {
+        if (!this.isClipboardSupported) {
+            this.handleCopyError(trigger, text);
+            return Promise.resolve(false);
         }
 
-        try {
-            const clipboard = new ClipboardJS(button, {
-                text: function(trigger) {
-                    return trigger.getAttribute('data-clipboard-text') || 
-                           document.querySelector(trigger.getAttribute('data-clipboard-target'))?.textContent || 
-                           trigger.textContent;
-                },
-                target: function(trigger) {
-                    const targetSelector = trigger.getAttribute('data-clipboard-target');
-                    return targetSelector ? document.querySelector(targetSelector) : trigger;
-                },
-                container: document.body
-            });
-
-            clipboard.on('success', (e) => {
-                this.handleCopySuccess(e.trigger, e.text);
-            });
-
-            clipboard.on('error', (e) => {
-                this.handleCopyError(e.trigger, e.text);
-            });
-
-            this.clipboardInstances.set(button, clipboard);
-        } catch (error) {
-            console.error('Failed to create clipboard instance:', error);
-            this.setupFallbackCopy(button);
+        if (navigator.clipboard?.writeText) {
+            return navigator.clipboard.writeText(text)
+                .then(() => {
+                    this.handleCopySuccess(trigger, text);
+                    return true;
+                })
+                .catch(() => this.fallbackCopyText(text, trigger));
         }
-    }
 
-    setupFallbackCopy(button) {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            let textToCopy = button.getAttribute('data-clipboard-text') || 
-                           document.querySelector(button.getAttribute('data-clipboard-target'))?.textContent || 
-                           button.textContent;
-
-            this.fallbackCopyText(textToCopy, button);
-        });
+        return this.fallbackCopyText(text, trigger);
     }
 
     fallbackCopyText(text, trigger) {
         const textArea = document.createElement('textarea');
         textArea.value = text;
+        textArea.setAttribute('readonly', '');
         textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '-9999px';
         document.body.appendChild(textArea);
-        textArea.focus();
         textArea.select();
 
         try {
-            const successful = document.execCommand('copy');
-            if (successful) {
-                this.handleCopySuccess(trigger, text);
-            } else {
-                this.handleCopyError(trigger, text);
-            }
-        } catch (err) {
-            console.error('Fallback copy failed:', err);
+            const copied = document.execCommand('copy');
+            if (copied) this.handleCopySuccess(trigger, text);
+            else this.handleCopyError(trigger, text);
+            return Promise.resolve(copied);
+        } catch (error) {
             this.handleCopyError(trigger, text);
-        }
-
-        document.body.removeChild(textArea);
-    }
-
-    initializeDynamicClipboard() {
-        // Watch for dynamically added copy buttons
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === 1) { // Element node
-                        const buttons = node.querySelectorAll('[data-clipboard-text], [data-clipboard-target]');
-                        buttons.forEach(button => {
-                            if (!this.clipboardInstances.has(button)) {
-                                this.createClipboardInstance(button);
-                            }
-                        });
-                    }
-                });
-            });
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-
-        this.observer = observer;
-    }
-
-    setupClipboardEvents() {
-        // Listen for copy events from other components
-        document.addEventListener('copyText', (e) => {
-            this.copyText(e.detail.text, e.detail.trigger);
-        });
-
-        // Listen for copy requests with options
-        document.addEventListener('copyWithOptions', (e) => {
-            this.copyWithOptions(e.detail.text, e.detail.options);
-        });
-
-        // Listen for copy history requests
-        document.addEventListener('getCopyHistory', (e) => {
-            this.emitEvent('copyHistoryData', {
-                history: this.copyHistory,
-                requestId: e.detail.requestId
-            });
-        });
-
-        // Listen for clear copy history
-        document.addEventListener('clearCopyHistory', () => {
-            this.clearCopyHistory();
-        });
-    }
-
-    setupEventListeners() {
-        // Listen for character copy events
-        document.addEventListener('charactersCopied', (e) => {
-            this.handleCharacterCopy(e.detail);
-        });
-
-        // Listen for theme changes to update button styles
-        document.addEventListener('themeChanged', (e) => {
-            this.updateButtonStyles(e.detail.theme);
-        });
-    }
-
-    copyText(text, trigger = null) {
-        if (!this.isSupported) {
-            this.emitEvent('copyNotSupported', { text, trigger });
-            return;
-        }
-
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(text).then(() => {
-                this.handleCopySuccess(trigger, text);
-            }).catch(err => {
-                console.error('Clipboard API failed:', err);
-                this.fallbackCopyText(text, trigger);
-            });
-        } else {
-            this.fallbackCopyText(text, trigger);
+            return Promise.resolve(false);
+        } finally {
+            document.body.removeChild(textArea);
         }
     }
 
     copyWithOptions(text, options = {}) {
-        const {
-            trigger = null,
-            showFeedback = true,
-            addToHistory = true,
-            customMessage = null,
-            timeout = 2000
-        } = options;
-
-        this.copyText(text, trigger);
-
-        if (showFeedback) {
-            this.showCopyFeedback(trigger, customMessage || '已复制!', timeout);
-        }
-
-        if (addToHistory) {
-            this.addToCopyHistory(text);
-        }
+        const { trigger = null, customMessage = null, timeout = 2000 } = options;
+        return this.copyText(text, trigger).then(copied => {
+            if (copied && customMessage) this.showCopyFeedback(trigger, customMessage, timeout);
+            return copied;
+        });
     }
 
     handleCopySuccess(trigger, text) {
-        // Update button state
         this.updateButtonState(trigger, 'success');
-        
-        // Add to history
         this.addToCopyHistory(text);
-        
-        // Show feedback
-        this.showCopyFeedback(trigger, '已复制!');
-        
-        // Emit success event
-        this.emitEvent('copySuccess', {
-            trigger,
-            text,
-            timestamp: new Date().toISOString()
-        });
+        this.showCopyFeedback(trigger, 'Copied');
+        this.emitEvent('copySuccess', { trigger, text, timestamp: new Date().toISOString() });
 
-        // Reset button state after delay
-        setTimeout(() => {
-            this.updateButtonState(trigger, 'default');
-        }, 2000);
-
-        // Add haptic feedback on mobile
-        if ('vibrate' in navigator) {
-            navigator.vibrate(50);
-        }
+        setTimeout(() => this.updateButtonState(trigger, 'default'), 2000);
+        if ('vibrate' in navigator) navigator.vibrate(50);
     }
 
     handleCopyError(trigger, text) {
-        // Update button state
         this.updateButtonState(trigger, 'error');
-        
-        // Show error feedback
-        this.showCopyFeedback(trigger, '复制失败', 3000);
-        
-        // Emit error event
-        this.emitEvent('copyError', {
-            trigger,
-            text,
-            timestamp: new Date().toISOString()
-        });
-
-        // Reset button state after delay
-        setTimeout(() => {
-            this.updateButtonState(trigger, 'default');
-        }, 3000);
+        this.showCopyFeedback(trigger, 'Copy failed', 3000);
+        this.emitEvent('copyError', { trigger, text, timestamp: new Date().toISOString() });
+        setTimeout(() => this.updateButtonState(trigger, 'default'), 3000);
     }
 
     handleCharacterCopy(detail) {
         const { characterIds, count } = detail;
-        
-        // Get character information
         const characters = window.invisibleCharacterLibrary?.getCharactersByIds(characterIds) || [];
-        const text = characters.map(char => char.character).join('');
-        
-        // Add to history with character information
+        const text = characters.map(character => character.character).join('');
         this.addToCopyHistory(text, {
             type: 'characters',
             characterIds,
             count,
-            characterNames: characters.map(char => char.name)
+            characterNames: characters.map(character => character.name)
         });
     }
 
     updateButtonState(button, state) {
         if (!button) return;
 
-        // Remove existing state classes
         button.classList.remove('copy-success', 'copy-error', 'copy-loading');
-        
-        // Add new state class
-        if (state !== 'default') {
-            button.classList.add(`copy-${state}`);
-        }
+        if (state !== 'default') button.classList.add(`copy-${state}`);
 
-        // Update button text if it has data attributes
         const originalText = button.getAttribute('data-original-text');
         const successText = button.getAttribute('data-success-text');
         const errorText = button.getAttribute('data-error-text');
 
-        switch (state) {
-            case 'success':
-                if (successText) {
-                    button.textContent = successText;
-                }
-                break;
-            case 'error':
-                if (errorText) {
-                    button.textContent = errorText;
-                }
-                break;
-            case 'default':
-                if (originalText) {
-                    button.textContent = originalText;
-                }
-                break;
-        }
+        if (state === 'success' && successText) button.textContent = successText;
+        if (state === 'error' && errorText) button.textContent = errorText;
+        if (state === 'default' && originalText) button.textContent = originalText;
     }
 
-    showCopyFeedback(trigger, message = '已复制!', timeout = 2000) {
+    showCopyFeedback(trigger, message = 'Copied', timeout = 2000) {
         if (!trigger) return;
 
-        // Create or update feedback element
         let feedback = trigger.querySelector('.copy-feedback');
-        
         if (!feedback) {
             feedback = document.createElement('span');
-            feedback.className = 'copy-feedback absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap';
+            feedback.className = 'copy-feedback';
             trigger.style.position = 'relative';
             trigger.appendChild(feedback);
         }
 
         feedback.textContent = message;
         feedback.style.display = 'block';
-
-        // Hide feedback after timeout
         setTimeout(() => {
             feedback.style.display = 'none';
         }, timeout);
@@ -440,20 +221,11 @@ class ClipboardManager {
         };
 
         this.copyHistory.unshift(historyItem);
-        
-        // Limit history size
         if (this.copyHistory.length > this.maxHistory) {
             this.copyHistory = this.copyHistory.slice(0, this.maxHistory);
         }
-
-        // Save to localStorage
         this.saveCopyHistory();
-
-        // Emit history updated event
-        this.emitEvent('copyHistoryUpdated', {
-            item: historyItem,
-            total: this.copyHistory.length
-        });
+        this.emitEvent('copyHistoryUpdated', { item: historyItem, total: this.copyHistory.length });
     }
 
     saveCopyHistory() {
@@ -467,9 +239,7 @@ class ClipboardManager {
     loadCopyHistory() {
         try {
             const saved = localStorage.getItem('copyHistory');
-            if (saved) {
-                this.copyHistory = JSON.parse(saved);
-            }
+            this.copyHistory = saved ? JSON.parse(saved) : [];
         } catch (error) {
             console.warn('Failed to load copy history:', error);
             this.copyHistory = [];
@@ -483,34 +253,12 @@ class ClipboardManager {
     }
 
     updateButtonStyles(theme) {
-        // Update copy button styles based on theme
-        const buttons = document.querySelectorAll('[data-clipboard-text], [data-clipboard-target]');
-        
-        buttons.forEach(button => {
-            // Add theme-specific classes
+        document.querySelectorAll('[data-clipboard-text], [data-clipboard-target]').forEach(button => {
             button.classList.remove('light-theme', 'dark-theme');
             button.classList.add(`${theme}-theme`);
         });
     }
 
-    setupEventListeners() {
-        // Listen for copy events from other components
-        document.addEventListener('copyText', (e) => {
-            this.copyText(e.detail.text, e.detail.trigger);
-        });
-
-        // Listen for character copy events
-        document.addEventListener('charactersCopied', (e) => {
-            this.handleCharacterCopy(e.detail);
-        });
-
-        // Listen for theme changes
-        document.addEventListener('themeChanged', (e) => {
-            this.updateButtonStyles(e.detail.theme);
-        });
-    }
-
-    // Public API methods
     copy(text, options = {}) {
         return this.copyWithOptions(text, options);
     }
@@ -524,43 +272,27 @@ class ClipboardManager {
     }
 
     isSupported() {
-        return this.isSupported;
+        return this.isClipboardSupported;
     }
 
-    // Destroy method for cleanup
     destroy() {
-        // Destroy all clipboard instances
-        this.clipboardInstances.forEach((clipboard) => {
-            clipboard.destroy();
-        });
-        this.clipboardInstances.clear();
-
-        // Disconnect observer
-        if (this.observer) {
-            this.observer.disconnect();
-        }
-
-        // Clear history
+        this.observer?.disconnect();
         this.copyHistory = [];
     }
 
     emitEvent(eventName, data) {
-        const event = new CustomEvent(eventName, { detail: data });
-        document.dispatchEvent(event);
+        document.dispatchEvent(new CustomEvent(eventName, { detail: data }));
     }
 }
 
-// Initialize clipboard manager when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     window.clipboardManager = new ClipboardManager();
 });
 
-// Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ClipboardManager;
 }
 
-// Export for ES modules
 if (typeof exports !== 'undefined') {
     exports.ClipboardManager = ClipboardManager;
 }

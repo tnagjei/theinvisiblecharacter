@@ -7,14 +7,12 @@ const CACHE_NAME = 'tic-v1.0.0';
 const urlsToCache = [
     '/',
     '/tools',
-    '/404.html',
     '/assets/css/theme.css',
+    '/assets/css/tailwind.css',
     '/assets/css/style.css',
     '/assets/js/theme.js',
     '/assets/js/components.js',
-    '/assets/js/performance.js',
-    'https://cdn.tailwindcss.com',
-    'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
+    '/assets/js/performance.js'
 ];
 
 // Install event - cache resources

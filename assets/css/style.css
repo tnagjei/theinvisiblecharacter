@@ -251,6 +251,50 @@ p {
     flex-shrink: 0;
 }
 
+/* Minimal local fallback for the few legacy Font Awesome classes used in older articles. */
+.fas,
+.fab {
+    font-style: normal;
+    display: inline-block;
+}
+
+.fa-invisible::before,
+.fa-eye-slash::before {
+    content: "[]";
+}
+
+.fa-code::before {
+    content: "</>";
+}
+
+.fa-cogs::before {
+    content: "gear";
+}
+
+.fa-book::before {
+    content: "book";
+}
+
+.fa-instagram::before {
+    content: "IG";
+}
+
+.fa-whatsapp::before {
+    content: "WA";
+}
+
+.fa-gamepad::before {
+    content: "GAME";
+}
+
+.fa-magic::before {
+    content: "*";
+}
+
+.fa-arrow-right::before {
+    content: "->";
+}
+
 /* Footer styles */
 .footer {
     background: #1f2937;
@@ -1383,6 +1427,24 @@ p {
     background: var(--tic-panel) !important;
     box-shadow: none;
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.character-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+}
+
+.character-card-top h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.platform-risk {
+    color: var(--tic-muted);
+    font-size: 0.9rem;
 }
 
 .character-card:hover {

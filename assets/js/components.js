@@ -18,27 +18,27 @@ class InvisibleCharacterGenerator {
     render() {
         this.container.innerHTML = `
             <div class="bg-white dark:bg-apple-gray-800 rounded-2xl p-6 shadow-lg">
-                <h3 class="text-2xl font-bold mb-6 text-center">隐形字符生成器</h3>
+                <h3 class="text-2xl font-bold mb-6 text-center">Invisible Character Generator</h3>
                 
                 <div class="space-y-6">
                     <!-- Character Type Selection -->
                     <div>
-                        <label class="block text-sm font-medium mb-3">选择字符类型</label>
+                        <label class="block text-sm font-medium mb-3">Choose character type</label>
                         <div class="grid grid-cols-2 gap-3">
                             <button class="character-type-btn active" data-type="zero-width-space">
-                                <span class="font-medium">零宽空格</span>
+                                <span class="font-medium">Zero Width Space</span>
                                 <span class="text-xs opacity-70">U+200B</span>
                             </button>
                             <button class="character-type-btn" data-type="zero-width-joiner">
-                                <span class="font-medium">零宽连字符</span>
+                                <span class="font-medium">Zero Width Joiner</span>
                                 <span class="text-xs opacity-70">U+200D</span>
                             </button>
                             <button class="character-type-btn" data-type="zero-width-non-joiner">
-                                <span class="font-medium">零宽非连字符</span>
+                                <span class="font-medium">Zero Width Non-Joiner</span>
                                 <span class="text-xs opacity-70">U+200C</span>
                             </button>
                             <button class="character-type-btn" data-type="left-to-right-mark">
-                                <span class="font-medium">左至右标记</span>
+                                <span class="font-medium">Left-to-Right Mark</span>
                                 <span class="text-xs opacity-70">U+200E</span>
                             </button>
                         </div>
@@ -46,48 +46,48 @@ class InvisibleCharacterGenerator {
 
                     <!-- Quantity Input -->
                     <div>
-                        <label for="quantity" class="block text-sm font-medium mb-2">生成数量</label>
+                        <label for="quantity" class="block text-sm font-medium mb-2">Quantity</label>
                         <input type="number" id="quantity" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" value="1" min="1" max="100">
                     </div>
 
                     <!-- Format Selection -->
                     <div>
-                        <label class="block text-sm font-medium mb-3">输出格式</label>
+                        <label class="block text-sm font-medium mb-3">Output format</label>
                         <select id="format" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700">
-                            <option value="unicode">Unicode 字符</option>
-                            <option value="html">HTML 实体</option>
-                            <option value="css">CSS 转义</option>
-                            <option value="javascript">JavaScript 转义</option>
+                            <option value="unicode">Unicode character</option>
+                            <option value="html">HTML entity</option>
+                            <option value="css">CSS escape</option>
+                            <option value="javascript">JavaScript escape</option>
                         </select>
                     </div>
 
                     <!-- Generate Button -->
                     <button id="generate-btn" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
-                        生成隐形字符
+                        Generate Invisible Characters
                     </button>
 
                     <!-- Result Display -->
                     <div id="result-container" class="hidden">
-                        <label class="block text-sm font-medium mb-2">生成结果</label>
+                        <label class="block text-sm font-medium mb-2">Generated result</label>
                         <div class="relative">
                             <textarea id="result" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 font-mono text-sm" rows="3" readonly></textarea>
                             <button id="copy-btn" class="absolute top-2 right-2 px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600 transition-colors">
-                                复制
+                                Copy
                             </button>
                         </div>
                         <div id="copy-feedback" class="hidden mt-2 text-sm text-green-600 dark:text-green-400">
-                            ✓ 已复制到剪贴板
+                            Copied to clipboard
                         </div>
                     </div>
 
                     <!-- Preview -->
                     <div id="preview-container" class="hidden">
-                        <label class="block text-sm font-medium mb-2">预览效果</label>
+                        <label class="block text-sm font-medium mb-2">Preview</label>
                         <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
                             <div class="flex items-center justify-between">
-                                <span>前面文本</span>
+                                <span>Text before</span>
                                 <span id="preview-text" class="font-mono text-sm"></span>
-                                <span>后面文本</span>
+                                <span>Text after</span>
                             </div>
                         </div>
                     </div>
@@ -228,32 +228,32 @@ class InvisibleCharacterDetector {
     render() {
         this.container.innerHTML = `
             <div class="bg-white dark:bg-apple-gray-800 rounded-2xl p-6 shadow-lg">
-                <h3 class="text-2xl font-bold mb-6 text-center">隐形字符检测器</h3>
+                <h3 class="text-2xl font-bold mb-6 text-center">Invisible CharactersDetector</h3>
                 
                 <div class="space-y-6">
                     <!-- Input Area -->
                     <div>
-                        <label for="detect-input" class="block text-sm font-medium mb-2">输入文本</label>
-                        <textarea id="detect-input" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="在此输入或粘贴文本以检测隐形字符..."></textarea>
+                        <label for="detect-input" class="block text-sm font-medium mb-2">Input text</label>
+                        <textarea id="detect-input" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="Enter or paste text to detect invisible characters..."></textarea>
                     </div>
 
                     <!-- Detect Button -->
                     <button id="detect-btn" class="w-full py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-lg font-medium hover:from-green-600 hover:to-teal-700 transition-all duration-200 transform hover:scale-105">
-                        检测隐形字符
+                        Detect Invisible Characters
                     </button>
 
                     <!-- Results -->
                     <div id="detect-results" class="hidden space-y-4">
                         <!-- Summary -->
                         <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                            <h4 class="font-medium mb-2">检测摘要</h4>
+                            <h4 class="font-medium mb-2">Detection summary</h4>
                             <div class="grid grid-cols-2 gap-4 text-sm">
                                 <div>
-                                    <span class="text-gray-600 dark:text-gray-400">总字符数:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">Total characters:</span>
                                     <span id="total-chars" class="font-medium ml-2">0</span>
                                 </div>
                                 <div>
-                                    <span class="text-gray-600 dark:text-gray-400">隐形字符:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">Invisible Characters:</span>
                                     <span id="invisible-chars" class="font-medium ml-2 text-red-600">0</span>
                                 </div>
                             </div>
@@ -261,17 +261,17 @@ class InvisibleCharacterDetector {
 
                         <!-- Detailed Results -->
                         <div>
-                            <h4 class="font-medium mb-2">详细结果</h4>
+                            <h4 class="font-medium mb-2">Detailed results</h4>
                             <div id="detailed-results" class="space-y-2 max-h-60 overflow-y-auto"></div>
                         </div>
 
                         <!-- Clean Text -->
                         <div>
-                            <label class="block text-sm font-medium mb-2">清洁文本</label>
+                            <label class="block text-sm font-medium mb-2">Clean text</label>
                             <div class="relative">
                                 <textarea id="clean-text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 font-mono text-sm" rows="3" readonly></textarea>
                                 <button id="copy-clean-btn" class="absolute top-2 right-2 px-3 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors">
-                                    复制
+                                    Copy
                                 </button>
                             </div>
                         </div>
@@ -308,13 +308,13 @@ class InvisibleCharacterDetector {
 
     findInvisibleCharacters(text) {
         const invisibleCharPatterns = [
-            { char: '\u200B', name: '零宽空格', code: 'U+200B' },
-            { char: '\u200C', name: '零宽非连字符', code: 'U+200C' },
-            { char: '\u200D', name: '零宽连字符', code: 'U+200D' },
-            { char: '\u200E', name: '左至右标记', code: 'U+200E' },
-            { char: '\u200F', name: '右至左标记', code: 'U+200F' },
-            { char: '\u2060', name: '词连接符', code: 'U+2060' },
-            { char: '\uFEFF', name: '零宽非断空格', code: 'U+FEFF' }
+            { char: '\u200B', name: 'Zero Width Space', code: 'U+200B' },
+            { char: '\u200C', name: 'Zero Width Non-Joiner', code: 'U+200C' },
+            { char: '\u200D', name: 'Zero Width Joiner', code: 'U+200D' },
+            { char: '\u200E', name: 'Left-to-Right Mark', code: 'U+200E' },
+            { char: '\u200F', name: 'Right-to-Left Mark', code: 'U+200F' },
+            { char: '\u2060', name: 'Word Joiner', code: 'U+2060' },
+            { char: '\uFEFF', name: 'Zero Width No-Break Space', code: 'U+FEFF' }
         ];
 
         const results = [];
@@ -350,7 +350,7 @@ class InvisibleCharacterDetector {
                         <svg class="w-5 h-5 text-green-600 dark:text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <span class="text-green-800 dark:text-green-200">未检测到隐形字符</span>
+                        <span class="text-green-800 dark:text-green-200">No invisible characters detected</span>
                     </div>
                 </div>
             `;
@@ -371,7 +371,7 @@ class InvisibleCharacterDetector {
                         <span class="font-medium">${char.name}</span>
                         <span class="text-sm text-gray-600 dark:text-gray-400 ml-2">${char.code}</span>
                     </div>
-                    <span class="text-sm text-gray-500">位置: ${char.position}</span>
+                    <span class="text-sm text-gray-500">Position: ${char.position}</span>
                 </div>
                 <div class="text-sm text-gray-600 dark:text-gray-400 mt-1 font-mono">
                     ...${char.context}...
@@ -399,7 +399,7 @@ class InvisibleCharacterDetector {
         // Show feedback
         const btn = document.getElementById('copy-clean-btn');
         const originalText = btn.textContent;
-        btn.textContent = '已复制!';
+        btn.textContent = 'Copied!';
         btn.classList.add('bg-green-600');
         
         setTimeout(() => {

@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theinvisiblecharacter.live/">
+    <link rel="alternate" hreflang="en" href="https://theinvisiblecharacter.live/" />
+    <link rel="alternate" hreflang="fr" href="https://theinvisiblecharacter.live/index-fr" />
+    <link rel="alternate" hreflang="x-default" href="https://theinvisiblecharacter.live/" />
     <meta name="description"
         content="Copy and detect Unicode invisible characters with invisiblecharacter for Instagram, TikTok, Fortnite, WhatsApp, Discord, and more. Free, private, no signup.">
     <meta name="keywords" content="">
@@ -59,38 +62,8 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-
-    <script>
-        window.tailwind = window.tailwind || {};
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'apple-gray': {
-                            50: '#fafafa',
-                            100: '#f5f5f7',
-                            200: '#e8e8ed',
-                            300: '#d1d1d6',
-                            400: '#a1a1a6',
-                            500: '#86868b',
-                            600: '#6e6e73',
-                            700: '#48484a',
-                            800: '#1d1d1f',
-                            900: '#000000'
-                        }
-                    },
-                    fontFamily: {
-                        sf: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
-                    }
-                }
-            }
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+<link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile-optimization.css">
 
@@ -300,7 +273,116 @@
                             </label>
                         </div>
 
-                        <div id="character-grid" class="character-grid" aria-live="polite"></div>
+                        <div id="character-grid" class="character-grid" aria-live="polite">
+                            <article class="character-card" data-character-id="u200b" data-unicode="U+200B" data-category="spacing">
+                                <div class="character-card-top">
+                                    <h4>Zero Width Space</h4>
+                                    <code>U+200B</code>
+                                </div>
+                                <p>Use for line breaks, short separators, and invisible spacing in bios or captions.</p>
+                                <p class="platform-risk">Platform risk: May be stripped by some apps.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8203;" data-original-text="Copy U+200B" data-success-text="Copied" data-error-text="Failed">Copy U+200B</button>
+                            </article>
+                            <article class="character-card" data-character-id="u2800" data-unicode="U+2800" data-category="braille">
+                                <div class="character-card-top">
+                                    <h4>Braille Pattern Blank</h4>
+                                    <code>U+2800</code>
+                                </div>
+                                <p>Use when a platform removes zero-width marks but allows blank-looking braille space.</p>
+                                <p class="platform-risk">Platform risk: Can render as a box in some fonts.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#10240;" data-original-text="Copy U+2800" data-success-text="Copied" data-error-text="Failed">Copy U+2800</button>
+                            </article>
+                            <article class="character-card" data-character-id="u3164" data-unicode="U+3164" data-category="hangul">
+                                <div class="character-card-top">
+                                    <h4>Hangul Filler</h4>
+                                    <code>U+3164</code>
+                                </div>
+                                <p>Use for blank-looking usernames, display names, and profile fields that reject spaces.</p>
+                                <p class="platform-risk">Platform risk: Some apps normalize or block it.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#12644;" data-original-text="Copy U+3164" data-success-text="Copied" data-error-text="Failed">Copy U+3164</button>
+                            </article>
+                            <article class="character-card" data-character-id="u2060" data-unicode="U+2060" data-category="formatting">
+                                <div class="character-card-top">
+                                    <h4>Word Joiner</h4>
+                                    <code>U+2060</code>
+                                </div>
+                                <p>Use to prevent unwanted line breaks inside a phrase, username, or pasted snippet.</p>
+                                <p class="platform-risk">Platform risk: Often removed during text cleanup.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8288;" data-original-text="Copy U+2060" data-success-text="Copied" data-error-text="Failed">Copy U+2060</button>
+                            </article>
+                            <article class="character-card" data-character-id="u200c" data-unicode="U+200C" data-category="formatting">
+                                <div class="character-card-top">
+                                    <h4>Zero Width Non-Joiner</h4>
+                                    <code>U+200C</code>
+                                </div>
+                                <p>Use for scripts and emojis where you need to stop adjacent characters from joining.</p>
+                                <p class="platform-risk">Platform risk: Can alter shaping in multilingual text.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8204;" data-original-text="Copy U+200C" data-success-text="Copied" data-error-text="Failed">Copy U+200C</button>
+                            </article>
+                            <article class="character-card" data-character-id="u200d" data-unicode="U+200D" data-category="formatting">
+                                <div class="character-card-top">
+                                    <h4>Zero Width Joiner</h4>
+                                    <code>U+200D</code>
+                                </div>
+                                <p>Use when emoji or script shaping requires invisible joining between characters.</p>
+                                <p class="platform-risk">Platform risk: May combine emojis unexpectedly.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8205;" data-original-text="Copy U+200D" data-success-text="Copied" data-error-text="Failed">Copy U+200D</button>
+                            </article>
+                            <article class="character-card" data-character-id="u2063" data-unicode="U+2063" data-category="separator">
+                                <div class="character-card-top">
+                                    <h4>Invisible Separator</h4>
+                                    <code>U+2063</code>
+                                </div>
+                                <p>Use for invisible separation in technical text, numbers, and compact labels.</p>
+                                <p class="platform-risk">Platform risk: Frequently stripped by validators.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8291;" data-original-text="Copy U+2063" data-success-text="Copied" data-error-text="Failed">Copy U+2063</button>
+                            </article>
+                            <article class="character-card" data-character-id="u2061" data-unicode="U+2061" data-category="mathematical">
+                                <div class="character-card-top">
+                                    <h4>Function Application</h4>
+                                    <code>U+2061</code>
+                                </div>
+                                <p>Use in mathematical notation where a function relationship should remain invisible.</p>
+                                <p class="platform-risk">Platform risk: Not reliable for social usernames.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8289;" data-original-text="Copy U+2061" data-success-text="Copied" data-error-text="Failed">Copy U+2061</button>
+                            </article>
+                            <article class="character-card" data-character-id="u2062" data-unicode="U+2062" data-category="mathematical">
+                                <div class="character-card-top">
+                                    <h4>Invisible Times</h4>
+                                    <code>U+2062</code>
+                                </div>
+                                <p>Use for invisible multiplication in formulas or notation copied between editors.</p>
+                                <p class="platform-risk">Platform risk: May be removed outside math contexts.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8290;" data-original-text="Copy U+2062" data-success-text="Copied" data-error-text="Failed">Copy U+2062</button>
+                            </article>
+                            <article class="character-card" data-character-id="u200e" data-unicode="U+200E" data-category="directional">
+                                <div class="character-card-top">
+                                    <h4>Left-to-Right Mark</h4>
+                                    <code>U+200E</code>
+                                </div>
+                                <p>Use to stabilize left-to-right display in mixed-language usernames or messages.</p>
+                                <p class="platform-risk">Platform risk: Can change text direction behavior.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8206;" data-original-text="Copy U+200E" data-success-text="Copied" data-error-text="Failed">Copy U+200E</button>
+                            </article>
+                            <article class="character-card" data-character-id="u200f" data-unicode="U+200F" data-category="directional">
+                                <div class="character-card-top">
+                                    <h4>Right-to-Left Mark</h4>
+                                    <code>U+200F</code>
+                                </div>
+                                <p>Use to stabilize right-to-left display in Arabic, Hebrew, or mixed-direction text.</p>
+                                <p class="platform-risk">Platform risk: Can make pasted text hard to edit.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8207;" data-original-text="Copy U+200F" data-success-text="Copied" data-error-text="Failed">Copy U+200F</button>
+                            </article>
+                            <article class="character-card" data-character-id="u202a" data-unicode="U+202A" data-category="directional">
+                                <div class="character-card-top">
+                                    <h4>Left-to-Right Embedding</h4>
+                                    <code>U+202A</code>
+                                </div>
+                                <p>Use for advanced bidirectional text testing when a full LTR embedding is needed.</p>
+                                <p class="platform-risk">Platform risk: Use carefully because it affects following text.</p>
+                                <button class="button-secondary small-button" type="button" data-clipboard-text="&#8234;" data-original-text="Copy U+202A" data-success-text="Copied" data-error-text="Failed">Copy U+202A</button>
+                            </article>
+                        </div>
 
                         <div class="selection-bar">
                             <span id="selection-counter" class="selection-counter hidden">
@@ -537,6 +619,7 @@
                     <h2 id="guides-title">Platform-specific next steps</h2>
                 </div>
                 <div class="guide-links">
+                    <a href="/tiktok-invisible-username-generator">TikTok username generator</a>
                     <a href="/blog/instagram-invisible-characters">Instagram bio formatting</a>
                     <a href="/blog/tiktok-invisible-characters">TikTok invisible characters</a>
                     <a href="/blog/fortnite-invisible-name">Fortnite invisible names</a>

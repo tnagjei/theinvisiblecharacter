@@ -1,166 +1,150 @@
-<!DOCTYPE html><html lang="zh-CN"><head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <link rel="canonical" href="https://theinvisiblecharacter.live/tools">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="隐形字符工具 - 在线生成和管理零宽字符，支持多种隐形字符格式">
-    <meta name="keywords" content="隐形字符,零宽字符,空白字符,在线工具">
+    <meta name="description" content="Generate, detect, convert, and copy invisible Unicode characters for social profiles, usernames, messages, and text cleanup.">
+    <meta name="keywords" content="">
     <meta name="author" content="The Invisible Character">
     <meta name="theme-color" content="#000000">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/tools">
-    <meta property="og:title" content="隐形字符工具 - 工作台">
-    <meta property="og:description" content="在线生成和管理零宽字符，支持多种隐形字符格式">
+    <meta property="og:title" content="Invisible Character Tools">
+    <meta property="og:description" content="Generate, detect, convert, and copy invisible Unicode characters in your browser.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="TheInvisibleCharacter.live - 隐形字符工具">
+    <meta property="og:image:alt" content="TheInvisibleCharacter.live invisible character tools">
     <meta property="og:site_name" content="TheInvisibleCharacter.live">
-    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@invisiblechar">
     <meta name="twitter:creator" content="@invisiblechar">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/tools">
-    <meta name="twitter:title" content="隐形字符工具 - 工作台">
-    <meta name="twitter:description" content="在线生成和管理零宽字符，支持多种隐形字符格式">
+    <meta name="twitter:title" content="Invisible Character Tools">
+    <meta name="twitter:description" content="Generate, detect, convert, and copy invisible Unicode characters in your browser.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
-    <meta name="twitter:image:alt" content="TheInvisibleCharacter.live - 隐形字符工具">
+    <meta name="twitter:image:alt" content="TheInvisibleCharacter.live invisible character tools">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom CSS -->
+<!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'apple-gray': {
-                            50: '#fafafa',
-                            100: '#f5f5f7',
-                            200: '#e8e8ed',
-                            300: '#d1d1d6',
-                            400: '#a1a1a6',
-                            500: '#86868b',
-                            600: '#6e6e73',
-                            700: '#48484a',
-                            800: '#1d1d1f',
-                            900: '#000000'
-                        }
-                    },
-                    fontFamily: {
-                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'slide-up': 'slideUp 0.3s ease-out',
-                        'scale-in': 'scaleIn 0.2s ease-out'
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(10px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        scaleIn: {
-                            '0%': { transform: 'scale(0.95)', opacity: '0' },
-                            '100%': { transform: 'scale(1)', opacity: '1' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <title>隐形字符工具 - 工作台</title>
+<title>Invisible Character Tools | Generator, Detector, Converter</title>
 
     <style>
-        /* Component-specific styles */
         .character-type-btn {
-            @apply px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-center hover:border-blue-500 transition-colors cursor-pointer;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .character-type-btn:hover {
+            border-color: #3b82f6;
         }
 
         .character-type-btn.active {
-            @apply border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300;
+            border-color: #3b82f6;
+            background: #eff6ff;
+            color: #1d4ed8;
         }
 
         .tool-section {
-            @apply mb-8;
+            margin-bottom: 2rem;
         }
 
         .tool-header {
-            @apply flex items-center justify-between mb-6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
         }
 
         .tool-title {
-            @apply text-2xl font-bold;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .tool-description {
-            @apply text-gray-600 dark:text-gray-400;
+            color: #4b5563;
         }
 
-        /* Tab styles */
         .tab-btn {
-            @apply px-6 py-3 font-medium border-b-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 transition-colors cursor-pointer;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            border-bottom-color: #d1d5db;
         }
 
         .tab-btn.active {
-            @apply border-blue-500 text-blue-600 dark:text-blue-400;
+            border-bottom-color: #3b82f6;
+            color: #2563eb;
         }
 
         .tab-content {
-            @apply hidden;
+            display: none;
         }
 
         .tab-content.active {
-            @apply block;
+            display: block;
+        }
+
+        .dark .character-type-btn {
+            border-color: #4b5563;
+        }
+
+        .dark .character-type-btn.active {
+            background: rgba(30, 58, 138, 0.2);
+            color: #93c5fd;
+        }
+
+        .dark .tool-description {
+            color: #9ca3af;
         }
     </style>
 </head>
 
 <body class="bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased transition-colors duration-300">
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-apple-gray-800 text-white px-4 py-2 rounded-md" title="跳转到主要内容">
-        跳转到主要内容
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-apple-gray-800 text-white px-4 py-2 rounded-md" title="Skip to main content">
+        Skip to main content
     </a>
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-apple-gray-900/80 backdrop-blur-xl border-b border-apple-gray-200 dark:border-apple-gray-700">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="主导航">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2" aria-label="首页" title="首页">
+                    <a href="/" class="flex items-center space-x-2" aria-label="Home" title="Home">
                         <svg class="w-8 h-8 text-apple-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
-                        <span class="text-xl font-semibold">隐形字符</span>
+                        <span class="text-xl font-semibold">Invisible Characters</span>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="首页">首页</a>
-                    <a href="/tools" class="text-apple-gray-900 dark:text-white font-medium" title="工具">工具</a>
-                    <a href="#features" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="功能">功能</a>
-                    <a href="#about" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="关于">关于</a>
-                    <button id="theme-toggle-desktop" class="p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="切换主题">
+                    <a href="/" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="Home">Home</a>
+                    <a href="/tools" class="text-apple-gray-900 dark:text-white font-medium" title="Tools">Tools</a>
+                    <a href="#features" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="Features">Features</a>
+                    <a href="#about" class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-gray-900 dark:hover:text-white transition-colors" title="About">About</a>
+                    <button id="theme-toggle-desktop" class="p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Toggle theme">
                         <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
@@ -171,7 +155,7 @@
                 </div>
 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="打开菜单" aria-expanded="false">
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -182,15 +166,15 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-apple-gray-900 border-t border-apple-gray-200 dark:border-apple-gray-700">
             <div class="px-4 py-2 space-y-1">
-                <a href="/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="首页">首页</a>
-                <a href="/tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors font-medium" title="工具">工具</a>
-                <a href="#features" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="功能">功能</a>
-                <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="关于">关于</a>
+                <a href="/" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="Home">Home</a>
+                <a href="/tools" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors font-medium" title="Tools">Tools</a>
+                <a href="#features" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="Features">Features</a>
+                <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors" title="About">About</a>
                 <button id="theme-toggle-mobile" class="w-full text-left px-3 py-2 rounded-lg hover:bg-apple-gray-100 dark:hover:bg-apple-gray-800 transition-colors flex items-center space-x-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                     </svg>
-                    <span>切换主题</span>
+                    <span>Toggle theme</span>
                 </button>
             </div>
         </div>
@@ -202,9 +186,12 @@
         <section class="bg-gradient-to-br from-apple-gray-50 to-white dark:from-apple-gray-900 dark:to-apple-gray-800 py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">隐形字符工具</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Invisible Character Tools</h1>
                     <p class="text-xl text-apple-gray-600 dark:text-apple-gray-300 max-w-3xl mx-auto">
-                        专业的零宽字符处理工具，支持生成、检测和转换各种隐形字符格式
+                        Generate, detect, and convert invisible Unicode characters for social profiles, usernames, messages, and text cleanup.
+                    </p>
+                    <p class="mt-4">
+                        <a href="/tiktok-invisible-username-generator" class="text-blue-600 hover:text-blue-700 font-medium">Open the TikTok invisible username generator</a>
                     </p>
                 </div>
             </div>
@@ -216,9 +203,9 @@
                 <!-- Tool Tabs -->
                 <div class="flex justify-center mb-8">
                     <div class="flex space-x-1 bg-apple-gray-100 dark:bg-apple-gray-800 rounded-lg p-1">
-                        <button class="tab-btn active" data-tab="generator">生成器</button>
-                        <button class="tab-btn" data-tab="detector">检测器</button>
-                        <button class="tab-btn" data-tab="converter">转换器</button>
+                        <button class="tab-btn active" data-tab="generator">Generator</button>
+                        <button class="tab-btn" data-tab="detector">Detector</button>
+                        <button class="tab-btn" data-tab="converter">Converter</button>
                     </div>
                 </div>
 
@@ -238,73 +225,73 @@
                 <div class="tab-content" id="converter-tab">
                     <div class="max-w-4xl mx-auto">
                         <div class="bg-white dark:bg-apple-gray-800 rounded-2xl p-6 shadow-lg">
-                            <h3 class="text-2xl font-bold mb-6 text-center">字符转换器</h3>
+                            <h3 class="text-2xl font-bold mb-6 text-center">Character Converter</h3>
 
                             <div class="space-y-6">
                                 <!-- Input Area -->
                                 <div>
-                                    <label for="converter-input" class="block text-sm font-medium mb-2">输入文本</label>
-                                    <textarea id="converter-input" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="在此输入要转换的文本..."></textarea>
+                                    <label for="converter-input" class="block text-sm font-medium mb-2">Input text</label>
+                                    <textarea id="converter-input" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700" rows="4" placeholder="Enter text to convert..."></textarea>
                                 </div>
 
                                 <!-- Conversion Options -->
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block text-sm font-medium mb-2">转换类型</label>
+                                        <label class="block text-sm font-medium mb-2">Conversion type</label>
                                         <select id="conversion-type" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700">
-                                            <option value="add-invisible">添加隐形字符</option>
-                                            <option value="remove-invisible">移除隐形字符</option>
-                                            <option value="to-unicode">转换为Unicode</option>
-                                            <option value="to-html">转换为HTML实体</option>
+                                            <option value="add-invisible">Add invisible characters</option>
+                                            <option value="remove-invisible">Remove invisible characters</option>
+                                            <option value="to-unicode">Convert to Unicode</option>
+                                            <option value="to-html">Convert to HTML entities</option>
                                         </select>
                                     </div>
 
                                     <div>
-                                        <label class="block text-sm font-medium mb-2">隐形字符位置</label>
+                                        <label class="block text-sm font-medium mb-2">Invisible character position</label>
                                         <select id="invisible-position" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700">
-                                            <option value="beginning">开头</option>
-                                            <option value="end">结尾</option>
-                                            <option value="both">开头和结尾</option>
-                                            <option value="between">字符之间</option>
+                                            <option value="beginning">Beginning</option>
+                                            <option value="end">End</option>
+                                            <option value="both">Both start and end</option>
+                                            <option value="between">Between characters</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <!-- Convert Button -->
                                 <button id="convert-btn" class="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-200 transform hover:scale-105">
-                                    转换文本
+                                    Convert Text
                                 </button>
 
                                 <!-- Results -->
                                 <div id="converter-results" class="hidden space-y-4">
                                     <div>
-                                        <label class="block text-sm font-medium mb-2">转换结果</label>
+                                        <label class="block text-sm font-medium mb-2">Converted result</label>
                                         <div class="relative">
                                             <textarea id="converted-text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 font-mono text-sm" rows="4" readonly=""></textarea>
                                             <button id="copy-converted-btn" class="absolute top-2 right-2 px-3 py-1 bg-purple-500 text-white rounded text-sm hover:bg-purple-600 transition-colors">
-                                                复制
+                                                Copy
                                             </button>
                                         </div>
                                     </div>
 
                                     <!-- Statistics -->
                                     <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                                        <h4 class="font-medium mb-2">转换统计</h4>
+                                        <h4 class="font-medium mb-2">Conversion stats</h4>
                                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                                             <div>
-                                                <span class="text-gray-600 dark:text-gray-400">原始长度:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Original length:</span>
                                                 <span id="original-length" class="font-medium ml-2">0</span>
                                             </div>
                                             <div>
-                                                <span class="text-gray-600 dark:text-gray-400">转换后长度:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Converted length:</span>
                                                 <span id="converted-length" class="font-medium ml-2">0</span>
                                             </div>
                                             <div>
-                                                <span class="text-gray-600 dark:text-gray-400">添加字符:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Characters added:</span>
                                                 <span id="added-chars" class="font-medium ml-2">0</span>
                                             </div>
                                             <div>
-                                                <span class="text-gray-600 dark:text-gray-400">移除字符:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Characters removed:</span>
                                                 <span id="removed-chars" class="font-medium ml-2">0</span>
                                             </div>
                                         </div>
@@ -321,54 +308,54 @@
         <section class="py-12 bg-apple-gray-50 dark:bg-apple-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold mb-4">快速参考</h2>
-                    <p class="text-lg text-apple-gray-600 dark:text-apple-gray-300">常用隐形字符参考表</p>
+                    <h2 class="text-3xl font-bold mb-4">Quick Reference</h2>
+                    <p class="text-lg text-apple-gray-600 dark:text-apple-gray-300">Common invisible character reference table</p>
                 </div>
 
                 <div class="bg-white dark:bg-apple-gray-900 rounded-2xl p-6 shadow-lg overflow-x-auto">
                     <table class="w-full">
                         <thead>
                             <tr class="border-b border-gray-200 dark:border-gray-700">
-                                <th class="text-left py-3 px-4 font-medium">字符名称</th>
+                                <th class="text-left py-3 px-4 font-medium">Character name</th>
                                 <th class="text-left py-3 px-4 font-medium">Unicode</th>
-                                <th class="text-left py-3 px-4 font-medium">HTML实体</th>
-                                <th class="text-left py-3 px-4 font-medium">CSS转义</th>
+                                <th class="text-left py-3 px-4 font-medium">HTML entity</th>
+                                <th class="text-left py-3 px-4 font-medium">CSS escape</th>
                                 <th class="text-left py-3 px-4 font-medium">JavaScript</th>
-                                <th class="text-left py-3 px-4 font-medium">描述</th>
+                                <th class="text-left py-3 px-4 font-medium">Description</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b border-gray-100 dark:border-gray-800">
-                                <td class="py-3 px-4">零宽空格</td>
+                                <td class="py-3 px-4">Zero Width Space</td>
                                 <td class="py-3 px-4 font-mono">U+200B</td>
                                 <td class="py-3 px-4 font-mono">&amp;#8203;</td>
                                 <td class="py-3 px-4 font-mono">\\200B</td>
                                 <td class="py-3 px-4 font-mono">\\u200B</td>
-                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">用于分隔字符但不显示宽度</td>
+                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">Separates text without visible width</td>
                             </tr>
                             <tr class="border-b border-gray-100 dark:border-gray-800">
-                                <td class="py-3 px-4">零宽连字符</td>
+                                <td class="py-3 px-4">Zero Width Joiner</td>
                                 <td class="py-3 px-4 font-mono">U+200D</td>
                                 <td class="py-3 px-4 font-mono">&amp;#8205;</td>
                                 <td class="py-3 px-4 font-mono">\\200D</td>
                                 <td class="py-3 px-4 font-mono">\\u200D</td>
-                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">连接字符，用于形成连字</td>
+                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">Joins characters for ligatures or combined marks</td>
                             </tr>
                             <tr class="border-b border-gray-100 dark:border-gray-800">
-                                <td class="py-3 px-4">零宽非连字符</td>
+                                <td class="py-3 px-4">Zero Width Non-Joiner</td>
                                 <td class="py-3 px-4 font-mono">U+200C</td>
                                 <td class="py-3 px-4 font-mono">&amp;#8204;</td>
                                 <td class="py-3 px-4 font-mono">\\200C</td>
                                 <td class="py-3 px-4 font-mono">\\u200C</td>
-                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">防止连字符连接</td>
+                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">Prevents adjacent characters from joining</td>
                             </tr>
                             <tr>
-                                <td class="py-3 px-4">左至右标记</td>
+                                <td class="py-3 px-4">Left-to-Right Mark</td>
                                 <td class="py-3 px-4 font-mono">U+200E</td>
                                 <td class="py-3 px-4 font-mono">&amp;#8206;</td>
                                 <td class="py-3 px-4 font-mono">\\200E</td>
                                 <td class="py-3 px-4 font-mono">\\u200E</td>
-                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">标记文本为左至右方向</td>
+                                <td class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400">Marks text as left-to-right</td>
                             </tr>
                         </tbody>
                     </table>
@@ -386,36 +373,36 @@
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
-                        <span class="text-xl font-semibold">隐形字符</span>
+                        <span class="text-xl font-semibold">Invisible Characters</span>
                     </div>
-                    <p class="text-apple-gray-400">专业的隐形字符工具平台</p>
+                    <p class="text-apple-gray-400">Invisible character tools for copy, detect, and conversion workflows</p>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">产品</h3>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
                     <ul class="space-y-2">
-                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="字符生成器">字符生成器</a></li>
-                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="检测工具">检测工具</a></li>
-                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="转换器">转换器</a>
+                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Character Generator">Character Generator</a></li>
+                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Detection Tool">Detection Tool</a></li>
+                        <li><a href="/tools" class="text-apple-gray-400 hover:text-white transition-colors" title="Converter">Converter</a>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">资源</h3>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="/blog/technical-guide-invisible-characters" class="text-apple-gray-400 hover:text-white transition-colors" title="文档">文档</a></li>
+                        <li><a href="/blog/technical-guide-invisible-characters" class="text-apple-gray-400 hover:text-white transition-colors" title="Docs">Docs</a></li>
                         <li><a href="/developer#api" class="text-apple-gray-400 hover:text-white transition-colors" title="API">API</a></li>
-                        <li><a href="/blog/" class="text-apple-gray-400 hover:text-white transition-colors" title="博客">博客</a></li>
+                        <li><a href="/blog/" class="text-apple-gray-400 hover:text-white transition-colors" title="Blog">Blog</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">支持</h3>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
                     <ul class="space-y-2">
-                        <li><a href="/help" class="text-apple-gray-400 hover:text-white transition-colors" title="帮助中心">帮助中心</a></li>
-                        <li><a href="/about#contact" class="text-apple-gray-400 hover:text-white transition-colors" title="联系我们">联系我们</a></li>
-                        <li><a href="/privacy-policy" class="text-apple-gray-400 hover:text-white transition-colors" title="隐私政策">隐私政策</a></li>
+                        <li><a href="/help" class="text-apple-gray-400 hover:text-white transition-colors" title="Help Center">Help Center</a></li>
+                        <li><a href="/about#contact" class="text-apple-gray-400 hover:text-white transition-colors" title="Contact Us">Contact Us</a></li>
+                        <li><a href="/privacy-policy" class="text-apple-gray-400 hover:text-white transition-colors" title="Privacy Policy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -541,7 +528,7 @@
             document.execCommand('copy');
 
             const originalText = copyConvertedBtn.textContent;
-            copyConvertedBtn.textContent = '已复制!';
+            copyConvertedBtn.textContent = 'Copied!';
             copyConvertedBtn.classList.add('bg-purple-600');
 
             setTimeout(() => {

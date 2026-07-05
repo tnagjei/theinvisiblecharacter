@@ -2,8 +2,8 @@
 # Production deployment settings
 
 [build]
-  command = "./build.sh"
-  publish = "."
+  command = "npm run build"
+  publish = "build"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -12,14 +12,14 @@
 # Production build settings
 [env.production]
   [env.production.build]
-    command = "./build.sh --production"
-    publish = "."
+    command = "npm run build"
+    publish = "build"
 
 # Development settings
 [env.development]
   [env.development.build]
-    command = "./build.sh --development"
-    publish = "."
+    command = "npm run build"
+    publish = "build"
 
 # Analytics and monitoring
 [analytics]

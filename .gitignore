@@ -6,6 +6,7 @@ task_plan.md
 doc/seo-review.md
 .codex/
 node_modules
+build/
 test-results/
 .agents/
 debug-core-functionality.html
