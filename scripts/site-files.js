@@ -18,7 +18,11 @@ const rootHtmlPages = [
   'cookie-policy.html',
   'tiktok-invisible-username-generator.html',
   'invisible-name-generator.html',
-  'blank-text-generator.html'
+  'blank-text-generator.html',
+  'discord-invisible-name-generator.html',
+  'whatsapp-blank-message-generator.html',
+  'fortnite-invisible-name-generator.html',
+  'instagram-invisible-character-generator.html'
 ];
 
 function walk(dir, predicate, output = []) {

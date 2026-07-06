@@ -3,7 +3,7 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'tic-v1.1.0';
+const CACHE_NAME = 'tic-v1.2.0';
 const urlsToCache = [
     '/',
     '/index-fr',
@@ -11,6 +11,10 @@ const urlsToCache = [
     '/tiktok-invisible-username-generator',
     '/invisible-name-generator',
     '/blank-text-generator',
+    '/discord-invisible-name-generator',
+    '/whatsapp-blank-message-generator',
+    '/fortnite-invisible-name-generator',
+    '/instagram-invisible-character-generator',
     '/fr/caractere-invisible',
     '/fr/pseudo-invisible-tiktok',
     '/fr/message-vide-whatsapp',

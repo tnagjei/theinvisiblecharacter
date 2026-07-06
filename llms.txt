@@ -14,6 +14,10 @@ TheInvisibleCharacter.live is a professional online platform specializing in zer
 - Character Generator: Create various types of invisible characters
 - Character Detector: Find and analyze invisible characters in text
 - Character Converter: Convert between regular and invisible characters
+- Discord Invisible Name Generator: Copy blank Unicode for Discord nickname tests
+- WhatsApp Blank Message Generator: Copy empty-looking WhatsApp message text
+- Fortnite Invisible Name Generator: Test blank Unicode for Fortnite and Epic display names
+- Instagram Invisible Character Generator: Copy hidden characters for bios, comments, and highlights
 
 ## Popular Use Cases
 - Instagram bios and captions
@@ -46,4 +50,4 @@ TheInvisibleCharacter.live is a professional online platform specializing in zer
 - Support: Available through help center
 
 ## Last Updated
-December 2024
+July 2026
