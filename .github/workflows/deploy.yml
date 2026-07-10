@@ -1,8 +1,8 @@
 # input: Pull requests, pushes to main, and manual workflow runs
-# output: Verified static build and Cloudflare Pages production deployment
+# output: Verified build, SEO, link, and security-header checks
 # pos: .github/workflows/deploy.yml（更新规则：变更时同步文件头与所属目录 README）
 
-name: Deploy to Cloudflare Pages
+name: Validate Site
 
 on:
   pull_request:
@@ -13,10 +13,9 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 concurrency:
-  group: deploy-${{ github.workflow }}-${{ github.ref }}
+  group: validate-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -54,36 +53,3 @@ jobs:
 
       - name: Check security headers
         run: npm run check:headers
-
-      - name: Upload verified build
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: verified-build
-          path: build/
-          if-no-files-found: error
-          retention-days: 3
-
-  deploy:
-    name: Deploy to Production
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: checks
-    if: >
-      github.ref == 'refs/heads/main' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
-
-    steps:
-      - name: Download verified build
-        uses: actions/download-artifact@v4
-        with:
-          name: verified-build
-          path: build/
-
-      - name: Deploy verified build to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy build --project-name=theinvisiblecharacter-live --branch=main
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

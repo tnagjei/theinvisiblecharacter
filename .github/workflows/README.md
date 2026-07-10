@@ -5,4 +5,4 @@
 > 一旦本目录内容变化，请更新本文件
 
 ## Files
-- deploy.yml：项目检查与自动部署到 Cloudflare Pages 的唯一工作流
+- deploy.yml：项目验证与检查（不执行部署）的唯一工作流
