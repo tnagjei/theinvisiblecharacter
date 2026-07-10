@@ -1,0 +1,602 @@
+/* input: blank-text-generator.html interactions
+   output: styled generator, result panel, analyzer, comparison table
+   pos: loaded after style.css; update when adding new page components */
+
+/* ─── Character selector fieldset ─────────────────────────────────────────── */
+.btg-char-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btg-char-fieldset legend {
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--tic-muted);
+  margin-bottom: 0.75rem;
+}
+
+.btg-char-options {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.btg-char-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--tic-line);
+  border-radius: 0.85rem;
+  background: var(--tic-panel);
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.btg-char-label:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.btg-char-label input[type="radio"] {
+  margin-top: 0.15rem;
+  accent-color: var(--tic-blue);
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.btg-char-label:has(input:checked) {
+  border-color: var(--tic-blue);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.btg-char-info {
+  flex: 1;
+}
+
+.btg-char-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--tic-ink);
+}
+
+.btg-char-code {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tic-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.btg-char-meta {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--tic-muted);
+  line-height: 1.5;
+}
+
+.btg-char-risk {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  background: rgba(180, 83, 9, 0.1);
+  color: var(--tic-amber);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ─── Count input row ────────────────────────────────────────────────────── */
+.btg-count-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.btg-count-field {
+  display: block;
+}
+
+.btg-count-field label {
+  display: block;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--tic-muted);
+  margin-bottom: 0.45rem;
+}
+
+.btg-count-field input[type="number"] {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 0.95rem;
+  border: 1px solid var(--tic-line);
+  border-radius: 0.8rem;
+  background: var(--tic-panel);
+  color: var(--tic-ink);
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.btg-count-field input[type="number"]:focus {
+  outline: none;
+  border-color: var(--tic-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.btg-count-field input[type="number"].btg-input-error {
+  border-color: var(--tic-rose);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+}
+
+.btg-error-msg {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--tic-rose);
+  font-weight: 700;
+  min-height: 1.2em;
+}
+
+/* ─── Quick count buttons ─────────────────────────────────────────────────── */
+.btg-quick-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.btg-quick-counts legend {
+  display: none; /* visually integrated as peer controls */
+}
+
+.btg-quick-btn {
+  min-height: 2.55rem;
+  min-width: 3.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--tic-line);
+  border-radius: 0.65rem;
+  background: var(--tic-panel);
+  color: var(--tic-ink);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.btg-quick-btn:hover {
+  border-color: rgba(37, 99, 235, 0.55);
+  background: rgba(37, 99, 235, 0.05);
+  transform: translateY(-1px);
+}
+
+.btg-quick-btn.is-active {
+  border-color: var(--tic-blue);
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--tic-blue);
+}
+
+/* ─── Generate button row ─────────────────────────────────────────────────── */
+.btg-generate-row {
+  margin-top: 1.25rem;
+}
+
+/* ─── Result panel ────────────────────────────────────────────────────────── */
+.btg-result-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.btg-result-panel h2 {
+  margin: 0 0 0.15rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+}
+
+.btg-result-textarea {
+  width: 100%;
+  min-height: 9rem;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--tic-line);
+  border-radius: 0.85rem;
+  background: var(--tic-soft);
+  color: var(--tic-ink);
+  font: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color 150ms ease;
+}
+
+.btg-result-textarea:focus {
+  outline: none;
+  border-color: var(--tic-blue);
+}
+
+.btg-result-textarea.btg-has-content {
+  border-color: var(--tic-teal);
+  background: rgba(15, 118, 110, 0.04);
+}
+
+.btg-status {
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.65rem;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--tic-teal);
+  font-size: 0.88rem;
+  font-weight: 800;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.btg-status.btg-status-empty {
+  background: rgba(95, 100, 109, 0.08);
+  color: var(--tic-muted);
+  font-weight: 600;
+}
+
+.btg-status.btg-status-error {
+  background: rgba(225, 29, 72, 0.08);
+  color: var(--tic-rose);
+}
+
+.btg-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--tic-muted);
+}
+
+.btg-stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btg-stat-label {
+  font-weight: 600;
+}
+
+.btg-stat-value {
+  font-weight: 800;
+  color: var(--tic-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── No-JS static fallback ──────────────────────────────────────────────── */
+.btg-noscript-section {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px dashed var(--tic-line);
+  border-radius: 0.85rem;
+  background: rgba(180, 83, 9, 0.04);
+}
+
+.btg-noscript-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--tic-amber);
+}
+
+.btg-static-presets {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.btg-preset-item label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--tic-muted);
+  margin-bottom: 0.3rem;
+}
+
+.btg-preset-textarea {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--tic-line);
+  border-radius: 0.65rem;
+  background: var(--tic-panel);
+  color: var(--tic-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+/* ─── Comparison table ────────────────────────────────────────────────────── */
+.btg-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btg-comparison-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.btg-comparison-table th,
+.btg-comparison-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--tic-line);
+}
+
+.btg-comparison-table th {
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tic-muted);
+  background: var(--tic-soft);
+}
+
+.btg-comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.btg-comparison-table tbody tr:hover td {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.btg-tag-yes {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--tic-teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.btg-tag-no {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  background: rgba(95, 100, 109, 0.1);
+  color: var(--tic-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.btg-tag-usually {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  background: rgba(180, 83, 9, 0.1);
+  color: var(--tic-amber);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ─── Analyzer module ─────────────────────────────────────────────────────── */
+.btg-analyzer {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--tic-line);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: var(--tic-shadow);
+}
+
+.dark .btg-analyzer {
+  background: rgba(23, 27, 31, 0.86);
+}
+
+.btg-analyzer h2 {
+  margin: 0 0 0.5rem;
+}
+
+.btg-analyze-area {
+  width: 100%;
+  min-height: 7rem;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--tic-line);
+  border-radius: 0.85rem;
+  background: var(--tic-soft);
+  color: var(--tic-ink);
+  font: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-top: 0.75rem;
+}
+
+.btg-analyze-area:focus {
+  outline: none;
+  border-color: var(--tic-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btg-analyze-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+.btg-analyze-results {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--tic-line);
+  border-radius: 0.85rem;
+  background: var(--tic-soft);
+  font-size: 0.88rem;
+}
+
+.btg-analyze-results.btg-hidden {
+  display: none;
+}
+
+.btg-analyze-summary {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--tic-ink);
+  margin-bottom: 0.75rem;
+}
+
+.btg-analyze-rows {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.btg-analyze-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--tic-line);
+  gap: 1rem;
+}
+
+.btg-analyze-row:last-child {
+  border-bottom: none;
+}
+
+.btg-analyze-key {
+  color: var(--tic-muted);
+  font-weight: 600;
+}
+
+.btg-analyze-val {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--tic-ink);
+}
+
+.btg-analyze-val.btg-nonzero {
+  color: var(--tic-teal);
+}
+
+.btg-char-list {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--tic-line);
+}
+
+.btg-char-list-title {
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tic-muted);
+  margin-bottom: 0.5rem;
+}
+
+.btg-char-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.btg-char-tag {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--tic-line);
+  border-radius: 0.4rem;
+  background: var(--tic-panel);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--tic-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Troubleshooting table ──────────────────────────────────────────────── */
+.btg-trouble-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.btg-trouble-table th,
+.btg-trouble-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--tic-line);
+  vertical-align: top;
+}
+
+.btg-trouble-table th {
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tic-muted);
+  background: var(--tic-soft);
+}
+
+.btg-trouble-table tr:last-child td {
+  border-bottom: none;
+}
+
+.btg-trouble-table code {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  background: rgba(37, 99, 235, 0.06);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+  color: var(--tic-blue);
+}
+
+/* ─── Responsive overrides ────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .btg-count-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .btg-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btg-char-label {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .btg-analyze-actions {
+    flex-direction: column;
+  }
+
+  .btg-analyze-actions button {
+    width: 100%;
+  }
+
+  .btg-table-wrap {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding: 0 12px;
+  }
+
+  .btg-trouble-table th,
+  .btg-trouble-table td {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.83rem;
+  }
+}
+
+/* ─── Dark mode overrides ─────────────────────────────────────────────────── */
+.dark .btg-comparison-table th {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark .btg-trouble-table th {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark .btg-analyze-results {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dark .btg-result-textarea,
+.dark .btg-analyze-area,
+.dark .btg-preset-textarea {
+  background: rgba(255, 255, 255, 0.03);
+}

@@ -235,6 +235,63 @@ if (fs.existsSync(tiktokPath)) {
   }
 }
 
+// Guard: Blank Text Generator page validation (feat/rebuild-blank-text-generator)
+const blankPath = path.join(root, 'blank-text-generator.html');
+if (fs.existsSync(blankPath)) {
+  const blank = cheerio.load(read(blankPath));
+  const blankTitle = blank('title').text().trim();
+  const blankH1 = blank('h1').first().text().trim();
+  const blankH1s = blank('h1').length;
+  const blankCanonical = blank('link[rel="canonical"]').attr('href') || '';
+  const bodyText = blank('body').text().toLowerCase();
+
+  // 1. Title matching
+  if (blankTitle !== 'Blank Text Generator (Copy & Paste Empty Text)') {
+    fail(`blank-text-generator.html: expected Title "Blank Text Generator (Copy & Paste Empty Text)", found "${blankTitle}"`);
+  }
+
+  // 2. Single H1 check and content matching
+  if (blankH1s !== 1) {
+    fail(`blank-text-generator.html: expected exactly 1 H1, found ${blankH1s}`);
+  } else if (blankH1 !== 'Blank Text Generator: Copy & Paste Empty Text') {
+    fail(`blank-text-generator.html: H1 mismatch — found: "${blankH1}"`);
+  }
+
+  // 3. Canonical matching
+  const expectedBlankCanonical = 'https://theinvisiblecharacter.live/blank-text-generator';
+  if (blankCanonical !== expectedBlankCanonical) {
+    fail(`blank-text-generator.html: canonical mismatch — found: "${blankCanonical}"`);
+  }
+
+  // 4. Keyword presence check
+  const requiredKeywords = ['blank text generator', 'empty text', 'blank character', 'empty character'];
+  for (const keyword of requiredKeywords) {
+    if (!bodyText.includes(keyword)) {
+      fail(`blank-text-generator.html: missing required keyword "${keyword}" in body text`);
+    }
+  }
+
+  // 5. FAQPage JSON-LD validator
+  let foundFaq = false;
+  blank('script[type="application/ld+json"]').each((_, node) => {
+    try {
+      const data = JSON.parse(blank(node).text());
+      if (data && data['@type'] === 'FAQPage') {
+        foundFaq = true;
+        const questions = data.mainEntity || [];
+        if (questions.length < 8) {
+          fail(`blank-text-generator.html: FAQPage has ${questions.length} items, expected at least 8`);
+        }
+      }
+    } catch (e) {
+      // JSON validation error is already checked by checkJsonLd, ignore here
+    }
+  });
+  if (!foundFaq) {
+    fail('blank-text-generator.html: missing FAQPage JSON-LD schema');
+  }
+}
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);

@@ -3,7 +3,7 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'tic-v1.2.1';
+const CACHE_NAME = 'tic-v1.3.0';
 const urlsToCache = [
     '/',
     '/index-fr',
@@ -29,7 +29,9 @@ const urlsToCache = [
     '/assets/js/detector.js',
     '/assets/js/main.js',
     '/assets/js/mobile-optimization.js',
-    '/assets/js/link-titles.js'
+    '/assets/js/link-titles.js',
+    '/assets/js/blank-text-generator.js',
+    '/assets/css/blank-text-generator.css'
 ];
 
 // Install event - cache resources
