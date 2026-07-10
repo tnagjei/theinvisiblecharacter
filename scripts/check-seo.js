@@ -201,4 +201,43 @@ if (failures.length) {
   process.exit(1);
 }
 
+// ─── Regression guards added for seo/tiktok-ranking-push ─────────────────────
+// Guard: homepage Title and H1 must remain unchanged
+const homeTitle = home('title').text().trim();
+const homeH1 = home('h1').first().text().trim();
+if (homeTitle !== 'Invisible Character Generator: Copy Blank Unicode Text') {
+  fail(`index.html: homepage Title changed — found: "${homeTitle}"`);
+}
+if (homeH1 !== 'Invisible Character Generator') {
+  fail(`index.html: homepage H1 changed — found: "${homeH1}"`);
+}
+
+// Guard: TikTok page Title and meta description must be present and non-empty
+const tiktokPath = path.join(root, 'tiktok-invisible-username-generator.html');
+if (fs.existsSync(tiktokPath)) {
+  const tiktok = cheerio.load(read(tiktokPath));
+  const tiktokTitle = tiktok('title').text().trim();
+  const tiktokDesc = tiktok('meta[name="description"]').attr('content') || '';
+  if (!tiktokTitle) fail('tiktok-invisible-username-generator.html: missing <title>');
+  if (!tiktokDesc) fail('tiktok-invisible-username-generator.html: missing meta description');
+
+  // Guard: TikTok page must have exactly one H1
+  const tiktokH1s = tiktok('h1').length;
+  if (tiktokH1s !== 1) {
+    fail(`tiktok-invisible-username-generator.html: expected exactly 1 H1, found ${tiktokH1s}`);
+  }
+
+  // Guard: TikTok canonical must be the clean URL (no .html)
+  const tiktokCanonical = tiktok('link[rel="canonical"]').attr('href') || '';
+  const expectedTiktokCanonical = 'https://theinvisiblecharacter.live/tiktok-invisible-username-generator';
+  if (tiktokCanonical !== expectedTiktokCanonical) {
+    fail(`tiktok-invisible-username-generator.html: canonical mismatch — found: "${tiktokCanonical}"`);
+  }
+}
+
+if (failures.length) {
+  console.error(failures.join('\n'));
+  process.exit(1);
+}
+
 console.log(`SEO check passed: ${sourceHtmlFiles().length} pages, ${urls.length} sitemap URLs`);
