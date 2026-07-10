@@ -3,7 +3,7 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'tic-v1.2.0';
+const CACHE_NAME = 'tic-v1.2.1';
 const urlsToCache = [
     '/',
     '/index-fr',

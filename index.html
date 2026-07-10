@@ -435,6 +435,7 @@
 
                         <div class="detector-actions">
                             <button id="detect-button" class="button-primary" type="button">Start Detection</button>
+                            <button class="button-secondary" type="button" onclick="window.app?.cleanDetectedText()">Clean Hidden Unicode</button>
                             <button id="clear-detector" class="button-secondary" type="button">Clear Text</button>
                             <label class="toggle-line">
                                 <input type="checkbox" id="real-time-detection" name="real-time-detection">
@@ -472,6 +473,10 @@
                         <h3>Detection matters</h3>
                         <p>Hidden characters can break search, usernames, code samples, or moderation review.</p>
                     </article>
+                    <article>
+                        <h3>Removal is cleanup</h3>
+                        <p>The invisible character remover is the detector cleanup action: paste text, review code points, then remove hidden marks before publishing.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -485,7 +490,7 @@
                 </div>
                 <div class="definition-list">
                     <article><h3>Invisible symbols to copy</h3><p>Reported: U+200B, U+2800, U+3164, U+200C, U+200D, and U+2060 are common choices. Copy them above, then test the result.</p></article>
-                    <article><h3>Generate, detect, then clean</h3><p>Verified on this site: the generator copies hidden Unicode and the detector can reveal the code point after you paste it.</p></article>
+                    <article><h3>Generate, detect, then clean</h3><p>Verified on this site: the generator copies hidden Unicode, the detector reveals the code point, and the cleaner removes hidden marks from pasted text.</p></article>
                     <article><h3>Hidden character risks</h3><p>Reported: hidden Unicode can affect formatting, moderation, screen readers, and copied code. Use it intentionally.</p></article>
                 </div>
             </div>
@@ -577,6 +582,10 @@
                         <h3>Local detection</h3>
                         <p>Reveal hidden Unicode without sending pasted text to a server.</p>
                     </article>
+                    <article>
+                        <h3>Invisible character remover</h3>
+                        <p>Clean zero-width, directional, and high-risk hidden marks from pasted text after reviewing the detector results.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -639,6 +648,10 @@
                     <article>
                         <h3>Why did one blank fail?</h3>
                         <p>The platform probably filters that mark. Try a different Unicode character and verify the result.</p>
+                    </article>
+                    <article>
+                        <h3>How do I remove invisible characters?</h3>
+                        <p>Paste text into the detector, run the scan, and use Clean Hidden Unicode to remove hidden code points from the textarea.</p>
                     </article>
                 </div>
             </div>

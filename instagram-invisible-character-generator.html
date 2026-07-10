@@ -107,6 +107,7 @@
                 <div class="definition-list">
                     <article><h3>Bio spacing</h3><p>Reported: U+200B can help with spacing and separators, but Instagram may normalize repeated marks.</p></article>
                     <article><h3>Comments</h3><p>Pending: empty looking comments can work with zero width characters, but behavior changes by client version.</p></article>
+                    <article><h3>Stories and highlights</h3><p>Pending: story text, highlight names, and sticker labels can normalize invisible characters differently from profile fields.</p></article>
                     <article><h3>Display name</h3><p>Pending: U+3164 or U+2800 can be tested, but a visible fallback is safer.</p></article>
                     <article><h3>Username</h3><p>Disputed: account usernames are usually stricter than bio, comment, or display name text.</p></article>
                 </div>
@@ -173,6 +174,7 @@
                     <article><h3>Which character should I try in an Instagram bio?</h3><p>Start with U+200B for spacing. If you need a blank looking mark, test U+3164 or U+2800.</p></article>
                     <article><h3>Why did Instagram remove the blank?</h3><p>The field may trim hidden characters, normalize Unicode, or block repeated invisible marks.</p></article>
                     <article><h3>Can invisible characters help highlight names?</h3><p>They can be tested for spacing or blank looking labels, but mark the result as pending until you save and reopen the profile.</p></article>
+                    <article><h3>Can I use invisible characters in Instagram stories?</h3><p>You can test them in story text or labels, but stories may render hidden marks differently from bios and comments.</p></article>
                     <article><h3>How do I check what I copied?</h3><p>Use the homepage detector to reveal code points such as U+200B, U+200D, U+2800, and U+3164.</p></article>
                 </div>
             </div>

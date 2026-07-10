@@ -121,8 +121,12 @@
                         <p>Expect stricter validation. If TikTok removes a character, switch to another option and test again.</p>
                     </article>
                     <article>
-                        <h3>Bio and captions</h3>
-                        <p>Invisible characters are more useful for spacing, separators, and clean line breaks.</p>
+                        <h3>Bio</h3>
+                        <p>Invisible characters are useful for compact separators and line layout, but repeated marks may be normalized.</p>
+                    </article>
+                    <article>
+                        <h3>Captions and comments</h3>
+                        <p>Use U+200B for spacing tests in captions or comments, then reopen the post because TikTok can trim hidden marks after publishing.</p>
                     </article>
                 </div>
             </div>
@@ -264,6 +268,7 @@
                 <div class="faq-list">
                     <article><h3>Which blank character should I try first?</h3><p>Start with U+200B. If TikTok removes it, try U+2800 and then U+3164.</p></article>
                     <article><h3>Can this guarantee an invisible TikTok username?</h3><p>No. TikTok validation changes, and usernames are usually stricter than display names or bios.</p></article>
+                    <article><h3>Can I use this in TikTok comments?</h3><p>You can test U+200B or U+2800 in comments, but behavior can differ from captions, bios, display names, and usernames.</p></article>
                     <article><h3>Is this private?</h3><p>Yes. Copying runs in your browser. The page does not need an account or uploaded text.</p></article>
                     <article><h3>Why does the blank show as a square?</h3><p>Your font or device may not render that Unicode character as blank. Try another invisible character.</p></article>
                 </div>

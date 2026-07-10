@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theinvisiblecharacter.live/fortnite-invisible-name-generator">
-    <meta name="description" content="Copy blank Unicode characters for Fortnite and Epic display name tests. Try U+3164, U+2800, and U+115F with safety, preview, and rollback notes.">
+    <meta name="description" content="Copy blank Unicode characters for Fortnite and Epic display name tests. Try U+3164, U+2800, and U+200B with safety, preview, and rollback notes.">
     <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#f7f8f8">
@@ -82,7 +82,7 @@
                     <div class="hero-actions">
                         <button class="button-primary" type="button" data-clipboard-text="&#12644;" data-original-text="Copy U+3164" data-success-text="Copied" data-error-text="Failed">Copy U+3164</button>
                         <button class="button-secondary" type="button" data-clipboard-text="&#10240;" data-original-text="Copy U+2800" data-success-text="Copied" data-error-text="Failed">Copy U+2800</button>
-                        <button class="button-secondary" type="button" data-clipboard-text="&#4447;" data-original-text="Copy U+115F" data-success-text="Copied" data-error-text="Failed">Copy U+115F</button>
+                        <button class="button-secondary" type="button" data-clipboard-text="&#8203;" data-original-text="Copy U+200B" data-success-text="Copied" data-error-text="Failed">Copy U+200B</button>
                     </div>
                 </div>
                 <aside class="instant-panel" aria-label="Fortnite safety note">
@@ -107,6 +107,7 @@
                 <div class="definition-list">
                     <article><h3>Pending platform behavior</h3><p>Third party pages report invisible name attempts, but current account validation can differ by region, client, and policy update.</p></article>
                     <article><h3>Visible backup</h3><p>Keep a normal display name available. If the blank fails, paste the visible name and save that instead.</p></article>
+                    <article><h3>Platform limits</h3><p>Pending: Epic account, console account, launcher, and in-game UI may not apply the same validation or rendering.</p></article>
                     <article><h3>Respect other players</h3><p>Do not use hidden names to impersonate, evade reports, or make moderation harder.</p></article>
                 </div>
             </div>
@@ -122,7 +123,7 @@
                     <p>Test one character at a time, then verify inside the launcher and in the game UI before assuming it worked.</p>
                 </div>
                 <ol class="process-list">
-                    <li><span>1</span><h3>Copy</h3><p>Start with U+3164, then U+2800 or U+115F if the first character is rejected.</p></li>
+                    <li><span>1</span><h3>Copy</h3><p>Start with U+3164, then U+2800 or U+200B if the first character is rejected.</p></li>
                     <li><span>2</span><h3>Paste</h3><p>Paste into the Epic display name flow, not into unrelated account fields.</p></li>
                     <li><span>3</span><h3>Preview</h3><p>Check for boxes, removed characters, or warning messages before saving.</p></li>
                     <li><span>4</span><h3>Verify</h3><p>Open Fortnite and compare how the name appears in menus and match UI.</p></li>
@@ -139,7 +140,7 @@
                 <div class="feature-matrix">
                     <article><h3>U+3164 Hangul Filler</h3><p>Reported: common blank looking fallback for names. Pending until your Epic settings save it.</p><button class="button-secondary small-button" type="button" data-clipboard-text="&#12644;" data-original-text="Copy U+3164" data-success-text="Copied" data-error-text="Failed">Copy U+3164</button></article>
                     <article><h3>U+2800 Braille Pattern Blank</h3><p>Reported: useful when a field needs a character with width. Some clients can show it as a square.</p><button class="button-secondary small-button" type="button" data-clipboard-text="&#10240;" data-original-text="Copy U+2800" data-success-text="Copied" data-error-text="Failed">Copy U+2800</button></article>
-                    <article><h3>U+115F Hangul Choseong Filler</h3><p>Pending: a less common filler option. Test carefully because support is less predictable.</p><button class="button-secondary small-button" type="button" data-clipboard-text="&#4447;" data-original-text="Copy U+115F" data-success-text="Copied" data-error-text="Failed">Copy U+115F</button></article>
+                    <article><h3>U+200B Zero Width Space</h3><p>Pending: compact fallback when blank-looking fillers are removed. It may be trimmed at field edges.</p><button class="button-secondary small-button" type="button" data-clipboard-text="&#8203;" data-original-text="Copy U+200B" data-success-text="Copied" data-error-text="Failed">Copy U+200B</button></article>
                     <article><h3>Detector check</h3><p>Verified on this site: the detector can reveal the copied hidden code point before you paste it elsewhere.</p><a href="/#detector-tool">Open detector</a></article>
                 </div>
             </div>
@@ -169,7 +170,7 @@
                 </div>
                 <div class="faq-list">
                     <article><h3>Does this prove Fortnite accepts blank names?</h3><p>No. It gives copy options and a test workflow. Epic validation is pending until you check it yourself.</p></article>
-                    <article><h3>Which character should I try first?</h3><p>Start with U+3164, then test U+2800. Use U+115F only as a secondary fallback.</p></article>
+                    <article><h3>Which character should I try first?</h3><p>Start with U+3164, then test U+2800 or U+200B. Keep a visible fallback ready before saving.</p></article>
                     <article><h3>What if the name is rejected?</h3><p>Paste a visible backup name, save that, and avoid repeating the same failed blank character.</p></article>
                     <article><h3>Can console players use this?</h3><p>Console display names usually route through the linked account system. Test in the account settings flow for your platform.</p></article>
                     <article><h3>Is a hidden name safe?</h3><p>It can create moderation and readability issues. Use visible names when identity clarity matters.</p></article>
