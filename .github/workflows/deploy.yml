@@ -1,19 +1,34 @@
+# input: Pull requests, pushes to main, and manual workflow runs
+# output: Verified static build and Cloudflare Pages production deployment
+# pos: .github/workflows/deploy.yml（更新规则：变更时同步文件头与所属目录 README）
+
 name: Deploy to Cloudflare Pages
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: '22'
+  PUPPETEER_SKIP_DOWNLOAD: 'true'
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
 
 jobs:
   checks:
     name: Run Checks
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
@@ -23,41 +38,52 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: npm
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run project checks
-        run: npm run check:all
-
-  deploy:
-    name: Deploy to Production
-    runs-on: ubuntu-latest
-    needs: checks
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install dependencies
+      - name: Install dependencies without browser downloads
         run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: Check SEO
+        run: npm run check:seo
+
+      - name: Check internal links
+        run: npm run check:links
+
+      - name: Check security headers
+        run: npm run check:headers
+
+      - name: Upload verified build
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-build
+          path: build/
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: checks
+    if: >
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+
+    steps:
+      - name: Download verified build
+        uses: actions/download-artifact@v4
+        with:
+          name: verified-build
+          path: build/
+
+      - name: Deploy verified build to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: theinvisiblecharacter-live
-          directory: build
+          command: pages deploy build --project-name=theinvisiblecharacter-live --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
