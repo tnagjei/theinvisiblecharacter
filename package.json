@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "自动化测试套件 for TheInvisibleCharacter.live",
   "main": "index.js",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/e2e/"
+    ]
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "check:seo": "node scripts/check-seo.js",

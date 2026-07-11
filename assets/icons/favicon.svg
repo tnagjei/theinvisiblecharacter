@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TheInvisibleCharacter">
+  <rect width="64" height="64" fill="#f2eee4"/>
+  <rect x="8" y="8" width="48" height="48" fill="#ce3e29"/>
+  <path d="M18 18h28v28H18z" fill="none" stroke="#f2eee4" stroke-width="3"/>
+  <text x="32" y="38" fill="#f2eee4" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">IC</text>
+</svg>

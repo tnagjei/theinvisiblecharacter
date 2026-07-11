@@ -1,0 +1,2534 @@
+<!-- input: qiaomu-design Phase 2 四个隔离方向样机与本地选择回传服务
+output: 全站 UI 重构的四方向可视化选择页
+pos: 设计预览入口（更新规则：方向、拨盘或交互变化时同步本注释与所属目录 README）
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f3f2ee">
+  <title>TheInvisibleCharacter 全站 UI 重构 · 设计方向预览</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f6b53'/%3E%3Ccircle cx='16' cy='16' r='4' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Archivo:wght@400;600;700;800&amp;family=Bungee&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,900&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --shell-bg: #f3f2ee;
+      --shell-surface: #fbfaf7;
+      --shell-ink: #1f211f;
+      --shell-muted: #676b66;
+      --shell-line: #d6d7d1;
+      --shell-accent: #1f6b53;
+      --shell-ease: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--shell-bg);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--shell-bg);
+      color: var(--shell-ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(31, 107, 83, 0.3);
+      outline-offset: 3px;
+    }
+
+    .preview-shell {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 34px 28px 84px;
+    }
+
+    .preview-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 32px;
+      align-items: end;
+      padding: 30px 0 24px;
+      border-bottom: 1px solid var(--shell-line);
+    }
+
+    .preview-kicker {
+      margin: 0 0 8px;
+      color: var(--shell-accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .preview-intro h1 {
+      max-width: 18ch;
+      margin: 0;
+      font-size: clamp(30px, 4vw, 58px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .preview-note {
+      max-width: 38em;
+      margin: 0;
+      color: var(--shell-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+
+    .dial-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 14px;
+      padding: 18px 0 26px;
+      border-bottom: 1px solid var(--shell-line);
+    }
+
+    .dial {
+      display: grid;
+      gap: 9px;
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid var(--shell-line);
+      border-radius: 10px;
+      background: var(--shell-surface);
+    }
+
+    .dial-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dial output {
+      color: var(--shell-accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .dial small {
+      color: var(--shell-muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .dial input {
+      width: 100%;
+      accent-color: var(--shell-accent);
+    }
+
+    .recommendation {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 26px 0 18px;
+      padding: 15px 16px;
+      border: 1px solid #b7cabe;
+      border-radius: 10px;
+      background: #e9f2ec;
+    }
+
+    .recommendation strong {
+      white-space: nowrap;
+      color: #174c3c;
+      font-size: 14px;
+    }
+
+    .recommendation p {
+      margin: 0;
+      color: #355e51;
+      font-size: 14px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .preview-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 2px solid var(--shell-line);
+      border-radius: 14px;
+      background: var(--shell-surface);
+      transition: border-color 160ms var(--shell-ease), transform 160ms var(--shell-ease);
+    }
+
+    .preview-card[data-rec="true"] {
+      border-color: #5f8d78;
+    }
+
+    .preview-frame {
+      position: relative;
+      height: 386px;
+      overflow: hidden;
+      background: #deded8;
+      border-bottom: 1px solid var(--shell-line);
+    }
+
+    .preview-frame-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: rgba(250, 250, 247, 0.92);
+      color: #272927;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .preview-rec {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: #1f6b53;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .stage-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      height: 600px;
+      flex: 0 0 auto;
+      transform: translate(-50%, -50%) scale(0.61);
+      transform-origin: center;
+    }
+
+    .preview-meta {
+      display: grid;
+      gap: 8px;
+      width: 100%;
+      padding: 17px 18px 0;
+    }
+
+    .preview-meta h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .preview-meta p {
+      display: -webkit-box;
+      max-width: 64ch;
+      min-height: 48px;
+      margin: 0;
+      overflow: hidden;
+      color: var(--shell-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      text-wrap: pretty;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .qmdp-pick-button {
+      position: relative;
+      width: calc(100% - 36px);
+      min-height: 46px;
+      margin: 14px 18px 18px;
+      border: 1px solid #252825;
+      border-radius: 8px;
+      background: #252825;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 140ms var(--shell-ease), background-color 140ms var(--shell-ease), box-shadow 140ms var(--shell-ease);
+    }
+
+    .direction-details {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--shell-line);
+    }
+
+    .direction-details > h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .detail-card {
+      min-width: 0;
+      padding: 17px;
+      border-top: 3px solid #2b2e2b;
+      background: var(--shell-surface);
+    }
+
+    .detail-card h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .detail-card p {
+      margin: 0 0 12px;
+      color: var(--shell-muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .detail-card dl {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      font-size: 12px;
+    }
+
+    .detail-card dt {
+      color: var(--shell-muted);
+    }
+
+    .detail-card dd {
+      margin: 1px 0 0;
+      color: var(--shell-ink);
+    }
+
+    .detail-a {
+      border-top-color: #ce3e29;
+    }
+
+    .detail-b {
+      border-top-color: #7896a5;
+    }
+
+    .detail-c {
+      border-top-color: #4f6542;
+    }
+
+    .detail-d {
+      border-top-color: #ef624f;
+    }
+
+    .mix-note {
+      margin: 18px 0 0;
+      color: var(--shell-muted);
+      font-size: 13px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .preview-card:hover {
+        border-color: #8f938d;
+        transform: translateY(-2px);
+      }
+
+      .qmdp-pick-button:hover {
+        background: var(--shell-accent);
+        box-shadow: 0 10px 24px rgba(31, 33, 31, 0.15);
+        transform: translateY(-1px);
+      }
+    }
+
+    @media (max-width: 1240px) {
+      .preview-frame {
+        height: 320px;
+      }
+
+      .stage-fit {
+        transform: translate(-50%, -50%) scale(0.49);
+      }
+
+      .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .preview-shell {
+        padding: 18px 14px 64px;
+      }
+
+      .preview-intro {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        padding-top: 18px;
+      }
+
+      .preview-intro h1 {
+        font-size: 34px;
+      }
+
+      .dial-panel,
+      .preview-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dial-panel {
+        gap: 9px;
+      }
+
+      .recommendation {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-frame {
+        height: 226px;
+      }
+
+      .stage-fit {
+        transform: translate(-50%, -50%) scale(0.34);
+      }
+
+      .preview-meta p {
+        min-height: 45px;
+      }
+
+      .dir-d .d-title {
+        font-size: 66px;
+      }
+
+      .dir-d .d-subtitle,
+      .dir-d .d-nav-links {
+        font-size: 18px;
+      }
+
+      .dir-d .d-search,
+      .dir-d .d-code,
+      .dir-d .d-switcher span,
+      .dir-d .d-studio-head {
+        font-size: 16px;
+      }
+
+      .dir-d .d-copy {
+        font-size: 21px;
+      }
+
+      .dir-b .db-title {
+        font-size: 52px;
+      }
+
+      .dir-b .db-char-name,
+      .dir-b .db-copy-button,
+      .dir-b .db-canvas-bar,
+      .dir-b .db-code {
+        font-size: 14px;
+      }
+
+      .dir-c .dir-c-lower-note {
+        top: 306px;
+        bottom: auto;
+        display: block !important;
+        width: 360px;
+      }
+
+      .dir-c .dir-c-lower-title {
+        font-size: 26px;
+      }
+
+      .dir-c .dir-c-lower-copy {
+        max-width: 34ch;
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .preview-card,
+      .qmdp-pick-button,
+      .qmdp-confirm,
+      .qmdp-dialog,
+      .qmdp-toast {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-shell">
+    <section class="preview-intro" aria-labelledby="preview-title">
+      <div>
+        <p class="preview-kicker">TheInvisibleCharacter · 全站 UI 重构</p>
+        <h1 id="preview-title">先看四种真实方向，再决定全站长什么样。</h1>
+      </div>
+      <p class="preview-note">这是设计方向样机，用于选择视觉与交互气质，不是最终 App（应用）或最终页面；选定后才进入正式实现。</p>
+    </section>
+
+    <section class="dial-panel" data-qmdp-dials aria-label="设计拨盘">
+      <label class="dial">
+        <span class="dial-head">视觉冒险度 <output data-qmdp-output="variance">6</output></span>
+        <input data-qmdp-dial="variance" type="range" min="1" max="10" value="6" aria-label="视觉冒险度">
+        <small>越高，版式越大胆。</small>
+      </label>
+      <label class="dial">
+        <span class="dial-head">动效强度 <output data-qmdp-output="motion">4</output></span>
+        <input data-qmdp-dial="motion" type="range" min="1" max="10" value="4" aria-label="动效强度">
+        <small>越高，转场和反馈越多。</small>
+      </label>
+      <label class="dial">
+        <span class="dial-head">信息密度 <output data-qmdp-output="density">6</output></span>
+        <input data-qmdp-dial="density" type="range" min="1" max="10" value="6" aria-label="信息密度">
+        <small>越高，同屏工具与信息越多。</small>
+      </label>
+    </section>
+
+    <aside class="recommendation" aria-label="推荐方向">
+      <strong>推荐 A · 精密索引</strong>
+      <p>它最贴近“打开就复制、需要时再检测”的真实任务，迁移风险最低，也最容易统一 50 个静态页面。</p>
+    </aside>
+
+    <div class="preview-grid" aria-label="四个设计方向">
+      <article class="preview-card" data-design-option="A" data-name="精密索引" data-rec="true">
+        <div class="preview-frame">
+          <span class="preview-frame-label">方向样机 A</span>
+          <span class="preview-rec">推荐</span>
+          <div class="stage-fit">
+<style>
+  .dir-a {
+    --da-paper: #f2eee4;
+    --da-paper-deep: #e4dfd3;
+    --da-ink: #20201d;
+    --da-muted: #747068;
+    --da-rule: #aaa499;
+    --da-signal: #ce3e29;
+    position: relative;
+    width: 960px;
+    height: 600px;
+    overflow: hidden;
+    background: var(--da-paper);
+    color: var(--da-ink);
+    font-family: "Archivo", "Avenir Next", sans-serif;
+    font-style: normal;
+  }
+
+  .dir-a .da-shell {
+    display: grid;
+    grid-template-rows: 76px minmax(0, 1fr) 50px;
+    height: 100%;
+    padding: 0 34px;
+    box-sizing: border-box;
+  }
+
+  .dir-a .da-topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: center;
+    border-bottom: 2px solid var(--da-ink);
+  }
+
+  .dir-a .da-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .dir-a .da-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background: var(--da-signal);
+    color: var(--da-paper);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .dir-a .da-brand-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-edition {
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-nav span:last-child {
+    color: var(--da-signal);
+  }
+
+  .dir-a .da-workbench {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    min-height: 0;
+  }
+
+  .dir-a .da-primary {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-width: 0;
+    padding: 38px 36px 28px 0;
+    border-right: 1px solid var(--da-rule);
+  }
+
+  .dir-a .da-kicker {
+    margin: 0 0 17px;
+    color: var(--da-signal);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-title {
+    max-width: 520px;
+    margin: 0;
+    font-family: "Archivo Narrow", "Archivo", sans-serif;
+    font-size: 56px;
+    font-stretch: condensed;
+    font-weight: 700;
+    line-height: 0.91;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+  }
+
+  .dir-a .da-intro {
+    max-width: 460px;
+    margin: 18px 0 0;
+    color: #5c5953;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .dir-a .da-character-tool {
+    display: grid;
+    grid-template-columns: 122px minmax(0, 1fr) 132px;
+    align-items: stretch;
+    min-height: 106px;
+    border-top: 2px solid var(--da-ink);
+    border-bottom: 2px solid var(--da-ink);
+  }
+
+  .dir-a .da-glyph {
+    display: grid;
+    place-items: center;
+    background: var(--da-paper-deep);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 46px;
+    font-weight: 700;
+  }
+
+  .dir-a .da-glyph::after {
+    content: "00";
+    color: var(--da-signal);
+    letter-spacing: -0.2em;
+  }
+
+  .dir-a .da-code {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 22px;
+    border-left: 1px solid var(--da-rule);
+  }
+
+  .dir-a .da-code strong {
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 24px;
+    letter-spacing: -0.03em;
+  }
+
+  .dir-a .da-code span {
+    margin-top: 7px;
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-copy {
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: var(--da-signal);
+    color: var(--da-paper);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-sidebar {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    min-width: 0;
+    padding: 38px 0 28px 28px;
+  }
+
+  .dir-a .da-search-label,
+  .dir-a .da-section-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-search {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 54px;
+    height: 47px;
+    border-top: 2px solid var(--da-ink);
+    border-bottom: 1px solid var(--da-ink);
+  }
+
+  .dir-a .da-search-text {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    color: var(--da-ink);
+    font-size: 14px;
+  }
+
+  .dir-a .da-search-key {
+    display: grid;
+    place-items: center;
+    border-left: 1px solid var(--da-rule);
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+  }
+
+  .dir-a .da-index {
+    min-height: 0;
+    padding-top: 25px;
+  }
+
+  .dir-a .da-row {
+    display: grid;
+    grid-template-columns: 66px minmax(0, 1fr) 44px;
+    align-items: center;
+    min-height: 43px;
+    border-top: 1px solid var(--da-rule);
+    font-size: 12px;
+  }
+
+  .dir-a .da-row:last-child {
+    border-bottom: 1px solid var(--da-rule);
+  }
+
+  .dir-a .da-row.da-active {
+    background: var(--da-ink);
+    color: var(--da-paper);
+  }
+
+  .dir-a .da-row-code {
+    padding-left: 10px;
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+  }
+
+  .dir-a .da-row-action {
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 9px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-active .da-row-action {
+    color: var(--da-paper);
+  }
+
+  .dir-a .da-detector {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 108px;
+    border-top: 2px solid var(--da-ink);
+    border-bottom: 2px solid var(--da-ink);
+  }
+
+  .dir-a .da-detector-copy {
+    padding: 14px 14px 13px;
+  }
+
+  .dir-a .da-detector-copy strong {
+    display: block;
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-detector-copy span {
+    display: block;
+    margin-top: 5px;
+    color: var(--da-muted);
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .dir-a .da-detector-status {
+    display: grid;
+    place-items: center;
+    border-left: 1px solid var(--da-rule);
+    color: var(--da-signal);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: center;
+    border-top: 1px solid var(--da-ink);
+    color: var(--da-muted);
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .dir-a .da-footer span:last-child {
+    text-align: right;
+  }
+
+  @media (max-width: 520px) {
+    .dir-a .da-brand-name {
+      font-size: 20px;
+    }
+
+    .dir-a .da-edition,
+    .dir-a .da-kicker {
+      display: none;
+    }
+
+    .dir-a .da-nav {
+      gap: 18px;
+      font-size: 15px;
+    }
+
+    .dir-a .da-title {
+      font-size: 66px;
+    }
+
+    .dir-a .da-intro {
+      font-size: 17px;
+    }
+
+    .dir-a .da-code strong {
+      font-size: 29px;
+    }
+
+    .dir-a .da-code span,
+    .dir-a .da-row-code {
+      font-size: 14px;
+    }
+
+    .dir-a .da-copy,
+    .dir-a .da-search-label,
+    .dir-a .da-section-label,
+    .dir-a .da-detector-copy strong,
+    .dir-a .da-detector-status {
+      font-size: 20px;
+    }
+
+    .dir-a .da-search-text {
+      font-size: 20px;
+    }
+
+    .dir-a .da-row {
+      font-size: 16px;
+    }
+
+    .dir-a .da-row-action,
+    .dir-a .da-detector-copy span,
+    .dir-a .da-footer {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<section class="dir-a" aria-label="Precision Index design direction">
+  <div class="da-shell">
+    <header class="da-topbar">
+      <div class="da-brand">
+        <span class="da-mark" aria-hidden="true">IC</span>
+        <span class="da-brand-name">The Invisible Character</span>
+        <span class="da-edition">Precision Index</span>
+      </div>
+      <nav class="da-nav" aria-label="Preview navigation">
+        <span>Characters</span>
+        <span>Detector</span>
+        <span>Private</span>
+      </nav>
+    </header>
+
+    <div class="da-workbench">
+      <section class="da-primary">
+        <div>
+          <p class="da-kicker">Unicode utility / exact by design</p>
+          <h1 class="da-title">Invisible<br>Character</h1>
+          <p class="da-intro">Copy a verified zero-width character, then inspect hidden Unicode in any line of text. No account. No upload.</p>
+        </div>
+
+        <div class="da-character-tool">
+          <div class="da-glyph" aria-label="Invisible zero width character"></div>
+          <div class="da-code">
+            <strong>U+200B</strong>
+            <span>Zero width space · 8203</span>
+          </div>
+          <button class="da-copy" type="button">Copy<br>U+200B</button>
+        </div>
+      </section>
+
+      <aside class="da-sidebar">
+        <div>
+          <div class="da-search-label"><span>Search</span><span>11,429 records</span></div>
+          <div class="da-search" aria-label="Character search field">
+            <span class="da-search-text">zero width</span>
+            <span class="da-search-key">⌘ K</span>
+          </div>
+        </div>
+
+        <div class="da-index">
+          <div class="da-section-label"><span>Character index</span><span>3 matches</span></div>
+          <div class="da-row da-active">
+            <span class="da-row-code">U+200B</span>
+            <span>Zero Width Space</span>
+            <span class="da-row-action">Copy</span>
+          </div>
+          <div class="da-row">
+            <span class="da-row-code">U+200C</span>
+            <span>Zero Width Non-Joiner</span>
+            <span class="da-row-action">Copy</span>
+          </div>
+          <div class="da-row">
+            <span class="da-row-code">U+2060</span>
+            <span>Word Joiner</span>
+            <span class="da-row-action">Copy</span>
+          </div>
+        </div>
+
+        <div class="da-detector">
+          <div class="da-detector-copy">
+            <strong>Detector</strong>
+            <span>Paste text to expose hidden code points.</span>
+          </div>
+          <div class="da-detector-status">Private</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="da-footer">
+      <span>Runs locally in your browser</span>
+      <span>Index rev. 04 / Unicode 16.0</span>
+    </footer>
+  </div>
+</section>
+          </div>
+        </div>
+        <div class="preview-meta">
+          <h2 data-direction-name>精密索引</h2>
+          <p>像一张瑞士工业仪器索引，先操作、后解释，精确而克制。</p>
+        </div>
+        <button class="qmdp-pick-button" type="button">选择 A · 精密索引</button>
+      </article>
+
+      <article class="preview-card" data-design-option="B" data-name="夜间实验室">
+        <div class="preview-frame">
+          <span class="preview-frame-label">方向样机 B</span>
+          <div class="stage-fit">
+<style>
+  .dir-b {
+    width: 960px;
+    height: 600px;
+    overflow: hidden;
+    background: #111418;
+    color: #edf3f4;
+    border: 1px solid #4f6a78;
+    box-sizing: border-box;
+    font-family: "DM Sans", "Avenir Next", sans-serif;
+  }
+
+  .dir-b .db-command {
+    height: 66px;
+    display: grid;
+    grid-template-columns: 250px minmax(260px, 1fr) auto;
+    align-items: center;
+    column-gap: 18px;
+    padding: 0 22px;
+    border-bottom: 1px solid #4f6a78;
+    box-sizing: border-box;
+    background: #14191e;
+  }
+
+  .dir-b .db-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+  }
+
+  .dir-b .db-brand-mark {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #8fb1c2;
+    color: #d9a44a;
+    font: 700 11px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.08em;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-brand-copy {
+    min-width: 0;
+  }
+
+  .dir-b .db-brand-name {
+    margin: 0;
+    color: #edf3f4;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  .dir-b .db-brand-edition {
+    margin: 4px 0 0;
+    color: #8ca0aa;
+    font: 500 9px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.13em;
+  }
+
+  .dir-b .db-search {
+    height: 34px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 0 11px;
+    border: 1px solid #425e6d;
+    background: #101317;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-search-icon,
+  .dir-b .db-search-key,
+  .dir-b .db-search-text {
+    font: 500 11px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-search-icon {
+    color: #d9a44a;
+  }
+
+  .dir-b .db-search-text {
+    color: #afbec5;
+    letter-spacing: 0.02em;
+  }
+
+  .dir-b .db-search-key {
+    color: #748994;
+    border: 1px solid #344c58;
+    padding: 4px 6px;
+  }
+
+  .dir-b .db-command-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dir-b .db-command-link,
+  .dir-b .db-private {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 11px;
+    border: 1px solid #334b57;
+    box-sizing: border-box;
+    color: #b9c7cd;
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.03em;
+  }
+
+  .dir-b .db-command-link {
+    background: #1b2329;
+    border-color: #7290a0;
+    color: #f5f8f9;
+  }
+
+  .dir-b .db-private-dot {
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    background: #d9a44a;
+  }
+
+  .dir-b .db-workspace {
+    height: 534px;
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+
+  .dir-b .db-library {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px 20px 18px;
+    border-right: 1px solid #4f6a78;
+    box-sizing: border-box;
+    background: #12171b;
+  }
+
+  .dir-b .db-library-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #344d59;
+  }
+
+  .dir-b .db-library-title {
+    margin: 0;
+    color: #e7eef1;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 650;
+  }
+
+  .dir-b .db-library-count {
+    color: #7f949e;
+    font: 500 10px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-copy-list {
+    display: grid;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .dir-b .db-copy-row {
+    min-height: 52px;
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 8px;
+    border: 1px solid #2f4652;
+    background: #151b20;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-copy-row-active {
+    border-color: #8aabb9;
+    background: #1a252b;
+  }
+
+  .dir-b .db-char {
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #3d5967;
+    color: #cbd8de;
+    font: 600 11px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-copy-row-active .db-char {
+    border-color: #d9a44a;
+    color: #f0bd63;
+  }
+
+  .dir-b .db-char-name {
+    margin: 0;
+    color: #d5e0e4;
+    font-size: 11px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  .dir-b .db-char-code {
+    margin: 4px 0 0;
+    color: #728a96;
+    font: 500 9px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .dir-b .db-copy-button {
+    min-width: 67px;
+    height: 30px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0 8px;
+    border: 1px solid #567281;
+    background: #101519;
+    color: #c8d6dc;
+    font: 650 9px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.04em;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-copy-row-active .db-copy-button {
+    border-color: #d9a44a;
+    background: #d9a44a;
+    color: #17140e;
+  }
+
+  .dir-b .db-library-foot {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #344d59;
+    color: #768b95;
+    font: 500 9px/1.45 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .dir-b .db-detector {
+    min-width: 0;
+    padding: 24px 24px 20px;
+    box-sizing: border-box;
+    background: #111418;
+  }
+
+  .dir-b .db-detector-intro {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 17px;
+  }
+
+  .dir-b .db-kicker {
+    margin: 0 0 8px;
+    color: #8ba6b4;
+    font: 600 9px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.16em;
+  }
+
+  .dir-b .db-title {
+    max-width: 510px;
+    margin: 0;
+    color: #f4f7f5;
+    font-family: "Fraunces", "Iowan Old Style", serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+
+  .dir-b .db-detector-state {
+    display: grid;
+    justify-items: end;
+    gap: 5px;
+    color: #7e939d;
+    font: 500 9px/1.2 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-detector-state strong {
+    color: #e6b45d;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  .dir-b .db-canvas {
+    height: 378px;
+    display: grid;
+    grid-template-rows: 42px 1fr 94px;
+    border: 1px solid #7896a5;
+    background: #141a1f;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-canvas-bar {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 14px;
+    padding: 0 13px;
+    border-bottom: 1px solid #4f6977;
+    color: #9bb0ba;
+    font: 550 10px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-canvas-bar strong {
+    color: #e6edf0;
+    font-size: 11px;
+    font-weight: 650;
+  }
+
+  .dir-b .db-status {
+    color: #e7b661;
+  }
+
+  .dir-b .db-editor {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) 144px;
+    min-height: 0;
+  }
+
+  .dir-b .db-lines {
+    padding-top: 19px;
+    border-right: 1px solid #344d59;
+    color: #5e7681;
+    text-align: center;
+    font: 500 11px/2.28 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-code {
+    min-width: 0;
+    padding: 17px 17px 13px;
+    border-right: 1px solid #344d59;
+    color: #d7e1e5;
+    font: 500 13px/2 "IBM Plex Mono", "SFMono-Regular", monospace;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-code-line {
+    height: 26px;
+    white-space: nowrap;
+  }
+
+  .dir-b .db-token {
+    display: inline-block;
+    min-width: 18px;
+    height: 19px;
+    margin: 0 3px;
+    padding: 0 4px;
+    border: 1px solid #d9a44a;
+    background: #2a251b;
+    color: #f2c474;
+    line-height: 17px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-code-muted {
+    color: #708792;
+  }
+
+  .dir-b .db-inspector {
+    padding: 14px 12px;
+    background: #12171b;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-inspector-label {
+    margin: 0 0 13px;
+    color: #7e949f;
+    font: 600 8px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.13em;
+  }
+
+  .dir-b .db-inspector-code {
+    margin: 0;
+    color: #f0bd63;
+    font: 600 25px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: -0.04em;
+  }
+
+  .dir-b .db-inspector-name {
+    margin: 10px 0 0;
+    color: #d4e0e4;
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .dir-b .db-inspector-meta {
+    margin: 15px 0 0;
+    color: #738995;
+    font: 500 9px/1.65 "IBM Plex Mono", "SFMono-Regular", monospace;
+  }
+
+  .dir-b .db-analysis {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #4f6977;
+  }
+
+  .dir-b .db-metric {
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .dir-b .db-metric:nth-child(-n + 2) {
+    border-right: 1px solid #344d59;
+  }
+
+  .dir-b .db-metric-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #728994;
+    font: 600 8px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+    letter-spacing: 0.12em;
+  }
+
+  .dir-b .db-metric-value {
+    color: #dce5e8;
+    font-size: 12px;
+    font-weight: 650;
+  }
+
+  .dir-b .db-metric-value-amber {
+    color: #e6b45d;
+  }
+
+  @media (max-width: 520px) {
+    .dir-b {
+      transform-origin: top left;
+    }
+
+    .dir-b .db-title {
+      font-size: 40px;
+    }
+
+    .dir-b .db-brand-name,
+    .dir-b .db-command-link,
+    .dir-b .db-private,
+    .dir-b .db-copy-button,
+    .dir-b .db-canvas-bar {
+      font-weight: 700;
+    }
+  }
+</style>
+
+<section class="dir-b" aria-label="夜间实验室 Night Lab 设计方向样机">
+  <header class="db-command">
+    <div class="db-brand">
+      <div class="db-brand-mark" aria-hidden="true">IC</div>
+      <div class="db-brand-copy">
+        <p class="db-brand-name">THE INVISIBLE CHARACTER</p>
+        <p class="db-brand-edition">NIGHT LAB / 2030</p>
+      </div>
+    </div>
+    <div class="db-search" role="search" aria-label="Search characters">
+      <span class="db-search-icon" aria-hidden="true">⌕</span>
+      <span class="db-search-text">Search Unicode, name, or code point</span>
+      <span class="db-search-key">⌘ K</span>
+    </div>
+    <nav class="db-command-links" aria-label="Tool commands">
+      <span class="db-command-link">Detector</span>
+      <span class="db-private"><span class="db-private-dot" aria-hidden="true"></span>Private</span>
+    </nav>
+  </header>
+
+  <div class="db-workspace">
+    <aside class="db-library" aria-label="Copy invisible characters">
+      <div class="db-library-head">
+        <h2 class="db-library-title">Copy library</h2>
+        <span class="db-library-count">06 GLYPHS</span>
+      </div>
+
+      <div class="db-copy-list">
+        <div class="db-copy-row db-copy-row-active">
+          <span class="db-char">ZW</span>
+          <div>
+            <p class="db-char-name">Zero width space</p>
+            <p class="db-char-code">U+200B · Cf</p>
+          </div>
+          <span class="db-copy-button">Copy U+200B</span>
+        </div>
+        <div class="db-copy-row">
+          <span class="db-char">JN</span>
+          <div>
+            <p class="db-char-name">Zero width joiner</p>
+            <p class="db-char-code">U+200D · Cf</p>
+          </div>
+          <span class="db-copy-button">COPY</span>
+        </div>
+        <div class="db-copy-row">
+          <span class="db-char">NB</span>
+          <div>
+            <p class="db-char-name">No-break space</p>
+            <p class="db-char-code">U+00A0 · Zs</p>
+          </div>
+          <span class="db-copy-button">COPY</span>
+        </div>
+        <div class="db-copy-row">
+          <span class="db-char">SH</span>
+          <div>
+            <p class="db-char-name">Soft hyphen</p>
+            <p class="db-char-code">U+00AD · Cf</p>
+          </div>
+          <span class="db-copy-button">COPY</span>
+        </div>
+        <div class="db-copy-row">
+          <span class="db-char">WM</span>
+          <div>
+            <p class="db-char-name">Word joiner</p>
+            <p class="db-char-code">U+2060 · Cf</p>
+          </div>
+          <span class="db-copy-button">COPY</span>
+        </div>
+      </div>
+
+      <div class="db-library-foot">LOCAL SET / UNICODE 16.0<br>Clipboard never leaves this device.</div>
+    </aside>
+
+    <div class="db-detector">
+      <div class="db-detector-intro">
+        <div>
+          <p class="db-kicker">UNICODE FORENSICS WORKBENCH</p>
+          <h1 class="db-title">Invisible Character</h1>
+        </div>
+        <div class="db-detector-state">
+          <span>SCAN STATUS</span>
+          <strong>03 FOUND</strong>
+        </div>
+      </div>
+
+      <section class="db-canvas" aria-label="Detector canvas">
+        <div class="db-canvas-bar">
+          <strong>Detector / Live canvas</strong>
+          <span>UTF-8</span>
+          <span class="db-status">● PRIVATE ANALYSIS</span>
+        </div>
+
+        <div class="db-editor">
+          <div class="db-lines">01<br>02<br>03<br>04<br>05<br>06</div>
+          <div class="db-code" aria-label="Sample text with hidden characters">
+            <div class="db-code-line">user<span class="db-token">·</span>name@domain.com</div>
+            <div class="db-code-line">invoice<span class="db-token">·</span>number: 8402</div>
+            <div class="db-code-line">plain text remains visible</div>
+            <div class="db-code-line">token<span class="db-token">·</span>boundary verified</div>
+            <div class="db-code-line db-code-muted">// hidden code points isolated</div>
+            <div class="db-code-line db-code-muted">// select a marker to inspect</div>
+          </div>
+          <aside class="db-inspector" aria-label="Selected Unicode character">
+            <p class="db-inspector-label">SELECTED NODE</p>
+            <p class="db-inspector-code">200B</p>
+            <p class="db-inspector-name">ZERO WIDTH<br>SPACE</p>
+            <p class="db-inspector-meta">BYTE E2 80 8B<br>INDEX 04:09<br>WIDTH 0 PX</p>
+          </aside>
+        </div>
+
+        <div class="db-analysis">
+          <div class="db-metric">
+            <span class="db-metric-label">VISIBLE LENGTH</span>
+            <strong class="db-metric-value">86 characters</strong>
+          </div>
+          <div class="db-metric">
+            <span class="db-metric-label">HIDDEN NODES</span>
+            <strong class="db-metric-value db-metric-value-amber">03 isolated</strong>
+          </div>
+          <div class="db-metric">
+            <span class="db-metric-label">NEXT ACTION</span>
+            <strong class="db-metric-value">Clean selected</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+          </div>
+        </div>
+        <div class="preview-meta">
+          <h2 data-direction-name>夜间实验室</h2>
+          <p>像一套 Unicode（统一字符编码）取证控制台，专业、紧凑、技术感最强。</p>
+        </div>
+        <button class="qmdp-pick-button" type="button">选择 B · 夜间实验室</button>
+      </article>
+
+      <article class="preview-card" data-design-option="C" data-name="字符田野">
+        <div class="preview-frame">
+          <span class="preview-frame-label">方向样机 C</span>
+          <div class="stage-fit">
+<section class="dir-c" aria-label="字符田野 Field Guide 设计方向样机">
+  <style>
+    .dir-c {
+      position: relative;
+      box-sizing: border-box;
+      width: min(960px, 100%);
+      aspect-ratio: 8 / 5;
+      overflow: hidden;
+      color: #24221c;
+      background-color: #f3ebd9;
+      border: 1px solid #817a68;
+      font-family: "Source Sans 3", "Avenir Next", sans-serif;
+      container-type: inline-size;
+      isolation: isolate;
+    }
+
+    .dir-c .dir-c-masthead {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 68px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr auto;
+      align-items: center;
+      padding: 0 28px;
+      border-bottom: 1px solid #817a68;
+    }
+
+    .dir-c .dir-c-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      color: #24221c;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-brand-mark {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      flex: 0 0 auto;
+      color: #f3ebd9;
+      background-color: #4f6542;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .dir-c .dir-c-edition {
+      justify-self: center;
+      color: #655f51;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-private {
+      justify-self: end;
+      padding: 7px 10px 6px;
+      color: #4f6542;
+      border: 1px solid #4f6542;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-hero {
+      position: absolute;
+      inset: 68px 0 auto;
+      height: 278px;
+      display: grid;
+      grid-template-columns: 2.15fr 1fr;
+      gap: 32px;
+      padding: 28px 28px 24px;
+    }
+
+    .dir-c .dir-c-title-wrap {
+      align-self: end;
+      min-width: 0;
+      padding-bottom: 44px;
+    }
+
+    .dir-c .dir-c-kicker {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 13px;
+      color: #b6573c;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-kicker-mark {
+      width: 29px;
+      height: 8px;
+      background-color: #b6573c;
+    }
+
+    .dir-c .dir-c-title {
+      max-width: 640px;
+      margin: 0;
+      color: #24221c;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(44px, 6.7cqw, 68px);
+      font-weight: 600;
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .dir-c .dir-c-title-accent {
+      color: #4f6542;
+    }
+
+    .dir-c .dir-c-field-note {
+      align-self: stretch;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 3px 0 2px 24px;
+      border-left: 0;
+      border-top: 1px solid #817a68;
+      border-bottom: 1px solid #817a68;
+    }
+
+    .dir-c .dir-c-note-index {
+      padding-top: 9px;
+      color: #b6573c;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-note-copy {
+      max-width: 25ch;
+      margin: 16px 0 0;
+      color: #444036;
+      font-size: 14px;
+      line-height: 1.52;
+    }
+
+    .dir-c .dir-c-note-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 0 9px;
+      color: #655f51;
+      border-top: 1px solid #bdb39d;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 9px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-specimens {
+      position: absolute;
+      inset: 346px 0 auto;
+      height: 104px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      color: #f3ebd9;
+      background-color: #4f6542;
+      border-top: 1px solid #24221c;
+      border-bottom: 1px solid #24221c;
+    }
+
+    .dir-c .dir-c-specimen {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr auto;
+      column-gap: 12px;
+      min-width: 0;
+      padding: 16px 18px 13px;
+      border-right: 1px solid #87957d;
+    }
+
+    .dir-c .dir-c-specimen:last-child {
+      border-right: 0;
+    }
+
+    .dir-c .dir-c-specimen-number {
+      grid-row: 1 / 3;
+      color: #d9cbb2;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 10px;
+    }
+
+    .dir-c .dir-c-specimen-name {
+      align-self: center;
+      min-width: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .dir-c .dir-c-specimen-code {
+      color: #d9cbb2;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .dir-c .dir-c-specimen-focus {
+      color: #f3ebd9;
+      background-color: #b6573c;
+    }
+
+    .dir-c .dir-c-specimen-focus .dir-c-specimen-code,
+    .dir-c .dir-c-specimen-focus .dir-c-specimen-number {
+      color: #f3ebd9;
+    }
+
+    .dir-c .dir-c-lower-note {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      width: 260px;
+      color: #5d584b;
+    }
+
+    .dir-c .dir-c-lower-title {
+      margin: 0 0 8px;
+      color: #24221c;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .dir-c .dir-c-lower-copy {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .dir-c .dir-c-workbench {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      box-sizing: border-box;
+      width: 472px;
+      height: 118px;
+      margin: 0;
+      padding: 14px 16px 15px;
+      color: #24221c;
+      background-color: #eadfc9;
+      border-top: 3px solid #24221c;
+      border-bottom: 1px solid #817a68;
+    }
+
+    .dir-c .dir-c-workbench-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .dir-c .dir-c-workbench-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-workbench-state {
+      color: #4f6542;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dir-c .dir-c-search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+    }
+
+    .dir-c .dir-c-search {
+      min-width: 0;
+      height: 37px;
+      box-sizing: border-box;
+      padding: 0 12px;
+      color: #24221c;
+      background-color: #f3ebd9;
+      border: 1px solid #817a68;
+      outline: 0;
+      font: 500 12px/1 "Source Sans 3", "Avenir Next", sans-serif;
+    }
+
+    .dir-c .dir-c-search::placeholder {
+      color: #736d5e;
+      opacity: 1;
+    }
+
+    .dir-c .dir-c-search:focus-visible {
+      border-color: #4f6542;
+      outline: 2px solid #4f6542;
+      outline-offset: 2px;
+    }
+
+    .dir-c .dir-c-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dir-c .dir-c-button {
+      min-height: 37px;
+      padding: 0 13px;
+      color: #f3ebd9;
+      background-color: #24221c;
+      border: 1px solid #24221c;
+      font: 700 10px/1 "IBM Plex Mono", "SFMono-Regular", monospace;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .dir-c .dir-c-button-secondary {
+      color: #24221c;
+      background-color: transparent;
+      border-color: #817a68;
+    }
+
+    .dir-c .dir-c-button:focus-visible {
+      outline: 2px solid #b6573c;
+      outline-offset: 2px;
+    }
+
+    .dir-c .dir-c-button:active {
+      transform: translateY(1px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .dir-c .dir-c-button:hover {
+        color: #f3ebd9;
+        background-color: #b6573c;
+        border-color: #b6573c;
+      }
+
+      .dir-c .dir-c-button-secondary:hover {
+        color: #f3ebd9;
+        background-color: #4f6542;
+        border-color: #4f6542;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .dir-c .dir-c-masthead {
+        height: 58px;
+        grid-template-columns: 1fr auto;
+        padding: 0 18px;
+      }
+
+      .dir-c .dir-c-brand {
+        font-size: 10px;
+      }
+
+      .dir-c .dir-c-brand-mark {
+        width: 28px;
+        height: 28px;
+      }
+
+      .dir-c .dir-c-edition {
+        display: none;
+      }
+
+      .dir-c .dir-c-private {
+        padding: 6px 8px 5px;
+        font-size: 9px;
+      }
+
+      .dir-c .dir-c-hero {
+        inset: 58px 0 auto;
+        height: 152px;
+        display: block;
+        padding: 20px 18px 14px;
+      }
+
+      .dir-c .dir-c-kicker {
+        margin-bottom: 9px;
+        font-size: 9px;
+      }
+
+      .dir-c .dir-c-title {
+        max-width: 11ch;
+        font-size: clamp(30px, 8.5cqw, 48px);
+        line-height: 0.9;
+      }
+
+      .dir-c .dir-c-title-wrap {
+        padding-bottom: 0;
+      }
+
+      .dir-c .dir-c-field-note {
+        display: none;
+      }
+
+      .dir-c .dir-c-specimens {
+        inset: 210px 0 auto;
+        height: 64px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .dir-c .dir-c-specimen {
+        display: block;
+        padding: 9px 8px 7px;
+      }
+
+      .dir-c .dir-c-specimen-number {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 7px;
+      }
+
+      .dir-c .dir-c-specimen-name {
+        display: block;
+        overflow: hidden;
+        font-size: 10px;
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .dir-c .dir-c-specimen-code {
+        display: block;
+        margin-top: 3px;
+        font-size: 7px;
+      }
+
+      .dir-c .dir-c-lower-note {
+        display: none;
+      }
+
+      .dir-c .dir-c-workbench {
+        right: 18px;
+        bottom: 14px;
+        left: 18px;
+        width: auto;
+        height: auto;
+        padding: 10px 11px 11px;
+        border-top-width: 2px;
+      }
+
+      .dir-c .dir-c-workbench-head {
+        margin-bottom: 8px;
+      }
+
+      .dir-c .dir-c-workbench-title,
+      .dir-c .dir-c-workbench-state {
+        font-size: 7px;
+      }
+
+      .dir-c .dir-c-search-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 5px;
+      }
+
+      .dir-c .dir-c-search {
+        height: 29px;
+        padding: 0 8px;
+        font-size: 9px;
+      }
+
+      .dir-c .dir-c-actions {
+        gap: 5px;
+      }
+
+      .dir-c .dir-c-button {
+        min-height: 29px;
+        padding: 0 7px;
+        font-size: 7px;
+      }
+    }
+  </style>
+
+  <header class="dir-c-masthead">
+    <div class="dir-c-brand">
+      <span class="dir-c-brand-mark" aria-hidden="true">IC</span>
+      <span>The Invisible Character</span>
+    </div>
+    <div class="dir-c-edition">Field notes · Vol. 07</div>
+    <div class="dir-c-private">Private</div>
+  </header>
+
+  <div class="dir-c-hero">
+    <div class="dir-c-title-wrap">
+      <p class="dir-c-kicker"><span class="dir-c-kicker-mark" aria-hidden="true"></span>Character field guide</p>
+      <h2 class="dir-c-title">Invisible <span class="dir-c-title-accent">Character</span></h2>
+    </div>
+
+    <aside class="dir-c-field-note" aria-label="Field note">
+      <div class="dir-c-note-index">Observation 07</div>
+      <p class="dir-c-note-copy">Silent marks live between visible letters. Identify, copy, and inspect them without exposing your text.</p>
+      <div class="dir-c-note-meta"><span>Unicode flora</span><span>Local only</span></div>
+    </aside>
+  </div>
+
+  <div class="dir-c-specimens" aria-label="Invisible character specimens">
+    <div class="dir-c-specimen dir-c-specimen-focus">
+      <span class="dir-c-specimen-number">01</span>
+      <span class="dir-c-specimen-name">Zero width</span>
+      <span class="dir-c-specimen-code">U+200B</span>
+    </div>
+    <div class="dir-c-specimen">
+      <span class="dir-c-specimen-number">02</span>
+      <span class="dir-c-specimen-name">Word joiner</span>
+      <span class="dir-c-specimen-code">U+2060</span>
+    </div>
+    <div class="dir-c-specimen">
+      <span class="dir-c-specimen-number">03</span>
+      <span class="dir-c-specimen-name">No-break</span>
+      <span class="dir-c-specimen-code">U+00A0</span>
+    </div>
+    <div class="dir-c-specimen">
+      <span class="dir-c-specimen-number">04</span>
+      <span class="dir-c-specimen-name">Soft hyphen</span>
+      <span class="dir-c-specimen-code">U+00AD</span>
+    </div>
+  </div>
+
+  <div class="dir-c-lower-note">
+    <h3 class="dir-c-lower-title">A pocket guide to the unseen.</h3>
+    <p class="dir-c-lower-copy">Search the collection, copy a specimen, or inspect a passage in the Detector.</p>
+  </div>
+
+  <form class="dir-c-workbench" action="#" aria-label="Character workbench">
+    <div class="dir-c-workbench-head">
+      <span class="dir-c-workbench-title">Specimen workbench</span>
+      <span class="dir-c-workbench-state">Selected · U+200B</span>
+    </div>
+    <div class="dir-c-search-row">
+      <input class="dir-c-search" type="search" aria-label="Search characters" placeholder="Search name or Unicode…">
+      <div class="dir-c-actions">
+        <button class="dir-c-button dir-c-button-secondary" type="button">Detector</button>
+        <button class="dir-c-button" type="button">Copy U+200B</button>
+      </div>
+    </div>
+  </form>
+</section>
+          </div>
+        </div>
+        <div class="preview-meta">
+          <h2 data-direction-name>字符田野</h2>
+          <p>像一本 1950 年代字符观察手册，阅读体验最好，适合工具与内容共存。</p>
+        </div>
+        <button class="qmdp-pick-button" type="button">选择 C · 字符田野</button>
+      </article>
+
+      <article class="preview-card" data-design-option="D" data-name="快捷游乐场">
+        <div class="preview-frame">
+          <span class="preview-frame-label">方向样机 D</span>
+          <div class="stage-fit">
+<style>
+  .dir-d {
+    --d-ink: #173228;
+    --d-paper: #f8fbf2;
+    --d-mint: #c8efda;
+    --d-coral: #ef624f;
+    --d-blue: #2544c7;
+    --d-yellow: #f4cd52;
+    width: 960px;
+    height: 600px;
+    overflow: hidden;
+    background: var(--d-paper);
+    color: var(--d-ink);
+    font-family: "Nunito Sans", "Avenir Next", sans-serif;
+    position: relative;
+  }
+
+  .dir-d * {
+    box-sizing: border-box;
+  }
+
+  .dir-d .d-shell {
+    display: grid;
+    grid-template-rows: 74px 1fr 118px;
+    height: 100%;
+  }
+
+  .dir-d .d-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 34px;
+    border-bottom: 2px solid var(--d-ink);
+  }
+
+  .dir-d .d-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .dir-d .d-brand-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--d-ink);
+    border-radius: 50%;
+    background: var(--d-coral);
+    color: var(--d-paper);
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+  }
+
+  .dir-d .d-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .dir-d .d-private {
+    padding: 8px 14px;
+    border: 2px solid var(--d-ink);
+    border-radius: 999px;
+    background: var(--d-mint);
+  }
+
+  .dir-d .d-main {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    min-height: 0;
+  }
+
+  .dir-d .d-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 34px 34px 28px;
+    border-right: 2px solid var(--d-ink);
+  }
+
+  .dir-d .d-kicker {
+    margin: 0 0 14px;
+    color: var(--d-blue);
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .dir-d .d-title {
+    max-width: 7ch;
+    margin: 0;
+    font-family: "Bungee", "Impact", sans-serif;
+    font-size: 57px;
+    font-weight: 400;
+    line-height: 0.93;
+    letter-spacing: 0.01em;
+  }
+
+  .dir-d .d-subtitle {
+    max-width: 30ch;
+    margin: 20px 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .dir-d .d-studio {
+    display: grid;
+    grid-template-rows: 54px 1fr 66px;
+    margin: 22px;
+    border: 2px solid var(--d-ink);
+    border-radius: 30px 10px 30px 10px;
+    background: var(--d-yellow);
+    overflow: hidden;
+  }
+
+  .dir-d .d-studio-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 2px solid var(--d-ink);
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .dir-d .d-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 180px;
+    padding: 8px 12px;
+    border: 2px solid var(--d-ink);
+    border-radius: 999px;
+    background: var(--d-paper);
+  }
+
+  .dir-d .d-stage {
+    display: grid;
+    grid-template-columns: 1fr 142px;
+    gap: 18px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .dir-d .d-glyph {
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .dir-d .d-blank {
+    display: grid;
+    place-items: center;
+    width: 74px;
+    height: 122px;
+    border: 2px dashed var(--d-ink);
+    border-radius: 999px;
+    background: var(--d-mint);
+    font-family: "DM Mono", monospace;
+    font-size: 18px;
+  }
+
+  .dir-d .d-glyph-name {
+    margin: 0;
+    font-family: "Bungee", "Impact", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .dir-d .d-code {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 9px;
+    border: 2px solid var(--d-ink);
+    background: var(--d-paper);
+    font-family: "DM Mono", monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .dir-d .d-copy {
+    min-height: 122px;
+    border: 2px solid var(--d-ink);
+    border-radius: 12px 28px 12px 28px;
+    background: var(--d-blue);
+    color: #f8fbf2;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .dir-d .d-switcher {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--d-ink);
+  }
+
+  .dir-d .d-switcher span {
+    display: grid;
+    place-items: center;
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .dir-d .d-switcher span + span {
+    border-left: 2px solid var(--d-ink);
+  }
+
+  .dir-d .d-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr 160px;
+    align-items: stretch;
+    border-top: 2px solid var(--d-ink);
+    background: var(--d-mint);
+  }
+
+  .dir-d .d-bottom > * {
+    display: flex;
+    align-items: center;
+    padding: 22px 28px;
+  }
+
+  .dir-d .d-bottom > * + * {
+    border-left: 2px solid var(--d-ink);
+  }
+
+  .dir-d .d-detector-title {
+    gap: 12px;
+    font-family: "Bungee", "Impact", sans-serif;
+    font-size: 20px;
+  }
+
+  .dir-d .d-detector-title b {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--d-coral);
+    color: var(--d-paper);
+    font-family: "DM Mono", monospace;
+    font-size: 14px;
+  }
+
+  .dir-d .d-input {
+    color: rgba(23, 50, 40, 0.68);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .dir-d .d-run {
+    justify-content: center;
+    background: var(--d-coral);
+    color: var(--d-paper);
+    font-weight: 900;
+  }
+</style>
+<section class="dir-d" aria-label="方向 D 快捷游乐场样机">
+  <div class="d-shell">
+    <header class="d-nav">
+      <div class="d-brand"><span class="d-brand-mark">IC</span><span>TheInvisibleCharacter.live</span></div>
+      <div class="d-nav-links"><span>Generator</span><span>Guides</span><span class="d-private">Private · local only</span></div>
+    </header>
+    <div class="d-main">
+      <section class="d-story">
+        <p class="d-kicker">One tap blank text studio</p>
+        <h1 class="d-title">Invisible Character</h1>
+        <p class="d-subtitle">Pick a real Unicode blank, copy it instantly, then test it before you paste.</p>
+      </section>
+      <section class="d-studio" aria-label="快速复制工作台">
+        <div class="d-studio-head"><span>BLANK 01 / 12</span><span class="d-search">⌕&nbsp; Search characters</span></div>
+        <div class="d-stage">
+          <div class="d-glyph"><div class="d-blank">[ ]</div><div><p class="d-glyph-name">Zero Width Space</p><span class="d-code">U+200B</span></div></div>
+          <button class="d-copy" type="button">COPY<br>U+200B</button>
+        </div>
+        <div class="d-switcher"><span>U+2800</span><span>U+3164</span><span>VIEW ALL 12 →</span></div>
+      </section>
+    </div>
+    <footer class="d-bottom">
+      <div class="d-detector-title"><b>?</b><span>Detector</span></div>
+      <div class="d-input">Paste text to reveal hidden Unicode…</div>
+      <div class="d-run">RUN SCAN →</div>
+    </footer>
+  </div>
+</section>
+          </div>
+        </div>
+        <div class="preview-meta">
+          <h2 data-direction-name>快捷游乐场</h2>
+          <p>像一台轻快的实体复制工作台，一键操作最醒目，对普通用户最友好。</p>
+        </div>
+        <button class="qmdp-pick-button" type="button">选择 D · 快捷游乐场</button>
+      </article>
+    </div>
+
+    <section class="direction-details" aria-labelledby="detail-title">
+      <h2 id="detail-title">四个方向的真实代价</h2>
+      <div class="detail-grid">
+        <article class="detail-card detail-a">
+          <h3>A · 精密索引</h3>
+          <p>最容易扩展成全站统一系统，品牌个性来自排版和工具结构。</p>
+          <dl>
+            <div><dt>字体</dt><dd>Archivo + IBM Plex Mono</dd></div>
+            <div><dt>布局</dt><dd>7:5 工具索引，几乎不用卡片</dd></div>
+            <div><dt>代价</dt><dd>情绪表现克制，不是最吸睛的方向</dd></div>
+          </dl>
+        </article>
+        <article class="detail-card detail-b">
+          <h3>B · 夜间实验室</h3>
+          <p>检测器最有说服力，适合突出 Unicode 技术可信度。</p>
+          <dl>
+            <div><dt>字体</dt><dd>Fraunces + DM Sans + IBM Plex Mono</dd></div>
+            <div><dt>布局</dt><dd>命令带与双面板检测工作台</dd></div>
+            <div><dt>代价</dt><dd>普通社媒用户可能觉得过于专业</dd></div>
+          </dl>
+        </article>
+        <article class="detail-card detail-c">
+          <h3>C · 字符田野</h3>
+          <p>博客和说明内容最舒服，能缓解当前页面过长且卡片化的问题。</p>
+          <dl>
+            <div><dt>字体</dt><dd>Libre Baskerville + Source Sans 3</dd></div>
+            <div><dt>布局</dt><dd>编辑标题、标本带、右下工具台</dd></div>
+            <div><dt>代价</dt><dd>即时工具感弱于 A 与 B</dd></div>
+          </dl>
+        </article>
+        <article class="detail-card detail-d">
+          <h3>D · 快捷游乐场</h3>
+          <p>一键复制最明确，适合 TikTok、Instagram 和游戏用户名场景。</p>
+          <dl>
+            <div><dt>字体</dt><dd>Bungee + Nunito Sans + DM Mono</dd></div>
+            <div><dt>布局</dt><dd>大操作键与全宽检测底栏</dd></div>
+            <div><dt>代价</dt><dd>若控制不好，会削弱技术可信度</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="mix-note">可以混搭，例如“要 A 的结构 + C 的配色”，确认方向时直接写在调整建议里。</p>
+    </section>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-qmdp-dial]").forEach(function (input) {
+      var output = document.querySelector('[data-qmdp-output="' + input.dataset.qmdpDial + '"]');
+      function syncOutput() {
+        input.setAttribute("aria-valuenow", input.value);
+        if (output) {
+          output.value = input.value;
+          output.textContent = input.value;
+        }
+      }
+      input.addEventListener("input", syncOutput);
+      syncOutput();
+    });
+  </script>
+</body>
+</html>

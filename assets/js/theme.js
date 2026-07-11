@@ -1,7 +1,6 @@
-/**
- * Theme System for The Invisible Character
- * Handles dark/light mode switching with localStorage persistence
- */
+// input: 用户的主题偏好、系统色彩偏好与页面中的主题切换按钮。
+// output: 在 documentElement 写入 data-theme，并同步保存用户选择。
+// pos: 经典 script 主题控制器（更新规则：主题令牌或切换控件变更时同步检查普通 script 兼容性）。
 
 class ThemeManager {
     constructor() {
@@ -65,7 +64,7 @@ class ThemeManager {
     updateMetaThemeColor(theme) {
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
+            metaThemeColor.setAttribute('content', theme === 'dark' ? '#20201d' : '#f2eee4');
         }
     }
 
@@ -192,20 +191,11 @@ class ThemeManager {
 
 // Initialize theme manager when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    window.themeManager = new ThemeManager();
-    
-    // Make theme manager globally available for debugging
-    if (typeof window !== 'undefined') {
-        window.themeManager = themeManager;
-    }
+    const themeManager = new ThemeManager();
+    window.themeManager = themeManager;
 });
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ThemeManager;
-}
-
-// Export for ES modules
-if (typeof export !== 'undefined') {
-    export { ThemeManager };
 }

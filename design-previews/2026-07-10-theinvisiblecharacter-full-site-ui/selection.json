@@ -1,0 +1,14 @@
+{
+  "id": "A",
+  "label": "A: 精密索引",
+  "name": "精密索引",
+  "notes": "",
+  "dials": {
+    "variance": 6,
+    "motion": 8,
+    "density": 6
+  },
+  "adjustments": "",
+  "source": "click",
+  "receivedAt": "2026-07-11T02:39:11.598Z"
+}
