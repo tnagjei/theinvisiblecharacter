@@ -57,7 +57,7 @@ function buildTailwind() {
   execFileSync(bin, [
     '-c', path.join(root, 'tailwind.config.js'),
     '-i', path.join(root, 'assets/css/tailwind-input.css'),
-    '-o', path.join(root, 'assets/css/tailwind.css'),
+    '-o', path.join(buildDir, 'assets/css/tailwind.css'),
     '--minify'
   ], { cwd: root, stdio: 'inherit' });
 }
@@ -96,7 +96,7 @@ function validateBuild() {
   }
 }
 
-buildTailwind();
 copyBuildFiles();
+buildTailwind();
 validateBuild();
 console.log(`Build ready: ${path.relative(root, buildDir)}`);

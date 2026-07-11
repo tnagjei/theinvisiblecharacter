@@ -13,7 +13,6 @@ class PerformanceOptimizer {
         this.setupResourceHints();
         this.setupPerformanceMonitoring();
         this.setupIntersectionObserver();
-        this.setupServiceWorker();
         this.optimizeImages();
         this.setupCaching();
     }
@@ -145,21 +144,6 @@ class PerformanceOptimizer {
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(element => {
                 observer.observe(element);
-            });
-        }
-    }
-
-    // Service Worker registration for offline support
-    setupServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed: ', error);
-                    });
             });
         }
     }

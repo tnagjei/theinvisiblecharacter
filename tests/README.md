@@ -11,6 +11,8 @@
 • `precision-index-contract.test.js`：验证公开页面样式与运行时基础合同。
 • `test_seo_query_ownership_v2.py`：验证三层 GSC 指标、Coverage 精确匹配、Supporting Page 和报告动作一致性。
 • `seo-experiment-2a.test.js`：验证实验页面的任务链接、证据标签、真实查询 FAQ 和禁止承诺。
+• `technical-seo-plan.test.js`：验证法语路径、图标、旧手机资源、缓存和 Service Worker 退役合同。
+• `e2e/seo-mobile-smoke.spec.js`：在 375px 与 430px 检查代表页的溢出、脚本错误、资源失败和无效锚点。
 • `accessibility/`：无障碍测试。
 • `e2e/`：端到端浏览器测试。
 • `performance/`：性能测试。

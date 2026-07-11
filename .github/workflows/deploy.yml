@@ -1,5 +1,5 @@
 # input: Pull requests, pushes to main, and manual workflow runs
-# output: Verified build, SEO, link, security-header, and Jest regression checks
+# output: Verified build, SEO, link, security-header, Jest, and mobile smoke checks
 # pos: .github/workflows/deploy.yml（更新规则：变更时同步文件头与所属目录 README）
 
 name: Validate Site
@@ -56,3 +56,6 @@ jobs:
 
       - name: Run regression tests
         run: npm test -- --runInBand
+
+      - name: Run mobile smoke checks
+        run: npm run check:mobile

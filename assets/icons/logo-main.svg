@@ -4,7 +4,7 @@
   
   <!-- 隐形字符符号 -->
   <text x="60" y="70" font-family="monospace" font-size="48" font-weight="bold" text-anchor="middle" fill="white">
-    &nbsp;
+    &#160;
   </text>
   
   <!-- 装饰性边框 -->

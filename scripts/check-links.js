@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { root, sourceHtmlFiles, webJsFiles } = require('./site-files');
+const cheerio = require('cheerio');
+const { root, domain, sourceHtmlFiles, webJsFiles, pathForCleanUrl } = require('./site-files');
 
 const files = [
   ...sourceHtmlFiles(),
@@ -32,6 +33,55 @@ for (const file of files) {
       failures.push(`${relative}: forbidden .html URL ${matches[0]}`);
     }
   }
+}
+
+function localUrl(raw, relative) {
+  if (!raw || /^(mailto:|tel:|javascript:|data:)/i.test(raw)) return null;
+  const base = `${domain}/${path.dirname(relative).replace(/\\/g, '/')}/`;
+  const url = new URL(raw, base);
+  return url.origin === domain ? url : null;
+}
+
+function sourceForPageUrl(url) {
+  return pathForCleanUrl(url.href, root);
+}
+
+for (const file of sourceHtmlFiles()) {
+  const relative = path.relative(root, file).replace(/\\/g, '/');
+  const $ = cheerio.load(fs.readFileSync(file, 'utf8'));
+
+  $('a[href]').each((_, node) => {
+    const raw = $(node).attr('href');
+    const url = localUrl(raw, relative);
+    if (!url) return;
+    const target = raw.startsWith('#') ? file : sourceForPageUrl(url);
+    if (!fs.existsSync(target)) {
+      failures.push(`${relative}: link target does not exist: ${raw}`);
+      return;
+    }
+    const fragment = decodeURIComponent(url.hash.slice(1));
+    if (fragment) {
+      const targetHtml = cheerio.load(fs.readFileSync(target, 'utf8'));
+      if (!targetHtml(`#${fragment}`).length && !targetHtml(`[name="${fragment}"]`).length) {
+        failures.push(`${relative}: link fragment does not exist: ${raw}`);
+      }
+    }
+  });
+
+  const seenResources = new Set();
+  $('script[src], link[href], img[src], source[src]').each((_, node) => {
+    const attribute = $(node).attr('src') ? 'src' : 'href';
+    const raw = $(node).attr(attribute);
+    const url = localUrl(raw, relative);
+    if (!url || !raw || raw.startsWith('#')) return;
+    const pathname = decodeURIComponent(url.pathname);
+    if (!path.extname(pathname)) return;
+    const target = path.join(root, pathname.replace(/^\//, ''));
+    if (!fs.existsSync(target)) failures.push(`${relative}: local resource does not exist: ${raw}`);
+    const key = `${node.tagName}:${url.pathname}`;
+    if (seenResources.has(key)) failures.push(`${relative}: duplicate local resource: ${raw}`);
+    seenResources.add(key);
+  });
 }
 
 if (!fs.existsSync(redirectsPath)) {

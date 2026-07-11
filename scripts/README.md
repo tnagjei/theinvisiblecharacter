@@ -8,9 +8,9 @@
 
 ## Files
 
-• `build.js`：构建静态站并验证站点地图。
+• `build.js`：复制静态站后把 Tailwind 结果写入 `build/`，并验证站点地图。
 • `check-headers.js`：检查安全响应头配置。
-• `check-links.js`：检查站内链接与重定向合同。
-• `check-seo.js`：检查 Canonical（规范网址）、Sitemap（站点地图）和基础 SEO 合同。
+• `check-links.js`：检查站内页面、锚点、本地资源、重复脚本与重定向合同。
+• `check-seo.js`：检查 Canonical（规范网址）、Sitemap 与正式页面集合相等及基础 SEO 合同。
 • `site-files.js`：维护正式页面文件与公开 URL 映射。
 • `seo-query-ownership.py`：扫描 GSC ZIP 字段，严格分离 Property、Exact Page 与 Visible Query 三层指标，并生成 V2 搜索词所有权审计。

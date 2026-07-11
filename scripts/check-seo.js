@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
-const { root, domain, sourceHtmlFiles, webJsFiles, pathForCleanUrl } = require('./site-files');
+const { root, domain, sourceHtmlFiles, webJsFiles, pathForCleanUrl, cleanRouteFromFile } = require('./site-files');
 
 const failures = [];
 
@@ -95,6 +95,16 @@ for (const file of sourceHtmlFiles()) {
 const sitemapPath = path.join(root, 'sitemap.xml');
 const sitemap = read(sitemapPath);
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+const expectedUrls = sourceHtmlFiles().map(file => `${domain}${cleanRouteFromFile(file)}`);
+const sitemapSet = new Set(urls);
+const expectedSet = new Set(expectedUrls);
+for (const url of expectedSet) {
+  if (!sitemapSet.has(url)) fail(`sitemap missing public page URL: ${url}`);
+}
+for (const url of sitemapSet) {
+  if (!expectedSet.has(url)) fail(`sitemap contains URL without indexed source page: ${url}`);
+}
+if (urls.length !== sitemapSet.size) fail('sitemap contains duplicate URLs');
 const requiredUrls = [
   `${domain}/`,
   `${domain}/index-fr`,
