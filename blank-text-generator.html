@@ -86,7 +86,7 @@
                 "name": "Which Unicode character creates blank text?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The most reliable blank characters are U+2800 (visible width, good for messages), U+200B (zero width, good for formatting), and U+3164 (usually visible width, useful for names). Try U+2800 first and switch to another if the platform removes it."
+                    "text": "This generator offers U+2800, U+200B, and U+3164 because they have different width and rendering behavior. No option is verified as universally compatible; choose one, copy it, and test the target field."
                 }
             },
             {
@@ -94,7 +94,7 @@
                 "name": "Why does my blank text disappear?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Most platforms strip or normalize certain Unicode characters, especially leading and trailing whitespace-like marks. Try pasting the blank character in the middle of text, or switch to a different character. U+2800 is harder to strip than U+200B in many apps."
+                    "text": "Platforms may strip or normalize Unicode characters, especially leading and trailing whitespace-like marks. Try pasting the blank character in the middle of text, or switch to a different character. The target field determines which option is accepted."
                 }
             },
             {
@@ -410,6 +410,7 @@
                         <h2 id="how-title">How to Generate Blank Text</h2>
                     </div>
                     <p>The steps below match the generator at the top of this page exactly.</p>
+                    <p>Whether you searched for blank text, empty text, a blank character, or an empty character, the task is the same: choose a Unicode option, generate the amount you need, then copy blank text and test the pasted result.</p>
                 </div>
                 <ol class="process-list">
                     <li>
@@ -452,7 +453,7 @@
                 <div class="definition-list">
                     <article>
                         <h3>WhatsApp messages</h3>
-                        <p>Use blank text to send a message that looks empty. U+2800 or U+3164 are the most reliable for WhatsApp messages and WhatsApp Web.</p>
+                        <p>Use blank text to test a message that looks empty. Reported options include U+2800 and U+3164, but this page does not verify current WhatsApp acceptance.</p>
                         <a href="/whatsapp-blank-message-generator">WhatsApp blank message generator</a>
                     </article>
                     <article>
@@ -597,7 +598,7 @@
                     </article>
                     <article id="faq-why-disappears">
                         <h3>Why does my blank text disappear?</h3>
-                        <p>Most platforms strip or normalize certain Unicode characters, especially at the start and end of a field. Try pasting blank text in the middle of other content, or switch to a different character. U+2800 is often harder to strip than U+200B.</p>
+                        <p>Platforms may strip or normalize Unicode characters, especially at the start and end of a field. Try pasting blank text in the middle of other content, or switch to a different character. Which option survives is unknown until the target field accepts and saves it.</p>
                     </article>
                     <article id="faq-multiple">
                         <h3>Can I generate multiple blank characters?</h3>

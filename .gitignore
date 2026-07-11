@@ -15,3 +15,9 @@ mobile-test.html
 test.html
 Cloudflare-Pages-文件结构实现.md
 playwright-report/
+seo-input/
+.DS_Store
+seo-work/
+docs/seo/EXPERIMENT_2A_CHANGELOG.md
+docs/seo/QUERY_OWNERSHIP_AUDIT_V2.md
+docs/seo/QUERY_OWNERSHIP_AUDIT.md

@@ -109,24 +109,24 @@
                 <div class="section-heading sticky-heading">
                     <p class="eyebrow">Username reality</p>
                     <h2 id="can-title">Can you make a TikTok username invisible?</h2>
-                    <p>Reported: you can try invisible Unicode characters in the display name, bio, and captions. A truly empty TikTok username is usually blocked because TikTok validates usernames and may strip blank-like characters.</p>
+                    <p>This page separates what the local tool can verify from TikTok behavior that must be tested in the target field.</p>
                 </div>
                 <div class="definition-list">
                     <article>
-                        <h3>Display name</h3>
-                        <p>Most users test blank characters here first because it is easier to edit than the account username.</p>
+                        <h3>Verified on this page: copying</h3>
+                        <p>The buttons copy U+200B, U+2800, and U+3164 locally in the browser. This verifies the copied code point, not TikTok acceptance.</p>
                     </article>
                     <article>
-                        <h3>Username</h3>
-                        <p>Expect stricter validation. If TikTok removes a character, switch to another option and test again.</p>
+                        <h3>Reported: display name and bio tests</h3>
+                        <p>Third-party guides report trying blank-like characters in display names and bios. Save and reopen the profile before treating a result as accepted.</p>
                     </article>
                     <article>
-                        <h3>Bio</h3>
-                        <p>Invisible characters are useful for compact separators and line layout, but repeated marks may be normalized.</p>
+                        <h3>Disputed: fully invisible username</h3>
+                        <p>Username validation may reject or remove blank-like characters. A copied character is not evidence that a fully invisible account username will save.</p>
                     </article>
                     <article>
-                        <h3>Captions and comments</h3>
-                        <p>Use U+200B for spacing tests in captions or comments, then reopen the post because TikTok can trim hidden marks after publishing.</p>
+                        <h3>Unknown: field-by-field compatibility</h3>
+                        <p>Current behavior for username, display name, nickname, bio, captions, and comments is unknown until tested in that exact field, app version, and device.</p>
                     </article>
                 </div>
             </div>
@@ -266,6 +266,8 @@
                     <h2 id="faq-title">TikTok invisible username FAQ</h2>
                 </div>
                 <div class="faq-list">
+                    <article><h3>How do I get a blank name on TikTok?</h3><p>Copy one character above, paste it into the field you intend to edit, save, then reopen the profile. If TikTok removes it, test another character or keep a visible name.</p></article>
+                    <article><h3>Can I use an invisible nickname on TikTok?</h3><p>You can test the copied characters in a nickname or display-name field if that field is available to you. Acceptance is unknown until TikTok saves and displays it.</p></article>
                     <article><h3>Which blank character should I try first?</h3><p>Start with U+200B. If TikTok removes it, try U+2800 and then U+3164.</p></article>
                     <article><h3>Can this guarantee an invisible TikTok username?</h3><p>No. TikTok validation changes, and usernames are usually stricter than display names or bios.</p></article>
                     <article><h3>Can I use this in TikTok comments?</h3><p>You can test U+200B or U+2800 in comments, but behavior can differ from captions, bios, display names, and usernames.</p></article>
