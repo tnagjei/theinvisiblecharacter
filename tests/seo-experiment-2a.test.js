@@ -7,6 +7,15 @@ const path = require('path');
 const { root } = require('../scripts/site-files');
 
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const between = (html, start, end) => html.split(start)[1]?.split(end)[0] || '';
+const unsupportedPromises = [
+  'most reliable',
+  'maximum reliability',
+  'works perfectly',
+  'fully supports',
+  'guaranteed works',
+  'ensure compatibility and safety'
+];
 
 describe('SEO 实验 2A 页面角色合同', () => {
   test('首页提供自然的 TikTok 专项任务链接', () => {
@@ -28,18 +37,35 @@ describe('SEO 实验 2A 页面角色合同', () => {
     }
     expect(html).toContain('How do I get a blank name on TikTok?');
     expect(html).toContain('Can I use an invisible nickname on TikTok?');
-    expect(html.toLowerCase()).not.toContain('guaranteed works');
+    expect(html).toContain('Three characters to test');
+    expect(html).toContain('Invisible characters you can test on TikTok');
+    expect(html).not.toContain('Best first tries');
+    expect(html).not.toContain('Best as a fallback');
+    for (const phrase of unsupportedPromises) expect(html.toLowerCase()).not.toContain(phrase);
   });
 
   test('WhatsApp 工具和指南建立自然双向链接', () => {
     expect(read('whatsapp-blank-message-generator.html')).toContain('href="/blog/whatsapp-invisible-messages"');
     const guide = read('blog/whatsapp-invisible-messages.html');
     expect(guide).toContain('href="/whatsapp-blank-message-generator"');
+    expect(between(guide, 'Method 1:', 'Method 2:')).toContain('href="/whatsapp-blank-message-generator"');
     expect(guide).not.toContain('Join thousands of users who trust');
+    for (const phrase of unsupportedPromises) expect(guide.toLowerCase()).not.toContain(phrase);
   });
 
   test('Fortnite 工具和指南建立自然双向链接', () => {
     expect(read('fortnite-invisible-name-generator.html')).toContain('href="/blog/fortnite-invisible-name"');
-    expect(read('blog/fortnite-invisible-name.html')).toContain('href="/fortnite-invisible-name-generator"');
+    const guide = read('blog/fortnite-invisible-name.html');
+    expect(guide).toContain('href="/fortnite-invisible-name-generator"');
+    expect(between(guide, 'Get Your Invisible Characters', 'Prepare to Change Your Name')).toContain('href="/fortnite-invisible-name-generator"');
+    for (const phrase of unsupportedPromises) expect(guide.toLowerCase()).not.toContain(phrase);
+  });
+
+  test('GitHub Actions 在现有站点检查后运行 Jest', () => {
+    const workflow = read('.github/workflows/deploy.yml');
+    expect(workflow).toContain('npm run check:headers');
+    expect(workflow).toContain('npm test -- --runInBand');
+    expect(workflow.indexOf('npm test -- --runInBand')).toBeGreaterThan(workflow.indexOf('npm run check:headers'));
+    expect(workflow).not.toContain('continue-on-error');
   });
 });
