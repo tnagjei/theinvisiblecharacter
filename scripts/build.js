@@ -96,27 +96,11 @@ function validateBuild() {
   }
 }
 
-// ===== 统一导航（单一真实来源）=====
+// ===== 统一导航（链接唯一真实来源见 scripts/nav-links.js）=====
 // 所有页面在构建时注入同一套导航链接：英文页一套、法语页一套。
 // 只替换链接列表，保留各页面原有的外壳（品牌/语言切换/主题按钮/移动菜单结构），避免破坏交互。
-const enNavLinks = [
-  { href: '/', label: 'Generator' },
-  { href: '/blank-text-generator', label: 'Blank Text' },
-  { href: '/tiktok-invisible-username-generator', label: 'TikTok' },
-  { href: '/invisible-name-generator', label: 'Names' },
-  { href: '/tools', label: 'Tools' },
-  { href: '/blog/', label: 'Blog' }
-];
-
-const frNavLinks = [
-  { href: '/index-fr', label: 'Accueil' },
-  { href: '/fr/caractere-invisible', label: 'Caractère invisible' },
-  { href: '/fr/pseudo-invisible-tiktok', label: 'TikTok' },
-  { href: '/fr/message-vide-whatsapp', label: 'WhatsApp' },
-  { href: '/fr/saut-de-ligne-instagram', label: 'Instagram' },
-  { href: '/fr/pseudo-invisible-discord', label: 'Discord' },
-  { href: '/blog/fr/', label: 'Blog' }
-];
+// 注意：enNavLinks/frNavLinks/pageLanguage 统一从 nav-links.js 引入，禁止在此文件再写一份。
+const { enNavLinks, frNavLinks, pageLanguage } = require('./nav-links');
 
 function navListHtml(links) {
   return links.map(link => `                <a href="${link.href}">${link.label}</a>`).join('\n');
@@ -135,12 +119,32 @@ function twMobLinks(links) {
 }
 
 function isFrenchPage(relPath) {
-  if (/[-]fr\.html$/.test(path.basename(relPath))) return true;
-  return relPath.split(path.sep).includes('fr');
+  return pageLanguage(relPath) === 'fr';
+}
+
+// 平衡匹配 <div class="...">...</div>：从开标签起按 <div>/</div> 计数，
+// 一直匹配到与开标签配对的闭合标签为止。相比非贪婪正则 [\s\S]*?</div>，
+// 它能正确处理导航容器内嵌套 <div> 的情况（如某页 nav-links 内又套了 div），
+// 避免只替换到第一个 </div> 而留下旧链接或多余的闭合标签。
+function replaceBalancedDiv(html, classAttr, newOpenTag, innerHtml) {
+  const open = new RegExp(`<div class="${classAttr}"[^>]*>`);
+  const m = html.match(open);
+  if (!m) return html;
+  let i = m.index + m[0].length;
+  let depth = 1;
+  while (i < html.length && depth > 0) {
+    if (html.startsWith('<div', i)) { depth++; i += 4; }
+    else if (html.startsWith('</div>', i)) { depth--; i += 6; }
+    else i++;
+  }
+  return html.slice(0, m.index) + newOpenTag + '\n' + innerHtml + '\n            ' + '</div>' + html.slice(i);
 }
 
 // 常规页面：nav-links 旧模板 或 内联 Tailwind 导航。
 // 只替换 <a> 链接列表，保留外壳（品牌/主题按钮/移动菜单结构）。
+// nav-links / mobile-menu-links 这两个容器只装链接（无嵌套交互控件），用平衡 div 匹配整段替换；
+// 内联 Tailwind 桌面/移动导航的容器里还嵌着语言切换器与主题按钮，必须保留，
+// 因此只替换「开标签到主题切换按钮之间」的链接段（与 applyNavComponent 处理组件碎片同理）。
 function applyNav(html, french) {
   const links = french ? frNavLinks : enNavLinks;
   const label = french ? 'Liens principaux' : 'Main links';
@@ -148,17 +152,66 @@ function applyNav(html, french) {
   const desk = twDeskLinks(links);
   const mob = twMobLinks(links);
 
-  return html
-    .replace(/<div class="nav-links"[^>]*>[\s\S]*?<\/div>/,
-      `<div class="nav-links" aria-label="${label}">\n${list}\n            </div>`)
-    .replace(/<div class="site-container mobile-menu-links">[\s\S]*?<\/div>/,
-      `<div class="site-container mobile-menu-links">\n${list}\n            </div>`)
+  let out = replaceBalancedDiv(html, 'nav-links', `<div class="nav-links" aria-label="${label}">`, list);
+  out = replaceBalancedDiv(out, 'site-container mobile-menu-links', `<div class="site-container mobile-menu-links">`, list);
+  out = out
     // 内联 Tailwind 桌面导航：链接到主题切换按钮之间整段替换
     .replace(/(<div class="hidden md:flex items-center space-x-8">)[\s\S]*?(<button id="theme-toggle-desktop")/,
       `$1\n${desk}\n                $2`)
     // 内联 Tailwind 移动导航
     .replace(/(<div class="px-4 py-2 space-y-1">)[\s\S]*?(<button id="theme-toggle-mobile")/,
       `$1\n${mob}\n                $2`);
+  return out;
+}
+
+// 部分 blog 页使用自定义 <nav class="bg-white shadow-lg sticky top-0 z-50"> 作为站点导航，
+// 链接是手写且不全（缺标准链接）。把它也纳入统一注入：保留品牌链接与包裹层结构，
+// 仅把 items 容器（flex items-center space-x-4）内的导航项整段替换为标准链接，
+// item class 从页面现有项自动检测（EN/FR 同模板，class 一致），
+// 这样这些 blog 页的「链接集合」与全站一致，且日后随 enNavLinks/frNavLinks 自动同步。
+// 注意：同文件里的另一个 <nav> 是文章目录（TOC，页内锚点），绝不可触碰。
+function applyNavCustomNav(html, french) {
+  const links = french ? frNavLinks : enNavLinks;
+  // 仅在含自定义导航签名的文件上处理（避免误改标准页 site-nav / 页脚 nav / TOC）
+  const open = html.match(/<nav class="bg-white shadow-lg sticky top-0 z-50">/);
+  if (!open) return html;
+
+  // 平衡匹配到配对的 </nav>
+  let p = open.index + open[0].length;
+  let depth = 1;
+  while (p < html.length && depth > 0) {
+    if (html.startsWith('<nav', p)) { depth++; p += 4; }
+    else if (html.startsWith('</nav>', p)) { depth--; p += 6; }
+    else p++;
+  }
+  const navStart = open.index;
+  const navEnd = p;
+  const navBlock = html.slice(navStart, navEnd);
+
+  // 找到 items 容器（flex items-center space-x-4）；品牌链接在另一个 flex items-center 容器内，不冲突
+  const wrapOpen = navBlock.match(/<div class="flex items-center space-x-4">/);
+  if (!wrapOpen) return html; // 结构不符则不动，避免破坏
+  let q = wrapOpen.index + wrapOpen[0].length;
+  let d = 1;
+  while (q < navBlock.length && d > 0) {
+    if (navBlock.startsWith('<div', q)) { d++; q += 4; }
+    else if (navBlock.startsWith('</div>', q)) { d--; q += 6; }
+    else q++;
+  }
+  const innerStart = wrapOpen.index + wrapOpen[0].length;
+  const innerEnd = q - 6;
+  const inner = navBlock.slice(innerStart, innerEnd);
+
+  // 从现有项检测 item class（保留原紫色样式），避免写死
+  const firstItem = inner.match(/<a\b[^>]*class="([^"]*)"/);
+  const itemClass = firstItem ? firstItem[1] : 'text-gray-700 hover:text-purple-600 transition';
+  const list = links.map(link =>
+    `                    <a href="${link.href}" class="${itemClass}" title="${link.label}">${link.label}</a>`
+  ).join('\n');
+
+  // 保留包裹层前后的换行，仅替换 items 内部
+  const newNavBlock = navBlock.slice(0, innerStart) + '\n' + list + '\n' + navBlock.slice(innerEnd);
+  return html.slice(0, navStart) + newNavBlock + html.slice(navEnd);
 }
 
 // 组件碎片（assets/components/navigation*.html）：保留语言切换器与主题按钮，
@@ -198,11 +251,11 @@ function injectNav(baseDir, label) {
   for (const file of pages) {
     const rel = path.relative(baseDir, file);
     const html0 = fs.readFileSync(file, 'utf8');
-    // 仅处理含 nav-links 或 内联 Tailwind 桌面导航的页面
-    if (!html0.includes('nav-links') && !html0.includes('hidden md:flex items-center space-x-8')) continue;
+    // 处理含 nav-links、内联 Tailwind 桌面导航、或自定义紫色导航（bg-white shadow-lg sticky）的页面
+    if (!html0.includes('nav-links') && !html0.includes('hidden md:flex items-center space-x-8') && !html0.includes('bg-white shadow-lg sticky top-0 z-50')) continue;
 
     const french = isFrenchPage(rel);
-    const html = applyNav(html0, french);
+    const html = applyNav(applyNavCustomNav(html0, french), french);
     if (html !== html0) {
       fs.writeFileSync(file, html);
       changed += 1;
