@@ -1586,6 +1586,19 @@ p {
     font-size: 1.1rem;
 }
 
+/* 工具枢纽卡片：标题即链接，明确可点击 */
+.feature-matrix h3 a,
+.definition-list h3 a {
+    color: var(--tic-blue);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.feature-matrix h3 a:hover,
+.definition-list h3 a:hover {
+    text-decoration: underline;
+}
+
 .scenario-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
