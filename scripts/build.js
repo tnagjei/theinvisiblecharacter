@@ -175,24 +175,28 @@ function applyNavComponent(html, french) {
       `$1\n${mob}\n\n                $2`);
 }
 
-function injectNav() {
+// 部署说明（关键）：Cloudflare Pages 的连接方式直接发布仓库「源文件夹」，
+// 并不会运行 npm run build 后再发 build/。因此导航注入必须写回源文件，
+// 否则线上永远拿到的是未注入的旧导航。链接定义仍只在 enNavLinks/frNavLinks 一处维护。
+function injectNav(baseDir, label) {
   const pages = [];
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        if (entry.name === 'assets') continue; // 组件碎片单独处理，避免改到模板本身
+        // 跳过资源目录与构建/依赖目录：导航只注入到页面与组件源文件
+        if (['assets', 'build', 'node_modules', '.git'].includes(entry.name)) continue;
         walk(full);
       } else if (entry.name.endsWith('.html')) {
         pages.push(full);
       }
     }
   };
-  walk(buildDir);
+  walk(baseDir);
 
   let changed = 0;
   for (const file of pages) {
-    const rel = path.relative(buildDir, file);
+    const rel = path.relative(baseDir, file);
     const html0 = fs.readFileSync(file, 'utf8');
     // 仅处理含 nav-links 或 内联 Tailwind 桌面导航的页面
     if (!html0.includes('nav-links') && !html0.includes('hidden md:flex items-center space-x-8')) continue;
@@ -207,7 +211,7 @@ function injectNav() {
 
   // 组件碎片：developer/privacy/terms/cookie 页运行时 fetch 加载，需单独注入
   for (const comp of ['assets/components/navigation.html', 'assets/components/navigation-fr.html']) {
-    const file = path.join(buildDir, comp);
+    const file = path.join(baseDir, comp);
     if (!fs.existsSync(file)) continue;
     const html0 = fs.readFileSync(file, 'utf8');
     const french = comp.endsWith('-fr.html');
@@ -218,11 +222,15 @@ function injectNav() {
     }
   }
 
-  console.log(`Nav unified across ${changed} built pages`);
+  console.log(`Nav unified across ${changed} ${label} pages`);
 }
 
+// 1) 先把统一导航写回源文件（线上部署的就是源文件）
+injectNav(root, 'source');
+// 2) 再拷贝源文件到 build/（保留 build/ 供本地校验/预览使用）
 copyBuildFiles();
-injectNav();
+// 3) build/ 已是注入后的源文件副本，再跑一次保证一致（幂等）
+injectNav(buildDir, 'built');
 buildTailwind();
 validateBuild();
 console.log(`Build ready: ${path.relative(root, buildDir)}`);
