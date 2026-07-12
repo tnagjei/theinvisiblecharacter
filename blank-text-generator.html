@@ -358,8 +358,8 @@
             <div class="site-container">
                 <div class="section-heading">
                     <p class="eyebrow">Comparison</p>
-                    <h2 id="choose-title">Choose the Right Blank Character</h2>
-                    <p>Each character behaves differently across platforms. Start with U+2800 and switch if the platform removes it.</p>
+                    <h2 id="choose-title">Blank Unicode Character Reference</h2>
+                    <p>Each blank Unicode character behaves differently across platforms. Compare width, best use, failure mode, and copy option before pasting it into a live field.</p>
                 </div>
                 <div class="btg-table-wrap">
                     <table class="btg-comparison-table" aria-label="Blank character comparison table">
@@ -369,7 +369,8 @@
                                 <th scope="col">Unicode</th>
                                 <th scope="col">Takes visible width</th>
                                 <th scope="col">Best for</th>
-                                <th scope="col">Main risk</th>
+                                <th scope="col">Fails when</th>
+                                <th scope="col">Copy</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -379,6 +380,7 @@
                                 <td><span class="btg-tag-yes">Yes</span></td>
                                 <td>Messages and visible spacing</td>
                                 <td>May be filtered by platform</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#10240;" data-original-text="Copy U+2800" data-success-text="Copied" data-error-text="Failed">Copy U+2800</button></td>
                             </tr>
                             <tr>
                                 <td>Zero Width Space</td>
@@ -386,6 +388,7 @@
                                 <td><span class="btg-tag-no">No</span></td>
                                 <td>Separators and formatting</td>
                                 <td>May be normalized away</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8203;" data-original-text="Copy U+200B" data-success-text="Copied" data-error-text="Failed">Copy U+200B</button></td>
                             </tr>
                             <tr>
                                 <td>Hangul Filler</td>
@@ -393,11 +396,36 @@
                                 <td><span class="btg-tag-usually">Usually</span></td>
                                 <td>Names and blank fields</td>
                                 <td>May be blocked in some apps</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#12644;" data-original-text="Copy U+3164" data-success-text="Copied" data-error-text="Failed">Copy U+3164</button></td>
+                            </tr>
+                            <tr>
+                                <td>Word Joiner</td>
+                                <td><code>U+2060</code></td>
+                                <td><span class="btg-tag-no">No</span></td>
+                                <td>Preventing line breaks inside technical text</td>
+                                <td>May break search or copied-code matching</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8288;" data-original-text="Copy U+2060" data-success-text="Copied" data-error-text="Failed">Copy U+2060</button></td>
+                            </tr>
+                            <tr>
+                                <td>Zero Width Non-Joiner</td>
+                                <td><code>U+200C</code></td>
+                                <td><span class="btg-tag-no">No</span></td>
+                                <td>Stopping script joining where that behavior is intended</td>
+                                <td>May change multilingual text rendering</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8204;" data-original-text="Copy U+200C" data-success-text="Copied" data-error-text="Failed">Copy U+200C</button></td>
+                            </tr>
+                            <tr>
+                                <td>Zero Width Joiner</td>
+                                <td><code>U+200D</code></td>
+                                <td><span class="btg-tag-no">No</span></td>
+                                <td>Joining emoji or script sequences</td>
+                                <td>May change emoji or character shaping</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8205;" data-original-text="Copy U+200D" data-success-text="Copied" data-error-text="Failed">Copy U+200D</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="platform-risk" style="margin-top:1.2rem">No blank character is guaranteed to work on every platform. Always test before using in production.</p>
+                <p class="platform-risk" style="margin-top:1.2rem">No blank character works on every platform. Always test before using in production. For regex, search, and CMS cleanup notes, read the <a href="/developer#zero-width-cleanup">developer cleanup reference</a>.</p>
             </div>
         </section>
 

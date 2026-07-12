@@ -212,14 +212,24 @@ function hasInvisibleChars(s) {
                         <section id="zero-width-cleanup" class="scroll-mt-24">
                             <h2 class="text-2xl md:text-3xl font-bold mb-4">Zero Width Cleanup Notes</h2>
                             <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-6">
-                                Hidden Unicode can break search matching, slug comparison, moderation review, and copy
-                                workflows. Treat cleanup as a reviewed normalization step, not as a blind replacement.
+                                Hidden Unicode can break search matching, regular expressions, CMS imports, slug
+                                comparison, moderation review, and copy workflows. Treat cleanup as a reviewed
+                                normalization step, not as a blind replacement.
                             </p>
 
                             <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 space-y-4">
                                 <div>
                                     <div class="text-sm uppercase tracking-wide text-apple-gray-500">Detection regex</div>
-                                    <pre class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const HIDDEN_UNICODE = /[\u200B-\u200F\u202A-\u202E\u2060-\u206F\u2800\u3164]/g;</code></pre>
+                                    <pre class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const HIDDEN_UNICODE = /[\u200B-\u200F\u202A-\u202E\u2060-\u206F\u2800\u3164\uFEFF]/g;</code></pre>
+                                </div>
+                                <div>
+                                    <div class="text-sm uppercase tracking-wide text-apple-gray-500">Common break points</div>
+                                    <ul class="list-disc list-inside space-y-2 text-apple-gray-600 dark:text-apple-gray-300">
+                                        <li><span class="font-mono">ZWSP</span> means Zero Width Space, code point <span class="font-mono">U+200B</span>; it can split search terms without showing a visible gap.</li>
+                                        <li><span class="font-mono">ZWNJ</span> means Zero Width Non-Joiner, code point <span class="font-mono">U+200C</span>; it can change script shaping and string equality.</li>
+                                        <li><span class="font-mono">ZWJ</span> means Zero Width Joiner, code point <span class="font-mono">U+200D</span>; it can change emoji or connected-letter rendering.</li>
+                                        <li><span class="font-mono">BOM</span> means Byte Order Mark, often <span class="font-mono">U+FEFF</span>; it can appear at the start of copied files or imported CMS text.</li>
+                                    </ul>
                                 </div>
                                 <div>
                                     <div class="text-sm uppercase tracking-wide text-apple-gray-500">Review checklist</div>
@@ -227,6 +237,7 @@ function hasInvisibleChars(s) {
                                         <li>Log the matched code points before removal when debugging imported text.</li>
                                         <li>Do not strip joiners inside language text if they are needed for correct rendering.</li>
                                         <li>Normalize slugs, search keys, and moderation text separately from user-facing display text.</li>
+                                        <li>Use this section for cleanup and debugging only; it is not a hidden-message or steganography tutorial.</li>
                                     </ul>
                                 </div>
                             </div>
