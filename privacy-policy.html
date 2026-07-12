@@ -233,8 +233,10 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navigation-placeholder').innerHTML = data;
-                // Reinitialize theme toggle
+                // Reinitialize theme toggle, mobile menu and language dropdown
                 initializeTheme();
+                initializeMobileMenu();
+                initializeLanguageDropdown();
             });
 
         // Load footer component
@@ -259,6 +261,40 @@
             }
             if (themeToggleMobile) {
                 themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+        }
+
+        // Initialize mobile menu toggle
+        function initializeMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        }
+
+        // Initialize language dropdown
+        function initializeLanguageDropdown() {
+            const languageButton = document.getElementById('language-toggle');
+            const languageDropdown = document.getElementById('language-dropdown');
+
+            if (languageButton && languageDropdown) {
+                languageButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', () => {
+                    if (languageDropdown && !languageDropdown.classList.contains('hidden')) {
+                        languageDropdown.classList.add('hidden');
+                    }
+                });
             }
         }
     </script>
