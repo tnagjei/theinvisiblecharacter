@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theinvisiblecharacter.live/tools">
-    <meta name="description" content="Open focused invisible character tools for copying blank text, TikTok invisible usernames, blank names, detection, and platform compatibility notes.">
+    <meta name="description" content="Open invisible character generator, detector, remover, blank Unicode reference, and platform tools. Copy, reveal, clean, and test safely.">
     <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#f2eee4">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/tools">
-    <meta property="og:title" content="Invisible Character Tools | Generator, Detector, and Platform Notes">
-    <meta property="og:description" content="A focused hub for invisible character generators, blank text tools, detection, and platform compatibility notes.">
+    <meta property="og:title" content="Invisible Character Tools: Generator, Detector, Remover">
+    <meta property="og:description" content="Open invisible character generator, detector, remover, blank Unicode reference, and platform tools. Copy, reveal, clean, and test safely.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:alt" content="TheInvisibleCharacter.live tools hub">
     <meta property="og:site_name" content="TheInvisibleCharacter.live">
@@ -21,8 +21,8 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/tools">
-    <meta name="twitter:title" content="Invisible Character Tools | Generator, Detector, and Platform Notes">
-    <meta name="twitter:description" content="A focused hub for invisible character generators, blank text tools, detection, and platform compatibility notes.">
+    <meta name="twitter:title" content="Invisible Character Tools: Generator, Detector, Remover">
+    <meta name="twitter:description" content="Open invisible character generator, detector, remover, blank Unicode reference, and platform tools. Copy, reveal, clean, and test safely.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="TheInvisibleCharacter.live tools hub">
 
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="/assets/css/theme.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="assets/css/precision-index.css">
-    <title>Invisible Character Tools | Generator, Detector, and Platform Notes</title>
+    <title>Invisible Character Tools: Generator, Detector, Remover</title>
 </head>
 
 <body class="brand-page bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased">
@@ -127,7 +127,7 @@
                     </article>
                     <article>
                         <h3><a href="/blank-text-generator">Blank Unicode Character Reference</a></h3>
-                        <p>Compare U+200B, U+2800, U+3164, U+2060, U+200C, and U+200D before choosing a blank character.</p>
+                        <p>Compare U+200B, U+2800, U+3164, U+200E, U+2060, U+200C, and U+200D before choosing a blank character.</p>
                     </article>
                     <article>
                         <h3><a href="/discord-invisible-name-generator">Discord Invisible Name Generator</a></h3>
@@ -148,6 +148,34 @@
                     <article>
                         <h3><a href="/blog/technical-guide-invisible-characters">Platform Compatibility Notes</a></h3>
                         <p>Read why each app filters different blank characters and which fallback to try.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-band" aria-labelledby="detector-workflow-title">
+            <div class="site-container content-grid">
+                <div class="section-heading sticky-heading">
+                    <p class="eyebrow">Cleanup workflow</p>
+                    <h2 id="detector-workflow-title">Detect and remove invisible characters</h2>
+                    <p>Use the homepage detector as the review step: paste text, reveal code points, remove unwanted hidden Unicode, then copy cleaned text. This keeps cleanup explicit instead of silently changing content.</p>
+                </div>
+                <div class="definition-list">
+                    <article>
+                        <h3>Reveal hidden Unicode code points</h3>
+                        <p>Paste text into the detector to show code points such as U+200B, U+200C, U+200D, U+2060, U+FEFF, and U+00A0 before publishing, importing, or moderating it.</p>
+                    </article>
+                    <article>
+                        <h3>Remove invisible characters after you inspect them</h3>
+                        <p>The remover is a cleanup action after review. It should not be used as a blind filter on language text, emoji sequences, or fields where joiners may be intentional.</p>
+                    </article>
+                    <article>
+                        <h3>What the remover cleans</h3>
+                        <p>Common cleanup targets include zero-width marks, BOM, word joiner, directional marks, Braille blank, Hangul filler, and non-breaking spaces.</p>
+                    </article>
+                    <article>
+                        <h3>Safe cleanup boundaries</h3>
+                        <p>Unsafe: do not use hidden Unicode cleanup to bypass AI detection, remove AI watermarks, hide identity, or make moderation harder. This page is for formatting repair and review.</p>
                     </article>
                 </div>
             </div>

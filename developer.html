@@ -6,17 +6,17 @@
     <link rel="canonical" href="https://theinvisiblecharacter.live/developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Developer resources for TheInvisibleCharacter.live - Static JSON data, integration tips, and technical support for invisible characters.">
-    <meta name="keywords" content="developer, api, integration guide, invisible characters, unicode, json">
+        content="Find hidden Unicode, detect zero-width characters, and clean copy-paste formatting issues without claiming AI-detection bypasses.">
+    <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#000000">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/developer">
-    <meta property="og:title" content="Developer Resources - TheInvisibleCharacter.live">
+    <meta property="og:title" content="Hidden Unicode Cleanup and Zero Width Character Guide">
     <meta property="og:description"
-        content="Static JSON data, integration tips, and technical support for invisible characters.">
+        content="Find hidden Unicode, detect zero-width characters, and clean copy-paste formatting issues without claiming AI-detection bypasses.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,9 +29,9 @@
     <meta name="twitter:site" content="@invisiblechar">
     <meta name="twitter:creator" content="@invisiblechar">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/developer">
-    <meta name="twitter:title" content="Developer Resources - TheInvisibleCharacter.live">
+    <meta name="twitter:title" content="Hidden Unicode Cleanup and Zero Width Character Guide">
     <meta name="twitter:description"
-        content="Static JSON data, integration tips, and technical support for invisible characters.">
+        content="Find hidden Unicode, detect zero-width characters, and clean copy-paste formatting issues without claiming AI-detection bypasses.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="TheInvisibleCharacter.live - Developer Resources">
 
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/precision-index.css">
-<title>Developer Resources - TheInvisibleCharacter.live</title>
+<title>Hidden Unicode Cleanup and Zero Width Character Guide</title>
 
     <!-- Google AdSense -->
     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963"
@@ -97,6 +97,8 @@
                                         title="Blank Unicode Reference">Blank Unicode Reference</a></li>
                                 <li><a href="#zero-width-cleanup" class="hover:text-blue-500 transition-colors"
                                         title="Zero Width Cleanup">Zero Width Cleanup</a></li>
+                                <li><a href="#ai-cleanup-boundaries" class="hover:text-blue-500 transition-colors"
+                                        title="AI Cleanup Boundaries">AI Cleanup Boundaries</a></li>
                                 <li><a href="#support" class="hover:text-blue-500 transition-colors"
                                         title="Technical Support">Technical
                                         Support</a></li>
@@ -202,6 +204,7 @@ function hasInvisibleChars(s) {
                                     <h3 class="text-lg font-semibold mb-3">Join and word control</h3>
                                     <ul class="space-y-2 text-apple-gray-600 dark:text-apple-gray-300">
                                         <li><span class="font-mono">U+2060</span> Word Joiner: prevents line breaks without visible width.</li>
+                                        <li><span class="font-mono">U+200E</span> Left-to-Right Mark: controls text direction and can look empty in app fields.</li>
                                         <li><span class="font-mono">U+200C</span> Zero Width Non-Joiner: stops script joining.</li>
                                         <li><span class="font-mono">U+200D</span> Zero Width Joiner: joins emoji or script sequences.</li>
                                     </ul>
@@ -220,7 +223,7 @@ function hasInvisibleChars(s) {
                             <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 space-y-4">
                                 <div>
                                     <div class="text-sm uppercase tracking-wide text-apple-gray-500">Detection regex</div>
-                                    <pre class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const HIDDEN_UNICODE = /[\u200B-\u200F\u202A-\u202E\u2060-\u206F\u2800\u3164\uFEFF]/g;</code></pre>
+                                    <pre class="bg-white dark:bg-apple-gray-900 rounded-lg p-4 overflow-x-auto text-sm"><code>const HIDDEN_UNICODE = /[\u00A0\u200B-\u200F\u202A-\u202E\u2060-\u206F\u2800\u3164\uFEFF]/g;</code></pre>
                                 </div>
                                 <div>
                                     <div class="text-sm uppercase tracking-wide text-apple-gray-500">Common break points</div>
@@ -228,6 +231,7 @@ function hasInvisibleChars(s) {
                                         <li><span class="font-mono">ZWSP</span> means Zero Width Space, code point <span class="font-mono">U+200B</span>; it can split search terms without showing a visible gap.</li>
                                         <li><span class="font-mono">ZWNJ</span> means Zero Width Non-Joiner, code point <span class="font-mono">U+200C</span>; it can change script shaping and string equality.</li>
                                         <li><span class="font-mono">ZWJ</span> means Zero Width Joiner, code point <span class="font-mono">U+200D</span>; it can change emoji or connected-letter rendering.</li>
+                                        <li><span class="font-mono">NBSP</span> means Non-Breaking Space, code point <span class="font-mono">U+00A0</span>; it can look like a normal space while blocking line breaks and exact matches.</li>
                                         <li><span class="font-mono">BOM</span> means Byte Order Mark, often <span class="font-mono">U+FEFF</span>; it can appear at the start of copied files or imported CMS text.</li>
                                     </ul>
                                 </div>
@@ -240,6 +244,24 @@ function hasInvisibleChars(s) {
                                         <li>Use this section for cleanup and debugging only; it is not a hidden-message or steganography tutorial.</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </section>
+
+                        <section id="ai-cleanup-boundaries" class="scroll-mt-24">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">AI and ChatGPT Hidden Unicode Cleanup</h2>
+                            <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-6">
+                                AI and ChatGPT cleanup requests are safe only when the job is formatting repair:
+                                reveal hidden Unicode, remove accidental zero-width marks, and keep searchable text
+                                readable. They are unsafe when the goal is to bypass AI detectors, remove AI
+                                watermarks, or make text harder to moderate.
+                            </p>
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-xl p-6 border border-yellow-200 dark:border-yellow-800 space-y-3">
+                                <h3 class="text-lg font-semibold">Safe cleanup boundaries</h3>
+                                <ul class="list-disc list-inside space-y-2 text-apple-gray-700 dark:text-apple-gray-200">
+                                    <li>Reported: pasted AI-tool output can contain hidden formatting marks that break search, regex, CMS import, or copied-code matching.</li>
+                                    <li>Verified on this site: the detector can reveal known code points before you choose what to remove.</li>
+                                    <li>Unsafe: do not claim this removes AI watermarks, makes AI text undetectable, or bypasses detection systems.</li>
+                                </ul>
                             </div>
                         </section>
 

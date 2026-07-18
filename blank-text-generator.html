@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theinvisiblecharacter.live/blank-text-generator">
-    <meta name="description" content="Generate and copy blank text, empty text, and invisible Unicode characters in custom lengths. Choose U+2800, U+200B, or U+3164. Free and private.">
+    <meta name="description" content="Copy blank Unicode characters like U+3164, U+2800, and U+200B, test compatibility, and use safe fallbacks for apps and messages.">
     <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#f2eee4">
@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/blank-text-generator">
     <meta property="og:title" content="Blank Text Generator (Copy &amp; Paste Empty Text)">
-    <meta property="og:description" content="Generate and copy blank text, empty text, and invisible Unicode characters in custom lengths. Choose U+2800, U+200B, or U+3164. Free and private.">
+    <meta property="og:description" content="Copy blank Unicode characters like U+3164, U+2800, and U+200B, test compatibility, and use safe fallbacks for apps and messages.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:alt" content="Blank text generator — copy empty Unicode text">
     <meta property="og:site_name" content="TheInvisibleCharacter.live">
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/blank-text-generator">
     <meta name="twitter:title" content="Blank Text Generator (Copy &amp; Paste Empty Text)">
-    <meta name="twitter:description" content="Generate and copy blank text, empty text, and invisible Unicode characters in custom lengths. Choose U+2800, U+200B, or U+3164. Free and private.">
+    <meta name="twitter:description" content="Copy blank Unicode characters like U+3164, U+2800, and U+200B, test compatibility, and use safe fallbacks for apps and messages.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="Blank text generator — copy empty Unicode text">
 
@@ -31,7 +31,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Blank Text Generator",
-        "description": "Generate and copy blank text, empty text, and invisible Unicode characters in custom lengths. Choose U+2800, U+200B, or U+3164. Free and private.",
+        "description": "Copy blank Unicode characters like U+3164, U+2800, and U+200B, test compatibility, and use safe fallbacks for apps and messages.",
         "url": "https://theinvisiblecharacter.live/blank-text-generator",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web Browser",
@@ -409,6 +409,22 @@
                                 <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8288;" data-original-text="Copy U+2060" data-success-text="Copied" data-error-text="Failed">Copy U+2060</button></td>
                             </tr>
                             <tr>
+                                <td>Zero Width No-Break Space / BOM</td>
+                                <td><code>U+FEFF</code></td>
+                                <td><span class="btg-tag-no">No</span></td>
+                                <td>Detecting pasted file or CMS cleanup issues</td>
+                                <td>Unsafe for intentional hiding; may break imports or search</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#65279;" data-original-text="Copy U+FEFF" data-success-text="Copied" data-error-text="Failed">Copy U+FEFF</button></td>
+                            </tr>
+                            <tr>
+                                <td>Left-to-Right Mark</td>
+                                <td><code>U+200E</code></td>
+                                <td><span class="btg-tag-no">No</span></td>
+                                <td>Fallback tests in left-to-right app fields</td>
+                                <td>May change bidirectional text behavior</td>
+                                <td><button class="button-secondary small-button" type="button" data-clipboard-text="&#8206;" data-original-text="Copy U+200E" data-success-text="Copied" data-error-text="Failed">Copy U+200E</button></td>
+                            </tr>
+                            <tr>
                                 <td>Zero Width Non-Joiner</td>
                                 <td><code>U+200C</code></td>
                                 <td><span class="btg-tag-no">No</span></td>
@@ -431,6 +447,22 @@
             </div>
         </section>
 
+        <section class="section-band" aria-labelledby="blank-video-title">
+            <div class="site-container content-grid">
+                <div class="section-heading sticky-heading">
+                    <p class="eyebrow">Video reference</p>
+                    <h2 id="blank-video-title">Blank Unicode character visual explanation</h2>
+                    <p>This embedded video is a visual reference for blank Unicode characters. It does not verify that every platform accepts every character today.</p>
+                </div>
+                <div>
+                    <div class="aspect-video overflow-hidden rounded-xl border border-apple-gray-200">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/xE2cv2Ga-ok" title="Blank Unicode character video reference" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-4"><a href="https://www.youtube.com/watch?v=xE2cv2Ga-ok" rel="nofollow noopener noreferrer" target="_blank">Watch the blank Unicode character video on YouTube</a></p>
+                </div>
+            </div>
+        </section>
+
         <!-- ─── How to Generate Blank Text ───────────────────────────────── -->
         <section class="section-band" aria-labelledby="how-title">
             <div class="site-container">
@@ -446,7 +478,7 @@
                     <li>
                         <span>1</span>
                         <h3>Choose a blank character</h3>
-                        <p>Pick U+2800, U+200B, or U+3164. Start with U+2800 for most use cases.</p>
+                        <p>Pick U+2800, U+200B, U+3164, or U+200E. Start with U+2800 for most use cases.</p>
                     </li>
                     <li>
                         <span>2</span>
@@ -498,7 +530,7 @@
                     </article>
                     <article>
                         <h3>Discord display names</h3>
-                        <p>Try blank characters for a Discord server nickname or username that looks empty. Use the detector to verify the result.</p>
+                        <p>Try blank characters for a Discord server nickname, display name, or About Me field. Use the detector to verify the result.</p>
                         <a href="/discord-invisible-name-generator">Discord invisible name generator</a>
                     </article>
                     <article>
@@ -623,7 +655,7 @@
                         <p>A blank character is a Unicode code point that renders as invisible or has no visible glyph in most fonts and apps. Common examples include U+2800, U+200B, and U+3164. They are real characters that occupy a text position.</p>
                     </article>
                     <article id="faq-which-unicode">
-                        <h3>Which Unicode character creates blank text?</h3>
+                        <h3>Which blank Unicode character should you use?</h3>
                         <p>The most practical choices are U+2800 (Braille Pattern Blank, visible width), U+200B (Zero Width Space, zero width), and U+3164 (Hangul Filler, usually visible). Try U+2800 first and switch if the platform removes it.</p>
                     </article>
                     <article id="faq-why-disappears">

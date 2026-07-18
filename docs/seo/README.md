@@ -11,3 +11,4 @@
 • `QUERY_OWNERSHIP_AUDIT.md`：搜索词意图、当前排名页与推荐主要承接页审计。
 • `QUERY_OWNERSHIP_AUDIT_V2.md`：修复指标层级、Coverage 状态传播和 Ownership 分类后的第二版审计。
 • `EXPERIMENT_2A_CHANGELOG.md`：Blank Text、TikTok、WhatsApp 与 Fortnite 实验页面的变更、假设与风险记录。
+• `WHATSAPP_GUIDE_GSC_AUDIT_2026-07-17.md`：WhatsApp 指南页最新 GSC 数据、网址检查、2A 归因边界与优化队列。

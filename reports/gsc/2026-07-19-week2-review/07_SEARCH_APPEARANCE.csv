@@ -1,0 +1,4 @@
+period,start_date,end_date,status,note
+P0_PROVISIONAL,2026-06-28,2026-07-03,NO_ROWS_RETURNED,"GSC returned zero searchAppearance rows. This dimension cannot be grouped with date, so each equal-length period was queried separately with data-state=all."
+P1_PROVISIONAL,2026-07-05,2026-07-10,NO_ROWS_RETURNED,"GSC returned zero searchAppearance rows. This dimension cannot be grouped with date, so each equal-length period was queried separately with data-state=all."
+P2_PROVISIONAL,2026-07-12,2026-07-17,NO_ROWS_RETURNED,"GSC returned zero searchAppearance rows. July 16 onward is incomplete in data-state=all."
