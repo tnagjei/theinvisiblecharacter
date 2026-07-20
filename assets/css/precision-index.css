@@ -1252,3 +1252,175 @@ html[data-theme="dark"] :is(.hero-shell, .section-band, body:not(.brand-page) ma
         transition-duration: 0.01ms !important;
     }
 }
+
+/* === TikTok username vs display name compare block === */
+.highlight-band {
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 22%, transparent);
+}
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.compare-card {
+    border: 1px solid var(--pi-border, #e5e1d8);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.compare-card.blocked {
+    border-color: #e7b4b4;
+    background: #fdf5f5;
+}
+
+.compare-card.allowed {
+    border-color: #b4dcc4;
+    background: #f3fbf6;
+}
+
+.compare-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+}
+
+.compare-card.blocked .compare-badge {
+    background: #f6d6d6;
+    color: #9b2c2c;
+}
+
+.compare-card.allowed .compare-badge {
+    background: #cdeede;
+    color: #1f6b42;
+}
+
+.compare-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.compare-card ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+    color: #555;
+}
+
+.compare-card li {
+    margin-bottom: 0.35rem;
+}
+
+.compare-foot {
+    margin-top: 1.5rem;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+/* === Compatibility table === */
+.compat-table th,
+.compat-table td {
+    font-size: 0.9rem;
+    vertical-align: top;
+}
+
+.compat-table tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 12%, transparent);
+}
+
+/* === Hero note === */
+.hero-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #6b6b6b;
+}
+
+/* === Responsive: stack compare grid on mobile === */
+@media (max-width: 640px) {
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Unicode character tables (brand-page) === */
+.brand-page .unicode-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--pi-border, #e5e0d5) 100%, transparent);
+    border-radius: 14px;
+    background: #fff;
+}
+
+.brand-page .unicode-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 520px;
+}
+
+.brand-page .unicode-table thead th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 40%, #fff);
+    font-weight: 600;
+    color: #3a3a3a;
+    border-bottom: 1px solid color-mix(in srgb, var(--pi-border, #e5e0d5) 100%, transparent);
+    white-space: nowrap;
+}
+
+.brand-page .unicode-table tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--pi-border, #e5e0d5) 70%, transparent);
+    vertical-align: middle;
+}
+
+.brand-page .unicode-table tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 14%, transparent);
+}
+
+.brand-page .unicode-table tbody tr:hover {
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 28%, transparent);
+}
+
+.brand-page .unicode-table .char-cell {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1.05rem;
+    color: #555;
+    min-width: 3rem;
+}
+
+.brand-page .unicode-table code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.82rem;
+    color: #4a4a4a;
+    background: color-mix(in srgb, var(--pi-accent, #f2eee4) 50%, transparent);
+    padding: 0.1rem 0.35rem;
+    border-radius: 5px;
+}
+
+.brand-page .platform-table tbody td:first-child {
+    font-weight: 500;
+}
+
+.brand-page .platform-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #6b6b6b;
+}
+
+@media (max-width: 640px) {
+    .brand-page .unicode-table {
+        font-size: 0.82rem;
+    }
+    .brand-page .unicode-table thead th,
+    .brand-page .unicode-table tbody td {
+        padding: 0.55rem 0.65rem;
+    }
+}
