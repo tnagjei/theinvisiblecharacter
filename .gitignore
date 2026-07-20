@@ -19,3 +19,8 @@ seo-input/
 .DS_Store
 seo-work/
 docs/seo/QUERY_OWNERSHIP_AUDIT.md
+
+# 本地运行态 / 个人配置 / 竞品抓取素材（不进仓库）
+.omo/
+.gsc.json
+docs/search-markdown-*
