@@ -256,14 +256,14 @@ if (fs.existsSync(blankPath)) {
   const bodyText = blank('body').text().toLowerCase();
 
   // 1. Title matching
-  if (blankTitle !== 'Blank Text Generator (Copy & Paste Empty Text)') {
-    fail(`blank-text-generator.html: expected Title "Blank Text Generator (Copy & Paste Empty Text)", found "${blankTitle}"`);
+  if (blankTitle !== 'Blank Text Generator & Invisible Character Remover / Detector') {
+    fail(`blank-text-generator.html: expected Title "Blank Text Generator & Invisible Character Remover / Detector", found "${blankTitle}"`);
   }
 
   // 2. Single H1 check and content matching
   if (blankH1s !== 1) {
     fail(`blank-text-generator.html: expected exactly 1 H1, found ${blankH1s}`);
-  } else if (blankH1 !== 'Blank Text Generator: Copy & Paste Empty Text') {
+  } else if (blankH1 !== 'Blank Text Generator & Invisible Character Remover') {
     fail(`blank-text-generator.html: H1 mismatch — found: "${blankH1}"`);
   }
 
