@@ -72,7 +72,7 @@
             }
         },
         "datePublished": "2024-12-01T10:00:00Z",
-        "dateModified": "2024-12-01T10:00:00Z",
+        "dateModified": "2026-07-28T10:00:00Z",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles"
@@ -80,7 +80,7 @@
         "articleSection": "Technique",
         "articleBody": "Guide technique complet des caractères invisibles, standards Unicode, encodage de caractères et bonnes pratiques pour l'implémentation. Couvre les espaces de largeur zéro, liants et aspects techniques de TheInvisibleCharacter.live.",
         "keywords": ["caractères invisibles", "unicode", "espace largeur zéro", "guide technique", "U+200B", "U+200D", "encodage caractères", "theinvisiblecharacter"],
-        "wordCount": 3000,
+        "wordCount": 1850,
         "readingTime": "PT15M",
         "inLanguage": "fr",
         "potentialAction": {
@@ -346,7 +346,7 @@
             <!-- Table of Contents -->
             <div class="lg:col-span-1">
                 <div class="bg-white rounded-lg shadow-md p-6 toc">
-                    <h3 class="text-lg font-semibold mb-4">Table des Matières</h3>
+                    <h2 class="text-lg font-semibold mb-4">Table des Matières</h2>
                     <nav>
                         <a href="#introduction" class="block py-1 text-sm hover:text-purple-600" title="Introduction">Introduction</a>
                         <a href="#bases-unicode" class="block py-1 text-sm hover:text-purple-600" title="Bases Unicode">Bases Unicode</a>
@@ -361,6 +361,7 @@
                         <a href="#depannage" class="block py-1 text-sm hover:text-purple-600" title="Dépannage">Dépannage</a>
                         <a href="#developpements-futurs" class="block py-1 text-sm hover:text-purple-600" title="Développements Futurs">Développements
                             Futurs</a>
+                        <a href="#faq" class="block py-1 text-sm hover:text-purple-600" title="Questions fréquentes">Questions fréquentes</a>
                         <a href="#conclusion" class="block py-1 text-sm hover:text-purple-600" title="Conclusion">Conclusion</a>
                     </nav>
                 </div>
@@ -821,6 +822,26 @@ fetch('https://api.theinvisiblecharacter.live/generate')
                             <li>API et SDK pour développeurs</li>
                             <li>Développement d'applications mobiles</li>
                         </ul>
+                    </section>
+
+                    <!-- FAQ -->
+                    <section id="faq">
+                        <h2>Questions fréquentes sur les caractères invisibles</h2>
+
+                        <h3>Que sont les caractères invisibles en Unicode ?</h3>
+                        <p>Les caractères invisibles sont des caractères Unicode qui prennent de l'espace mais n'affichent pas de contenu visible. Ils incluent les espaces de largeur zéro, les liants, les non-liants et autres caractères de formatage.</p>
+
+                        <h3>Comment fonctionnent techniquement les caractères de largeur zéro ?</h3>
+                        <p>Les caractères de largeur zéro sont des points de code Unicode spéciaux qui n'occupent aucun espace visuel mais affectent le rendu du texte, le comportement de liaison ou fournissent une signification sémantique sans représentation visible.</p>
+
+                        <h3>Quelle est la différence entre U+200B et U+200D ?</h3>
+                        <p>U+200B (Espace de Largeur Zéro) crée des césures de mots sans espace visible, tandis que U+200D (Liant de Largeur Zéro) connecte des caractères qui seraient autrement séparés, utilisé dans les scripts complexes et séquences d'emojis.</p>
+
+                        <h3>Les caractères invisibles sont-ils sûrs à utiliser ?</h3>
+                        <p>Oui, les caractères invisibles Unicode standard sont complètement sûrs et largement supportés sur toutes les plateformes et applications modernes.</p>
+
+                        <h3>Comment TheInvisibleCharacter.live génère-t-il du texte invisible ?</h3>
+                        <p>TheInvisibleCharacter.live utilise des caractères Unicode invisibles soigneusement sélectionnés et les combine de manière optimale pour une compatibilité maximale sur différentes plateformes et applications.</p>
                     </section>
 
                     <!-- Conclusion -->

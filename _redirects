@@ -75,7 +75,8 @@ https://www.theinvisiblecharacter.live/* https://theinvisiblecharacter.live/:spl
 /guide /help 301
 
 # French language shortcuts
-/fr /index-fr 302
+/fr /index-fr 301
+/fr/ /index-fr 301
 /fr/a-propos /about-fr 301
 /fr/aide /help-fr 301
 /fr/blog /blog/fr/ 301

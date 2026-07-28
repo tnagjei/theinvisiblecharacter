@@ -8,5 +8,5 @@
 ## Files
 
 - `GSC_WEEK3_REVIEW.md`：完整数据复盘。
+- `PROVISIONAL_FULL7_COMPARISON.md`：包含 7 月 25 日未定稿数据的 7 天补充对比。
 - `ACTION_PACKAGE.md`：唯一优先动作包。
-

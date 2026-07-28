@@ -15,7 +15,7 @@
     <!-- French Homepage -->
     <url>
         <loc>https://theinvisiblecharacter.live/index-fr</loc>
-        <lastmod>2026-07-05</lastmod>
+        <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -215,7 +215,7 @@
     </url>
     <url>
         <loc>https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles</loc>
-        <lastmod>2026-07-05</lastmod>
+        <lastmod>2026-07-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
