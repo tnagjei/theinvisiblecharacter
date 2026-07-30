@@ -19,7 +19,7 @@
   /* ─── DOM references (resolved after DOMContentLoaded) ─────────────────── */
   var countInput, countError, generateBtn, resultTextarea, statusEl, copyResultBtn;
   var statsCharType, statsUnicode, statsCount, statsVisible, statsGenerated;
-  var analyzeInput, analyzeBtn, clearAnalyzeBtn, analyzeResults;
+  var analyzeInput, analyzeBtn, stripBtn, clearAnalyzeBtn, analyzeResults;
   var analyzeSummary, analyzeRows, charTagList;
 
   /* ─── Internal state ────────────────────────────────────────────────────── */
@@ -288,6 +288,17 @@
     analyzeSummary.textContent = '';
   }
 
+  function stripInvisible() {
+    var text = analyzeInput.value;
+    if (!text) return;
+    var cleaned = text.replace(/[​-‍﻿⠀ㅤ‎‏]/g, '');
+    analyzeInput.value = cleaned;
+    analyze();
+    if (analyzeSummary) {
+      analyzeSummary.textContent = 'Hidden characters removed. ' + analyzeSummary.textContent;
+    }
+  }
+
   /* ─── Bind all events ────────────────────────────────────────────────────── */
   function bindEvents() {
     // Generate button
@@ -334,6 +345,7 @@
 
     // Analyzer buttons
     if (analyzeBtn) analyzeBtn.addEventListener('click', analyze);
+    if (stripBtn) stripBtn.addEventListener('click', stripInvisible);
     if (clearAnalyzeBtn) clearAnalyzeBtn.addEventListener('click', clearAnalyze);
   }
 
@@ -354,6 +366,7 @@
 
     analyzeInput     = document.getElementById('btg-analyze-input');
     analyzeBtn       = document.getElementById('btg-analyze-btn');
+    stripBtn         = document.getElementById('btg-strip-btn');
     clearAnalyzeBtn  = document.getElementById('btg-analyze-clear');
     analyzeResults   = document.getElementById('btg-analyze-results');
     analyzeSummary   = document.getElementById('btg-analyze-summary');
@@ -374,6 +387,7 @@
     window.blankTextGenerator = {
       generate:    generate,
       analyze:     analyze,
+      stripInvisible: stripInvisible,
       clearAnalyze: clearAnalyze,
       getResult:   function () { return resultTextarea.value; },
       CHARS:       CHARS
