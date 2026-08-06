@@ -1,0 +1,2 @@
+usage: check-schema.py [-h] [--file FILE] [--timeout TIMEOUT] [url]
+check-schema.py: error: unrecognized arguments: --url

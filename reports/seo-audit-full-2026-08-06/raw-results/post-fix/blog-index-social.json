@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/index.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Blog - TheInvisibleCharacter.live Invisible Character Guide",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Blog - Expert guides on invisible characters for Instagram, TikTok, Fortnite & WhatsApp. Learn creative techniques, troubleshooting tips & platform tutorials ✓",
+        "length": 161,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Blog - TheInvisibleCharacter.live Invisible Character Guide",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Blog - Expert guides on invisible characters for Instagram, TikTok, Fortnite & WhatsApp. Learn creative techniques, troubleshooting tips & platform tutorials ✓",
+        "length": 161,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

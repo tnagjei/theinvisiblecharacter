@@ -1,0 +1,25 @@
+HTTP/1.1 200 Connection established
+
+HTTP/2 200 
+date: Thu, 06 Aug 2026 01:16:33 GMT
+content-type: text/plain
+content-length: 80
+x-xss-protection: 1; mode=block
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=5AhAEFNdOpPRhjk%2Ffw0BRqEOp8gTE82Qoju0A2hpGQCi0X3wIBuMd3UGsSSk0ZgAUVlkBTqoHBw%2BnQ8qFXQoLj8m1VEk5tGVPMjw3zcteWbJ7Vqxu3wXjP8vSj%2Bd8F%2Bs48L8K2IaWw4y2wDRgrGSMZqdrSrYf2IMvw%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+access-control-allow-origin: *
+cache-control: public, max-age=86400, s-maxage=172800
+etag: "8137f290539513aabf04cb7c266e09ce"
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https://www.clarity.ms https://*.clarity.ms https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; font-src 'self' https://fonts.gstatic.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.youtube-nocookie.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests
+permissions-policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-permitted-cross-domain-policies: none
+server: cloudflare
+accept-ranges: bytes
+cf-cache-status: MISS
+cf-ray: a26a32621d6722ae-SJC
+alt-svc: h3=":443"; ma=86400
+

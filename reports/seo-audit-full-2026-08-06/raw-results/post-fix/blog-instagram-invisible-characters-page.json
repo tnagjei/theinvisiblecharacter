@@ -1,0 +1,22 @@
+{
+  "file": "blog/instagram-invisible-characters.html",
+  "title": {
+    "value": "Instagram Invisible Characters: Bio & Line Break Guide",
+    "length": 54,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 151,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 12,
+  "overall": "pass"
+}

@@ -1,0 +1,22 @@
+{
+  "file": "blog/fr/optimisation-stories-instagram.html",
+  "title": {
+    "value": "Optimisation Instagram Stories: Guide Pratique (2024)",
+    "length": 53,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 134,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 0,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 13,
+  "overall": "pass"
+}

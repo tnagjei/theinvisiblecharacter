@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/discord-nom-invisible.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas",
+        "length": 53,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Créez un pseudo Discord qui paraît vide en utilisant un caractère Unicode invisible. Étapes desktop/mobile + dépannage si Discord refuse le nom.",
+        "length": 144,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas",
+        "length": 53,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Nom Discord invisible: étapes desktop/mobile + dépannage si Discord refuse ou tronque le pseudo.",
+        "length": 96,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

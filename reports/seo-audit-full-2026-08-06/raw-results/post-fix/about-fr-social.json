@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/about-fr.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "À propos de TheInvisibleCharacter.live - Outils gratuits",
+        "length": 56,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "À propos de TheInvisibleCharacter.live : outils de caractères invisibles gratuits pour réseaux sociaux et jeux, dans le respect de la vie privée.",
+        "length": 145,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/about-fr",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "À propos de TheInvisibleCharacter.live - Outils gratuits",
+        "length": 56,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "À propos de TheInvisibleCharacter.live : outils de caractères invisibles gratuits pour réseaux sociaux et jeux, dans le respect de la vie privée.",
+        "length": 145,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

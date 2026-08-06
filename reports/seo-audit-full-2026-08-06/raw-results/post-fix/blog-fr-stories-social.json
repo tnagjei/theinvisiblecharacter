@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/optimisation-stories-instagram.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Optimisation Instagram Stories: Guide Pratique (2024)",
+        "length": 53,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Optimisez vos Instagram Stories: structure, stickers, highlights, et conseils de mise en page pour plus d'engagement.",
+        "length": 117,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Optimisation Instagram Stories: Guide Pratique (2024)",
+        "length": 53,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Conseils concrets pour des Stories Instagram plus engageantes: structure, stickers, highlights, et mise en page.",
+        "length": 112,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

@@ -1,0 +1,2 @@
+usage: check-social.py [-h] [--file FILE] [--timeout TIMEOUT] [url]
+check-social.py: error: unrecognized arguments: --url

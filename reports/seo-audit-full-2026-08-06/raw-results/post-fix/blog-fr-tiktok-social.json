@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/tiktok-profil-caracteres-invisibles.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Caractères Invisibles TikTok: Bio, Espacement & Nom (Guide)",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Comment utiliser des caractères invisibles sur TikTok pour une bio plus propre: espacement, séparateurs, et dépannage si TikTok les supprime.",
+        "length": 141,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Caractères Invisibles TikTok: Bio, Espacement & Nom (Guide)",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Guide TikTok: espacement bio avec des caractères invisibles + dépannage si TikTok les supprime.",
+        "length": 95,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

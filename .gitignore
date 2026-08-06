@@ -24,3 +24,7 @@ docs/seo/QUERY_OWNERSHIP_AUDIT.md
 .omo/
 .gsc.json
 docs/search-markdown-*
+
+# 全站 SEO 审计原始抓取数据（可重新生成，不进仓库）
+reports/seo-audit-full-2026-08-06/raw-results/pages/
+reports/seo-audit-full-2026-08-06/raw-results/crawl-results.json

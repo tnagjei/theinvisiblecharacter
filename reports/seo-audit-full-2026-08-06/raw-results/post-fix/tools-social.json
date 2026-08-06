@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/tools.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Invisible Character Tools: Generator, Detector, Remover",
+        "length": 55,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Open invisible character generator, detector, remover, blank Unicode reference, and platform tools. Copy, reveal, clean, and test safely.",
+        "length": 137,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/tools",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Invisible Character Tools: Generator, Detector, Remover",
+        "length": 55,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Open invisible character generator, detector, remover, blank Unicode reference, and platform tools. Copy, reveal, clean, and test safely.",
+        "length": 137,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

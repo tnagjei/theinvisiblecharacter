@@ -1,0 +1,49 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/tiktok-invisible-username-generator.html",
+  "status": "pass",
+  "schemas": [
+    {
+      "types": [
+        "WebApplication"
+      ],
+      "status": "info",
+      "fields_present": [],
+      "fields_missing": [],
+      "recommended_missing": [],
+      "nested_issues": [],
+      "detail": "WebApplication — no required-field ruleset defined."
+    }
+  ],
+  "parse_errors": [],
+  "found_types": [
+    "WebApplication"
+  ],
+  "inferred_page_type": "unknown",
+  "expected_types": [],
+  "has_expected_type": false,
+  "has_type_conflicts": false,
+  "page_language": "en",
+  "canonical_url": "https://theinvisiblecharacter.live/tiktok-invisible-username-generator",
+  "hreflang_urls": {
+    "en": "https://theinvisiblecharacter.live/tiktok-invisible-username-generator",
+    "fr": "https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok",
+    "x-default": "https://theinvisiblecharacter.live/tiktok-invisible-username-generator"
+  },
+  "localized_schema": {
+    "status": "pass",
+    "page_language": "en",
+    "schema_languages": [
+      "en"
+    ],
+    "schema_urls": [
+      "https://theinvisiblecharacter.live/tiktok-invisible-username-generator",
+      "https://theinvisiblecharacter.live/tiktok-invisible-username-generator"
+    ],
+    "multilingual": true,
+    "issues": [],
+    "fixes": [],
+    "detail": "Localized schema matches page language."
+  },
+  "detail": "Found 1 JSON-LD block(s): WebApplication.",
+  "llm_review_required": true
+}

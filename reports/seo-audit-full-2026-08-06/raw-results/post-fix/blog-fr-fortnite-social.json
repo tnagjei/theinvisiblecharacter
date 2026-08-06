@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/fortnite-nom-invisible.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Nom invisible Fortnite : guide pour joueurs (2026)",
+        "length": 50,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide complet Fortnite nom invisible. Tutoriel étape par étape pour noms vides, méthodes sûres pour PC, console & joueurs mobiles ✓",
+        "length": 133,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Nom invisible Fortnite : guide pour joueurs (2026)",
+        "length": 50,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide complet Fortnite nom invisible. Tutoriel étape par étape pour noms vides, méthodes sûres pour PC, console & joueurs mobiles ✓",
+        "length": 133,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

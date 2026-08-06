@@ -1,0 +1,22 @@
+{
+  "file": "index-fr.html",
+  "title": {
+    "value": "Caractère invisible : copier-coller du texte invisible",
+    "length": 54,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 150,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 12,
+  "overall": "pass"
+}

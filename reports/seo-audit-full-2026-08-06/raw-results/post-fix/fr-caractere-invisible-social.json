@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/fr/caractere-invisible.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Caractère Invisible | Générateur de Texte Invisible",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Copiez un caractère invisible ou du texte vide pour Instagram, WhatsApp, Discord et les jeux. Gratuit, privé, sans inscription.",
+        "length": 127,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/fr/caractere-invisible",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Caractère Invisible | Générateur de Texte Invisible",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Copiez un caractère invisible ou du texte vide pour Instagram, WhatsApp, Discord et les jeux. Gratuit, privé, sans inscription.",
+        "length": 127,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

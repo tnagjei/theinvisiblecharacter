@@ -1,0 +1,22 @@
+{
+  "file": "blog/fr/whatsapp-messages-invisibles.html",
+  "title": {
+    "value": "Messages invisibles WhatsApp : guide complet pas à pas",
+    "length": 54,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 127,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 2,
+  "inLanguage_fields": 3,
+  "internal_links": 15,
+  "overall": "pass"
+}

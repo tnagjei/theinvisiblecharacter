@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-08-06",
+  "status": "pass",
+  "detail": "Repository-only HTML route candidates all returned HTTP 404 online and are not treated as public indexable route mismatches.",
+  "checks": [
+    {
+      "url": "https://theinvisiblecharacter.live/debug-core-functionality",
+      "http_status": 404
+    },
+    {
+      "url": "https://theinvisiblecharacter.live/debug-runtime",
+      "http_status": 404
+    },
+    {
+      "url": "https://theinvisiblecharacter.live/mobile-test",
+      "http_status": 404
+    },
+    {
+      "url": "https://theinvisiblecharacter.live/test",
+      "http_status": 404
+    }
+  ]
+}

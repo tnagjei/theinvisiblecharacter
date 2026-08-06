@@ -1,0 +1,44 @@
+{
+  "origin": "https://theinvisiblecharacter.live",
+  "staging_subdomains": {
+    "status": "pass",
+    "checked_hosts": [
+      "test.theinvisiblecharacter.live",
+      "staging.theinvisiblecharacter.live",
+      "dev.theinvisiblecharacter.live",
+      "preview.theinvisiblecharacter.live",
+      "beta.theinvisiblecharacter.live",
+      "uat.theinvisiblecharacter.live"
+    ],
+    "public_hosts": [],
+    "protected_hosts": [],
+    "redirected_hosts": [],
+    "similar_hosts": [],
+    "detail": "No public staging/test subdomain detected."
+  },
+  "robots": {
+    "status": "error",
+    "http_status": null,
+    "disallow_all": false,
+    "googlebot_blocked": false,
+    "sitemap_directives": [],
+    "sitemap_directive": null,
+    "detail": "Fetch error: Blocked: resolves to private IP (198.18.1.7)"
+  },
+  "sitemap": {
+    "status": "fail",
+    "http_status": null,
+    "url_count": 0,
+    "is_index": false,
+    "checked_url": "https://theinvisiblecharacter.live/sitemap.xml",
+    "urls": [],
+    "child_sitemaps": [],
+    "detail": "No accessible sitemap found. Checked: https://theinvisiblecharacter.live/sitemap.xml. Ensure a valid XML sitemap exists and is referenced in robots.txt."
+  },
+  "sitemap_inventory": {
+    "status": "error",
+    "total_urls": 0,
+    "directories": [],
+    "detail": "No sitemap URLs available for inventory."
+  }
+}

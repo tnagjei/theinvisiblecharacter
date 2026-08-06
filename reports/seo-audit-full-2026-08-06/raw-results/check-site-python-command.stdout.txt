@@ -1,0 +1,1 @@
+[no stdout output; see matching stderr and exit-code files]

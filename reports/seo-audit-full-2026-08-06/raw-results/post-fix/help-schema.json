@@ -1,0 +1,50 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/help.html",
+  "status": "pass",
+  "schemas": [
+    {
+      "types": [
+        "FAQPage"
+      ],
+      "status": "pass",
+      "fields_present": [
+        "mainEntity"
+      ],
+      "fields_missing": [],
+      "recommended_missing": [],
+      "nested_issues": [],
+      "detail": "FAQPage: all required fields present."
+    }
+  ],
+  "parse_errors": [],
+  "found_types": [
+    "FAQPage"
+  ],
+  "inferred_page_type": "unknown",
+  "expected_types": [],
+  "has_expected_type": false,
+  "has_type_conflicts": false,
+  "page_language": "en",
+  "canonical_url": "https://theinvisiblecharacter.live/help",
+  "hreflang_urls": {
+    "en": "https://theinvisiblecharacter.live/help",
+    "fr": "https://theinvisiblecharacter.live/help-fr",
+    "x-default": "https://theinvisiblecharacter.live/help"
+  },
+  "localized_schema": {
+    "status": "pass",
+    "page_language": "en",
+    "schema_languages": [
+      "en"
+    ],
+    "schema_urls": [
+      "https://theinvisiblecharacter.live/help"
+    ],
+    "multilingual": true,
+    "issues": [],
+    "fixes": [],
+    "detail": "Localized schema matches page language."
+  },
+  "detail": "Found 1 JSON-LD block(s): FAQPage.",
+  "llm_review_required": true
+}

@@ -1,0 +1,22 @@
+{
+  "file": "blog/fr/fortnite-nom-invisible.html",
+  "title": {
+    "value": "Nom invisible Fortnite : guide pour joueurs (2026)",
+    "length": 50,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 133,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 13,
+  "overall": "pass"
+}

@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/index-fr.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Caractère invisible : copier-coller du texte invisible",
+        "length": 54,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Qu'est-ce qu'un caractère invisible ? Copiez un caractère invisible Unicode pour WhatsApp, Instagram, TikTok, Discord et les jeux. Gratuit, privé, sans inscription.",
+        "length": 164,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/index-fr",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Caractère invisible : copier-coller du texte invisible",
+        "length": 54,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Qu'est-ce qu'un caractère invisible ? Copiez un caractère invisible Unicode pour WhatsApp, Instagram, TikTok, Discord et les jeux. Gratuit, privé, sans inscription.",
+        "length": 164,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/tiktok-invisible-characters.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "TikTok Invisible Characters: Bio Spacing & Blank Name Guide",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Learn how to use invisible characters on TikTok to add spacing in your bio, create clean separators, and (sometimes) make your display name look blank. Includes troubleshooting tips.",
+        "length": 182,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/tiktok-invisible-characters",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "TikTok Invisible Characters: Bio Spacing & Blank Name Guide",
+        "length": 59,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Step-by-step TikTok invisible character guide: bio spacing, clean separators, and troubleshooting when TikTok removes your invisible text.",
+        "length": 138,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

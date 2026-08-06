@@ -1,0 +1,53 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/optimisation-stories-instagram.html",
+  "status": "pass",
+  "schemas": [
+    {
+      "types": [
+        "Article"
+      ],
+      "status": "pass",
+      "fields_present": [
+        "headline",
+        "datePublished",
+        "author",
+        "image"
+      ],
+      "fields_missing": [],
+      "recommended_missing": [],
+      "nested_issues": [],
+      "detail": "Article: all required fields present."
+    }
+  ],
+  "parse_errors": [],
+  "found_types": [
+    "Article"
+  ],
+  "inferred_page_type": "article",
+  "expected_types": [
+    "Article",
+    "BlogPosting",
+    "NewsArticle"
+  ],
+  "has_expected_type": true,
+  "has_type_conflicts": false,
+  "page_language": "fr",
+  "canonical_url": "https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram",
+  "hreflang_urls": {},
+  "localized_schema": {
+    "status": "pass",
+    "page_language": "fr",
+    "schema_languages": [
+      "fr"
+    ],
+    "schema_urls": [
+      "https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram"
+    ],
+    "multilingual": false,
+    "issues": [],
+    "fixes": [],
+    "detail": "Localized schema matches page language."
+  },
+  "detail": "Found 1 JSON-LD block(s): Article.",
+  "llm_review_required": true
+}

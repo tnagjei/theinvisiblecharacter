@@ -1,0 +1,22 @@
+{
+  "file": "fr/pseudo-invisible-tiktok.html",
+  "title": {
+    "value": "Pseudo TikTok invisible (2026) : caractère vide gratuit",
+    "length": 55,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 131,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 7,
+  "overall": "pass"
+}

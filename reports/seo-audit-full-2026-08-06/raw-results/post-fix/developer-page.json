@@ -1,0 +1,22 @@
+{
+  "file": "developer.html",
+  "title": {
+    "value": "Unicode Invisible Characters & Zero Width Space Guide",
+    "length": 53,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 142,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 0,
+  "jsonld_blocks": 0,
+  "inLanguage_fields": 0,
+  "internal_links": 2,
+  "overall": "pass"
+}

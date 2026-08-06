@@ -1,0 +1,9 @@
+{
+  "only_in_sitemap": [],
+  "only_in_repo_routes": [
+    "/debug-core-functionality",
+    "/debug-runtime",
+    "/mobile-test",
+    "/test"
+  ]
+}

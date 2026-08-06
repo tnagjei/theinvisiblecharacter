@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/strategies-croissance-instagram.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Stratégies de Croissance Instagram: Routine Simple (2024)",
+        "length": 57,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Une approche simple pour grandir sur Instagram: profil clair, contenu régulier, engagement, Stories, et conversion.",
+        "length": 115,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Stratégies de Croissance Instagram: Routine Simple (2024)",
+        "length": 57,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Routine de croissance Instagram: profil clair, contenu régulier, engagement, Stories, et conversion.",
+        "length": 100,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

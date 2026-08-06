@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/whatsapp-invisible-messages.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "WhatsApp Invisible Messages: How to Send Blank Text",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ WhatsApp invisible messages guide. Learn to send blank texts & hidden messages with complete step-by-step tutorial ✓",
+        "length": 118,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "WhatsApp Invisible Messages: How to Send Blank Text",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ WhatsApp invisible messages guide. Learn to send blank texts & hidden messages with complete step-by-step tutorial ✓",
+        "length": 118,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

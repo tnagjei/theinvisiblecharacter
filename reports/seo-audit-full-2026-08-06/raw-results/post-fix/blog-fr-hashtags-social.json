@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/guide-hashtags-instagram.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Guide Hashtags Instagram: Stratégie Simple & Efficace (2024)",
+        "length": 60,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Choisir des hashtags Instagram qui servent vraiment: méthode de recherche, mix de tailles, tests, et erreurs à éviter.",
+        "length": 118,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Guide Hashtags Instagram: Stratégie Simple & Efficace (2024)",
+        "length": 60,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Méthode simple pour choisir des hashtags Instagram utiles, tester des groupes, et éviter les erreurs qui bloquent la portée.",
+        "length": 124,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

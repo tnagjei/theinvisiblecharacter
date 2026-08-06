@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/fr/message-vide-whatsapp.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Message Vide WhatsApp | Envoyer du Texte Invisible",
+        "length": 50,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Envoyez un message vide sur WhatsApp en copiant un caractère Unicode invisible. Essayez U+200B, U+2800 ou U+3164.",
+        "length": 113,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/fr/message-vide-whatsapp",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Message Vide WhatsApp | Envoyer du Texte Invisible",
+        "length": 50,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Envoyez un message vide sur WhatsApp en copiant un caractère Unicode invisible. Essayez U+200B, U+2800 ou U+3164.",
+        "length": 113,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

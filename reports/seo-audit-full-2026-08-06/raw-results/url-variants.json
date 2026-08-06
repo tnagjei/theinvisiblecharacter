@@ -1,0 +1,98 @@
+[
+  {
+    "requested_url": "http://theinvisiblecharacter.live/",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live/",
+    "redirects": 1,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "https://theinvisiblecharacter.live/",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "http://www.theinvisiblecharacter.live/",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live/",
+    "redirects": 2,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "https://www.theinvisiblecharacter.live/",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live/",
+    "redirects": 1,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "https://theinvisiblecharacter.live/index.html",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live/",
+    "redirects": 1,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "https://theinvisiblecharacter.live//",
+    "http_status": 200,
+    "final_url": "https://theinvisiblecharacter.live//",
+    "redirects": 0,
+    "exit_code": 0,
+    "error": ""
+  },
+  {
+    "requested_url": "https://test.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://test.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to test.theinvisiblecharacter.live:443"
+  },
+  {
+    "requested_url": "https://staging.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://staging.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to staging.theinvisiblecharacter.live:443"
+  },
+  {
+    "requested_url": "https://dev.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://dev.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dev.theinvisiblecharacter.live:443"
+  },
+  {
+    "requested_url": "https://preview.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://preview.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to preview.theinvisiblecharacter.live:443"
+  },
+  {
+    "requested_url": "https://beta.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://beta.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to beta.theinvisiblecharacter.live:443"
+  },
+  {
+    "requested_url": "https://uat.theinvisiblecharacter.live/",
+    "http_status": 0,
+    "final_url": "https://uat.theinvisiblecharacter.live/",
+    "redirects": 0,
+    "exit_code": 35,
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to uat.theinvisiblecharacter.live:443"
+  }
+]

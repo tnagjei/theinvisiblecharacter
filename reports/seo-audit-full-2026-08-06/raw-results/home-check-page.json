@@ -1,0 +1,47 @@
+{
+  "url": "https://theinvisiblecharacter.live/",
+  "final_url": "https://theinvisiblecharacter.live/",
+  "http_status": 200,
+  "redirect_chain": [],
+  "url_slug": {
+    "status": "pass",
+    "slug": "/",
+    "is_homepage": true,
+    "keyword_match": "unverified",
+    "llm_review_required": false,
+    "detail": "Homepage detected — URL slug check not applicable."
+  },
+  "title": {
+    "status": "pass",
+    "value": "Invisible Character Generator: Copy Blank Unicode Text",
+    "length": 54,
+    "keyword_match": "full",
+    "keyword_position": "start",
+    "llm_review_required": false,
+    "detail": "Length 54 chars — within recommended range (50-60). | Keyword \"invisible character generator\" leads the title — good SEO positioning."
+  },
+  "meta_description": {
+    "status": "warn",
+    "value": "Copy invisible characters for TikTok usernames, Instagram bios, WhatsApp blank messages, Discord names, and Fortnite profiles. Free, private, no signup.",
+    "length": 152,
+    "keyword_match": "partial",
+    "llm_review_required": true,
+    "detail": "Partial match for \"invisible character generator\" in meta description. LLM review required: check if a synonym covers the intent naturally. | Length 152 chars — within recommended range (120-160). | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?"
+  },
+  "h1": {
+    "status": "pass",
+    "count": 1,
+    "values": [
+      "Invisible Character Generator"
+    ],
+    "keyword_match": "full",
+    "llm_review_required": false,
+    "detail": "Single H1 found: \"Invisible Character Generator\". Primary keyword \"invisible character generator\" found in H1 (full match)."
+  },
+  "canonical": {
+    "status": "pass",
+    "value": "https://theinvisiblecharacter.live/",
+    "matches_final_url": true,
+    "detail": "Self-referencing canonical present."
+  }
+}

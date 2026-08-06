@@ -1,0 +1,22 @@
+{
+  "file": "fr/caractere-invisible.html",
+  "title": {
+    "value": "Caractère Invisible | Générateur de Texte Invisible",
+    "length": 51,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 148,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 0,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 7,
+  "overall": "pass"
+}

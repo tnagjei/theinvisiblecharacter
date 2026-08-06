@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/whatsapp-messages-invisibles.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Messages invisibles WhatsApp : guide complet pas à pas",
+        "length": 54,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide messages invisibles WhatsApp. Apprenez à envoyer textes vides & messages cachés avec tutoriel étape par étape complet ✓",
+        "length": 127,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Messages invisibles WhatsApp : guide complet pas à pas",
+        "length": 54,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide messages invisibles WhatsApp. Apprenez à envoyer textes vides & messages cachés avec tutoriel étape par étape complet ✓",
+        "length": 127,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

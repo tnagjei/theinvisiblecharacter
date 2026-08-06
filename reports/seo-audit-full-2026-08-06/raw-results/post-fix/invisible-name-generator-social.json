@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/invisible-name-generator.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Invisible Name Generator: Copy Blank Names for Apps",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram and more. Try multiple blank Unicode characters.",
+        "length": 123,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/invisible-name-generator",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Invisible Name Generator: Copy Blank Names for Apps",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram and more. Try multiple blank Unicode characters.",
+        "length": 123,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

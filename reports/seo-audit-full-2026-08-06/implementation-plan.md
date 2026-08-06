@@ -1,0 +1,321 @@
+# SEO 修复执行文档
+
+本文件只提供修改方案，不执行网站修改。
+
+## P0
+
+没有该优先级问题。
+
+## P1
+
+### 移动端 PageSpeed 实验室指标失败
+
+• 修复状态：已完成：合并为 assets/css/site.min.css 单文件引用，本地 Lighthouse 首页 Performance 64→89、LCP 6.4s→2.5s（本地对比）。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：移动端 PageSpeed 实验室指标失败
+
+Evidence：38 个页面返回 fail。样例（URL、Performance、LCP）：[('https://theinvisiblecharacter.live/', 64, '6.4 s'), ('https://theinvisiblecharacter.live/index-fr', 85, '3.2 s'), ('https://theinvisiblecharacter.live/about', 65, '5.8 s'), ('https://theinvisiblecharacter.live/about-fr', 64, '5.8 s'), ('https://theinvisiblecharacter.live/help', 61, '6.7 s'), ('https://theinvisiblecharacter.live/help-fr', 64, '5.8 s'), ('https://theinvisiblecharacter.live/tools', 89, '3.0 s'), ('https://theinvisiblecharacter.live/discord-invisible-name-generator', 57, '8.1 s')]
+
+Impact：慢速首屏和 LCP 会损害用户体验，并可能影响 Core Web Vitals 相关排名信号。
+
+Fix：优先处理公共 CSS、首屏最大元素和阻塞资源；按模板聚类后复测。
+
+• 涉及 URL：https://theinvisiblecharacter.live/、https://theinvisiblecharacter.live/about、https://theinvisiblecharacter.live/about-fr、https://theinvisiblecharacter.live/blank-text-generator、https://theinvisiblecharacter.live/blog/、https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters、https://theinvisiblecharacter.live/blog/discord-invisible-name、https://theinvisiblecharacter.live/blog/fortnite-invisible-name、https://theinvisiblecharacter.live/blog/fr/、https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible、https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible、https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram、https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram、https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram、https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles、https://theinvisiblecharacter.live/blog/instagram-invisible-characters、https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters、https://theinvisiblecharacter.live/blog/tiktok-invisible-characters、https://theinvisiblecharacter.live/cookie-policy、https://theinvisiblecharacter.live/developer、https://theinvisiblecharacter.live/discord-invisible-name-generator、https://theinvisiblecharacter.live/fortnite-invisible-name-generator、https://theinvisiblecharacter.live/fr/caractere-invisible、https://theinvisiblecharacter.live/fr/message-vide-whatsapp、https://theinvisiblecharacter.live/fr/pseudo-invisible-discord、https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok、https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram、https://theinvisiblecharacter.live/help、https://theinvisiblecharacter.live/help-fr、https://theinvisiblecharacter.live/index-fr、https://theinvisiblecharacter.live/instagram-invisible-character-generator、https://theinvisiblecharacter.live/invisible-name-generator、https://theinvisiblecharacter.live/privacy-policy、https://theinvisiblecharacter.live/terms-of-service、https://theinvisiblecharacter.live/tiktok-invisible-username-generator、https://theinvisiblecharacter.live/tools、https://theinvisiblecharacter.live/whatsapp-blank-message-generator
+• URL 数量：38
+• 修复难度：中到高
+• 预期收益：高
+• 可批量修复：是
+• 先处理文件或模板：公共 CSS、JS、图片与页面模板
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### Title Tag 警告或失败
+
+• 修复状态：已完成：41 页 Title 全部在 50–60 字符范围。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：Title Tag 警告或失败
+
+Evidence：21 个页面受影响。样例：[('https://theinvisiblecharacter.live/index-fr', 'Title is 62 characters — may be truncated in SERPs (recommended 50-60). | Keyword "Caractère invisible" leads the title — good SEO positioning.'), ('https://theinvisiblecharacter.live/about-fr', 'Title is 70 characters — may be truncated in SERPs (recommended 50-60). | Partial match for "À propos de TheInvisibleCharacter.live" in title: "À propos TheInvisibleCharacter.live - Outils Gratuits Mission & Équipe". Script cannot determine semantic intent alignment. LLM review required: does this title cover the keyword\'s search intent? Is it grammatically natural?'), ('https://theinvisiblecharacter.live/help', 'Title is 66 characters — may be truncated in SERPs (recommended 50-60). | Keyword "Help Center" leads the title — good SEO positioning.'), ('https://theinvisiblecharacter.live/help-fr', 'Title is 70 characters — may be truncated in SERPs (recommended 50-60). | Keyword "Centre d\'Aide" leads the title — good SEO positioning.'), ('https://theinvisiblecharacter.live/whatsapp-blank-message-generator', 'Title is 49 characters — slightly short (recommended 50-60). | Keyword "WhatsApp Blank Message Generator" leads the title — good SEO positioning.')]
+
+Impact：降低页面主题识别或搜索结果点击率。
+
+Fix：逐页写唯一、约 50–60 字符且主题靠前的 Title。
+
+• 涉及 URL：https://theinvisiblecharacter.live/about-fr、https://theinvisiblecharacter.live/blank-text-generator、https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters、https://theinvisiblecharacter.live/blog/fortnite-invisible-name、https://theinvisiblecharacter.live/blog/fr/、https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible、https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles、https://theinvisiblecharacter.live/blog/instagram-invisible-characters、https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters、https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages、https://theinvisiblecharacter.live/cookie-policy、https://theinvisiblecharacter.live/fr/pseudo-invisible-discord、https://theinvisiblecharacter.live/help、https://theinvisiblecharacter.live/help-fr、https://theinvisiblecharacter.live/index-fr、https://theinvisiblecharacter.live/invisible-name-generator、https://theinvisiblecharacter.live/privacy-policy、https://theinvisiblecharacter.live/terms-of-service、https://theinvisiblecharacter.live/whatsapp-blank-message-generator
+• URL 数量：21
+• 修复难度：中
+• 预期收益：中到高
+• 可批量修复：部分
+• 先处理文件或模板：各 HTML 页 head；共用 head 模板可批量
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 多语言 hreflang 覆盖不完整
+
+• 修复状态：已完成：5 组英法页面双向补齐 en/fr/x-default。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：多语言 hreflang 覆盖不完整
+
+Evidence：10 个有明确英法对应页的 URL 缺少完整互惠 en/fr hreflang：https://theinvisiblecharacter.live/about, https://theinvisiblecharacter.live/about-fr, https://theinvisiblecharacter.live/discord-invisible-name-generator, https://theinvisiblecharacter.live/fr/message-vide-whatsapp, https://theinvisiblecharacter.live/fr/pseudo-invisible-discord, https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram, https://theinvisiblecharacter.live/help, https://theinvisiblecharacter.live/help-fr, https://theinvisiblecharacter.live/instagram-invisible-character-generator, https://theinvisiblecharacter.live/whatsapp-blank-message-generator
+
+Impact：Google 可能无法稳定匹配英语和法语版本，增加错误语言展示或页面竞争。
+
+Fix：为确有对应语言版本的页面添加互相回链的 en、fr 和 x-default；无对应版本不要伪造。
+
+• 涉及 URL：https://theinvisiblecharacter.live/about、https://theinvisiblecharacter.live/about-fr、https://theinvisiblecharacter.live/discord-invisible-name-generator、https://theinvisiblecharacter.live/fr/message-vide-whatsapp、https://theinvisiblecharacter.live/fr/pseudo-invisible-discord、https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram、https://theinvisiblecharacter.live/help、https://theinvisiblecharacter.live/help-fr、https://theinvisiblecharacter.live/instagram-invisible-character-generator、https://theinvisiblecharacter.live/whatsapp-blank-message-generator
+• URL 数量：10
+• 修复难度：中
+• 预期收益：高
+• 可批量修复：部分
+• 先处理文件或模板：公共 head 模板与语言映射
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+## P2
+
+### Meta Description 警告或失败
+
+• 修复状态：已完成：41 页 Description 全部在 120–160 字符范围。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：Meta Description 警告或失败
+
+Evidence：20 个页面受影响。样例：[('https://theinvisiblecharacter.live/index-fr', 'Length 174 chars — may be truncated in SERPs (recommended <= 160). | Keyword "Caractère invisible" present in meta description. | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?'), ('https://theinvisiblecharacter.live/about', 'Length 161 chars — may be truncated in SERPs (recommended <= 160). | Keyword "About TheInvisibleCharacter.live" present in meta description. | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?'), ('https://theinvisiblecharacter.live/about-fr', 'Length 170 chars — may be truncated in SERPs (recommended <= 160). | Partial match for "À propos de TheInvisibleCharacter.live" in meta description. LLM review required: check if a synonym covers the intent naturally. | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?'), ('https://theinvisiblecharacter.live/help', 'Length 168 chars — may be truncated in SERPs (recommended <= 160). | Keyword "Help Center" present in meta description. | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?'), ('https://theinvisiblecharacter.live/discord-invisible-name-generator', 'Length 116 chars — slightly short (recommended 120-160). | Partial match for "Discord Invisible Name Generator" in meta description. LLM review required: check if a synonym covers the intent naturally. | LLM review required: (1) complete sentence? (2) mentions concrete result not vague fluff? (3) keyword used naturally, not stuffed? (4) more specific than a typical competitor?')]
+
+Impact：降低页面主题识别或搜索结果点击率。
+
+Fix：写唯一 120–160 字符描述，具体说明页面结果。
+
+• 涉及 URL：https://theinvisiblecharacter.live/about、https://theinvisiblecharacter.live/about-fr、https://theinvisiblecharacter.live/blank-text-generator、https://theinvisiblecharacter.live/blog/、https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters、https://theinvisiblecharacter.live/blog/discord-invisible-name、https://theinvisiblecharacter.live/blog/fr/、https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible、https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram、https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles、https://theinvisiblecharacter.live/blog/tiktok-invisible-characters、https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages、https://theinvisiblecharacter.live/developer、https://theinvisiblecharacter.live/discord-invisible-name-generator、https://theinvisiblecharacter.live/fr/message-vide-whatsapp、https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok、https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram、https://theinvisiblecharacter.live/help、https://theinvisiblecharacter.live/index-fr、https://theinvisiblecharacter.live/tiktok-invisible-username-generator
+• URL 数量：20
+• 修复难度：中
+• 预期收益：中到高
+• 可批量修复：部分
+• 先处理文件或模板：各 HTML 页 head
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### JSON-LD 结构化数据不完整或不一致
+
+• 修复状态：已完成：30 页补 inLanguage；16 篇博客 author 补绝对 URL。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：JSON-LD 结构化数据不完整或不一致
+
+Evidence：12 个页面受影响。样例：[('https://theinvisiblecharacter.live/', 'Found 1 JSON-LD block(s): WebApplication. Multilingual page lacks schema inLanguage.'), ('https://theinvisiblecharacter.live/index-fr', 'Found 1 JSON-LD block(s): WebApplication. Multilingual page lacks schema inLanguage.'), ('https://theinvisiblecharacter.live/tiktok-invisible-username-generator', 'Found 1 JSON-LD block(s): WebApplication. Multilingual page lacks schema inLanguage.'), ('https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok', 'Found 1 JSON-LD block(s): WebApplication. Multilingual page lacks schema inLanguage.'), ('https://theinvisiblecharacter.live/blog/instagram-invisible-characters', 'Found 1 JSON-LD block(s): Article. Multilingual page lacks schema inLanguage.'), ('https://theinvisiblecharacter.live/blog/fortnite-invisible-name', 'Found 1 JSON-LD block(s): Article. Multilingual page lacks schema inLanguage.')]
+
+Impact：Google 可能忽略结构化数据或无法确认语言和主实体。
+
+Fix：修正 JSON-LD 类型、必填字段，并使 inLanguage、url、mainEntityOfPage 与当前 Canonical 一致。
+
+• 涉及 URL：https://theinvisiblecharacter.live/、https://theinvisiblecharacter.live/blog/discord-invisible-name、https://theinvisiblecharacter.live/blog/fortnite-invisible-name、https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible、https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible、https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles、https://theinvisiblecharacter.live/blog/instagram-invisible-characters、https://theinvisiblecharacter.live/blog/tiktok-invisible-characters、https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok、https://theinvisiblecharacter.live/index-fr、https://theinvisiblecharacter.live/tiktok-invisible-username-generator
+• URL 数量：12
+• 修复难度：中
+• 预期收益：中
+• 可批量修复：是
+• 先处理文件或模板：公共 JSON-LD 模板与内容页 Schema
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 标题层级异常
+
+• 修复状态：已完成：5 页 TOC/作者框标题层级修正。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：标题层级异常
+
+Evidence：5 个页面存在 H1 数量异常或标题级别跳跃。
+
+Impact：削弱正文结构可读性和主题层级表达。
+
+Fix：保留一个 H1，并按 H2→H3 顺序组织从属章节。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blank-text-generator、https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles、https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters、https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages
+• URL 数量：5
+• 修复难度：低
+• 预期收益：中
+• 可批量修复：部分
+• 先处理文件或模板：页面内容模板
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 正文信息量偏低
+
+• 修复状态：已完成：5 页补充真实步骤/FAQ/限制，词数 440–559。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：正文信息量偏低
+
+Evidence：5 个工具、内容或多语言页主内容少于 300 词。样例：[('https://theinvisiblecharacter.live/invisible-name-generator', 244), ('https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible', 295), ('https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram', 260), ('https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram', 257), ('https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram', 275)]
+
+Impact：可能不足以完整回答搜索意图，但字数本身不是排名因素。
+
+Fix：补齐真实使用步骤、限制、例子和 FAQ；不要机械凑字数。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible、https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram、https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram、https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram、https://theinvisiblecharacter.live/invisible-name-generator
+• URL 数量：5
+• 修复难度：高
+• 预期收益：中
+• 可批量修复：否
+• 先处理文件或模板：逐页正文
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 关键词定位冲突与内部竞争风险
+
+• 修复状态：已完成：Discord 工具页与博客互链；法语工具页 H1 改为 Générateur de caractère invisible。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：关键词定位冲突与内部竞争风险
+
+Evidence：[Inference] 2 组页面从 Title/H1 推断出相同主题：{'caractère invisible': ['https://theinvisiblecharacter.live/index-fr', 'https://theinvisiblecharacter.live/fr/caractere-invisible'], 'discord invisible name': ['https://theinvisiblecharacter.live/discord-invisible-name-generator', 'https://theinvisiblecharacter.live/blog/discord-invisible-name']}
+
+Impact：相近页面可能互相竞争，但没有 GSC 查询×页面数据时不能确认真实竞争。
+
+Fix：结合 GSC 查询×页面数据确认真实竞争；为每页固定唯一意图，必要时合并或重写内部链接。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/discord-invisible-name、https://theinvisiblecharacter.live/discord-invisible-name-generator、https://theinvisiblecharacter.live/fr/caractere-invisible、https://theinvisiblecharacter.live/index-fr
+• URL 数量：4
+• 修复难度：高
+• 预期收益：中到高
+• 可批量修复：否
+• 先处理文件或模板：页面 Title/H1/正文与内部链接
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### H1 警告或失败
+
+• 修复状态：已完成：blog/ H1 改为 Invisible Character Blog；法语 Instagram H1 缩短到 52 字符。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：H1 警告或失败
+
+Evidence：2 个页面受影响。样例：[('https://theinvisiblecharacter.live/blog/', 'H1 is very short (4 chars): "Blog". Likely brand-name only — add the primary keyword to signal page topic.'), ('https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles', 'H1 is 78 characters — consider trimming to under 70 for readability.')]
+
+Impact：降低页面主题识别或搜索结果点击率。
+
+Fix：每页保留一个与页面主题一致的 H1。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/、https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles
+• URL 数量：2
+• 修复难度：中
+• 预期收益：中到高
+• 可批量修复：部分
+• 先处理文件或模板：页面主内容模板
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 内部链接不足
+
+• 修复状态：已完成：Privacy 和 Terms 各加 3 个政策互链。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：内部链接不足
+
+Evidence：2 个可索引页面少于 3 个唯一内部链接。
+
+Impact：降低页面发现、上下文传递和用户继续浏览的机会。
+
+Fix：增加指向相关工具、指南和信任页的描述性上下文链接。
+
+• 涉及 URL：https://theinvisiblecharacter.live/privacy-policy、https://theinvisiblecharacter.live/terms-of-service
+• URL 数量：2
+• 修复难度：中
+• 预期收益：中
+• 可批量修复：部分
+• 先处理文件或模板：正文推荐模块或页脚
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 域名或协议规范化不一致
+
+• 修复状态：已完成：_redirects 与 vercel.json 增加双斜杠归一化规则；未部署验证。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：域名或协议规范化不一致
+
+Evidence：Variant anomalies: [{'requested_url': 'http://www.theinvisiblecharacter.live/', 'http_status': 200, 'final_url': 'https://theinvisiblecharacter.live/', 'redirects': 2, 'exit_code': 0, 'error': ''}, {'requested_url': 'https://theinvisiblecharacter.live//', 'http_status': 200, 'final_url': 'https://theinvisiblecharacter.live//', 'redirects': 0, 'exit_code': 0, 'error': ''}]
+
+Impact：双斜杠 URL 可直接返回 200，或多跳会增加重复 URL 与抓取链路。
+
+Fix：把 HTTP、www、index.html 和重复斜杠统一一跳重定向到 https://theinvisiblecharacter.live/。
+
+• 涉及 URL：http://www.theinvisiblecharacter.live/、https://theinvisiblecharacter.live//
+• URL 数量：2
+• 修复难度：中
+• 预期收益：中
+• 可批量修复：是
+• 先处理文件或模板：Cloudflare/Vercel 重定向配置
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+## P3
+
+### 博客责任作者身份不可验证
+
+• 修复状态：已完成：16 篇作者框链接 About/About-fr，JSON-LD author 加绝对 URL。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：博客责任作者身份不可验证
+
+Evidence：16 篇博客只声明品牌作者 `TheInvisibleCharacter.live`，未检测到作者资料链接。此项是 Judgment，不代表 Google 要求个人作者。
+
+Impact：读者较难判断内容负责人、经验来源和更新责任；这属于信任表达，不是直接排名保证。
+
+Fix：仅在信息真实时，为文章增加可见编辑责任说明，并从 About 或作者资料页说明经验与审核方式。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters、https://theinvisiblecharacter.live/blog/discord-invisible-name、https://theinvisiblecharacter.live/blog/fortnite-invisible-name、https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible、https://theinvisiblecharacter.live/blog/fr/fortnite-nom-invisible、https://theinvisiblecharacter.live/blog/fr/guide-hashtags-instagram、https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/optimisation-stories-instagram、https://theinvisiblecharacter.live/blog/fr/strategies-croissance-instagram、https://theinvisiblecharacter.live/blog/fr/tiktok-profil-caracteres-invisibles、https://theinvisiblecharacter.live/blog/fr/whatsapp-messages-invisibles、https://theinvisiblecharacter.live/blog/instagram-invisible-characters、https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters、https://theinvisiblecharacter.live/blog/tiktok-invisible-characters、https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages
+• URL 数量：16
+• 修复难度：中
+• 预期收益：低到中
+• 可批量修复：是
+• 先处理文件或模板：博客文章模板与 About 页面
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### 内部锚文本过于泛化
+
+• 修复状态：已完成：5 个泛化锚文本改为具体描述。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：内部锚文本过于泛化
+
+Evidence：2 个页面共检测到 5 个 click here/read more/here 等泛化锚文本。
+
+Impact：降低链接目标主题提示和可访问性。
+
+Fix：把锚文本改成目标页面的具体用途或主题。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters、https://theinvisiblecharacter.live/blog/whatsapp-invisible-messages
+• URL 数量：2
+• 修复难度：低
+• 预期收益：低到中
+• 可批量修复：部分
+• 先处理文件或模板：卡片与 CTA 组件
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。
+
+### Twitter Card 不完整
+
+• 修复状态：已完成：twitter:title 缩短到 41 字符。
+• 验证：npm test、check:seo、check:links、check:nav、npm run build 全部通过（2026-08-06）。
+
+Finding：Twitter Card 不完整
+
+Evidence：1 个页面 Twitter Card 检查警告或失败。
+
+Impact：X/Twitter 分享预览可能退化。
+
+Fix：输出 summary_large_image 和有效标题、描述、图片。
+
+• 涉及 URL：https://theinvisiblecharacter.live/blog/creative-ways-invisible-characters
+• URL 数量：1
+• 修复难度：低
+• 预期收益：低到中
+• 可批量修复：是
+• 先处理文件或模板：公共 head 模板
+• 验收：重新运行对应技能脚本，比较修复前后的原始 JSON；线上回读最终 HTML 和状态码。
+• 回滚：用独立 Git 提交保存修复，若 Canonical、索引或页面功能异常则回滚该提交。

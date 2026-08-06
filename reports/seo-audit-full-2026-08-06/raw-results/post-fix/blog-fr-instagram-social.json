@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/fr/instagram-caracteres-invisibles.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Caractères invisibles Instagram : guide pour la bio",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide complet pour les caractères invisibles Instagram bio formatage & sauts de ligne. Apprenez techniques largeur zéro avec tutoriel étape par étape ✓",
+        "length": 153,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/fr/instagram-caracteres-invisibles",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Caractères invisibles Instagram : guide pour la bio",
+        "length": 51,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "✓ Guide complet pour les caractères invisibles Instagram bio formatage & sauts de ligne. Apprenez techniques largeur zéro avec tutoriel étape par étape ✓",
+        "length": 153,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

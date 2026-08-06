@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/fortnite-invisible-name-generator.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Fortnite Invisible Name Generator: Copy Blank Characters",
+        "length": 56,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Copy blank Unicode characters for Fortnite and Epic display name tests with safety and rollback notes.",
+        "length": 102,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/fortnite-invisible-name-generator",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Fortnite Invisible Name Generator: Copy Blank Characters",
+        "length": 56,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Copy blank Unicode characters for Fortnite and Epic display name tests with safety and rollback notes.",
+        "length": 102,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

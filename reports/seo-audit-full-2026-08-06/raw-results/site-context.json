@@ -1,0 +1,74 @@
+{
+  "sitemap_inventory": [
+    {
+      "directory": "/",
+      "count": 1,
+      "type": "Homepage",
+      "example": "https://theinvisiblecharacter.live/"
+    },
+    {
+      "directory": "/blog/",
+      "count": 17,
+      "type": "Content / Blog",
+      "example": "https://theinvisiblecharacter.live/blog/fr/"
+    },
+    {
+      "directory": "/fr/",
+      "count": 5,
+      "type": "French localized pages",
+      "example": "https://theinvisiblecharacter.live/fr/caractere-invisible"
+    },
+    {
+      "directory": "/top-level/",
+      "count": 18,
+      "type": "Tools, trust and utility pages",
+      "example": "https://theinvisiblecharacter.live/index-fr"
+    }
+  ],
+  "robots_ok": true,
+  "robots_detail": "robots.txt returned HTTP 200, allows crawling, and declares the production sitemap.",
+  "sitemap_ok": true,
+  "sitemap_detail": "Sitemap parsed successfully with 41 URLs.",
+  "not_found_status": "pass",
+  "not_found_detail": "Random missing URL returned HTTP 404 with final URL https://theinvisiblecharacter.live/seo-audit-nonexistent-20260806.",
+  "variant_status": "warn",
+  "variant_detail": "Variant anomalies: [{'requested_url': 'http://www.theinvisiblecharacter.live/', 'http_status': 200, 'final_url': 'https://theinvisiblecharacter.live/', 'redirects': 2, 'exit_code': 0, 'error': ''}, {'requested_url': 'https://theinvisiblecharacter.live//', 'http_status': 200, 'final_url': 'https://theinvisiblecharacter.live//', 'redirects': 0, 'exit_code': 0, 'error': ''}]",
+  "staging_status": "pass",
+  "staging_detail": "No tested staging/test host returned a public HTTP 200 page.",
+  "hreflang_status": "warn",
+  "hreflang_detail": "10 个有明确英法对应页的 URL 缺少完整互惠 en/fr hreflang：https://theinvisiblecharacter.live/about, https://theinvisiblecharacter.live/about-fr, https://theinvisiblecharacter.live/discord-invisible-name-generator, https://theinvisiblecharacter.live/fr/message-vide-whatsapp, https://theinvisiblecharacter.live/fr/pseudo-invisible-discord, https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram, https://theinvisiblecharacter.live/help, https://theinvisiblecharacter.live/help-fr, https://theinvisiblecharacter.live/instagram-invisible-character-generator, https://theinvisiblecharacter.live/whatsapp-blank-message-generator",
+  "hreflang_missing_urls": [
+    "https://theinvisiblecharacter.live/about",
+    "https://theinvisiblecharacter.live/about-fr",
+    "https://theinvisiblecharacter.live/discord-invisible-name-generator",
+    "https://theinvisiblecharacter.live/fr/message-vide-whatsapp",
+    "https://theinvisiblecharacter.live/fr/pseudo-invisible-discord",
+    "https://theinvisiblecharacter.live/fr/saut-de-ligne-instagram",
+    "https://theinvisiblecharacter.live/help",
+    "https://theinvisiblecharacter.live/help-fr",
+    "https://theinvisiblecharacter.live/instagram-invisible-character-generator",
+    "https://theinvisiblecharacter.live/whatsapp-blank-message-generator"
+  ],
+  "trust": {
+    "About Us": {
+      "status": "pass",
+      "detail": "https://theinvisiblecharacter.live/about HTTP 200; homepage/footer link reachable: True.",
+      "fix": "Add a persistent footer or navigation link."
+    },
+    "Privacy Policy": {
+      "status": "pass",
+      "detail": "https://theinvisiblecharacter.live/privacy-policy HTTP 200; homepage/footer link reachable: True.",
+      "fix": "Add a persistent footer or navigation link."
+    },
+    "Terms of Service": {
+      "status": "pass",
+      "detail": "https://theinvisiblecharacter.live/terms-of-service HTTP 200; homepage/footer link reachable: True.",
+      "fix": "Add a persistent footer or navigation link."
+    },
+    "Contact": {
+      "status": "pass",
+      "detail": "Contact pathway found in homepage/footer content.",
+      "fix": "Keep the current footer contact pathway visible."
+    }
+  }
+}

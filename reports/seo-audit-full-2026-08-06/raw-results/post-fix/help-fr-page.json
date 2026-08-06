@@ -1,0 +1,22 @@
+{
+  "file": "help-fr.html",
+  "title": {
+    "value": "Centre d'aide : caractères invisibles et outils gratuits",
+    "length": 56,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 145,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 16,
+  "overall": "pass"
+}

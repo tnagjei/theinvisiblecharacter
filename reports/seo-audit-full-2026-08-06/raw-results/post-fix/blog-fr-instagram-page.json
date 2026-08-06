@@ -1,0 +1,22 @@
+{
+  "file": "blog/fr/instagram-caracteres-invisibles.html",
+  "title": {
+    "value": "Caractères invisibles Instagram : guide pour la bio",
+    "length": 51,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 153,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 13,
+  "overall": "pass"
+}

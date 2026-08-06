@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/fr/pseudo-invisible-discord.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Pseudo Discord invisible : copier un nom vide (2026)",
+        "length": 52,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Créez un pseudo Discord invisible avec un caractère Unicode vide. Copiez plusieurs options si Discord filtre votre premier essai.",
+        "length": 129,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/fr/pseudo-invisible-discord",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Pseudo Discord invisible : copier un nom vide (2026)",
+        "length": 52,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Créez un pseudo Discord invisible avec un caractère Unicode vide. Copiez plusieurs options si Discord filtre votre premier essai.",
+        "length": 129,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

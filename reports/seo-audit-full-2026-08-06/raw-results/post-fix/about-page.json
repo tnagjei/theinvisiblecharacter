@@ -1,0 +1,22 @@
+{
+  "file": "about.html",
+  "title": {
+    "value": "About TheInvisibleCharacter.live - Free Tools Mission & Team",
+    "length": 60,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 121,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 1,
+  "inLanguage_fields": 1,
+  "internal_links": 9,
+  "overall": "pass"
+}

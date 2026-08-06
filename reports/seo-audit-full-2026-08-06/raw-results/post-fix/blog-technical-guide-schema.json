@@ -1,0 +1,72 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/technical-guide-invisible-characters.html",
+  "status": "pass",
+  "schemas": [
+    {
+      "types": [
+        "Article"
+      ],
+      "status": "pass",
+      "fields_present": [
+        "headline",
+        "datePublished",
+        "author",
+        "image"
+      ],
+      "fields_missing": [],
+      "recommended_missing": [],
+      "nested_issues": [],
+      "detail": "Article: all required fields present."
+    },
+    {
+      "types": [
+        "FAQPage"
+      ],
+      "status": "pass",
+      "fields_present": [
+        "mainEntity"
+      ],
+      "fields_missing": [],
+      "recommended_missing": [],
+      "nested_issues": [],
+      "detail": "FAQPage: all required fields present."
+    }
+  ],
+  "parse_errors": [],
+  "found_types": [
+    "FAQPage",
+    "Article"
+  ],
+  "inferred_page_type": "article",
+  "expected_types": [
+    "Article",
+    "BlogPosting",
+    "NewsArticle"
+  ],
+  "has_expected_type": true,
+  "has_type_conflicts": false,
+  "page_language": "en",
+  "canonical_url": "https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters",
+  "hreflang_urls": {
+    "en": "https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters",
+    "fr": "https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles",
+    "x-default": "https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters"
+  },
+  "localized_schema": {
+    "status": "pass",
+    "page_language": "en",
+    "schema_languages": [
+      "en",
+      "en"
+    ],
+    "schema_urls": [
+      "https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters"
+    ],
+    "multilingual": true,
+    "issues": [],
+    "fixes": [],
+    "detail": "Localized schema matches page language."
+  },
+  "detail": "Found 2 JSON-LD block(s): FAQPage, Article.",
+  "llm_review_required": true
+}

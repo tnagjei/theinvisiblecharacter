@@ -1,0 +1,22 @@
+{
+  "file": "blog/fr/guide-technique-caracteres-invisibles.html",
+  "title": {
+    "value": "Guide technique : caractères invisibles et Unicode",
+    "length": 50,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 138,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 2,
+  "inLanguage_fields": 3,
+  "internal_links": 15,
+  "overall": "pass"
+}

@@ -1,0 +1,22 @@
+{
+  "file": "privacy-policy.html",
+  "title": {
+    "value": "Privacy Policy | Invisible Character Generator Tools",
+    "length": 52,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 129,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 0,
+  "jsonld_blocks": 0,
+  "inLanguage_fields": 0,
+  "internal_links": 3,
+  "overall": "pass"
+}

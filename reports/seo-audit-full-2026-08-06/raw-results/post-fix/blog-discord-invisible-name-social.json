@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/blog/discord-invisible-name.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Discord Invisible Name (Blank Nickname) - Step-by-Step Guide",
+        "length": 60,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Make your Discord nickname look blank using invisible Unicode characters. Includes best characters to try, desktop/mobile steps, and troubleshooting tips.",
+        "length": 154,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "article",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/blog/discord-invisible-name",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Discord Invisible Name (Blank Nickname) - Step-by-Step Guide",
+        "length": 60,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "How to make your Discord nickname look invisible: best Unicode characters to try + desktop/mobile steps + troubleshooting.",
+        "length": 122,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}

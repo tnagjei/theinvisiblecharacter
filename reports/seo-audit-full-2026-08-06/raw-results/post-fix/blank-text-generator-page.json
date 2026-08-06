@@ -1,0 +1,22 @@
+{
+  "file": "blank-text-generator.html",
+  "title": {
+    "value": "Blank Text Generator & Invisible Character Remover",
+    "length": 50,
+    "status": "pass"
+  },
+  "meta_description": {
+    "length": 136,
+    "status": "pass"
+  },
+  "h1": {
+    "count": 1,
+    "status": "pass"
+  },
+  "heading_jumps": 0,
+  "hreflang": 3,
+  "jsonld_blocks": 2,
+  "inLanguage_fields": 2,
+  "internal_links": 14,
+  "overall": "pass"
+}

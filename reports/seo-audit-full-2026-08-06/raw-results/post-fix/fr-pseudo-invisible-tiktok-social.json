@@ -1,0 +1,70 @@
+{
+  "url": "/Users/tangjei/Documents/建站/工具站/theinvisiblecharacter/fr/pseudo-invisible-tiktok.html",
+  "status": "pass",
+  "og": {
+    "status": "pass",
+    "fields": {
+      "title": {
+        "present": true,
+        "value": "Pseudo TikTok invisible (2026) : caractère vide gratuit",
+        "length": 55,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Caractère invisible TikTok : créez un pseudo vide gratuitement. Copiez U+3164 ou U+2800, évitez les caractères bloqués par TikTok.",
+        "length": 130,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      },
+      "type": {
+        "present": true,
+        "value": "website",
+        "status": "pass"
+      },
+      "url": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/fr/pseudo-invisible-tiktok",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "All OG tags present and valid."
+  },
+  "twitter_card": {
+    "status": "pass",
+    "fields": {
+      "card": {
+        "present": true,
+        "value": "summary_large_image",
+        "status": "pass"
+      },
+      "title": {
+        "present": true,
+        "value": "Pseudo TikTok invisible (2026) : caractère vide gratuit",
+        "length": 55,
+        "status": "pass"
+      },
+      "description": {
+        "present": true,
+        "value": "Caractère invisible TikTok : créez un pseudo vide gratuitement. Copiez U+3164 ou U+2800, évitez les caractères bloqués par TikTok.",
+        "length": 130,
+        "status": "pass"
+      },
+      "image": {
+        "present": true,
+        "value": "https://theinvisiblecharacter.live/assets/og-image.png",
+        "status": "pass"
+      }
+    },
+    "issues": [],
+    "warnings": [],
+    "detail": "Twitter Card valid with all fields present or fallback available."
+  },
+  "detail": "OG: pass. Twitter Card: pass."
+}
