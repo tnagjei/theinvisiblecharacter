@@ -1,19 +1,19 @@
 <!DOCTYPE html><html lang="fr"><head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/site.min.css">
     <link rel="canonical" href="https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles">
     <link rel="alternate" hreflang="en" href="https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters" />
     <link rel="alternate" hreflang="fr" href="https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles" />
     <link rel="alternate" hreflang="x-default" href="https://theinvisiblecharacter.live/blog/technical-guide-invisible-characters" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963" crossorigin="anonymous"></script>
-    <title>Guide Technique - TheInvisibleCharacter.live Caractères Invisibles</title>
+    <title>Guide technique : caractères invisibles et Unicode</title>
     <meta name="description" content="✓ Guide technique caractères invisibles &amp; standards Unicode. Apprenez espaces largeur zéro, liants &amp; meilleures pratiques implémentation ✓">
     <meta name="keywords" content="caractères invisibles, unicode, espace largeur zéro, guide technique, U+200B, U+200D, encodage caractères, theinvisiblecharacter">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="robots" content="index, follow">
-
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Guide Technique - TheInvisibleCharacter.live Caractères Invisibles">
+    <meta property="og:title" content="Guide technique : caractères invisibles et Unicode">
     <meta property="og:description" content="✓ Guide technique caractères invisibles &amp; standards Unicode. Apprenez espaces largeur zéro, liants &amp; meilleures pratiques implémentation ✓">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles">
@@ -32,17 +32,15 @@
     <meta property="article:tag" content="unicode">
     <meta property="article:tag" content="espace largeur zéro">
     <meta property="article:tag" content="guide technique">
-
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/blog/fr/guide-technique-caracteres-invisibles">
-    <meta name="twitter:title" content="Guide Technique - TheInvisibleCharacter.live Caractères Invisibles">
+    <meta name="twitter:title" content="Guide technique : caractères invisibles et Unicode">
     <meta name="twitter:description" content="✓ Guide technique caractères invisibles &amp; standards Unicode. Apprenez espaces largeur zéro, liants &amp; meilleures pratiques implémentation ✓">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="TheInvisibleCharacter.live - Guide technique des caracteres invisibles">
     <meta name="twitter:site" content="@invisiblechar">
     <meta name="twitter:creator" content="@invisiblechar">
-
     <!-- Additional SEO Meta Tags -->
     <meta name="language" content="fr">
     <meta name="geo.region" content="FR">
@@ -50,16 +48,17 @@
     <meta name="msvalidate.01" content="1234567890ABCDEF1234567890ABCDEF">
     <meta name="google-site-verification" content="google-site-verification-code">
     <meta name="yandex-verification" content="yandex-verification-code">
-
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "inLanguage": "fr",
         "@type": "Article",
         "headline": "Guide Technique des Caractères Invisibles: Unicode, Standards & Bonnes Pratiques",
         "description": "Guide technique complet des caractères invisibles, standards Unicode et implémentation. Apprenez les espaces de largeur zéro, liants et comment TheInvisibleCharacter.live fonctionne en coulisses.",
         "image": "https://theinvisiblecharacter.live/assets/og-image.png",
         "author": {
+            "url": "https://theinvisiblecharacter.live/about-fr",
             "@type": "Organization",
             "name": "TheInvisibleCharacter.live"
         },
@@ -115,11 +114,11 @@
         }
     }
     </script>
-
     <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "inLanguage": "fr",
         "@type": "FAQPage",
         "mainEntity": [
             {
@@ -166,7 +165,6 @@
     }
     </script>
 <!-- Font Awesome -->
-
     <!-- Custom Styles -->
     <style>
         .gradient-text {
@@ -175,83 +173,68 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .card-hover {
             transition: all 0.3s ease;
         }
-
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
         .prose {
             max-width: none;
         }
-
         .prose h2 {
             color: #4a5568;
             font-weight: 600;
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
-
         .prose h3 {
             color: #4a5568;
             font-weight: 600;
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
         }
-
         .prose p {
             margin-bottom: 1rem;
             line-height: 1.6;
         }
-
         .prose ul,
         .prose ol {
             margin-bottom: 1rem;
         }
-
         .prose li {
             margin-bottom: 0.5rem;
         }
-
         .prose a {
             color: #667eea;
             text-decoration: none;
         }
-
         .prose a:hover {
             text-decoration: underline;
         }
-
         .prose code {
             background-color: #f7fafc;
             padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
             font-size: 0.875rem;
         }
-
         .prose pre {
             background-color: #f7fafc;
             padding: 1rem;
             border-radius: 0.5rem;
             overflow-x: auto;
         }
-
         .prose blockquote {
             border-left: 4px solid #667eea;
             padding-left: 1rem;
             margin-left: 0;
             font-style: italic;
         }
-
         .toc {
             position: sticky;
             top: 2rem;
         }
-
         .toc a {
             color: #4a5568;
             text-decoration: none;
@@ -259,40 +242,32 @@
             padding: 0.25rem 0;
             transition: color 0.2s;
         }
-
         .toc a:hover {
             color: #667eea;
         }
-
         .scroll-smooth {
             scroll-behavior: smooth;
         }
-
         .unicode-table {
             font-family: 'Courier New', monospace;
             background-color: #f8f9fa;
             border-radius: 0.5rem;
             overflow: hidden;
         }
-
         .unicode-table th,
         .unicode-table td {
             padding: 0.75rem;
             text-align: left;
             border-bottom: 1px solid #e9ecef;
         }
-
         .unicode-table th {
             background-color: #e9ecef;
             font-weight: 600;
         }
-
         .unicode-table tr:hover {
             background-color: #f1f3f4;
         }
     </style>
-    <link rel="stylesheet" href="../../assets/css/tailwind.css">
-    <link rel="stylesheet" href="../../assets/css/precision-index.css">
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
@@ -373,7 +348,7 @@
                             <i class="fas fa-invisible"></i>
                         </div>
                         <div class="ml-3">
-                            <h4 class="font-semibold">TheInvisibleCharacter.live</h4>
+                            <h3 class="font-semibold"><a href="/about-fr" title="À propos de TheInvisibleCharacter.live">TheInvisibleCharacter.live</a></h3>
                             <p class="text-sm text-gray-600">Expert Technique</p>
                         </div>
                     </div>

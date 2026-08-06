@@ -256,8 +256,8 @@ if (fs.existsSync(blankPath)) {
   const bodyText = blank('body').text().toLowerCase();
 
   // 1. Title matching
-  if (blankTitle !== 'Blank Text Generator & Invisible Character Remover / Detector') {
-    fail(`blank-text-generator.html: expected Title "Blank Text Generator & Invisible Character Remover / Detector", found "${blankTitle}"`);
+  if (blankTitle !== 'Blank Text Generator & Invisible Character Remover') {
+    fail(`blank-text-generator.html: expected Title "Blank Text Generator & Invisible Character Remover", found "${blankTitle}"`);
   }
 
   // 2. Single H1 check and content matching

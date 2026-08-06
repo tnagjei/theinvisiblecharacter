@@ -1,15 +1,15 @@
 <!DOCTYPE html><html lang="fr"><head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/site.min.css">
     <link rel="canonical" href="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible">
     <link rel="alternate" hreflang="en" href="https://theinvisiblecharacter.live/blog/discord-invisible-name" />
     <link rel="alternate" hreflang="fr" href="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible" />
     <link rel="alternate" hreflang="x-default" href="https://theinvisiblecharacter.live/blog/discord-invisible-name" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comment faire un nom Discord invisible (pseudo qui paraît vide) avec des caractères Unicode invisibles. Étapes desktop et mobile, plus solutions si Discord refuse ou tronque le pseudo.">
+    <meta name="description" content="Comment créer un nom Discord invisible avec des caractères Unicode sûrs : étapes desktop et mobile, plus des solutions si Discord refuse le pseudo.">
     <meta name="keywords" content="nom discord invisible, pseudo discord invisible, nom discord vide, pseudo discord vide, caractere invisible discord, braille vide discord, espace largeur zero discord">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#000000">
-
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://theinvisiblecharacter.live/blog/fr/discord-nom-invisible">
@@ -24,7 +24,6 @@
     <meta property="og:locale:alternate" content="en_US">
     <meta property="article:published_time" content="2024-01-18">
     <meta property="article:author" content="TheInvisibleCharacter.live">
-
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@invisiblechar">
@@ -34,16 +33,17 @@
     <meta name="twitter:description" content="Nom Discord invisible: étapes desktop/mobile + dépannage si Discord refuse ou tronque le pseudo.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="Guide Discord - Nom invisible (TheInvisibleCharacter.live)">
-
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "inLanguage": "fr",
         "@type": "Article",
         "headline": "Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas",
         "description": "Comment faire un pseudo Discord qui paraît vide avec un caractère Unicode invisible, avec étapes desktop/mobile et dépannage.",
         "image": "https://theinvisiblecharacter.live/assets/og-image.png",
         "author": {
+            "url": "https://theinvisiblecharacter.live/about-fr",
             "@type": "Organization",
             "name": "TheInvisibleCharacter.live"
         },
@@ -63,17 +63,11 @@
         }
     }
     </script>
-
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
     <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
 <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../assets/css/tailwind.css">
-    <link rel="stylesheet" href="../../assets/css/theme.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/precision-index.css">
 <title>Nom Discord Invisible (Pseudo Vide) - Guide Pas à Pas</title>
-
     <!-- Google AdSense -->
     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083296102953963" crossorigin="anonymous"></script>
 </head>
@@ -228,6 +222,29 @@
                         <li><strong>Pseudos uniques</strong>: certains serveurs imposent l'unicité; il faut parfois un mix ou une séquence différente.</li>
                     </ul>
 
+                    <h2>Quels caractères essayer sur Discord ?</h2>
+                    <p>
+                        Discord accepte plusieurs caractères Unicode qui s'affichent comme un espace vide, mais aucun n'est garanti sur toutes les versions de l'application. Voici l'ordre de test recommandé :
+                    </p>
+                    <ul>
+                        <li><strong>U+3164 (Hangul Filler)</strong> : le meilleur premier essai pour un pseudo de serveur qui paraît vide.</li>
+                        <li><strong>U+2800 (Braille Pattern Blank)</strong> : utile quand le champ refuse U+3164 ou affiche un carré.</li>
+                        <li><strong>U+200B (Zero Width Space)</strong> : parfois accepté, parfois supprimé au moment de l'enregistrement.</li>
+                    </ul>
+                    <p>
+                        Collez un seul caractère à la fois et vérifiez le résultat après enregistrement. Discord peut normaliser le nom dans la liste des membres même si le champ d'édition l'accepte.
+                    </p>
+
+                    <h2>Questions fréquentes</h2>
+                    <h3>Pourquoi mon pseudo invisible disparaît après un redémarrage ?</h3>
+                    <p>
+                        Discord a peut-être normalisé le nom lors d'une mise à jour du profil ou du serveur. Recollez le même caractère et vérifiez qu'il est toujours présent dans vos paramètres. Si le problème revient, utilisez U+3164 au lieu d'un caractère de largeur zéro.
+                    </p>
+                    <h3>Un pseudo vide est-il autorisé par Discord ?</h3>
+                    <p>
+                        Discord n'interdit pas officiellement les caractères Unicode invisibles, mais chaque serveur peut appliquer ses propres règles de modération. Un pseudo invisible rend l'identification plus difficile pour les autres membres ; gardez-le uniquement si le serveur l'accepte clairement.
+                    </p>
+
                     <div class="bg-apple-gray-50 dark:bg-apple-gray-800 rounded-2xl p-6 border border-apple-gray-200 dark:border-apple-gray-700 my-10">
                         <h3 class="mt-0">Aussi utile sur TikTok</h3>
                         <p class="mb-0">
@@ -268,7 +285,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-4 gap-8">
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">TheInvisibleCharacter.live</h3>
+                        <h3 class="text-lg font-semibold mb-4"><a href="/about-fr" title="À propos de TheInvisibleCharacter.live">TheInvisibleCharacter.live</a></h3>
                         <p class="text-apple-gray-400">Plateforme professionnelle de caractères invisibles</p>
                     </div>
 

@@ -3,32 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/site.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theinvisiblecharacter.live/invisible-name-generator">
-    <meta name="description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram, and other apps. Try multiple blank Unicode characters when one option does not work.">
+    <meta name="description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram and more. Try U+3164, U+2800 or U+200B when one blank character fails.">
     <meta name="keywords" content="">
     <meta name="author" content="TheInvisibleCharacter.live">
     <meta name="theme-color" content="#f2eee4">
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinvisiblecharacter.live/invisible-name-generator">
-    <meta property="og:title" content="Invisible Name Generator | Copy Blank Names for Apps and Games">
-    <meta property="og:description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram, and other apps.">
+    <meta property="og:title" content="Invisible Name Generator: Copy Blank Names for Apps">
+    <meta property="og:description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram and more. Try multiple blank Unicode characters.">
     <meta property="og:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta property="og:image:alt" content="Invisible name generator">
     <meta property="og:site_name" content="TheInvisibleCharacter.live">
     <meta property="og:locale" content="en_US">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://theinvisiblecharacter.live/invisible-name-generator">
-    <meta name="twitter:title" content="Invisible Name Generator | Copy Blank Names for Apps and Games">
-    <meta name="twitter:description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram, and other apps.">
+    <meta name="twitter:title" content="Invisible Name Generator: Copy Blank Names for Apps">
+    <meta name="twitter:description" content="Generate and copy invisible names for TikTok, Discord, Fortnite, Instagram and more. Try multiple blank Unicode characters.">
     <meta name="twitter:image" content="https://theinvisiblecharacter.live/assets/og-image.png">
     <meta name="twitter:image:alt" content="Invisible name generator">
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "inLanguage": "en",
         "@type": "WebApplication",
         "name": "Invisible Name Generator",
         "description": "Generate and copy invisible names for apps, social profiles, and games with fallback Unicode characters.",
@@ -43,14 +42,9 @@
         "mainEntityOfPage": "https://theinvisiblecharacter.live/invisible-name-generator"
     }
     </script>
-
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-    <link rel="stylesheet" href="/assets/css/tailwind.css">
-    <link rel="stylesheet" href="/assets/css/theme.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/precision-index.css">
-    <title>Invisible Name Generator | Copy Blank Names for Apps and Games</title>
+    <title>Invisible Name Generator: Copy Blank Names for Apps</title>
 </head>
 
 <body class="brand-page bg-white dark:bg-apple-gray-900 text-apple-gray-900 dark:text-white font-sf antialiased">
@@ -141,6 +135,45 @@
                     <a href="/discord-invisible-name-generator">Discord invisible name generator</a>
                     <a href="/fortnite-invisible-name-generator">Fortnite invisible name generator</a>
                     <a href="/tools">Tools hub</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-band alt-band" aria-labelledby="steps-title">
+            <div class="site-container">
+                <div class="section-heading">
+                    <p class="eyebrow">Safe workflow</p>
+                    <h2 id="steps-title">How to test an invisible name without breaking an account</h2>
+                </div>
+                <ol class="list-decimal list-inside space-y-3">
+                    <li><strong>Copy one character, not several.</strong> Start with U+200B on display-name fields and U+3164 on game names. Copying multiple marks at once makes it harder to tell which character was filtered.</li>
+                    <li><strong>Paste into the exact field you want to change.</strong> Display names, server nicknames, and account usernames often have different validation rules on the same platform.</li>
+                    <li><strong>Save and check every surface.</strong> A name can look blank on the profile edit screen but render as a visible box or an error in chat, leaderboards, or search.</li>
+                    <li><strong>Switch characters when a field rejects the first try.</strong> If U+200B disappears, test U+2800 or U+3164. If the app normalizes the mark, keep the original account name and avoid repeated failed saves.</li>
+                    <li><strong>Verify with the detector.</strong> Paste the saved name into the <a href="/#detector-tool">hidden Unicode detector</a> to see which code points remain before you keep it.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section-band" aria-labelledby="faq-title">
+            <div class="site-container">
+                <div class="section-heading">
+                    <p class="eyebrow">FAQ</p>
+                    <h2 id="faq-title">Invisible name questions</h2>
+                </div>
+                <div class="faq-list space-y-4">
+                    <article>
+                        <h3>Why does an invisible name work on one app but not another?</h3>
+                        <p>Platforms apply different Unicode filters. Some strip zero-width characters on save, others allow them but normalize the name during display. The same character can pass Discord and fail Fortnite, so test each field separately.</p>
+                    </article>
+                    <article>
+                        <h3>Can an invisible name get my account flagged?</h3>
+                        <p>Invisible names are normal Unicode text, not an exploit. The practical risk is different: if the app expects a visible identifier, an invisible display name can make moderation, friend requests, and search harder for other users. Keep the change reversible and check the platform rules before using it on an important account.</p>
+                    </article>
+                    <article>
+                        <h3>What if the app shows a box or a question mark?</h3>
+                        <p>The field rendered a character the current font cannot display. Switch to a mark with wider font support, such as U+2800 for visible blank width or U+3164 for name fields, then verify the saved result again.</p>
+                    </article>
                 </div>
             </div>
         </section>
