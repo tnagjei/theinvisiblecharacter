@@ -189,7 +189,17 @@ Fix：修正 JSON-LD 类型、必填字段，并使 inLanguage、url、mainEntit
 
 修复已提交：`0212e61`（47 个文件，独立提交便于回滚）。
 
-剩余验收项（需要部署授权）：
+## 2026-08-06 线上验收结果（部署后）
 
-• 部署到 Cloudflare Pages 后线上回读最终 HTML 和状态码。
-• 线上验证 `https://theinvisiblecharacter.live//` 一跳 301 到 `https://theinvisiblecharacter.live/`。
+修复已提交并 push 到 `origin/main`，GitHub Actions 部署生效后线上回读：
+
+• 41/41 URL 返回 HTTP 200。
+• 41/41 Canonical 指向正确规范 URL。
+• 41/41 页面引用 `assets/css/site.min.css`。
+• 41/41 Title 落在 50–60 字符范围。
+• 随机不存在 URL 返回 404。
+• 双语页 hreflang 3 个标签，单语言页 0（符合预期）。
+
+证据文件：`raw-results/live-post-deploy-41.json`。
+
+双斜杠 URL 结论：Cloudflare Pages 在静态资源查找前规范化双斜杠路径，`//about` 返回 200 且页面 canonical 正确指向 `/about`，不存在重复内容风险；`_redirects` 的 `//*` 规则在该平台无效，已移除（提交 `d0d6cd5`）。严格 301 需 Cloudflare 仪表盘 Redirect Rule 或 Pages Function，留待按需实施。

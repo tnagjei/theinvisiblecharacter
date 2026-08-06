@@ -60,9 +60,7 @@
       "fail": 0
     }
   },
-  "remaining_acceptance": [
-    "线上 41 URL 状态码与元信息回读（部署后）"
-  ],
+  "remaining_acceptance": [],
   "double_slash_finding": {
     "status": "resolved_as_platform_normalized",
     "evidence": {
@@ -72,5 +70,16 @@
     },
     "conclusion": "Cloudflare Pages normalizes double-slash paths before static asset lookup; _redirects //* rule is not supported. Pages already emit correct canonical tags, so duplicate-content signals are merged. Strict 301 would require a Cloudflare dashboard Redirect Rule (regex) or a Pages Function; not implemented because it is a platform/architecture change outside this task.",
     "action_taken": "Removed ineffective //* rules from _redirects, cloudflare-config/_redirects and vercel.json to avoid misleading future maintainers."
+  },
+  "online_acceptance": {
+    "status": "PASS",
+    "checked_at": "2026-08-06 (post-deploy)",
+    "urls_checked": 41,
+    "http_200": 41,
+    "canonical_ok": 41,
+    "site_min_css": 41,
+    "title_in_50_60": 41,
+    "random_404_status": 404,
+    "evidence_file": "raw-results/live-post-deploy-41.json"
   }
 }
