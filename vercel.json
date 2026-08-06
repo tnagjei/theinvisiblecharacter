@@ -35,9 +35,7 @@
     { "source": "/blog/fr/discord-nom-invisible.html", "destination": "/blog/fr/discord-nom-invisible", "permanent": true },
     { "source": "/blog/fr/optimisation-stories-instagram.html", "destination": "/blog/fr/optimisation-stories-instagram", "permanent": true },
     { "source": "/blog/fr/guide-hashtags-instagram.html", "destination": "/blog/fr/guide-hashtags-instagram", "permanent": true },
-    { "source": "/blog/fr/strategies-croissance-instagram.html", "destination": "/blog/fr/strategies-croissance-instagram", "permanent": true },
-    { "source": "//", "destination": "/", "permanent": true },
-    { "source": "//:path*", "destination": "/:path*", "permanent": true }
+    { "source": "/blog/fr/strategies-croissance-instagram.html", "destination": "/blog/fr/strategies-croissance-instagram", "permanent": true }
   ],
   "cleanUrls": true,
   "trailingSlash": false

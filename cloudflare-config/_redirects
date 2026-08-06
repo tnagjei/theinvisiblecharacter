@@ -99,8 +99,3 @@ https://www.theinvisiblecharacter.live/* https://theinvisiblecharacter.live/:spl
 /search / 301
 /sitemap /sitemap.xml 301
 /robots /robots.txt 301
-
-# ============================================================
-# Double slash normalization (https://domain// → https://domain/)
-# ============================================================
-//* https://theinvisiblecharacter.live/:splat 301

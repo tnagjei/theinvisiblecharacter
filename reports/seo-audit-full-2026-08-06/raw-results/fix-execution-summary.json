@@ -61,7 +61,16 @@
     }
   },
   "remaining_acceptance": [
-    "线上回读最终 HTML 和状态码（需部署到 Cloudflare Pages 后执行）",
-    "双斜杠重定向线上行为验证（需部署）"
-  ]
+    "线上 41 URL 状态码与元信息回读（部署后）"
+  ],
+  "double_slash_finding": {
+    "status": "resolved_as_platform_normalized",
+    "evidence": {
+      "https://theinvisiblecharacter.live//about": "HTTP 200, canonical points to /about",
+      "https://theinvisiblecharacter.live//blog/": "HTTP 200, canonical points to /blog/",
+      "https://theinvisiblecharacter.live//": "HTTP 200, canonical points to /"
+    },
+    "conclusion": "Cloudflare Pages normalizes double-slash paths before static asset lookup; _redirects //* rule is not supported. Pages already emit correct canonical tags, so duplicate-content signals are merged. Strict 301 would require a Cloudflare dashboard Redirect Rule (regex) or a Pages Function; not implemented because it is a platform/architecture change outside this task.",
+    "action_taken": "Removed ineffective //* rules from _redirects, cloudflare-config/_redirects and vercel.json to avoid misleading future maintainers."
+  }
 }
