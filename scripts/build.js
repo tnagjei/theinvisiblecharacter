@@ -122,6 +122,74 @@ function isFrenchPage(relPath) {
   return pageLanguage(relPath) === 'fr';
 }
 
+const makeThisBetterWidget = `
+    <!-- Make This Better feedback widget -->
+    <script data-makethisbetter-widget src="https://unpkg.com/makethisbetter@1/dist/makethisbetter.js"></script>
+    <script data-makethisbetter-widget>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.MakeThisBetter) return;
+            window.MakeThisBetter.init({
+                projectKey: 'mtb_proj_ryBbhpnH0jTz0s-bD1Sun45MI_1K8fpg',
+                locale: document.documentElement.lang || 'en',
+                position: 'right'
+            });
+        });
+    </script>`;
+
+function injectMakeThisBetter(html, french) {
+  let out = html;
+  if (out.includes('</head>') && !out.includes('data-makethisbetter-widget')) {
+    out = out.replace('</head>', `${makeThisBetterWidget}\n</head>`);
+  }
+
+  if (out.includes('</footer>') && !out.includes('data-makethisbetter-feedback')) {
+    const label = french ? 'Commentaires' : 'Feedback';
+    const entry = `
+        <p data-makethisbetter-feedback><a href="https://theinvisiblecharacter.makethisbetter.dev" target="_blank" rel="noopener noreferrer">${label}</a></p>`;
+    out = out.replace('</footer>', `${entry}\n    </footer>`);
+  }
+  return out;
+}
+
+function injectMakeThisBetterSite(baseDir, label) {
+  const pages = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (['build', 'node_modules', '.git', 'reports', 'assets', 'design-previews'].includes(entry.name)) continue;
+        walk(full);
+      } else if (entry.name.endsWith('.html')) {
+        pages.push(full);
+      }
+    }
+  };
+  walk(baseDir);
+
+  let changed = 0;
+  for (const file of pages) {
+    const rel = path.relative(baseDir, file);
+    const html0 = fs.readFileSync(file, 'utf8');
+    const html = injectMakeThisBetter(html0, isFrenchPage(rel));
+    if (html !== html0) {
+      fs.writeFileSync(file, html);
+      changed += 1;
+    }
+  }
+
+  for (const comp of ['assets/components/footer.html', 'assets/components/footer-fr.html']) {
+    const file = path.join(baseDir, comp);
+    if (!fs.existsSync(file)) continue;
+    const html0 = fs.readFileSync(file, 'utf8');
+    const html = injectMakeThisBetter(html0, comp.endsWith('-fr.html'));
+    if (html !== html0) {
+      fs.writeFileSync(file, html);
+      changed += 1;
+    }
+  }
+  console.log(`Make This Better injected into ${changed} ${label} files`);
+}
+
 // 平衡匹配 <div class="...">...</div>：从开标签起按 <div>/</div> 计数，
 // 一直匹配到与开标签配对的闭合标签为止。相比非贪婪正则 [\s\S]*?</div>，
 // 它能正确处理导航容器内嵌套 <div> 的情况（如某页 nav-links 内又套了 div），
@@ -280,10 +348,12 @@ function injectNav(baseDir, label) {
 
 // 1) 先把统一导航写回源文件（线上部署的就是源文件）
 injectNav(root, 'source');
+injectMakeThisBetterSite(root, 'source');
 // 2) 再拷贝源文件到 build/（保留 build/ 供本地校验/预览使用）
 copyBuildFiles();
 // 3) build/ 已是注入后的源文件副本，再跑一次保证一致（幂等）
 injectNav(buildDir, 'built');
+injectMakeThisBetterSite(buildDir, 'built');
 buildTailwind();
 validateBuild();
 console.log(`Build ready: ${path.relative(root, buildDir)}`);

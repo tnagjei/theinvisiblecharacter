@@ -246,6 +246,19 @@
             scroll-behavior: smooth;
         }
     </style>
+
+    <!-- Make This Better feedback widget -->
+    <script data-makethisbetter-widget src="https://unpkg.com/makethisbetter@1/dist/makethisbetter.js"></script>
+    <script data-makethisbetter-widget>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.MakeThisBetter) return;
+            window.MakeThisBetter.init({
+                projectKey: 'mtb_proj_ryBbhpnH0jTz0s-bD1Sun45MI_1K8fpg',
+                locale: document.documentElement.lang || 'en',
+                position: 'right'
+            });
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
@@ -672,6 +685,8 @@
                 <p class="text-gray-400">© 2024 TheInvisibleCharacter.live. All rights reserved. | <a href="/privacy-policy" class="hover:text-white transition" title="Privacy Policy">Privacy Policy</a> | <a href="/terms-of-service" class="hover:text-white transition" title="Terms of Service">Terms of Service</a></p>
             </div>
         </div>
+
+        <p data-makethisbetter-feedback><a href="https://theinvisiblecharacter.makethisbetter.dev" target="_blank" rel="noopener noreferrer">Feedback</a></p>
     </footer>
 
     <!-- JavaScript -->

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "makethisbetter": {
+      "source": "makethisbetter/skills",
+      "sourceType": "github",
+      "skillPath": "makethisbetter/SKILL.md",
+      "computedHash": "35d582ee377c6dc61cf973079371c621d3fdf1caec4eac9ccf836cb784708eea"
+    }
+  }
+}

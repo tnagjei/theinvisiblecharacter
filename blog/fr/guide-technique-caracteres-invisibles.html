@@ -268,6 +268,19 @@
             background-color: #f1f3f4;
         }
     </style>
+
+    <!-- Make This Better feedback widget -->
+    <script data-makethisbetter-widget src="https://unpkg.com/makethisbetter@1/dist/makethisbetter.js"></script>
+    <script data-makethisbetter-widget>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.MakeThisBetter) return;
+            window.MakeThisBetter.init({
+                projectKey: 'mtb_proj_ryBbhpnH0jTz0s-bD1Sun45MI_1K8fpg',
+                locale: document.documentElement.lang || 'en',
+                position: 'right'
+            });
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
@@ -511,7 +524,7 @@ function genererTexteInvisible(longueur = 1) {
         '\u200C', // Non-Liant de Largeur Zéro
         '\u2060'  // Liant de Mots
     ];
-    
+
     let resultat = '';
     for (let i = 0; i &lt; longueur; i++) {
         resultat += caracteresInvisibles[Math.floor(Math.random() * caracteresInvisibles.length)];
@@ -952,6 +965,8 @@ fetch('https://api.theinvisiblecharacter.live/generate')
                 <p class="text-gray-400">© 2024 TheInvisibleCharacter.live. Tous droits réservés. | <a href="/privacy-policy" class="hover:text-white transition" title="Politique de Confidentialité">Politique de Confidentialité</a> | <a href="/terms-of-service" class="hover:text-white transition" title="Conditions d'Utilisation">Conditions d'Utilisation</a></p>
             </div>
         </div>
+
+        <p data-makethisbetter-feedback><a href="https://theinvisiblecharacter.makethisbetter.dev" target="_blank" rel="noopener noreferrer">Commentaires</a></p>
     </footer>
 
     <!-- JavaScript -->
