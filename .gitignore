@@ -22,6 +22,7 @@ docs/seo/QUERY_OWNERSHIP_AUDIT.md
 
 # 本地运行态 / 个人配置 / 竞品抓取素材（不进仓库）
 .omo/
+.freebuff/
 .gsc.json
 docs/search-markdown-*
 
