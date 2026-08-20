@@ -25,6 +25,7 @@ docs/seo/QUERY_OWNERSHIP_AUDIT.md
 .freebuff/
 .gsc.json
 docs/search-markdown-*
+scripts/gsc-review-once-*.sh
 
 # 全站 SEO 审计原始抓取数据（可重新生成，不进仓库）
 reports/seo-audit-full-2026-08-06/raw-results/pages/

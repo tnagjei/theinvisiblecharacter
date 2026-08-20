@@ -2,3 +2,15 @@ User-agent: *
 Allow: /
 
 Sitemap: https://theinvisiblecharacter.live/sitemap.xml
+
+# AI Crawlers
+User-agent: GPTBot
+User-agent: Claude-Web
+User-agent: Anthropic-AI
+User-agent: PerplexityBot
+User-agent: GoogleOther
+User-agent: DuckAssistBot
+Allow: /
+
+# AI Content Pointers
+LLM-Content: https://theinvisiblecharacter.live/llms.txt
