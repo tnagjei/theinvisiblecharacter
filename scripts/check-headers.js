@@ -59,6 +59,13 @@ if (html.includes('googletagmanager.com')) {
 if (html.includes('google-analytics.com')) {
   needs.push(['connect-src', 'https://www.google-analytics.com']);
 }
+if (html.includes('unpkg.com/makethisbetter')) {
+  needs.push(['script-src', 'https://unpkg.com']);
+}
+if (html.includes('static.cloudflareinsights.com')) {
+  needs.push(['script-src', 'https://static.cloudflareinsights.com']);
+  needs.push(['connect-src', 'https://cloudflareinsights.com']);
+}
 if (html.includes('fonts.googleapis.com') || css.includes('fonts.googleapis.com')) {
   needs.push(['style-src', 'https://fonts.googleapis.com']);
   needs.push(['font-src', 'https://fonts.gstatic.com']);

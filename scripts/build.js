@@ -124,7 +124,7 @@ function isFrenchPage(relPath) {
 
 const makeThisBetterWidget = `
     <!-- Make This Better feedback widget -->
-    <script data-makethisbetter-widget src="https://unpkg.com/makethisbetter@1/dist/makethisbetter.js"></script>
+    <script defer data-makethisbetter-widget src="https://unpkg.com/makethisbetter@1/dist/makethisbetter.js"></script>
     <script data-makethisbetter-widget>
         document.addEventListener('DOMContentLoaded', function () {
             if (!window.MakeThisBetter) return;

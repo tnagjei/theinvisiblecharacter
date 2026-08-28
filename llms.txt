@@ -32,10 +32,10 @@ TheInvisibleCharacter.live is a professional online platform specializing in zer
 ## Technical Details
 - Built with HTML5, Tailwind CSS, and vanilla JavaScript
 - Cloudflare Pages deployment ready
-- SEO optimized with structured data
+- Public pages include canonical metadata and structured data where applicable
 - Mobile-first responsive design
 - Dark/light theme support
-- Accessibility compliant (WCAG 2.1)
+- Accessibility is tested with automated and manual checks; no universal compliance claim is made
 
 ## Language Support
 - English: https://theinvisiblecharacter.live/
@@ -44,8 +44,8 @@ TheInvisibleCharacter.live is a professional online platform specializing in zer
 ## Legal & Privacy
 - Privacy Policy: https://theinvisiblecharacter.live/privacy-policy
 - Terms of Service: https://theinvisiblecharacter.live/terms-of-service
-- No user data collection or tracking
-- GDPR compliant
+- Tool input is processed locally in the browser and is not submitted to the site
+- Analytics, advertising, and essential browser storage are described in the Privacy Policy and Cookie Policy
 
 ## Contact
 - Website: https://theinvisiblecharacter.live
