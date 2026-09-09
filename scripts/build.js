@@ -136,6 +136,50 @@ const makeThisBetterWidget = `
         });
     </script>`;
 
+const ga4Snippet = `
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZV96VEWKZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4ZV96VEWKZ');
+    </script>`;
+
+function injectGA4(html) {
+  if (html.includes('G-4ZV96VEWKZ')) return html;
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `${ga4Snippet}\n</head>`);
+  }
+  return html;
+}
+
+function injectGA4Site(baseDir, label) {
+  const pages = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (['build', 'node_modules', '.git', 'reports', 'assets', 'design-previews'].includes(entry.name)) continue;
+        walk(full);
+      } else if (entry.name.endsWith('.html')) {
+        pages.push(full);
+      }
+    }
+  };
+  walk(baseDir);
+  let changed = 0;
+  for (const file of pages) {
+    const html0 = fs.readFileSync(file, 'utf8');
+    const html = injectGA4(html0);
+    if (html !== html0) {
+      fs.writeFileSync(file, html);
+      changed += 1;
+    }
+  }
+  console.log(`GA4 (G-4ZV96VEWKZ) injected into ${changed} ${label} files`);
+}
+
 function injectMakeThisBetter(html, french) {
   let out = html;
   if (out.includes('</head>') && !out.includes('data-makethisbetter-widget')) {
@@ -349,11 +393,13 @@ function injectNav(baseDir, label) {
 // 1) 先把统一导航写回源文件（线上部署的就是源文件）
 injectNav(root, 'source');
 injectMakeThisBetterSite(root, 'source');
+injectGA4Site(root, 'source');
 // 2) 再拷贝源文件到 build/（保留 build/ 供本地校验/预览使用）
 copyBuildFiles();
 // 3) build/ 已是注入后的源文件副本，再跑一次保证一致（幂等）
 injectNav(buildDir, 'built');
 injectMakeThisBetterSite(buildDir, 'built');
+injectGA4Site(buildDir, 'built');
 buildTailwind();
 validateBuild();
 console.log(`Build ready: ${path.relative(root, buildDir)}`);
